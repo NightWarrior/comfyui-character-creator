@@ -1,0 +1,652 @@
+{
+  "id": "e50aa742-2a06-4471-9b22-0972ac942b87",
+  "revision": 0,
+  "last_node_id": 10,
+  "last_link_id": 14,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "CharacterCreator",
+      "pos": [
+        0,
+        0
+      ],
+      "size": [
+        690,
+        680
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            1
+          ]
+        },
+        {
+          "name": "character_code",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "name": "controlnet_stack",
+          "type": "CHARACTER_CONTROL_STACK",
+          "links": [
+            4
+          ]
+        },
+        {
+          "name": "negative_prompt",
+          "type": "STRING",
+          "links": [
+            14
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CharacterCreator"
+      },
+      "widgets_values": [
+        "sdxl",
+        "character",
+        "woman",
+        "twenties",
+        "porcelain",
+        "slender",
+        "soft",
+        "unspecified",
+        "red",
+        "long_waves",
+        "smile",
+        "dress",
+        "qipao",
+        "tshirt",
+        "jeans",
+        "none",
+        "heels",
+        "none",
+        "mountains",
+        "soft",
+        "fashion",
+        "contrapposto",
+        "waist_up",
+        "neon",
+        "dynamic",
+        "disabled",
+        "",
+        "{\"dress\": \"#fa0000\", \"hair_color\": \"#a64b2a\", \"lip_makeup\": \"#a93440\", \"earrings\": \"#d4af37\"}",
+        24,
+        "{\"dress\": {\"fabric\": \"silk\", \"details\": {\"piping\": \"#d4af37\", \"belt\": \"#d4af37\"}}}",
+        "unspecified",
+        "tousled",
+        "voluminous",
+        "green",
+        "none",
+        "natural",
+        "none",
+        "stain",
+        "soft_glam",
+        "fine",
+        "studs",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "widgets_values_named": {
+        "model": "sdxl",
+        "template": "character",
+        "gender": "woman",
+        "life_stage": "twenties",
+        "skin_tone": "porcelain",
+        "body_shape": "slender",
+        "muscle_tone": "soft",
+        "bust_size": "unspecified",
+        "hair_color": "red",
+        "hair_style": "long_waves",
+        "expression": "smile",
+        "wardrobe_mode": "dress",
+        "dress": "qipao",
+        "upper_garment": "tshirt",
+        "lower_garment": "jeans",
+        "outerwear": "none",
+        "shoes": "heels",
+        "headwear": "none",
+        "background": "mountains",
+        "scene_detail": "soft",
+        "art_style": "fashion",
+        "pose": "contrapposto",
+        "framing": "waist_up",
+        "lighting": "neon",
+        "composition": "dynamic",
+        "controlnets": "disabled",
+        "character_code": "",
+        "colors": "{\"dress\": \"#fa0000\", \"hair_color\": \"#a64b2a\", \"lip_makeup\": \"#a93440\", \"earrings\": \"#d4af37\"}",
+        "age": 24,
+        "clothing": "{\"dress\": {\"fabric\": \"silk\", \"details\": {\"piping\": \"#d4af37\", \"belt\": \"#d4af37\"}}}",
+        "ethnicity": "unspecified",
+        "hair_finish": "tousled",
+        "hair_volume": "voluminous",
+        "eye_color": "green",
+        "eye_shape": "none",
+        "eyebrows": "natural",
+        "lip_shape": "none",
+        "lip_makeup": "stain",
+        "makeup": "soft_glam",
+        "eyeliner": "fine",
+        "earrings": "studs",
+        "necklace": "none",
+        "piercings": "none",
+        "moles": "none",
+        "freckles": "none",
+        "eyewear": "none",
+        "gloves": "none"
+      }
+    },
+    {
+      "id": 2,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        760,
+        0
+      ],
+      "size": [
+        320,
+        180
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            7
+          ]
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            2,
+            3
+          ]
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            12
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1120,
+        0
+      ],
+      "size": [
+        320,
+        180
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 1,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "title": "Positive - Character Creator prompt"
+    },
+    {
+      "id": 4,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1120,
+        240
+      ],
+      "size": [
+        320,
+        180
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 3
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 14,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "title": "Negative - optional; start empty"
+    },
+    {
+      "id": 5,
+      "type": "EmptyLatentImage",
+      "pos": [
+        760,
+        260
+      ],
+      "size": [
+        320,
+        180
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        832,
+        1216,
+        1
+      ]
+    },
+    {
+      "id": 6,
+      "type": "ApplyCharacterControlNets",
+      "pos": [
+        1490,
+        240
+      ],
+      "size": [
+        320,
+        180
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 5
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 6
+        },
+        {
+          "name": "stack",
+          "type": "CHARACTER_CONTROL_STACK",
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            8
+          ]
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ApplyCharacterControlNets"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 7,
+      "type": "KSampler",
+      "pos": [
+        1850,
+        0
+      ],
+      "size": [
+        320,
+        300
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 7
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 8
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 9
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            11
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        42,
+        "fixed",
+        35,
+        5,
+        "dpmpp_2m",
+        "karras",
+        1
+      ]
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [
+        2220,
+        0
+      ],
+      "size": [
+        320,
+        180
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 11
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 12
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 9,
+      "type": "SaveImage",
+      "pos": [
+        2580,
+        0
+      ],
+      "size": [
+        320,
+        180
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 13
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "CharacterCreator/Juggernaut_XL"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "Note",
+      "pos": [
+        1490,
+        500
+      ],
+      "size": [
+        600,
+        240
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "Note"
+      },
+      "widgets_values": [
+        "Ready to queue after loading the updated addon. Uses the installed checkpoint including its CLIP and VAE. The creator family must match this checkpoint; changing the family button changes prompt wording only. Optional ControlNets must match SDXL. Connect classic Character ControlNet Entry nodes to the creator, not Qwen model patches. Negative prompt starts empty. Seed 42 is fixed for comparisons. No upscaler or refiner is required.\n\nThe creator negative_prompt output is connected to negative text encoding. SD/SDXL generate concise style/crop-aware negatives; Qwen currently outputs an empty negative. Disconnect this link to enter your own negative text."
+      ],
+      "title": "Start here - Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors"
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      3,
+      1,
+      "STRING"
+    ],
+    [
+      2,
+      2,
+      1,
+      3,
+      0,
+      "CLIP"
+    ],
+    [
+      3,
+      2,
+      1,
+      4,
+      0,
+      "CLIP"
+    ],
+    [
+      4,
+      1,
+      2,
+      6,
+      2,
+      "CHARACTER_CONTROL_STACK"
+    ],
+    [
+      5,
+      3,
+      0,
+      6,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      6,
+      4,
+      0,
+      6,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      7,
+      2,
+      0,
+      7,
+      0,
+      "MODEL"
+    ],
+    [
+      8,
+      6,
+      0,
+      7,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      9,
+      6,
+      1,
+      7,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      10,
+      5,
+      0,
+      7,
+      3,
+      "LATENT"
+    ],
+    [
+      11,
+      7,
+      0,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      12,
+      2,
+      2,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      13,
+      8,
+      0,
+      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      14,
+      1,
+      3,
+      4,
+      1,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.6,
+      "offset": [
+        50,
+        50
+      ]
+    }
+  },
+  "version": 0.4
+}

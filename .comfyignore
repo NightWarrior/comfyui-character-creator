@@ -1,0 +1,8 @@
+tests/
+docs/
+package.json
+scripts/
+.github/
+config.json
+__pycache__/
+*.py[cod]

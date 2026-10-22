@@ -1,0 +1,60 @@
+{
+  "model": {
+    "path": "models/model_patches/Qwen-Image-2.1-Fun-Controlnet-Union.safetensors",
+    "source": "https://huggingface.co/alibaba-pai/Qwen-Image-2.1-Fun-Controlnet-Union",
+    "size": 7550979904,
+    "sha256": "65d6b66d734da9e7ff5ef04e7db3a133553a52a3f29a7fcb3e9cce8fa21dcfcd"
+  },
+  "hint": {
+    "path": "input/character_creator/qwen21_union_pose.png",
+    "source": "https://huggingface.co/alibaba-pai/Qwen-Image-2.1-Fun-Controlnet-Union/resolve/main/asset/control_4_00000931.png",
+    "sha256": "f31981793aeeaa3cded8b0e5d94f960fd084392aee34fa9f805f0e1c3a7cc2c9"
+  },
+  "control_examples": {
+    "canny": {
+      "path": "input/character_creator/qwen21_union_canny.png",
+      "source": "https://huggingface.co/alibaba-pai/Qwen-Image-2.1-Fun-Controlnet-Union/resolve/main/asset/control_2_00025069.png",
+      "sha256": "0a7303ca5967778aeedbe9105881dc1b9562ec615a0285cf9005f4e38dd52afd"
+    },
+    "depth": {
+      "path": "input/character_creator/qwen21_union_depth.png",
+      "source": "https://huggingface.co/alibaba-pai/Qwen-Image-2.1-Fun-Controlnet-Union/resolve/main/asset/control_5_00005389.png",
+      "sha256": "65279ae0098a39ab76e0b83a16303c1bd4b3dcc3716b10957259d391a1c609bb"
+    },
+    "grayscale": {
+      "path": "input/character_creator/qwen21_union_grayscale.png",
+      "source": "https://huggingface.co/alibaba-pai/Qwen-Image-2.1-Fun-Controlnet-Union/resolve/main/asset/control_1_00014291.png",
+      "sha256": "4e4e7af19961d7d728cce78ecf97df05423c4cf1a4f124b6f17e0c8dc233aa27"
+    },
+    "hed": {
+      "path": "input/character_creator/qwen21_union_hed.png",
+      "source": "https://huggingface.co/alibaba-pai/Qwen-Image-2.1-Fun-Controlnet-Union/resolve/main/asset/control_6_00009388.png",
+      "sha256": "48ccd6431efe2d1380b3e7323ffc6bc8cd1a1eba4d2c1f478d5943e6ead02d90"
+    },
+    "lineart": {
+      "path": "input/character_creator/qwen21_union_lineart.png",
+      "source": "https://huggingface.co/alibaba-pai/Qwen-Image-2.1-Fun-Controlnet-Union/resolve/main/asset/control_4_00003435.png",
+      "sha256": "2ff48d0829a25057415bb4c0fdbc8fe7edf6f90fd3d00655139c490cc5e16518"
+    },
+    "mlsd": {
+      "path": "input/character_creator/qwen21_union_mlsd.png",
+      "source": "https://huggingface.co/alibaba-pai/Qwen-Image-2.1-Fun-Controlnet-Union/resolve/main/asset/control_4_00027496.png",
+      "sha256": "648b731da55104aa65d58e480d48f4f499661a7775b16552d406185d5fe06bd8"
+    },
+    "scribble": {
+      "path": "input/character_creator/qwen21_union_scribble.png",
+      "source": "https://huggingface.co/alibaba-pai/Qwen-Image-2.1-Fun-Controlnet-Union/resolve/main/asset/control_13_00000494.png",
+      "sha256": "5686dcac4a0fb67920580c4d5875fe3457163ace11970e1f7590871223ea5454"
+    },
+    "pose": {
+      "path": "input/character_creator/qwen21_union_pose.png",
+      "source": "https://huggingface.co/alibaba-pai/Qwen-Image-2.1-Fun-Controlnet-Union/resolve/main/asset/control_4_00000931.png",
+      "sha256": "f31981793aeeaa3cded8b0e5d94f960fd084392aee34fa9f805f0e1c3a7cc2c9"
+    }
+  },
+  "source_image": {
+    "path": "input/red dress.png",
+    "source": "Existing local ComfyUI input/red dress.png (not bundled with the addon)",
+    "sha256": "9950258fedb1a977dd86195e62abb1aa2dc39e8bb734fa97b7f7bd04259d9f78"
+  }
+}

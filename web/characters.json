@@ -1,0 +1,160 @@
+[
+  {
+    "id": "scarlet",
+    "name": "Scarlet · Red Qipao",
+    "settings": {
+      "model": "qwen_image_2_1",
+      "template": "character",
+      "gender": "woman",
+      "life_stage": "twenties",
+      "skin_tone": "porcelain",
+      "body_shape": "slender",
+      "muscle_tone": "soft",
+      "bust_size": "unspecified",
+      "hair_color": "red",
+      "hair_style": "long_waves",
+      "expression": "smile",
+      "wardrobe_mode": "dress",
+      "dress": "qipao",
+      "upper_garment": "tshirt",
+      "lower_garment": "jeans",
+      "outerwear": "none",
+      "shoes": "heels",
+      "headwear": "none",
+      "background": "mountains",
+      "scene_detail": "soft",
+      "art_style": "fashion",
+      "pose": "contrapposto",
+      "framing": "waist_up",
+      "lighting": "neon",
+      "composition": "dynamic",
+      "age": 24,
+      "hair_finish": "tousled",
+      "hair_volume": "voluminous",
+      "eye_color": "green",
+      "eyebrows": "natural",
+      "lip_makeup": "stain",
+      "makeup": "soft_glam",
+      "eyeliner": "fine",
+      "earrings": "studs",
+      "colors": {
+        "dress": "#fa0000",
+        "hair_color": "#a64b2a",
+        "lip_makeup": "#a93440",
+        "earrings": "#d4af37"
+      },
+      "clothing": {
+        "dress": {
+          "fabric": "silk",
+          "details": {
+            "piping": "#d4af37",
+            "belt": "#d4af37"
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "celeste",
+    "name": "Celeste · Timeless Elegance",
+    "settings": {
+      "model": "qwen_image_2_1",
+      "template": "character",
+      "gender": "woman",
+      "life_stage": "fifties",
+      "skin_tone": "olive",
+      "body_shape": "curvy",
+      "muscle_tone": "natural",
+      "bust_size": "unspecified",
+      "hair_color": "black",
+      "hair_style": "low_bun",
+      "expression": "smile",
+      "wardrobe_mode": "dress",
+      "dress": "wrap_dress",
+      "upper_garment": "tshirt",
+      "lower_garment": "jeans",
+      "outerwear": "none",
+      "shoes": "heels",
+      "headwear": "none",
+      "background": "palace",
+      "scene_detail": "soft",
+      "art_style": "photo",
+      "pose": "seated",
+      "framing": "waist_up",
+      "lighting": "window",
+      "composition": "editorial",
+      "age": 52,
+      "hair_finish": "sleek",
+      "eye_color": "hazel",
+      "eyebrows": "arched",
+      "makeup": "natural",
+      "earrings": "pearls",
+      "necklace": "pearls",
+      "lip_makeup": "matte",
+      "colors": {
+        "dress": "#264d43",
+        "lip_makeup": "#9c4050"
+      },
+      "clothing": {
+        "dress": {
+          "fabric": "velvet",
+          "details": {
+            "belt": "#d4af37"
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "silas",
+    "name": "Silas · The Weathered Sage",
+    "settings": {
+      "model": "qwen_image_2_1",
+      "template": "character",
+      "gender": "man",
+      "life_stage": "older",
+      "skin_tone": "tan",
+      "body_shape": "broad",
+      "muscle_tone": "defined",
+      "bust_size": "unspecified",
+      "hair_color": "grey",
+      "hair_style": "caesar",
+      "expression": "thoughtful",
+      "wardrobe_mode": "separates",
+      "dress": "day_dress",
+      "upper_garment": "henley",
+      "lower_garment": "cargo_pants",
+      "outerwear": "coat",
+      "shoes": "boots",
+      "headwear": "none",
+      "background": "workshop",
+      "scene_detail": "soft",
+      "art_style": "photo",
+      "pose": "hand_chin",
+      "framing": "waist_up",
+      "lighting": "window",
+      "composition": "dramatic",
+      "age": 78,
+      "hair_finish": "messy",
+      "eye_color": "gray",
+      "eye_shape": "hooded",
+      "eyebrows": "thick",
+      "freckles": "dense",
+      "colors": {
+        "upper_garment": "#77715c",
+        "outerwear": "#604332",
+        "lower_garment": "#393d37"
+      },
+      "clothing": {
+        "outerwear": {
+          "fabric": "canvas",
+          "texture": "brushed",
+          "details": {
+            "stitching": "#b49368",
+            "pockets": "#604332"
+          }
+        }
+      }
+    }
+  }
+]

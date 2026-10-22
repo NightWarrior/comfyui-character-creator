@@ -1,0 +1,23 @@
+{
+  "color_names": {
+    "#536878": "storm blue"
+  },
+  "options": {
+    "upper_garment": [
+      {
+        "id": "linen_shirt",
+        "label": "Linen shirt",
+        "phrase": "a pale sand linen shirt",
+        "color_phrase": "a {color} linen shirt",
+        "icon": "button_shirt",
+        "covers": ["upper"]
+      }
+    ]
+  },
+  "templates": {
+    "my_character": {
+      "label": "My character layout",
+      "format": "{opening} {scene} {pose} {hair} {expression} {appearance} {wardrobe} {lighting} {composition}"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+# Python caches and build output
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+build/
+dist/
+*.egg-info/
+.venv/
+venv/
+
+# JavaScript dependencies and test output
+node_modules/
+coverage/
+
+# Machine-local settings, credentials and temporary files
+/docs/
+/scripts/
+/FEATURES.txt
+/config.json
+.env
+.env.*
+!.env.example
+/tests/test-config-*/
+/output/
+/temp/
+*.log
+*.tmp
+
+# Model weights belong in the ComfyUI model directories
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+
+# Editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini

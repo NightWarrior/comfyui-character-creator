@@ -1,0 +1,1220 @@
+{
+  "id": "237ae86d-ceb0-45cd-ad76-59e623cc97b9",
+  "revision": 0,
+  "last_node_id": 21,
+  "last_link_id": 4,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "CharacterCreator",
+      "pos": [
+        0,
+        0
+      ],
+      "size": [
+        690,
+        680
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            1
+          ]
+        },
+        {
+          "name": "character_code",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "name": "controlnet_stack",
+          "type": "CHARACTER_CONTROL_STACK",
+          "links": [
+            2
+          ]
+        },
+        {
+          "name": "negative_prompt",
+          "type": "STRING",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CharacterCreator"
+      },
+      "widgets_values": [
+        "qwen_image_2_1",
+        "character",
+        "woman",
+        "twenties",
+        "porcelain",
+        "slender",
+        "soft",
+        "unspecified",
+        "red",
+        "long_waves",
+        "smile",
+        "dress",
+        "qipao",
+        "tshirt",
+        "jeans",
+        "none",
+        "heels",
+        "none",
+        "mountains",
+        "soft",
+        "fashion",
+        "contrapposto",
+        "waist_up",
+        "neon",
+        "dynamic",
+        "disabled",
+        "",
+        "{\"dress\": \"#fa0000\", \"hair_color\": \"#a64b2a\", \"lip_makeup\": \"#a93440\", \"earrings\": \"#d4af37\"}",
+        24,
+        "{\"dress\": {\"fabric\": \"silk\", \"details\": {\"piping\": \"#d4af37\", \"belt\": \"#d4af37\"}}}",
+        "unspecified",
+        "tousled",
+        "voluminous",
+        "green",
+        "none",
+        "natural",
+        "none",
+        "stain",
+        "soft_glam",
+        "fine",
+        "studs",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "widgets_values_named": {
+        "model": "qwen_image_2_1",
+        "template": "character",
+        "gender": "woman",
+        "life_stage": "twenties",
+        "skin_tone": "porcelain",
+        "body_shape": "slender",
+        "muscle_tone": "soft",
+        "bust_size": "unspecified",
+        "hair_color": "red",
+        "hair_style": "long_waves",
+        "expression": "smile",
+        "wardrobe_mode": "dress",
+        "dress": "qipao",
+        "upper_garment": "tshirt",
+        "lower_garment": "jeans",
+        "outerwear": "none",
+        "shoes": "heels",
+        "headwear": "none",
+        "background": "mountains",
+        "scene_detail": "soft",
+        "art_style": "fashion",
+        "pose": "contrapposto",
+        "framing": "waist_up",
+        "lighting": "neon",
+        "composition": "dynamic",
+        "controlnets": "disabled",
+        "character_code": "",
+        "colors": "{\"dress\": \"#fa0000\", \"hair_color\": \"#a64b2a\", \"lip_makeup\": \"#a93440\", \"earrings\": \"#d4af37\"}",
+        "age": 24,
+        "clothing": "{\"dress\": {\"fabric\": \"silk\", \"details\": {\"piping\": \"#d4af37\", \"belt\": \"#d4af37\"}}}",
+        "ethnicity": "unspecified",
+        "hair_finish": "tousled",
+        "hair_volume": "voluminous",
+        "eye_color": "green",
+        "eye_shape": "none",
+        "eyebrows": "natural",
+        "lip_shape": "none",
+        "lip_makeup": "stain",
+        "makeup": "soft_glam",
+        "eyeliner": "fine",
+        "earrings": "studs",
+        "necklace": "none",
+        "piercings": "none",
+        "moles": "none",
+        "freckles": "none",
+        "eyewear": "none",
+        "gloves": "none"
+      }
+    },
+    {
+      "id": 20,
+      "type": "7052c5c0-0a71-490f-ba3c-ddf5fe280d33",
+      "pos": [
+        780,
+        0
+      ],
+      "size": [
+        420,
+        430
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 1,
+          "widget": {
+            "name": "prompt"
+          }
+        },
+        {
+          "name": "controlnet_stack",
+          "type": "CHARACTER_CONTROL_STACK",
+          "link": 2
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "height"
+          }
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "steps"
+          }
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "link": null,
+          "widget": {
+            "name": "cfg"
+          }
+        },
+        {
+          "name": "negative_prompt",
+          "type": "STRING",
+          "link": 4,
+          "widget": {
+            "name": "negative_prompt"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "",
+        1024,
+        1024,
+        42,
+        25,
+        1,
+        ""
+      ],
+      "title": "Qwen Image 2.1 - Generation pipeline",
+      "widgets_values_named": {
+        "prompt": "",
+        "width": 1024,
+        "height": 1024,
+        "seed": 42,
+        "steps": 25,
+        "cfg": 1,
+        "negative_prompt": ""
+      }
+    },
+    {
+      "id": 11,
+      "type": "SaveImage",
+      "pos": [
+        1260,
+        0
+      ],
+      "size": [
+        430,
+        500
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 3
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "CharacterCreator/Qwen_Image_2_1"
+      ]
+    },
+    {
+      "id": 21,
+      "type": "Note",
+      "pos": [
+        780,
+        480
+      ],
+      "size": [
+        600,
+        240
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "Note"
+      },
+      "widgets_values": [
+        "Native subgraph prototype: edit the character on the left. Generation settings are on the middle node; IMAGE goes to Save Image. Double-click the subgraph to inspect its loaders, encoders, control application and sampler. The model-family button changes prompt formatting only: use the matching pipeline. The full custom DOM editor is deliberately kept outside; it is not a promoted scalar widget. This file is structurally unit-tested; no live UI or generation test has been run.\n\nThe creator negative_prompt output is connected to negative text encoding. SD/SDXL generate concise style/crop-aware negatives; Qwen currently outputs an empty negative. Disconnect this link to enter your own negative text."
+      ],
+      "title": "Compact workflow - start here"
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      20,
+      0,
+      "STRING"
+    ],
+    [
+      2,
+      1,
+      2,
+      20,
+      1,
+      "CHARACTER_CONTROL_STACK"
+    ],
+    [
+      3,
+      20,
+      0,
+      11,
+      0,
+      "IMAGE"
+    ],
+    [
+      4,
+      1,
+      3,
+      20,
+      7,
+      "STRING"
+    ]
+  ],
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "7052c5c0-0a71-490f-ba3c-ddf5fe280d33",
+        "version": 1,
+        "state": {
+          "lastGroupId": 0,
+          "lastNodeId": 13,
+          "lastLinkId": 27,
+          "lastRerouteId": 0
+        },
+        "revision": 0,
+        "config": {},
+        "name": "Qwen Image 2.1 Generation",
+        "description": "Native reusable generation subgraph; visual creator remains on the parent graph.",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            -250,
+            0,
+            150,
+            232
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            3100,
+            0,
+            150,
+            70
+          ]
+        },
+        "inputs": [
+          {
+            "id": "7290866f-847a-48da-b831-70a523b94464",
+            "name": "prompt",
+            "type": "STRING",
+            "linkIds": [
+              18
+            ],
+            "pos": [
+              -120,
+              24
+            ]
+          },
+          {
+            "id": "a6c92601-522b-4c01-af4e-803f043774cc",
+            "name": "controlnet_stack",
+            "type": "CHARACTER_CONTROL_STACK",
+            "linkIds": [
+              19,
+              20
+            ],
+            "pos": [
+              -120,
+              48
+            ]
+          },
+          {
+            "id": "d87fd9d7-4dad-4772-8d52-482534444d6e",
+            "name": "width",
+            "type": "INT",
+            "linkIds": [
+              21
+            ],
+            "pos": [
+              -120,
+              72
+            ]
+          },
+          {
+            "id": "ae14de25-c927-44ce-98d7-cf2acb564c41",
+            "name": "height",
+            "type": "INT",
+            "linkIds": [
+              22
+            ],
+            "pos": [
+              -120,
+              96
+            ]
+          },
+          {
+            "id": "dd7bdc6b-b182-4d30-9d24-898c2a291179",
+            "name": "seed",
+            "type": "INT",
+            "linkIds": [
+              23
+            ],
+            "pos": [
+              -120,
+              120
+            ]
+          },
+          {
+            "id": "048db63e-d76a-4b85-a601-1254057b62cb",
+            "name": "steps",
+            "type": "INT",
+            "linkIds": [
+              24
+            ],
+            "pos": [
+              -120,
+              144
+            ]
+          },
+          {
+            "id": "6bb157db-d0d7-4f79-ae7c-621bbd56a869",
+            "name": "cfg",
+            "type": "FLOAT",
+            "linkIds": [
+              25
+            ],
+            "pos": [
+              -120,
+              168
+            ]
+          },
+          {
+            "id": "09573617-545f-4dbb-8fb3-90fb100ae607",
+            "name": "negative_prompt",
+            "type": "STRING",
+            "linkIds": [
+              26
+            ],
+            "pos": [
+              -120,
+              192
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "454dfaa6-1eb1-4d7a-b41f-30761d98504a",
+            "name": "IMAGE",
+            "type": "IMAGE",
+            "linkIds": [
+              27
+            ],
+            "pos": [
+              3124,
+              24
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 2,
+            "type": "UNETLoader",
+            "pos": [
+              60,
+              0
+            ],
+            "size": [
+              510,
+              90
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  3
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "UNETLoader"
+            },
+            "widgets_values": [
+              "qwen_image_2.1_int8_convrot.safetensors",
+              "default"
+            ],
+            "widgets_values_named": {
+              "unet_name": "qwen_image_2.1_int8_convrot.safetensors",
+              "weight_dtype": "default"
+            }
+          },
+          {
+            "id": 3,
+            "type": "CLIPLoader",
+            "pos": [
+              60,
+              180
+            ],
+            "size": [
+              510,
+              120
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "CLIP",
+                "name": "CLIP",
+                "type": "CLIP",
+                "links": [
+                  4
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "CLIPLoader"
+            },
+            "widgets_values": [
+              "qwen3vl_8b_int8_convrot.safetensors",
+              "qwen_image",
+              "default"
+            ],
+            "widgets_values_named": {
+              "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+              "type": "qwen_image",
+              "device": "default"
+            }
+          },
+          {
+            "id": 4,
+            "type": "VAELoader",
+            "pos": [
+              60,
+              380
+            ],
+            "size": [
+              510,
+              70
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "VAE",
+                "name": "VAE",
+                "type": "VAE",
+                "links": [
+                  5,
+                  6
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "VAELoader"
+            },
+            "widgets_values": [
+              "qwen_image_2.1_vae_bf16.safetensors"
+            ],
+            "widgets_values_named": {
+              "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+            }
+          },
+          {
+            "id": 5,
+            "type": "TextEncodeQwenImage21",
+            "pos": [
+              470,
+              210
+            ],
+            "size": [
+              340,
+              260
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "clip",
+                "type": "CLIP",
+                "link": 4
+              },
+              {
+                "name": "images.image_1",
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "name": "vae",
+                "type": "VAE",
+                "link": 5
+              },
+              {
+                "name": "prompt",
+                "type": "STRING",
+                "link": 18,
+                "widget": {
+                  "name": "prompt"
+                }
+              },
+              {
+                "name": "negative_prompt",
+                "type": "STRING",
+                "link": 26,
+                "widget": {
+                  "name": "negative_prompt"
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "positive",
+                "name": "positive",
+                "type": "CONDITIONING",
+                "links": [
+                  7
+                ]
+              },
+              {
+                "localized_name": "negative",
+                "name": "negative",
+                "type": "CONDITIONING",
+                "links": [
+                  8
+                ]
+              },
+              {
+                "localized_name": "latent",
+                "name": "latent",
+                "type": "LATENT",
+                "links": []
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "TextEncodeQwenImage21"
+            },
+            "widgets_values": [
+              "",
+              "",
+              1024
+            ],
+            "widgets_values_named": {
+              "prompt": "",
+              "negative_prompt": "",
+              "resolution": 1024
+            }
+          },
+          {
+            "id": 6,
+            "type": "QwenImage21Cache",
+            "pos": [
+              470,
+              0
+            ],
+            "size": [
+              270,
+              90
+            ],
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 3
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  15
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "QwenImage21Cache"
+            },
+            "widgets_values": [
+              "auto",
+              "default"
+            ],
+            "widgets_values_named": {
+              "device": "auto",
+              "dtype": "default"
+            }
+          },
+          {
+            "id": 7,
+            "type": "EmptyLatentImage",
+            "pos": [
+              470,
+              570
+            ],
+            "size": [
+              300,
+              120
+            ],
+            "flags": {},
+            "order": 6,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "width",
+                "type": "INT",
+                "link": 21,
+                "widget": {
+                  "name": "width"
+                }
+              },
+              {
+                "name": "height",
+                "type": "INT",
+                "link": 22,
+                "widget": {
+                  "name": "height"
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "LATENT",
+                "name": "LATENT",
+                "type": "LATENT",
+                "links": [
+                  10
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "EmptyLatentImage"
+            },
+            "widgets_values": [
+              1024,
+              1024,
+              1
+            ],
+            "widgets_values_named": {
+              "width": 1024,
+              "height": 1024,
+              "batch_size": 1
+            }
+          },
+          {
+            "id": 8,
+            "type": "ApplyCharacterControlNets",
+            "pos": [
+              850,
+              220
+            ],
+            "size": [
+              280,
+              125
+            ],
+            "flags": {},
+            "order": 7,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "positive",
+                "type": "CONDITIONING",
+                "link": 7
+              },
+              {
+                "name": "negative",
+                "type": "CONDITIONING",
+                "link": 8
+              },
+              {
+                "name": "stack",
+                "type": "CHARACTER_CONTROL_STACK",
+                "link": 19
+              }
+            ],
+            "outputs": [
+              {
+                "name": "positive",
+                "type": "CONDITIONING",
+                "links": [
+                  11
+                ]
+              },
+              {
+                "name": "negative",
+                "type": "CONDITIONING",
+                "links": [
+                  12
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "ApplyCharacterControlNets"
+            },
+            "widgets_values": []
+          },
+          {
+            "id": 9,
+            "type": "KSampler",
+            "pos": [
+              1170,
+              0
+            ],
+            "size": [
+              270,
+              270
+            ],
+            "flags": {},
+            "order": 8,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 17
+              },
+              {
+                "localized_name": "positive",
+                "name": "positive",
+                "type": "CONDITIONING",
+                "link": 11
+              },
+              {
+                "localized_name": "negative",
+                "name": "negative",
+                "type": "CONDITIONING",
+                "link": 12
+              },
+              {
+                "localized_name": "latent_image",
+                "name": "latent_image",
+                "type": "LATENT",
+                "link": 10
+              },
+              {
+                "name": "seed",
+                "type": "INT",
+                "link": 23,
+                "widget": {
+                  "name": "seed"
+                }
+              },
+              {
+                "name": "steps",
+                "type": "INT",
+                "link": 24,
+                "widget": {
+                  "name": "steps"
+                }
+              },
+              {
+                "name": "cfg",
+                "type": "FLOAT",
+                "link": 25,
+                "widget": {
+                  "name": "cfg"
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "LATENT",
+                "name": "LATENT",
+                "type": "LATENT",
+                "links": [
+                  13
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "KSampler"
+            },
+            "widgets_values": [
+              42,
+              "fixed",
+              25,
+              1,
+              "euler",
+              "simple",
+              1
+            ],
+            "widgets_values_named": {
+              "seed": 0,
+              "control_after_generate": "fixed",
+              "steps": 25,
+              "cfg": 1,
+              "sampler_name": "euler",
+              "scheduler": "simple",
+              "denoise": 1
+            }
+          },
+          {
+            "id": 10,
+            "type": "VAEDecode",
+            "pos": [
+              1540,
+              0
+            ],
+            "size": [
+              230,
+              60
+            ],
+            "flags": {},
+            "order": 9,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "samples",
+                "name": "samples",
+                "type": "LATENT",
+                "link": 13
+              },
+              {
+                "localized_name": "vae",
+                "name": "vae",
+                "type": "VAE",
+                "link": 6
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  27
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "VAEDecode"
+            }
+          },
+          {
+            "id": 13,
+            "type": "ApplyCharacterModelControls",
+            "pos": [
+              1750,
+              0
+            ],
+            "size": [
+              320,
+              180
+            ],
+            "flags": {},
+            "order": 12,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "model",
+                "type": "MODEL",
+                "link": 15
+              },
+              {
+                "name": "stack",
+                "type": "CHARACTER_CONTROL_STACK",
+                "link": 20
+              }
+            ],
+            "outputs": [
+              {
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  17
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "ApplyCharacterModelControls"
+            },
+            "widgets_values": []
+          }
+        ],
+        "links": [
+          {
+            "id": 18,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 5,
+            "target_slot": 3,
+            "type": "STRING"
+          },
+          {
+            "id": 19,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 8,
+            "target_slot": 2,
+            "type": "CHARACTER_CONTROL_STACK"
+          },
+          {
+            "id": 20,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 13,
+            "target_slot": 1,
+            "type": "CHARACTER_CONTROL_STACK"
+          },
+          {
+            "id": 21,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 7,
+            "target_slot": 0,
+            "type": "INT"
+          },
+          {
+            "id": 22,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 7,
+            "target_slot": 1,
+            "type": "INT"
+          },
+          {
+            "id": 23,
+            "origin_id": -10,
+            "origin_slot": 4,
+            "target_id": 9,
+            "target_slot": 4,
+            "type": "INT"
+          },
+          {
+            "id": 24,
+            "origin_id": -10,
+            "origin_slot": 5,
+            "target_id": 9,
+            "target_slot": 5,
+            "type": "INT"
+          },
+          {
+            "id": 25,
+            "origin_id": -10,
+            "origin_slot": 6,
+            "target_id": 9,
+            "target_slot": 6,
+            "type": "FLOAT"
+          },
+          {
+            "id": 26,
+            "origin_id": -10,
+            "origin_slot": 7,
+            "target_id": 5,
+            "target_slot": 4,
+            "type": "STRING"
+          },
+          {
+            "id": 3,
+            "origin_id": 2,
+            "origin_slot": 0,
+            "target_id": 6,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 4,
+            "origin_id": 3,
+            "origin_slot": 0,
+            "target_id": 5,
+            "target_slot": 0,
+            "type": "CLIP"
+          },
+          {
+            "id": 5,
+            "origin_id": 4,
+            "origin_slot": 0,
+            "target_id": 5,
+            "target_slot": 2,
+            "type": "VAE"
+          },
+          {
+            "id": 6,
+            "origin_id": 4,
+            "origin_slot": 0,
+            "target_id": 10,
+            "target_slot": 1,
+            "type": "VAE"
+          },
+          {
+            "id": 7,
+            "origin_id": 5,
+            "origin_slot": 0,
+            "target_id": 8,
+            "target_slot": 0,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 8,
+            "origin_id": 5,
+            "origin_slot": 1,
+            "target_id": 8,
+            "target_slot": 1,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 10,
+            "origin_id": 7,
+            "origin_slot": 0,
+            "target_id": 9,
+            "target_slot": 3,
+            "type": "LATENT"
+          },
+          {
+            "id": 11,
+            "origin_id": 8,
+            "origin_slot": 0,
+            "target_id": 9,
+            "target_slot": 1,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 12,
+            "origin_id": 8,
+            "origin_slot": 1,
+            "target_id": 9,
+            "target_slot": 2,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 13,
+            "origin_id": 9,
+            "origin_slot": 0,
+            "target_id": 10,
+            "target_slot": 0,
+            "type": "LATENT"
+          },
+          {
+            "id": 15,
+            "origin_id": 6,
+            "origin_slot": 0,
+            "target_id": 13,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 17,
+            "origin_id": 13,
+            "origin_slot": 0,
+            "target_id": 9,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 27,
+            "origin_id": 10,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "IMAGE"
+          }
+        ],
+        "groups": [],
+        "extra": {
+          "workflowRendererVersion": "LG"
+        }
+      }
+    ]
+  },
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8,
+      "offset": [
+        50,
+        50
+      ]
+    }
+  },
+  "version": 0.4
+}

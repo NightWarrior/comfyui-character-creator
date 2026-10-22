@@ -1,0 +1,6167 @@
+{
+  "fields": {
+    "gender": {
+      "label": "Gender",
+      "group": "Identity",
+      "default": "woman",
+      "options": [
+        {
+          "id": "woman",
+          "label": "Female",
+          "phrase": "woman",
+          "icon": "person"
+        },
+        {
+          "id": "man",
+          "label": "Male",
+          "phrase": "man",
+          "icon": "person"
+        }
+      ],
+      "description": "Choose Male or Female. This also changes the available hair and clothing menus."
+    },
+    "life_stage": {
+      "label": "Adult life stage",
+      "group": "Identity",
+      "default": "thirties",
+      "options": [
+        {
+          "id": "thirties",
+          "label": "Thirties",
+          "phrase": "in their thirties",
+          "icon": "person"
+        },
+        {
+          "id": "twenties",
+          "label": "Twenties",
+          "phrase": "in their twenties",
+          "icon": "person"
+        },
+        {
+          "id": "forties",
+          "label": "Forties",
+          "phrase": "in their forties",
+          "icon": "person"
+        },
+        {
+          "id": "fifties",
+          "label": "Fifties",
+          "phrase": "in their fifties",
+          "icon": "person"
+        },
+        {
+          "id": "older",
+          "label": "Older adult",
+          "phrase": "in later adulthood",
+          "icon": "person"
+        }
+      ],
+      "description": "Set the character’s age in years. Drag the slider or type a number on the right; ages stay between 18 and 100."
+    },
+    "skin_tone": {
+      "label": "Skin tone",
+      "group": "Appearance",
+      "default": "medium",
+      "options": [
+        {
+          "id": "medium",
+          "label": "Medium",
+          "phrase": "warm medium skin",
+          "icon": "swatch",
+          "color": "#bd8663",
+          "color_phrase": "{color} skin"
+        },
+        {
+          "id": "porcelain",
+          "label": "Porcelain",
+          "phrase": "cool porcelain skin",
+          "icon": "swatch",
+          "color": "#f3ddd1",
+          "color_phrase": "{color} skin"
+        },
+        {
+          "id": "fair",
+          "label": "Fair",
+          "phrase": "warm fair skin",
+          "icon": "swatch",
+          "color": "#eac5ab",
+          "color_phrase": "{color} skin"
+        },
+        {
+          "id": "olive",
+          "label": "Olive",
+          "phrase": "muted olive skin",
+          "icon": "swatch",
+          "color": "#b3986b",
+          "color_phrase": "{color} skin"
+        },
+        {
+          "id": "tan",
+          "label": "Tan",
+          "phrase": "golden tan skin",
+          "icon": "swatch",
+          "color": "#c08a50",
+          "color_phrase": "{color} skin"
+        },
+        {
+          "id": "brown",
+          "label": "Brown",
+          "phrase": "deep warm brown skin",
+          "icon": "swatch",
+          "color": "#875335",
+          "color_phrase": "{color} skin"
+        },
+        {
+          "id": "dark",
+          "label": "Dark",
+          "phrase": "rich dark brown skin",
+          "icon": "swatch",
+          "color": "#4d3028",
+          "color_phrase": "{color} skin"
+        }
+      ],
+      "description": "Choose a skin color, or use the swatch for a custom shade. Ethnicity is selected separately."
+    },
+    "body_shape": {
+      "label": "Body shape",
+      "group": "Appearance",
+      "default": "average",
+      "options": [
+        {
+          "id": "average",
+          "label": "Average",
+          "phrase": "an average build",
+          "icon": "body_average"
+        },
+        {
+          "id": "slender",
+          "label": "Slender",
+          "phrase": "a slender build",
+          "icon": "body_slender"
+        },
+        {
+          "id": "athletic",
+          "label": "Athletic",
+          "phrase": "an athletic build",
+          "icon": "body_athletic"
+        },
+        {
+          "id": "broad",
+          "label": "Broad",
+          "phrase": "a broad build",
+          "icon": "body_broad"
+        },
+        {
+          "id": "curvy",
+          "label": "Curvy",
+          "phrase": "a curvy build",
+          "icon": "body_curvy"
+        },
+        {
+          "id": "full",
+          "label": "Full figured",
+          "phrase": "a full figure",
+          "icon": "body_full"
+        }
+      ],
+      "description": "Choose the overall build and silhouette, such as slender, broad or curvy."
+    },
+    "muscle_tone": {
+      "label": "Muscle definition",
+      "group": "Appearance",
+      "default": "natural",
+      "options": [
+        {
+          "id": "natural",
+          "label": "Natural",
+          "phrase": "natural muscle definition",
+          "icon": "muscle_natural"
+        },
+        {
+          "id": "soft",
+          "label": "Soft",
+          "phrase": "soft body contours",
+          "icon": "muscle_soft"
+        },
+        {
+          "id": "toned",
+          "label": "Toned",
+          "phrase": "gently defined muscles",
+          "icon": "muscle_toned"
+        },
+        {
+          "id": "defined",
+          "label": "Defined",
+          "phrase": "clearly defined muscles",
+          "icon": "muscle_defined"
+        },
+        {
+          "id": "muscular",
+          "label": "Muscular",
+          "phrase": "a muscular physique",
+          "icon": "muscle_muscular"
+        }
+      ],
+      "description": "Choose how soft or visibly defined the muscles should look."
+    },
+    "bust_size": {
+      "label": "Breast size",
+      "group": "Appearance",
+      "default": "unspecified",
+      "options": [
+        {
+          "id": "unspecified",
+          "label": "Unspecified",
+          "phrase": "",
+          "icon": "body"
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "phrase": "small breasts",
+          "icon": "bust_small"
+        },
+        {
+          "id": "medium",
+          "label": "Medium",
+          "phrase": "medium-sized breasts",
+          "icon": "bust_medium"
+        },
+        {
+          "id": "full",
+          "label": "Large",
+          "phrase": "large breasts",
+          "icon": "bust_full"
+        }
+      ],
+      "description": "For Female characters, describe the bust fit of the covering garment. This is omitted from head-and-shoulders portraits."
+    },
+    "hair_color": {
+      "label": "Hair color",
+      "group": "Hair",
+      "default": "brown",
+      "options": [
+        {
+          "id": "brown",
+          "label": "Brown",
+          "phrase": "deep chestnut brown",
+          "icon": "swatch",
+          "color": "#65432b",
+          "color_phrase": "{color}"
+        },
+        {
+          "id": "black",
+          "label": "Black",
+          "phrase": "soft jet black",
+          "icon": "swatch",
+          "color": "#202029",
+          "color_phrase": "{color}"
+        },
+        {
+          "id": "blonde",
+          "label": "Blonde",
+          "phrase": "warm honey blonde",
+          "icon": "swatch",
+          "color": "#d5b260",
+          "color_phrase": "{color}"
+        },
+        {
+          "id": "red",
+          "label": "Auburn",
+          "phrase": "rich auburn",
+          "icon": "swatch",
+          "color": "#a2472c",
+          "color_phrase": "{color}"
+        },
+        {
+          "id": "white",
+          "label": "White",
+          "phrase": "silvery white",
+          "icon": "swatch",
+          "color": "#e4e5eb",
+          "color_phrase": "{color}"
+        },
+        {
+          "id": "grey",
+          "label": "Grey",
+          "phrase": "cool grey",
+          "icon": "swatch",
+          "color": "#969ba4",
+          "color_phrase": "{color}"
+        },
+        {
+          "id": "pink",
+          "label": "Pink",
+          "phrase": "dusty rose pink",
+          "icon": "swatch",
+          "color": "#d28da4",
+          "color_phrase": "{color}"
+        },
+        {
+          "id": "blue",
+          "label": "Blue",
+          "phrase": "deep cobalt blue",
+          "icon": "swatch",
+          "color": "#4769a8",
+          "color_phrase": "{color}"
+        }
+      ],
+      "description": "Choose a hair shade, or use the swatch to set a custom color."
+    },
+    "hair_style": {
+      "label": "Hair style",
+      "group": "Hair",
+      "default": "long_waves",
+      "options": [
+        {
+          "id": "long_waves",
+          "label": "Long waves",
+          "phrase": "falling in long waves over the shoulders",
+          "icon": "long_waves"
+        },
+        {
+          "id": "straight",
+          "label": "Long straight",
+          "phrase": "falling straight past the shoulders",
+          "icon": "straight"
+        },
+        {
+          "id": "bob",
+          "label": "Bob",
+          "phrase": "cut in a chin-length bob",
+          "icon": "bob"
+        },
+        {
+          "id": "pixie",
+          "label": "Pixie",
+          "phrase": "cut in a short textured pixie style",
+          "icon": "pixie"
+        },
+        {
+          "id": "ponytail",
+          "label": "Ponytail",
+          "phrase": "tied in a high ponytail",
+          "icon": "ponytail"
+        },
+        {
+          "id": "bun",
+          "label": "Bun",
+          "phrase": "gathered in a neat high bun",
+          "icon": "bun"
+        },
+        {
+          "id": "braids",
+          "label": "Braids",
+          "phrase": "arranged in two long braids",
+          "icon": "braids"
+        },
+        {
+          "id": "curls",
+          "label": "Curls",
+          "phrase": "shaped into soft shoulder-length curls",
+          "icon": "curls"
+        },
+        {
+          "id": "afro",
+          "label": "Afro",
+          "phrase": "shaped into a rounded natural afro",
+          "icon": "afro"
+        },
+        {
+          "id": "buzz",
+          "label": "Buzz cut",
+          "phrase": "cropped in a close buzz cut",
+          "icon": "buzz"
+        },
+        {
+          "id": "bald",
+          "label": "Bald",
+          "phrase": "",
+          "icon": "bald"
+        },
+        {
+          "id": "crew_cut",
+          "label": "Crew cut",
+          "phrase": "cut in a short crew cut with tapered sides",
+          "icon": "crew_cut"
+        },
+        {
+          "id": "side_part",
+          "label": "Side part",
+          "phrase": "cut short with a defined side part",
+          "icon": "side_part"
+        },
+        {
+          "id": "undercut",
+          "label": "Undercut",
+          "phrase": "styled with a longer top and closely trimmed sides",
+          "icon": "undercut"
+        },
+        {
+          "id": "slicked_back",
+          "label": "Slicked back",
+          "phrase": "combed back smoothly from the forehead",
+          "icon": "slicked_back"
+        },
+        {
+          "id": "french_bob",
+          "label": "French bob",
+          "phrase": "cut in a jaw-length French bob with short bangs",
+          "icon": "french_bob"
+        },
+        {
+          "id": "lob",
+          "label": "Long bob",
+          "phrase": "cut in a shoulder-length long bob",
+          "icon": "lob"
+        },
+        {
+          "id": "bixie",
+          "label": "Bixie",
+          "phrase": "cut in a layered bixie with a soft fringe",
+          "icon": "bixie"
+        },
+        {
+          "id": "shag",
+          "label": "Layered shag",
+          "phrase": "cut in a layered shoulder-length shag with curtain bangs",
+          "icon": "shag"
+        },
+        {
+          "id": "curtain_bangs",
+          "label": "Curtain bangs",
+          "phrase": "worn long with centre-parted curtain bangs",
+          "icon": "curtain_bangs"
+        },
+        {
+          "id": "low_bun",
+          "label": "Low bun",
+          "phrase": "gathered in a low bun at the nape",
+          "icon": "low_bun"
+        },
+        {
+          "id": "fishtail",
+          "label": "Fishtail braid",
+          "phrase": "woven into a long fishtail braid over one shoulder",
+          "icon": "fishtail"
+        },
+        {
+          "id": "twin_braids",
+          "label": "Twin braids",
+          "phrase": "worn in two neat braids",
+          "icon": "twin_braids"
+        },
+        {
+          "id": "coils",
+          "label": "Natural coils",
+          "phrase": "worn in defined natural coils around the head",
+          "icon": "coils"
+        },
+        {
+          "id": "fade",
+          "label": "Taper fade",
+          "phrase": "cut in a short taper fade with textured hair on top",
+          "icon": "fade"
+        },
+        {
+          "id": "caesar",
+          "label": "Caesar cut",
+          "phrase": "cut in a short Caesar crop with a straight fringe",
+          "icon": "caesar"
+        },
+        {
+          "id": "pompadour",
+          "label": "Pompadour",
+          "phrase": "styled in a swept-up pompadour with short sides",
+          "icon": "pompadour"
+        },
+        {
+          "id": "quiff",
+          "label": "Textured quiff",
+          "phrase": "styled in a textured quiff above short sides",
+          "icon": "quiff"
+        },
+        {
+          "id": "faux_hawk",
+          "label": "Faux hawk",
+          "phrase": "styled in a short central faux hawk with tapered sides",
+          "icon": "faux_hawk"
+        },
+        {
+          "id": "curtains",
+          "label": "Curtains",
+          "phrase": "parted down the centre with cheek-length curtains",
+          "icon": "curtains"
+        },
+        {
+          "id": "man_bun",
+          "label": "Tied bun",
+          "phrase": "tied into a compact bun with short sides",
+          "icon": "man_bun"
+        },
+        {
+          "id": "short_curls",
+          "label": "Short curls",
+          "phrase": "cut in short defined curls with tapered sides",
+          "icon": "short_curls"
+        },
+        {
+          "id": "locs",
+          "label": "Locs",
+          "phrase": "worn in shoulder-length neatly parted locs",
+          "icon": "locs"
+        },
+        {
+          "id": "cornrows",
+          "label": "Cornrows",
+          "phrase": "braided into neat close-set cornrows",
+          "icon": "cornrows"
+        }
+      ],
+      "gender_options": {
+        "woman": [
+          "long_waves",
+          "straight",
+          "bob",
+          "pixie",
+          "ponytail",
+          "bun",
+          "braids",
+          "curls",
+          "afro",
+          "bald",
+          "french_bob",
+          "lob",
+          "bixie",
+          "shag",
+          "curtain_bangs",
+          "low_bun",
+          "fishtail",
+          "twin_braids",
+          "coils",
+          "locs",
+          "cornrows"
+        ],
+        "man": [
+          "crew_cut",
+          "side_part",
+          "undercut",
+          "slicked_back",
+          "buzz",
+          "ponytail",
+          "bun",
+          "curls",
+          "afro",
+          "bald",
+          "fade",
+          "caesar",
+          "pompadour",
+          "quiff",
+          "faux_hawk",
+          "curtains",
+          "man_bun",
+          "short_curls",
+          "locs",
+          "cornrows"
+        ]
+      },
+      "sections": [
+        {
+          "label": "Modern & textured cuts",
+          "options": [
+            "pixie",
+            "bixie",
+            "shag",
+            "undercut",
+            "fade",
+            "quiff",
+            "faux_hawk",
+            "short_curls"
+          ]
+        },
+        {
+          "label": "Classic cuts",
+          "options": [
+            "bob",
+            "french_bob",
+            "lob",
+            "buzz",
+            "crew_cut",
+            "side_part",
+            "slicked_back",
+            "caesar",
+            "pompadour",
+            "curtains"
+          ]
+        },
+        {
+          "label": "Long & layered",
+          "options": [
+            "long_waves",
+            "straight",
+            "curtain_bangs"
+          ]
+        },
+        {
+          "label": "Curls & coils",
+          "options": [
+            "curls",
+            "afro",
+            "coils"
+          ]
+        },
+        {
+          "label": "Braids, locs & protective styles",
+          "description": "Includes styles with African and African-diaspora traditions. Choose independently of ethnicity or skin tone.",
+          "options": [
+            "braids",
+            "fishtail",
+            "twin_braids",
+            "locs",
+            "cornrows"
+          ]
+        },
+        {
+          "label": "Tied & gathered",
+          "options": [
+            "ponytail",
+            "bun",
+            "low_bun",
+            "man_bun"
+          ]
+        },
+        {
+          "label": "Bald",
+          "options": [
+            "bald"
+          ]
+        }
+      ],
+      "description": "Choose the cut or arrangement of the hair. Sections group related styles; finish and volume below add styling details."
+    },
+    "expression": {
+      "label": "Expression",
+      "group": "Appearance",
+      "default": "neutral",
+      "options": [
+        {
+          "id": "neutral",
+          "label": "Neutral",
+          "phrase": "a relaxed neutral expression",
+          "icon": "neutral"
+        },
+        {
+          "id": "smile",
+          "label": "Smile",
+          "phrase": "a gentle smile",
+          "icon": "smile"
+        },
+        {
+          "id": "serious",
+          "label": "Serious",
+          "phrase": "a focused serious expression",
+          "icon": "expression_serious"
+        },
+        {
+          "id": "joyful",
+          "label": "Joyful",
+          "phrase": "a broad joyful smile",
+          "icon": "expression_joyful"
+        },
+        {
+          "id": "thoughtful",
+          "label": "Thoughtful",
+          "phrase": "a thoughtful expression with relaxed brows",
+          "icon": "thoughtful"
+        },
+        {
+          "id": "determined",
+          "label": "Determined",
+          "phrase": "a determined expression with focused eyes",
+          "icon": "determined"
+        },
+        {
+          "id": "laughing",
+          "label": "Laughing",
+          "phrase": "an open joyful laugh",
+          "icon": "laughing"
+        },
+        {
+          "id": "surprised",
+          "label": "Surprised",
+          "phrase": "a surprised expression with raised brows",
+          "icon": "surprised"
+        }
+      ],
+      "description": "Choose the emotion shown in the face, such as neutral, smiling or thoughtful."
+    },
+    "wardrobe_mode": {
+      "label": "Outfit construction",
+      "group": "Clothing",
+      "default": "separates",
+      "options": [
+        {
+          "id": "separates",
+          "label": "Separates",
+          "phrase": "separates",
+          "icon": "shirt"
+        },
+        {
+          "id": "dress",
+          "label": "Dress / one piece",
+          "phrase": "one-piece outfit",
+          "icon": "dress"
+        }
+      ],
+      "description": "Choose one main outfit: Dress / one piece uses a dress, jumpsuit or coveralls; Separates uses an upper and a lower garment."
+    },
+    "dress": {
+      "label": "Dress / one piece",
+      "group": "Clothing",
+      "default": "day_dress",
+      "options": [
+        {
+          "id": "none",
+          "label": "None",
+          "phrase": "",
+          "icon": "none",
+          "covers": []
+        },
+        {
+          "id": "day_dress",
+          "label": "Day dress",
+          "phrase": "a muted teal cotton day dress with a fitted waist",
+          "icon": "dress",
+          "covers": [
+            "upper",
+            "lower"
+          ],
+          "color_phrase": "a {color} cotton day dress with a fitted waist",
+          "color": "#008080"
+        },
+        {
+          "id": "evening_dress",
+          "label": "Evening dress",
+          "phrase": "a deep navy satin evening dress",
+          "icon": "gown",
+          "covers": [
+            "upper",
+            "lower"
+          ],
+          "color_phrase": "a {color} satin evening dress",
+          "color": "#000080"
+        },
+        {
+          "id": "sundress",
+          "label": "Sundress",
+          "phrase": "a pale cream linen sundress",
+          "icon": "dress",
+          "covers": [
+            "upper",
+            "lower"
+          ],
+          "color_phrase": "a {color} linen sundress",
+          "color": "#fff5dd"
+        },
+        {
+          "id": "jumpsuit",
+          "label": "Jumpsuit",
+          "phrase": "a charcoal woven jumpsuit",
+          "icon": "jumpsuit",
+          "covers": [
+            "upper",
+            "lower"
+          ],
+          "color_phrase": "a {color} woven jumpsuit",
+          "color": "#333333"
+        },
+        {
+          "id": "overalls",
+          "label": "Work overalls",
+          "phrase": "deep indigo denim work overalls over a pale cream cotton T-shirt",
+          "icon": "overalls",
+          "color": "#000080",
+          "covers": [
+            "upper",
+            "lower"
+          ],
+          "color_phrase": "a set of {color} denim work overalls over a pale cream cotton T-shirt"
+        },
+        {
+          "id": "shirt_dress",
+          "label": "Shirt dress",
+          "phrase": "a slate blue cotton shirt dress with a buttoned bodice",
+          "icon": "shirt_dress",
+          "color": "#536878",
+          "color_phrase": "a {color} cotton shirt dress with a buttoned bodice",
+          "covers": [
+            "upper",
+            "lower"
+          ]
+        },
+        {
+          "id": "wrap_dress",
+          "label": "Wrap dress",
+          "phrase": "a slate blue jersey wrap dress with an overlapping fully closed bodice",
+          "icon": "wrap_dress",
+          "color": "#536878",
+          "color_phrase": "a {color} jersey wrap dress with an overlapping fully closed bodice",
+          "covers": [
+            "upper",
+            "lower"
+          ]
+        },
+        {
+          "id": "a_line_dress",
+          "label": "A-line dress",
+          "phrase": "a slate blue crepe A-line dress with a covered bodice",
+          "icon": "a_line_dress",
+          "color": "#536878",
+          "color_phrase": "a {color} crepe A-line dress with a covered bodice",
+          "covers": [
+            "upper",
+            "lower"
+          ]
+        },
+        {
+          "id": "pleated_dress",
+          "label": "Pleated dress",
+          "phrase": "a slate blue chiffon dress with an opaque lining and pleated skirt",
+          "icon": "pleated_dress",
+          "color": "#536878",
+          "color_phrase": "a {color} chiffon dress with an opaque lining and pleated skirt",
+          "covers": [
+            "upper",
+            "lower"
+          ]
+        },
+        {
+          "id": "turtleneck_dress",
+          "label": "Sweater dress",
+          "phrase": "a slate blue knitted wool turtleneck dress",
+          "icon": "turtleneck_dress",
+          "color": "#536878",
+          "color_phrase": "a {color} knitted wool turtleneck dress",
+          "covers": [
+            "upper",
+            "lower"
+          ]
+        },
+        {
+          "id": "ball_gown",
+          "label": "Ball gown",
+          "phrase": "a slate blue silk ball gown with a fully covered fitted bodice",
+          "icon": "ball_gown",
+          "color": "#536878",
+          "color_phrase": "a {color} silk ball gown with a fully covered fitted bodice",
+          "covers": [
+            "upper",
+            "lower"
+          ]
+        },
+        {
+          "id": "qipao",
+          "label": "Qipao",
+          "phrase": "a slate blue silk qipao with a high mandarin collar",
+          "icon": "qipao",
+          "color": "#536878",
+          "color_phrase": "a {color} silk qipao with a high mandarin collar",
+          "covers": [
+            "upper",
+            "lower"
+          ]
+        },
+        {
+          "id": "pinafore",
+          "label": "Pinafore",
+          "phrase": "a slate blue corduroy pinafore dress over an opaque cotton blouse",
+          "icon": "pinafore",
+          "color": "#536878",
+          "color_phrase": "a {color} corduroy pinafore dress over an opaque cotton blouse",
+          "covers": [
+            "upper",
+            "lower"
+          ]
+        },
+        {
+          "id": "coveralls",
+          "label": "Coveralls",
+          "phrase": "slate blue cotton work coveralls with a closed front",
+          "icon": "coveralls",
+          "color": "#536878",
+          "color_phrase": "{color} cotton work coveralls with a closed front",
+          "covers": [
+            "upper",
+            "lower"
+          ]
+        },
+        {
+          "id": "flight_suit",
+          "label": "Flight suit",
+          "phrase": "a slate blue woven flight suit with a zippered front",
+          "icon": "flight_suit",
+          "color": "#536878",
+          "color_phrase": "a {color} woven flight suit with a zippered front",
+          "covers": [
+            "upper",
+            "lower"
+          ]
+        }
+      ],
+      "gender_options": {
+        "woman": [
+          "none",
+          "day_dress",
+          "evening_dress",
+          "sundress",
+          "jumpsuit",
+          "shirt_dress",
+          "wrap_dress",
+          "a_line_dress",
+          "pleated_dress",
+          "turtleneck_dress",
+          "ball_gown",
+          "qipao",
+          "pinafore",
+          "coveralls",
+          "flight_suit"
+        ],
+        "man": [
+          "none",
+          "overalls",
+          "jumpsuit",
+          "coveralls",
+          "flight_suit"
+        ]
+      },
+      "option_details": {
+        "day_dress": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "evening_dress": {
+          "fabric": "satin",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "sundress": {
+          "fabric": "linen",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "jumpsuit": {
+          "fabric": "woven",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "overalls": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "shirt_dress": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "wrap_dress": {
+          "fabric": "jersey",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "a_line_dress": {
+          "fabric": "crepe",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "pleated_dress": {
+          "fabric": "chiffon",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "turtleneck_dress": {
+          "fabric": "wool",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "ball_gown": {
+          "fabric": "silk",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "qipao": {
+          "fabric": "silk",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "pinafore": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "coveralls": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "flight_suit": {
+          "fabric": "woven",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        }
+      },
+      "description": "Choose the main one-piece outfit. The upper and lower separates are ignored while this mode is active."
+    },
+    "upper_garment": {
+      "label": "Upper garment",
+      "group": "Clothing",
+      "default": "tshirt",
+      "options": [
+        {
+          "id": "none",
+          "label": "None",
+          "phrase": "",
+          "icon": "none",
+          "covers": []
+        },
+        {
+          "id": "tshirt",
+          "label": "T-shirt",
+          "phrase": "a pale cream cotton T-shirt",
+          "icon": "shirt",
+          "covers": [
+            "upper"
+          ],
+          "color_phrase": "a {color} cotton T-shirt",
+          "color": "#fff5dd"
+        },
+        {
+          "id": "shirt",
+          "label": "Shirt",
+          "phrase": "a light blue woven button-up shirt",
+          "icon": "button_shirt",
+          "covers": [
+            "upper"
+          ],
+          "color_phrase": "a {color} woven button-up shirt",
+          "color": "#9ec8e5"
+        },
+        {
+          "id": "blouse",
+          "label": "Blouse",
+          "phrase": "a dusty rose silk blouse",
+          "icon": "blouse",
+          "covers": [
+            "upper"
+          ],
+          "color_phrase": "a {color} silk blouse",
+          "color": "#d28da4"
+        },
+        {
+          "id": "sweater",
+          "label": "Sweater",
+          "phrase": "a muted olive knitted sweater",
+          "icon": "sweater",
+          "covers": [
+            "upper"
+          ],
+          "color_phrase": "a {color} knitted sweater",
+          "color": "#808000"
+        },
+        {
+          "id": "hoodie",
+          "label": "Hoodie",
+          "phrase": "a charcoal cotton hoodie",
+          "icon": "hoodie",
+          "covers": [
+            "upper"
+          ],
+          "color_phrase": "a {color} cotton hoodie",
+          "color": "#333333"
+        },
+        {
+          "id": "tank",
+          "label": "Tank top",
+          "phrase": "a muted teal opaque cotton tank top",
+          "icon": "tank",
+          "covers": [
+            "upper"
+          ],
+          "color_phrase": "a {color} opaque cotton tank top",
+          "color": "#008080"
+        },
+        {
+          "id": "polo",
+          "label": "Polo shirt",
+          "phrase": "a deep navy cotton polo shirt",
+          "icon": "polo",
+          "color": "#000080",
+          "covers": [
+            "upper"
+          ],
+          "color_phrase": "a {color} cotton polo shirt"
+        },
+        {
+          "id": "henley",
+          "label": "Henley",
+          "phrase": "a charcoal cotton Henley shirt",
+          "icon": "henley",
+          "color": "#333333",
+          "covers": [
+            "upper"
+          ],
+          "color_phrase": "a {color} cotton Henley shirt"
+        },
+        {
+          "id": "long_sleeve",
+          "label": "Long sleeve tee",
+          "phrase": "a slate blue cotton long-sleeved T-shirt",
+          "icon": "long_sleeve",
+          "color": "#536878",
+          "color_phrase": "a {color} cotton long-sleeved T-shirt",
+          "covers": [
+            "upper"
+          ]
+        },
+        {
+          "id": "turtleneck",
+          "label": "Turtleneck",
+          "phrase": "a slate blue knitted wool turtleneck",
+          "icon": "turtleneck",
+          "color": "#536878",
+          "color_phrase": "a {color} knitted wool turtleneck",
+          "covers": [
+            "upper"
+          ]
+        },
+        {
+          "id": "sweatshirt",
+          "label": "Sweatshirt",
+          "phrase": "a slate blue cotton sweatshirt",
+          "icon": "sweatshirt",
+          "color": "#536878",
+          "color_phrase": "a {color} cotton sweatshirt",
+          "covers": [
+            "upper"
+          ]
+        },
+        {
+          "id": "rugby_shirt",
+          "label": "Rugby shirt",
+          "phrase": "a slate blue cotton rugby shirt with a contrasting collar",
+          "icon": "rugby_shirt",
+          "color": "#536878",
+          "color_phrase": "a {color} cotton rugby shirt with a contrasting collar",
+          "covers": [
+            "upper"
+          ]
+        },
+        {
+          "id": "athletic_top",
+          "label": "Athletic top",
+          "phrase": "a slate blue opaque jersey athletic shirt",
+          "icon": "athletic_top",
+          "color": "#536878",
+          "color_phrase": "a {color} opaque jersey athletic shirt",
+          "covers": [
+            "upper"
+          ]
+        },
+        {
+          "id": "tunic",
+          "label": "Tunic",
+          "phrase": "a slate blue linen long-sleeved tunic",
+          "icon": "tunic",
+          "color": "#536878",
+          "color_phrase": "a {color} linen long-sleeved tunic",
+          "covers": [
+            "upper"
+          ]
+        },
+        {
+          "id": "vest_shirt",
+          "label": "Waistcoat and shirt",
+          "phrase": "a slate blue wool waistcoat over an opaque cotton shirt",
+          "icon": "vest_shirt",
+          "color": "#536878",
+          "color_phrase": "a {color} wool waistcoat over an opaque cotton shirt",
+          "covers": [
+            "upper"
+          ]
+        },
+        {
+          "id": "overshirt",
+          "label": "Overshirt",
+          "phrase": "a slate blue flannel overshirt over an opaque T-shirt",
+          "icon": "overshirt",
+          "color": "#536878",
+          "color_phrase": "a {color} flannel overshirt over an opaque T-shirt",
+          "covers": [
+            "upper"
+          ]
+        },
+        {
+          "id": "peasant_blouse",
+          "label": "Peasant blouse",
+          "phrase": "a slate blue cotton peasant blouse with a gathered neckline",
+          "icon": "peasant_blouse",
+          "color": "#536878",
+          "color_phrase": "a {color} cotton peasant blouse with a gathered neckline",
+          "covers": [
+            "upper"
+          ]
+        },
+        {
+          "id": "bow_blouse",
+          "label": "Tie-neck blouse",
+          "phrase": "a slate blue silk blouse with a tied bow at the neck",
+          "icon": "bow_blouse",
+          "color": "#536878",
+          "color_phrase": "a {color} silk blouse with a tied bow at the neck",
+          "covers": [
+            "upper"
+          ]
+        },
+        {
+          "id": "puff_sleeve",
+          "label": "Puff sleeve blouse",
+          "phrase": "a slate blue cotton blouse with puffed sleeves",
+          "icon": "puff_sleeve",
+          "color": "#536878",
+          "color_phrase": "a {color} cotton blouse with puffed sleeves",
+          "covers": [
+            "upper"
+          ]
+        }
+      ],
+      "gender_options": {
+        "woman": [
+          "none",
+          "tshirt",
+          "shirt",
+          "blouse",
+          "sweater",
+          "hoodie",
+          "tank",
+          "long_sleeve",
+          "turtleneck",
+          "sweatshirt",
+          "rugby_shirt",
+          "athletic_top",
+          "tunic",
+          "vest_shirt",
+          "overshirt",
+          "peasant_blouse",
+          "bow_blouse",
+          "puff_sleeve"
+        ],
+        "man": [
+          "none",
+          "polo",
+          "henley",
+          "tshirt",
+          "shirt",
+          "sweater",
+          "hoodie",
+          "long_sleeve",
+          "turtleneck",
+          "sweatshirt",
+          "rugby_shirt",
+          "athletic_top",
+          "tunic",
+          "vest_shirt",
+          "overshirt"
+        ]
+      },
+      "option_details": {
+        "tshirt": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique"
+          ]
+        },
+        "shirt": {
+          "fabric": "woven",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets"
+          ]
+        },
+        "blouse": {
+          "fabric": "silk",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets"
+          ]
+        },
+        "sweater": {
+          "fabric": "knitted",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique"
+          ]
+        },
+        "hoodie": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique"
+          ]
+        },
+        "tank": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique"
+          ]
+        },
+        "polo": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets"
+          ]
+        },
+        "henley": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets"
+          ]
+        },
+        "long_sleeve": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique"
+          ]
+        },
+        "turtleneck": {
+          "fabric": "wool",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique"
+          ]
+        },
+        "sweatshirt": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique"
+          ]
+        },
+        "rugby_shirt": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets"
+          ]
+        },
+        "athletic_top": {
+          "fabric": "jersey",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique"
+          ]
+        },
+        "tunic": {
+          "fabric": "linen",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets"
+          ]
+        },
+        "vest_shirt": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets"
+          ]
+        },
+        "overshirt": {
+          "fabric": "flannel",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets"
+          ]
+        },
+        "peasant_blouse": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets"
+          ]
+        },
+        "bow_blouse": {
+          "fabric": "silk",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets"
+          ]
+        },
+        "puff_sleeve": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets"
+          ]
+        }
+      },
+      "description": "Choose the top worn with a separate lower garment. Outerwear can be added over it."
+    },
+    "lower_garment": {
+      "label": "Lower garment",
+      "group": "Clothing",
+      "default": "jeans",
+      "options": [
+        {
+          "id": "none",
+          "label": "None",
+          "phrase": "",
+          "icon": "none",
+          "covers": []
+        },
+        {
+          "id": "jeans",
+          "label": "Jeans",
+          "phrase": "deep indigo denim jeans",
+          "icon": "trousers",
+          "covers": [
+            "lower"
+          ],
+          "color_phrase": "{color} denim jeans",
+          "color": "#000080"
+        },
+        {
+          "id": "trousers",
+          "label": "Trousers",
+          "phrase": "charcoal tailored trousers",
+          "icon": "trousers",
+          "covers": [
+            "lower"
+          ],
+          "color_phrase": "{color} tailored trousers",
+          "color": "#333333"
+        },
+        {
+          "id": "skirt",
+          "label": "Skirt",
+          "phrase": "a muted plum knee-length woven skirt",
+          "icon": "skirt",
+          "covers": [
+            "lower"
+          ],
+          "color_phrase": "a {color} knee-length woven skirt",
+          "color": "#800080"
+        },
+        {
+          "id": "shorts",
+          "label": "Shorts",
+          "phrase": "tan cotton shorts",
+          "icon": "shorts",
+          "covers": [
+            "lower"
+          ],
+          "color_phrase": "{color} cotton shorts",
+          "color": "#c8ad7f"
+        },
+        {
+          "id": "long_skirt",
+          "label": "Long skirt",
+          "phrase": "a navy ankle-length linen skirt",
+          "icon": "long_skirt",
+          "covers": [
+            "lower"
+          ],
+          "color_phrase": "a {color} ankle-length linen skirt",
+          "color": "#000080"
+        },
+        {
+          "id": "cargo_shorts",
+          "label": "Cargo shorts",
+          "phrase": "tan cotton cargo shorts with side pockets",
+          "icon": "cargo_shorts",
+          "color": "#c8ad7f",
+          "covers": [
+            "lower"
+          ],
+          "color_phrase": "a pair of {color} cotton cargo shorts with side pockets"
+        },
+        {
+          "id": "chinos",
+          "label": "Chinos",
+          "phrase": "slate blue cotton chino trousers",
+          "icon": "chinos",
+          "color": "#536878",
+          "color_phrase": "{color} cotton chino trousers",
+          "covers": [
+            "lower"
+          ]
+        },
+        {
+          "id": "wide_leg",
+          "label": "Wide leg trousers",
+          "phrase": "slate blue linen wide-leg trousers",
+          "icon": "wide_leg",
+          "color": "#536878",
+          "color_phrase": "{color} linen wide-leg trousers",
+          "covers": [
+            "lower"
+          ]
+        },
+        {
+          "id": "joggers",
+          "label": "Joggers",
+          "phrase": "slate blue jersey jogger trousers",
+          "icon": "joggers",
+          "color": "#536878",
+          "color_phrase": "{color} jersey jogger trousers",
+          "covers": [
+            "lower"
+          ]
+        },
+        {
+          "id": "cargo_pants",
+          "label": "Cargo trousers",
+          "phrase": "slate blue cotton cargo trousers with thigh pockets",
+          "icon": "cargo_pants",
+          "color": "#536878",
+          "color_phrase": "{color} cotton cargo trousers with thigh pockets",
+          "covers": [
+            "lower"
+          ]
+        },
+        {
+          "id": "track_pants",
+          "label": "Track trousers",
+          "phrase": "slate blue woven track trousers",
+          "icon": "track_pants",
+          "color": "#536878",
+          "color_phrase": "{color} woven track trousers",
+          "covers": [
+            "lower"
+          ]
+        },
+        {
+          "id": "bermuda",
+          "label": "Bermuda shorts",
+          "phrase": "slate blue linen knee-length Bermuda shorts",
+          "icon": "bermuda",
+          "color": "#536878",
+          "color_phrase": "{color} linen knee-length Bermuda shorts",
+          "covers": [
+            "lower"
+          ]
+        },
+        {
+          "id": "pleated_skirt",
+          "label": "Pleated midi skirt",
+          "phrase": "a slate blue crepe pleated midi skirt",
+          "icon": "pleated_skirt",
+          "color": "#536878",
+          "color_phrase": "a {color} crepe pleated midi skirt",
+          "covers": [
+            "lower"
+          ]
+        },
+        {
+          "id": "pencil_skirt",
+          "label": "Pencil skirt",
+          "phrase": "a slate blue wool knee-length pencil skirt",
+          "icon": "pencil_skirt",
+          "color": "#536878",
+          "color_phrase": "a {color} wool knee-length pencil skirt",
+          "covers": [
+            "lower"
+          ]
+        },
+        {
+          "id": "a_line_skirt",
+          "label": "A-line skirt",
+          "phrase": "a slate blue cotton A-line midi skirt",
+          "icon": "a_line_skirt",
+          "color": "#536878",
+          "color_phrase": "a {color} cotton A-line midi skirt",
+          "covers": [
+            "lower"
+          ]
+        },
+        {
+          "id": "culottes",
+          "label": "Culottes",
+          "phrase": "slate blue linen culottes",
+          "icon": "culottes",
+          "color": "#536878",
+          "color_phrase": "{color} linen culottes",
+          "covers": [
+            "lower"
+          ]
+        },
+        {
+          "id": "leggings",
+          "label": "Athletic leggings",
+          "phrase": "slate blue opaque jersey athletic leggings",
+          "icon": "leggings",
+          "color": "#536878",
+          "color_phrase": "{color} opaque jersey athletic leggings",
+          "covers": [
+            "lower"
+          ]
+        }
+      ],
+      "gender_options": {
+        "woman": [
+          "none",
+          "jeans",
+          "trousers",
+          "skirt",
+          "shorts",
+          "long_skirt",
+          "chinos",
+          "wide_leg",
+          "joggers",
+          "cargo_pants",
+          "track_pants",
+          "bermuda",
+          "pleated_skirt",
+          "pencil_skirt",
+          "a_line_skirt",
+          "culottes",
+          "leggings"
+        ],
+        "man": [
+          "none",
+          "jeans",
+          "trousers",
+          "shorts",
+          "cargo_shorts",
+          "chinos",
+          "wide_leg",
+          "joggers",
+          "cargo_pants",
+          "track_pants",
+          "bermuda"
+        ]
+      },
+      "option_details": {
+        "jeans": {
+          "fabric": "denim",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "trousers": {
+          "fabric": "",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "skirt": {
+          "fabric": "woven",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "shorts": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "long_skirt": {
+          "fabric": "linen",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "cargo_shorts": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "chinos": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "wide_leg": {
+          "fabric": "linen",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "joggers": {
+          "fabric": "jersey",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "cargo_pants": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "track_pants": {
+          "fabric": "woven",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "bermuda": {
+          "fabric": "linen",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "pleated_skirt": {
+          "fabric": "crepe",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "pencil_skirt": {
+          "fabric": "wool",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "a_line_skirt": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "culottes": {
+          "fabric": "linen",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        },
+        "leggings": {
+          "fabric": "jersey",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "belt"
+          ]
+        }
+      },
+      "description": "Choose trousers, shorts or a skirt. This choice stays saved but is omitted from prompts cropped above the lower body."
+    },
+    "outerwear": {
+      "label": "Outerwear",
+      "group": "Clothing",
+      "default": "none",
+      "options": [
+        {
+          "id": "none",
+          "label": "None",
+          "phrase": "",
+          "icon": "none"
+        },
+        {
+          "id": "jacket",
+          "label": "Jacket",
+          "phrase": "a brown leather jacket",
+          "icon": "jacket",
+          "color_phrase": "a {color} leather jacket",
+          "color": "#65432b"
+        },
+        {
+          "id": "blazer",
+          "label": "Blazer",
+          "phrase": "a charcoal wool blazer",
+          "icon": "blazer",
+          "color_phrase": "a {color} wool blazer",
+          "color": "#333333"
+        },
+        {
+          "id": "coat",
+          "label": "Coat",
+          "phrase": "a camel wool coat worn open",
+          "icon": "coat",
+          "color_phrase": "a {color} wool coat worn open",
+          "color": "#c8ad7f"
+        },
+        {
+          "id": "cardigan",
+          "label": "Cardigan",
+          "phrase": "a cream knitted cardigan worn open",
+          "icon": "cardigan",
+          "color_phrase": "a {color} knitted cardigan worn open",
+          "color": "#fff5dd"
+        },
+        {
+          "id": "bomber",
+          "label": "Bomber jacket",
+          "phrase": "a slate blue woven bomber jacket",
+          "icon": "bomber",
+          "color": "#536878",
+          "color_phrase": "a {color} woven bomber jacket"
+        },
+        {
+          "id": "denim_jacket",
+          "label": "Denim jacket",
+          "phrase": "a slate blue denim jacket",
+          "icon": "denim_jacket",
+          "color": "#536878",
+          "color_phrase": "a {color} denim jacket"
+        },
+        {
+          "id": "biker",
+          "label": "Biker jacket",
+          "phrase": "a slate blue leather motorcycle jacket",
+          "icon": "biker",
+          "color": "#536878",
+          "color_phrase": "a {color} leather motorcycle jacket"
+        },
+        {
+          "id": "trench",
+          "label": "Trench coat",
+          "phrase": "a slate blue cotton belted trench coat",
+          "icon": "trench",
+          "color": "#536878",
+          "color_phrase": "a {color} cotton belted trench coat"
+        },
+        {
+          "id": "parka",
+          "label": "Parka",
+          "phrase": "a slate blue woven hooded parka",
+          "icon": "parka",
+          "color": "#536878",
+          "color_phrase": "a {color} woven hooded parka"
+        },
+        {
+          "id": "puffer",
+          "label": "Puffer jacket",
+          "phrase": "a slate blue quilted puffer jacket",
+          "icon": "puffer",
+          "color": "#536878",
+          "color_phrase": "a {color} quilted puffer jacket"
+        },
+        {
+          "id": "cape",
+          "label": "Cape",
+          "phrase": "a slate blue wool shoulder cape",
+          "icon": "cape",
+          "color": "#536878",
+          "color_phrase": "a {color} wool shoulder cape"
+        },
+        {
+          "id": "robe",
+          "label": "Fantasy robe",
+          "phrase": "a slate blue velvet open-front fantasy robe over the outfit",
+          "icon": "robe",
+          "color": "#536878",
+          "color_phrase": "a {color} velvet open-front fantasy robe over the outfit"
+        },
+        {
+          "id": "varsity",
+          "label": "Varsity jacket",
+          "phrase": "a slate blue wool varsity jacket",
+          "icon": "varsity",
+          "color": "#536878",
+          "color_phrase": "a {color} wool varsity jacket"
+        },
+        {
+          "id": "suit_jacket",
+          "label": "Suit jacket",
+          "phrase": "a slate blue wool tailored suit jacket",
+          "icon": "suit_jacket",
+          "color": "#536878",
+          "color_phrase": "a {color} wool tailored suit jacket"
+        }
+      ],
+      "gender_options": {
+        "woman": [
+          "none",
+          "jacket",
+          "blazer",
+          "coat",
+          "cardigan",
+          "bomber",
+          "denim_jacket",
+          "biker",
+          "trench",
+          "parka",
+          "puffer",
+          "cape",
+          "robe",
+          "varsity",
+          "suit_jacket"
+        ],
+        "man": [
+          "none",
+          "jacket",
+          "blazer",
+          "coat",
+          "cardigan",
+          "bomber",
+          "denim_jacket",
+          "biker",
+          "trench",
+          "parka",
+          "puffer",
+          "cape",
+          "robe",
+          "varsity",
+          "suit_jacket"
+        ]
+      },
+      "option_details": {
+        "jacket": {
+          "fabric": "leather",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets",
+            "belt"
+          ]
+        },
+        "blazer": {
+          "fabric": "wool",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets",
+            "belt"
+          ]
+        },
+        "coat": {
+          "fabric": "wool",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets",
+            "belt"
+          ]
+        },
+        "cardigan": {
+          "fabric": "knitted",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets",
+            "belt"
+          ]
+        },
+        "bomber": {
+          "fabric": "woven",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets",
+            "belt"
+          ]
+        },
+        "denim_jacket": {
+          "fabric": "denim",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets",
+            "belt"
+          ]
+        },
+        "biker": {
+          "fabric": "leather",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets",
+            "belt"
+          ]
+        },
+        "trench": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets",
+            "belt"
+          ]
+        },
+        "parka": {
+          "fabric": "woven",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets",
+            "belt"
+          ]
+        },
+        "puffer": {
+          "fabric": "",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets",
+            "belt"
+          ]
+        },
+        "cape": {
+          "fabric": "wool",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets",
+            "belt"
+          ]
+        },
+        "robe": {
+          "fabric": "velvet",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets",
+            "belt"
+          ]
+        },
+        "varsity": {
+          "fabric": "wool",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets",
+            "belt"
+          ]
+        },
+        "suit_jacket": {
+          "fabric": "wool",
+          "details": [
+            "piping",
+            "embroidery",
+            "stitching",
+            "trim",
+            "stripes",
+            "checks",
+            "applique",
+            "buttons",
+            "pockets",
+            "belt"
+          ]
+        }
+      },
+      "description": "Add a jacket, coat or other outer layer over the main outfit. None leaves the main outfit as it is."
+    },
+    "shoes": {
+      "label": "Shoes",
+      "group": "Clothing",
+      "default": "sneakers",
+      "options": [
+        {
+          "id": "none",
+          "label": "Barefoot",
+          "phrase": "",
+          "icon": "barefoot"
+        },
+        {
+          "id": "sneakers",
+          "label": "Sneakers",
+          "phrase": "off-white canvas sneakers",
+          "icon": "sneakers",
+          "color_phrase": "{color} canvas sneakers",
+          "color": "#f5f0e6"
+        },
+        {
+          "id": "boots",
+          "label": "Boots",
+          "phrase": "dark brown leather ankle boots",
+          "icon": "boots",
+          "color_phrase": "{color} leather ankle boots",
+          "color": "#3d2314"
+        },
+        {
+          "id": "heels",
+          "label": "Heels",
+          "phrase": "black leather low-heeled shoes",
+          "icon": "heels",
+          "color_phrase": "{color} leather low-heeled shoes",
+          "color": "#000000"
+        },
+        {
+          "id": "sandals",
+          "label": "Sandals",
+          "phrase": "tan leather sandals",
+          "icon": "sandals",
+          "color_phrase": "{color} leather sandals",
+          "color": "#c8ad7f"
+        },
+        {
+          "id": "loafers",
+          "label": "Loafers",
+          "phrase": "dark brown leather loafers",
+          "icon": "loafers",
+          "color": "#3d2314",
+          "color_phrase": "a pair of {color} leather loafers"
+        },
+        {
+          "id": "oxfords",
+          "label": "Oxford shoes",
+          "phrase": "slate blue leather Oxford shoes",
+          "icon": "oxfords",
+          "color": "#536878",
+          "color_phrase": "{color} leather Oxford shoes"
+        },
+        {
+          "id": "chelsea",
+          "label": "Chelsea boots",
+          "phrase": "slate blue leather Chelsea boots",
+          "icon": "chelsea",
+          "color": "#536878",
+          "color_phrase": "{color} leather Chelsea boots"
+        },
+        {
+          "id": "combat",
+          "label": "Lace-up boots",
+          "phrase": "slate blue leather lace-up boots",
+          "icon": "combat",
+          "color": "#536878",
+          "color_phrase": "{color} leather lace-up boots"
+        },
+        {
+          "id": "running",
+          "label": "Running shoes",
+          "phrase": "slate blue mesh running shoes",
+          "icon": "running",
+          "color": "#536878",
+          "color_phrase": "{color} mesh running shoes"
+        },
+        {
+          "id": "high_tops",
+          "label": "High-top sneakers",
+          "phrase": "slate blue canvas high-top sneakers",
+          "icon": "high_tops",
+          "color": "#536878",
+          "color_phrase": "{color} canvas high-top sneakers"
+        },
+        {
+          "id": "hiking",
+          "label": "Hiking boots",
+          "phrase": "slate blue suede hiking boots",
+          "icon": "hiking",
+          "color": "#536878",
+          "color_phrase": "{color} suede hiking boots"
+        },
+        {
+          "id": "ballet_flats",
+          "label": "Ballet flats",
+          "phrase": "slate blue leather ballet flats",
+          "icon": "ballet_flats",
+          "color": "#536878",
+          "color_phrase": "{color} leather ballet flats"
+        },
+        {
+          "id": "ankle_heels",
+          "label": "Heeled ankle boots",
+          "phrase": "slate blue suede heeled ankle boots",
+          "icon": "ankle_heels",
+          "color": "#536878",
+          "color_phrase": "{color} suede heeled ankle boots"
+        }
+      ],
+      "gender_options": {
+        "woman": [
+          "none",
+          "sneakers",
+          "boots",
+          "heels",
+          "sandals",
+          "oxfords",
+          "chelsea",
+          "combat",
+          "running",
+          "high_tops",
+          "hiking",
+          "ballet_flats",
+          "ankle_heels"
+        ],
+        "man": [
+          "none",
+          "sneakers",
+          "boots",
+          "loafers",
+          "sandals",
+          "oxfords",
+          "chelsea",
+          "combat",
+          "running",
+          "high_tops",
+          "hiking"
+        ]
+      },
+      "option_details": {
+        "sneakers": {
+          "fabric": "canvas",
+          "details": [
+            "stitching",
+            "laces",
+            "buckle",
+            "piping"
+          ]
+        },
+        "boots": {
+          "fabric": "leather",
+          "details": [
+            "stitching",
+            "laces",
+            "buckle",
+            "piping"
+          ]
+        },
+        "heels": {
+          "fabric": "leather",
+          "details": [
+            "stitching",
+            "laces",
+            "buckle",
+            "piping"
+          ]
+        },
+        "sandals": {
+          "fabric": "leather",
+          "details": [
+            "stitching",
+            "laces",
+            "buckle",
+            "piping"
+          ]
+        },
+        "loafers": {
+          "fabric": "leather",
+          "details": [
+            "stitching",
+            "laces",
+            "buckle",
+            "piping"
+          ]
+        },
+        "oxfords": {
+          "fabric": "leather",
+          "details": [
+            "stitching",
+            "laces",
+            "buckle",
+            "piping"
+          ]
+        },
+        "chelsea": {
+          "fabric": "leather",
+          "details": [
+            "stitching",
+            "laces",
+            "buckle",
+            "piping"
+          ]
+        },
+        "combat": {
+          "fabric": "leather",
+          "details": [
+            "stitching",
+            "laces",
+            "buckle",
+            "piping"
+          ]
+        },
+        "running": {
+          "fabric": "mesh",
+          "details": [
+            "stitching",
+            "laces",
+            "buckle",
+            "piping"
+          ]
+        },
+        "high_tops": {
+          "fabric": "canvas",
+          "details": [
+            "stitching",
+            "laces",
+            "buckle",
+            "piping"
+          ]
+        },
+        "hiking": {
+          "fabric": "suede",
+          "details": [
+            "stitching",
+            "laces",
+            "buckle",
+            "piping"
+          ]
+        },
+        "ballet_flats": {
+          "fabric": "leather",
+          "details": [
+            "stitching",
+            "laces",
+            "buckle",
+            "piping"
+          ]
+        },
+        "ankle_heels": {
+          "fabric": "suede",
+          "details": [
+            "stitching",
+            "laces",
+            "buckle",
+            "piping"
+          ]
+        }
+      },
+      "description": "Choose footwear. Shoes stay saved but are omitted from prompts where the feet are outside the crop."
+    },
+    "headwear": {
+      "label": "Headwear",
+      "group": "Clothing",
+      "default": "none",
+      "options": [
+        {
+          "id": "none",
+          "label": "None",
+          "phrase": "",
+          "icon": "none"
+        },
+        {
+          "id": "cap",
+          "label": "Cap",
+          "phrase": "a navy cotton cap",
+          "icon": "cap",
+          "color_phrase": "a {color} cotton cap",
+          "color": "#000080"
+        },
+        {
+          "id": "beanie",
+          "label": "Beanie",
+          "phrase": "a muted grey knitted beanie",
+          "icon": "beanie",
+          "color_phrase": "a {color} knitted beanie",
+          "color": "#969ba4"
+        },
+        {
+          "id": "hat",
+          "label": "Wide-brim hat",
+          "phrase": "a tan felt wide-brim hat",
+          "icon": "hat",
+          "color_phrase": "a {color} felt wide-brim hat",
+          "color": "#c8ad7f"
+        },
+        {
+          "id": "headscarf",
+          "label": "Headscarf",
+          "phrase": "a dusty blue woven headscarf",
+          "icon": "headscarf",
+          "color_phrase": "a {color} woven headscarf",
+          "color": "#336699"
+        },
+        {
+          "id": "beret",
+          "label": "Beret",
+          "phrase": "a slate blue wool beret",
+          "icon": "beret",
+          "color": "#536878",
+          "color_phrase": "a {color} wool beret"
+        },
+        {
+          "id": "bucket",
+          "label": "Bucket hat",
+          "phrase": "a slate blue cotton bucket hat",
+          "icon": "bucket",
+          "color": "#536878",
+          "color_phrase": "a {color} cotton bucket hat"
+        },
+        {
+          "id": "fedora",
+          "label": "Fedora",
+          "phrase": "a slate blue felt fedora",
+          "icon": "fedora",
+          "color": "#536878",
+          "color_phrase": "a {color} felt fedora"
+        },
+        {
+          "id": "hood",
+          "label": "Hood",
+          "phrase": "a slate blue woven hood framing the face",
+          "icon": "hood",
+          "color": "#536878",
+          "color_phrase": "a {color} woven hood framing the face"
+        },
+        {
+          "id": "headband",
+          "label": "Headband",
+          "phrase": "a slate blue cotton headband",
+          "icon": "headband",
+          "color": "#536878",
+          "color_phrase": "a {color} cotton headband"
+        }
+      ],
+      "gender_options": {
+        "woman": [
+          "none",
+          "cap",
+          "beanie",
+          "hat",
+          "headscarf",
+          "beret",
+          "bucket",
+          "fedora",
+          "hood",
+          "headband"
+        ],
+        "man": [
+          "none",
+          "cap",
+          "beanie",
+          "hat",
+          "beret",
+          "bucket",
+          "fedora",
+          "hood",
+          "headband"
+        ]
+      },
+      "option_details": {
+        "cap": {
+          "fabric": "cotton",
+          "details": [
+            "ribbon",
+            "embroidery",
+            "trim",
+            "stripes"
+          ]
+        },
+        "beanie": {
+          "fabric": "knitted",
+          "details": [
+            "ribbon",
+            "embroidery",
+            "trim",
+            "stripes"
+          ]
+        },
+        "hat": {
+          "fabric": "felt",
+          "details": [
+            "ribbon",
+            "embroidery",
+            "trim",
+            "stripes"
+          ]
+        },
+        "headscarf": {
+          "fabric": "woven",
+          "details": [
+            "ribbon",
+            "embroidery",
+            "trim",
+            "stripes"
+          ]
+        },
+        "beret": {
+          "fabric": "wool",
+          "details": [
+            "ribbon",
+            "embroidery",
+            "trim",
+            "stripes"
+          ]
+        },
+        "bucket": {
+          "fabric": "cotton",
+          "details": [
+            "ribbon",
+            "embroidery",
+            "trim",
+            "stripes"
+          ]
+        },
+        "fedora": {
+          "fabric": "felt",
+          "details": [
+            "ribbon",
+            "embroidery",
+            "trim",
+            "stripes"
+          ]
+        },
+        "hood": {
+          "fabric": "woven",
+          "details": [
+            "ribbon",
+            "embroidery",
+            "trim",
+            "stripes"
+          ]
+        },
+        "headband": {
+          "fabric": "cotton",
+          "details": [
+            "ribbon",
+            "embroidery",
+            "trim",
+            "stripes"
+          ]
+        }
+      },
+      "description": "Add a hat, cap, scarf or other head covering. None leaves the head uncovered."
+    },
+    "background": {
+      "label": "Background",
+      "group": "Scene",
+      "default": "studio",
+      "options": [
+        {
+          "id": "studio",
+          "label": "Studio",
+          "phrase": "against a warm grey seamless studio background",
+          "icon": "studio"
+        },
+        {
+          "id": "garden",
+          "label": "Garden",
+          "phrase": "in a garden with layered green foliage and pale stone paths",
+          "icon": "garden"
+        },
+        {
+          "id": "city",
+          "label": "City street",
+          "phrase": "on a city street with brick facades and distant storefronts",
+          "icon": "city"
+        },
+        {
+          "id": "beach",
+          "label": "Beach",
+          "phrase": "on a sandy beach beside a blue-grey sea",
+          "icon": "beach"
+        },
+        {
+          "id": "forest",
+          "label": "Forest",
+          "phrase": "on a woodland path surrounded by tall trees",
+          "icon": "forest"
+        },
+        {
+          "id": "room",
+          "label": "Room",
+          "phrase": "in a quiet room with pale walls and a wooden floor",
+          "icon": "room"
+        },
+        {
+          "id": "fantasy",
+          "label": "Fantasy courtyard",
+          "phrase": "in a stone courtyard with ivy-covered arches",
+          "icon": "castle"
+        },
+        {
+          "id": "cafe",
+          "label": "Cafe",
+          "phrase": "inside a quiet cafe with wood tables and window light",
+          "icon": "cafe"
+        },
+        {
+          "id": "library",
+          "label": "Library",
+          "phrase": "in a library with tall shelves and a reading desk",
+          "icon": "library"
+        },
+        {
+          "id": "mountains",
+          "label": "Mountains",
+          "phrase": "on a mountain overlook with distant layered peaks",
+          "icon": "mountains"
+        },
+        {
+          "id": "desert",
+          "label": "Desert",
+          "phrase": "among rolling desert dunes under a clear sky",
+          "icon": "desert"
+        },
+        {
+          "id": "snow",
+          "label": "Snowy woodland",
+          "phrase": "in a snowy woodland with frost-covered branches",
+          "icon": "snow"
+        },
+        {
+          "id": "rooftop",
+          "label": "Rooftop",
+          "phrase": "on a rooftop terrace overlooking a city skyline",
+          "icon": "rooftop"
+        },
+        {
+          "id": "workshop",
+          "label": "Workshop",
+          "phrase": "in an artisan workshop with tools and workbenches",
+          "icon": "workshop"
+        },
+        {
+          "id": "palace",
+          "label": "Palace hall",
+          "phrase": "in a palace hall with carved pillars and a tiled floor",
+          "icon": "palace"
+        },
+        {
+          "id": "scifi",
+          "label": "Space station",
+          "phrase": "in a space station corridor with softly lit panels",
+          "icon": "scifi"
+        },
+        {
+          "id": "market",
+          "label": "Market street",
+          "phrase": "on a lively market street with colorful stalls",
+          "icon": "market"
+        }
+      ],
+      "description": "Choose where the character is placed: for example, a studio, garden or city street. Background treatment below controls how that setting is shown."
+    },
+    "scene_detail": {
+      "label": "Background treatment",
+      "group": "Scene",
+      "default": "soft",
+      "options": [
+        {
+          "id": "soft",
+          "label": "Soft focus",
+          "phrase": "the background falls gently out of focus.",
+          "icon": "scene_soft"
+        },
+        {
+          "id": "sharp",
+          "label": "Sharp",
+          "phrase": "the background remains clearly resolved.",
+          "icon": "scene_sharp"
+        },
+        {
+          "id": "minimal",
+          "label": "Minimal",
+          "phrase": "the surroundings leave generous uncluttered space.",
+          "icon": "scene_minimal"
+        }
+      ],
+      "description": "Control how the surroundings appear behind the character: blurred, clearly detailed, or kept simple and uncluttered. The chosen location stays the same.",
+      "option_details": {
+        "soft": {
+          "description": "Blur the background gently while keeping the character as the main focus. The location can still be recognizable, but small background details are softened."
+        },
+        "sharp": {
+          "description": "Keep background details clear and recognizable, so the setting matters alongside the character. Use this when you want to see buildings, foliage or room details."
+        },
+        "minimal": {
+          "description": "Keep the surroundings simple, with few distractions and plenty of empty space. This reduces clutter; it does not specifically ask for blur or remove the chosen location."
+        }
+      }
+    },
+    "art_style": {
+      "label": "Art style",
+      "group": "Scene",
+      "default": "photo",
+      "options": [
+        {
+          "id": "photo",
+          "label": "Photography",
+          "phrase": "realistic editorial photograph",
+          "icon": "camera"
+        },
+        {
+          "id": "anime",
+          "label": "Anime",
+          "phrase": "anime character illustration with clean linework and cel shading",
+          "icon": "anime"
+        },
+        {
+          "id": "watercolor",
+          "label": "Watercolor",
+          "phrase": "watercolour character painting with visible paper texture",
+          "icon": "brush"
+        },
+        {
+          "id": "oil",
+          "label": "Oil painting",
+          "phrase": "oil-painted portrait with visible brushwork",
+          "icon": "palette"
+        },
+        {
+          "id": "game",
+          "label": "Game art",
+          "phrase": "three-dimensional game character render with textured surfaces",
+          "icon": "game"
+        },
+        {
+          "id": "comic",
+          "label": "Comic",
+          "phrase": "flat 2D comic-book illustration with bold black ink outlines, solid color fills, cel-shaded shadow shapes and halftone dots, with simplified drawn facial features, inked hair strands and graphic fabric folds",
+          "icon": "comic"
+        },
+        {
+          "id": "ink",
+          "label": "Ink drawing",
+          "phrase": "an ink drawing with controlled hatching",
+          "icon": "ink"
+        },
+        {
+          "id": "gouache",
+          "label": "Gouache",
+          "phrase": "a gouache illustration with matte painted shapes",
+          "icon": "palette"
+        },
+        {
+          "id": "pencil",
+          "label": "Pencil sketch",
+          "phrase": "a graphite drawing with soft tonal shading",
+          "icon": "pencil"
+        },
+        {
+          "id": "pixel",
+          "label": "Pixel art",
+          "phrase": "a pixel-art illustration with crisp block shapes",
+          "icon": "pixel"
+        },
+        {
+          "id": "clay",
+          "label": "Clay render",
+          "phrase": "a clay-style three-dimensional illustration",
+          "icon": "clay"
+        },
+        {
+          "id": "fashion",
+          "label": "Fashion illustration",
+          "phrase": "a fashion illustration with expressive clean lines",
+          "icon": "fashion"
+        }
+      ],
+      "description": "Choose how the whole image is rendered, such as a photograph, anime illustration or painted artwork.",
+      "option_details": {
+        "comic": {
+          "description": "A clearly drawn 2D comic-book look: bold black outlines, flat colors, cel-shaded shadows and halftone dots. The face, hair and clothing are simplified into graphic shapes."
+        }
+      }
+    },
+    "pose": {
+      "label": "Pose",
+      "group": "Pose & camera",
+      "default": "standing",
+      "options": [
+        {
+          "id": "standing",
+          "label": "Standing",
+          "phrase": "standing upright with arms relaxed beside the body",
+          "icon": "standing"
+        },
+        {
+          "id": "contrapposto",
+          "label": "Contrapposto",
+          "phrase": "standing with weight on one leg and shoulders relaxed",
+          "icon": "contrapposto"
+        },
+        {
+          "id": "hands_hips",
+          "label": "Hands on hips",
+          "phrase": "standing with both hands resting on the hips",
+          "icon": "hands_hips"
+        },
+        {
+          "id": "walking",
+          "label": "Walking",
+          "phrase": "walking forward with a natural mid-stride posture",
+          "icon": "walking"
+        },
+        {
+          "id": "seated",
+          "label": "Seated",
+          "phrase": "sitting upright on a simple chair with feet on the floor",
+          "icon": "seated"
+        },
+        {
+          "id": "arms_crossed",
+          "label": "Arms crossed",
+          "phrase": "standing with arms folded across the chest",
+          "icon": "arms_crossed"
+        },
+        {
+          "id": "profile",
+          "label": "Profile",
+          "phrase": "standing in side profile and looking ahead",
+          "icon": "profile"
+        },
+        {
+          "id": "leaning",
+          "label": "Leaning",
+          "phrase": "leaning lightly against a wall with relaxed shoulders",
+          "icon": "standing"
+        },
+        {
+          "id": "looking_back",
+          "label": "Looking back",
+          "phrase": "turning the shoulders and looking back over one shoulder",
+          "icon": "profile"
+        },
+        {
+          "id": "hand_chin",
+          "label": "Hand at chin",
+          "phrase": "resting one hand lightly beneath the chin",
+          "icon": "arms_crossed"
+        },
+        {
+          "id": "waving",
+          "label": "Waving",
+          "phrase": "raising one hand in a relaxed wave",
+          "icon": "hands_hips"
+        },
+        {
+          "id": "reading",
+          "label": "Reading",
+          "phrase": "holding an open book near the chest and looking at its pages",
+          "icon": "arms_crossed"
+        },
+        {
+          "id": "hands_pockets",
+          "label": "Hands in pockets",
+          "phrase": "standing with hands tucked into the outfit pockets",
+          "icon": "standing"
+        }
+      ],
+      "option_details": {
+        "standing": {
+          "cropped_phrase": "upright with relaxed shoulders"
+        },
+        "contrapposto": {
+          "cropped_phrase": "holding the torso at a relaxed slight angle"
+        },
+        "hands_hips": {
+          "cropped_phrase": "standing with both hands resting on the hips"
+        },
+        "walking": {
+          "cropped_phrase": "moving forward, with a slight forward inclination of the shoulders and a natural arm swing"
+        },
+        "seated": {
+          "cropped_phrase": "seated upright, with relaxed shoulders and hands resting near the lap"
+        },
+        "arms_crossed": {
+          "cropped_phrase": "standing with arms folded across the chest"
+        },
+        "profile": {
+          "cropped_phrase": "in side profile and looking ahead"
+        },
+        "leaning": {
+          "cropped_phrase": "leaning lightly against a wall with relaxed shoulders"
+        },
+        "looking_back": {
+          "cropped_phrase": "turning the shoulders and looking back over one shoulder"
+        },
+        "hand_chin": {
+          "cropped_phrase": "resting one hand lightly beneath the chin"
+        },
+        "waving": {
+          "cropped_phrase": "raising one hand in a relaxed wave"
+        },
+        "reading": {
+          "cropped_phrase": "holding an open book near the chest and looking at its pages"
+        },
+        "hands_pockets": {
+          "cropped_phrase": "upright with relaxed shoulders and elbows angled slightly back"
+        }
+      },
+      "description": "Choose the character’s stance, action or body direction. Framing determines how much of that pose is visible."
+    },
+    "framing": {
+      "label": "Framing",
+      "group": "Pose & camera",
+      "default": "full_body",
+      "options": [
+        {
+          "id": "full_body",
+          "label": "Full body",
+          "phrase": "full-body framing with space above the head and below the feet",
+          "icon": "framing_full_body"
+        },
+        {
+          "id": "three_quarter",
+          "label": "Three quarter",
+          "phrase": "three-quarter framing from the head to below the knees",
+          "icon": "framing_three_quarter"
+        },
+        {
+          "id": "waist_up",
+          "label": "Waist up",
+          "phrase": "waist-up framing with the face near the upper centre",
+          "icon": "framing_waist_up"
+        },
+        {
+          "id": "portrait",
+          "label": "Portrait",
+          "phrase": "head-and-shoulders framing",
+          "icon": "framing_portrait"
+        }
+      ],
+      "description": "Choose how much of the character fits inside the image, from head and shoulders to the full body. This controls the crop.",
+      "option_details": {
+        "full_body": {
+          "description": "Show the whole character, including the shoes, with space above the head and below the feet."
+        },
+        "three_quarter": {
+          "description": "Show the character from the head to just below the knees. The feet and shoes are outside the image."
+        },
+        "waist_up": {
+          "description": "Show the head and upper body down to the waist. Lower garments and shoes are left out of the prompt, and poses are described through the visible upper body."
+        },
+        "portrait": {
+          "description": "Show only the head and shoulders. Best for face details; lower-body clothing, shoes and bust-fit descriptions are left out of the prompt."
+        }
+      }
+    },
+    "lighting": {
+      "label": "Lighting",
+      "group": "Scene",
+      "default": "softbox",
+      "options": [
+        {
+          "id": "softbox",
+          "label": "Softbox",
+          "phrase": "soft diffused studio light from the upper left, with gentle shadows falling to the right",
+          "icon": "lighting_softbox"
+        },
+        {
+          "id": "daylight",
+          "label": "Daylight",
+          "phrase": "soft daylight from the left, with broad highlights and gentle shadows to the right",
+          "icon": "lighting_daylight"
+        },
+        {
+          "id": "golden",
+          "label": "Golden hour",
+          "phrase": "warm low sunlight from the right, with long soft shadows to the left",
+          "icon": "lighting_golden"
+        },
+        {
+          "id": "overcast",
+          "label": "Overcast",
+          "phrase": "cool even overcast daylight with shallow diffuse shadows",
+          "icon": "lighting_overcast"
+        },
+        {
+          "id": "rim",
+          "label": "Rim light",
+          "phrase": "a broad soft key light from the left and a narrow rim light behind the right shoulder",
+          "icon": "lighting_rim"
+        },
+        {
+          "id": "window",
+          "label": "Window light",
+          "phrase": "soft window light from the left with gentle shadow falloff",
+          "icon": "lighting_window"
+        },
+        {
+          "id": "neon",
+          "label": "Neon",
+          "phrase": "cyan light from the left and magenta light from the right",
+          "icon": "lighting_neon"
+        },
+        {
+          "id": "candle",
+          "label": "Candlelight",
+          "phrase": "warm candlelight with softly fading shadows",
+          "icon": "lighting_candle"
+        }
+      ],
+      "description": "Choose the direction, softness and color of the light falling on the character and scene.",
+      "option_details": {
+        "softbox": {
+          "description": "Soft studio light from the upper left, with gentle shadows to the right. Good for an evenly readable character portrait."
+        },
+        "daylight": {
+          "description": "Natural outdoor daylight. The prompt describes the selected daylight setup without changing the background location."
+        },
+        "golden": {
+          "description": "Warm, low sunlight from the right, like late afternoon. Casts longer, softer shadows to the left."
+        },
+        "overcast": {
+          "description": "Cloudy-sky daylight spread broadly across the scene, with soft shadows and low contrast."
+        },
+        "rim": {
+          "description": "A narrow light outlines the edges of the hair and shoulders, helping separate the character from the background."
+        },
+        "window": {
+          "description": "Soft light enters from the left, like light through a window, fading gently into shadow."
+        },
+        "neon": {
+          "description": "Colored light from two sides: cyan on the left and magenta on the right."
+        },
+        "candle": {
+          "description": "Warm candlelight with softly fading shadows, for an intimate low-light mood."
+        }
+      }
+    },
+    "composition": {
+      "label": "Composition",
+      "group": "Pose & camera",
+      "default": "balanced",
+      "options": [
+        {
+          "id": "balanced",
+          "label": "Balanced",
+          "phrase": "balanced spacing, a restrained palette and a calm mood",
+          "icon": "composition_balanced"
+        },
+        {
+          "id": "editorial",
+          "label": "Editorial",
+          "phrase": "asymmetric negative space, coordinated colors and a composed editorial mood",
+          "icon": "composition_editorial"
+        },
+        {
+          "id": "dramatic",
+          "label": "Dramatic",
+          "phrase": "strong visual contrast, a focused palette and a dramatic mood",
+          "icon": "composition_dramatic"
+        },
+        {
+          "id": "dynamic",
+          "label": "Dynamic",
+          "phrase": "diagonal visual flow, vivid color accents and an energetic, dynamic mood",
+          "icon": "composition_dynamic"
+        }
+      ],
+      "description": "Guide how the image is arranged and how it feels: visual spacing, use of empty space, color palette and mood. Framing controls how much of the body is shown.",
+      "option_details": {
+        "balanced": {
+          "description": "Spread visual weight evenly around the character, with restrained colors and a calm mood. A useful starting point for a straightforward character portrait."
+        },
+        "editorial": {
+          "description": "Leave more empty space on one side of the character, like a composed magazine photograph. Uses coordinated colors and a polished, deliberate mood."
+        },
+        "dramatic": {
+          "description": "Ask for stronger visual contrast, a focused set of colors and a more intense mood. Lighting is still chosen separately."
+        },
+        "dynamic": {
+          "description": "Use diagonal visual flow and vivid color accents to create energy and movement in the composition. Pose and lighting remain separate choices."
+        }
+      }
+    }
+  },
+  "templates": {
+    "character": {
+      "label": "Character portrait",
+      "format": "{opening} {scene} {pose} {hair} {expression} {appearance} {wardrobe} {lighting} {composition}"
+    },
+    "outfit": {
+      "label": "Outfit study",
+      "format": "{opening} {scene} {pose} {wardrobe} {hair} {expression} {appearance} {lighting} {composition}"
+    },
+    "face": {
+      "label": "Face study",
+      "format": "{opening} {scene} {expression} {hair} {appearance} {pose} {wardrobe} {lighting} {composition}"
+    },
+    "build": {
+      "label": "Build study",
+      "format": "{opening} {scene} {pose} {appearance} {wardrobe} {hair} {expression} {lighting} {composition}"
+    },
+    "scene": {
+      "label": "Scene study",
+      "format": "{opening} {scene} {lighting} {pose} {hair} {expression} {appearance} {wardrobe} {composition}"
+    }
+  },
+  "color_names": {
+    "#000000": "black",
+    "#202029": "soft jet black",
+    "#333333": "charcoal grey",
+    "#666666": "slate grey",
+    "#969ba4": "cool grey",
+    "#b0b0b0": "silver grey",
+    "#e4e5eb": "silvery white",
+    "#ffffff": "white",
+    "#f5f0e6": "warm ivory",
+    "#fff5dd": "pale cream",
+    "#eddfc2": "sand beige",
+    "#c8ad7f": "warm tan",
+    "#875335": "deep warm brown",
+    "#4d3028": "rich dark brown",
+    "#bd8663": "warm medium brown",
+    "#f3ddd1": "cool porcelain",
+    "#eac5ab": "warm fair beige",
+    "#b3986b": "muted olive tan",
+    "#c08a50": "golden tan",
+    "#65432b": "deep chestnut brown",
+    "#3d2314": "dark chocolate brown",
+    "#a2472c": "rich auburn",
+    "#d5b260": "warm honey blonde",
+    "#ff0000": "bright red",
+    "#a51c30": "deep crimson",
+    "#800020": "burgundy",
+    "#d85d50": "warm coral",
+    "#f5a07c": "soft peach",
+    "#ff8000": "bright orange",
+    "#c36a36": "warm terracotta",
+    "#ffd700": "golden yellow",
+    "#ffff00": "bright yellow",
+    "#f4e29a": "pale yellow",
+    "#808000": "olive green",
+    "#86a65b": "muted sage green",
+    "#008000": "forest green",
+    "#00ff00": "bright lime green",
+    "#006b54": "deep emerald green",
+    "#008080": "muted teal",
+    "#00ffff": "bright cyan",
+    "#85cbd1": "pale aqua",
+    "#0000ff": "bright blue",
+    "#4769a8": "deep cobalt blue",
+    "#336699": "muted steel blue",
+    "#9ec8e5": "pale sky blue",
+    "#000080": "deep navy blue",
+    "#4169e1": "royal blue",
+    "#800080": "deep purple",
+    "#663399": "rich violet",
+    "#c4a8dc": "soft lavender",
+    "#ff00ff": "bright magenta",
+    "#ff69b4": "bright pink",
+    "#d28da4": "dusty rose pink",
+    "#f5c3d8": "pale blush pink",
+    "#d4af37": "metallic gold",
+    "#a93440": "muted rose red",
+    "#264d43": "deep forest green"
+  },
+  "clothing": {
+    "fabric": {
+      "default": {
+        "label": "Original material",
+        "phrase": "",
+        "description": "Keep the material already described by the selected garment."
+      },
+      "cotton": {
+        "label": "Cotton",
+        "phrase": "cotton",
+        "description": "A familiar fabric with a soft, mostly matte appearance, like a T-shirt or everyday shirt."
+      },
+      "linen": {
+        "label": "Linen",
+        "phrase": "linen",
+        "description": "A lightly textured fabric that often shows natural creases, like a relaxed summer shirt."
+      },
+      "silk": {
+        "label": "Silk",
+        "phrase": "silk",
+        "description": "A fine fabric that drapes softly and often catches light with a gentle sheen."
+      },
+      "wool": {
+        "label": "Wool",
+        "phrase": "wool",
+        "description": "A warm-looking fabric, often used for sweaters, tailored jackets and coats."
+      },
+      "denim": {
+        "label": "Denim",
+        "phrase": "denim",
+        "description": "The sturdy fabric used for jeans, with a visible diagonal weave."
+      },
+      "leather": {
+        "label": "Leather",
+        "phrase": "leather",
+        "description": "A solid hide-like surface that can look smooth, firm or slightly glossy."
+      },
+      "suede": {
+        "label": "Suede",
+        "phrase": "suede",
+        "description": "A leather surface with a soft, fuzzy finish and little shine."
+      },
+      "velvet": {
+        "label": "Velvet",
+        "phrase": "velvet",
+        "description": "A plush surface with short, dense fibers that catch light in soft highlights."
+      },
+      "satin": {
+        "label": "Satin",
+        "phrase": "satin",
+        "description": "A smooth fabric surface with a noticeable sheen, often used for evening wear."
+      },
+      "jersey": {
+        "label": "Jersey",
+        "phrase": "jersey",
+        "description": "A soft, flexible knit fabric, like the material of many T-shirts."
+      },
+      "corduroy": {
+        "label": "Corduroy",
+        "phrase": "corduroy",
+        "description": "A fabric with rows of raised ridges, often used for trousers and jackets."
+      },
+      "canvas": {
+        "label": "Canvas",
+        "phrase": "canvas",
+        "description": "A sturdy, closely woven fabric, often used for workwear and casual shoes."
+      },
+      "crepe": {
+        "label": "Crepe",
+        "phrase": "crepe",
+        "description": "A fabric with a fine, slightly pebbled or crinkled surface."
+      },
+      "chiffon": {
+        "label": "Lined chiffon",
+        "phrase": "opaque-lined chiffon",
+        "description": "A light, delicate fabric over an opaque lining, so the garment remains covered."
+      },
+      "brocade": {
+        "label": "Brocade",
+        "phrase": "brocade",
+        "description": "A decorative fabric with raised-looking designs woven into it, often used for ornate or formal clothing."
+      }
+    },
+    "texture": {
+      "default": {
+        "label": "Original surface",
+        "phrase": "",
+        "description": "Keep the selected garment’s original surface description."
+      },
+      "smooth": {
+        "label": "Smooth",
+        "phrase": "a smooth matte surface",
+        "description": "An even, matte surface without a strongly visible texture."
+      },
+      "ribbed": {
+        "label": "Ribbed knit",
+        "phrase": "a fine ribbed-knit surface",
+        "description": "Fine raised rows in the knit, like the ribs on a sweater cuff."
+      },
+      "cable": {
+        "label": "Cable knit",
+        "phrase": "a raised cable-knit surface",
+        "description": "Raised, rope-like knitted patterns, like those on a cable-knit sweater."
+      },
+      "twill": {
+        "label": "Twill",
+        "phrase": "a visible diagonal twill weave",
+        "description": "A weave with small diagonal lines across the fabric, as seen in denim or chinos."
+      },
+      "jacquard": {
+        "label": "Jacquard",
+        "phrase": "a woven jacquard pattern",
+        "description": "A decorative pattern woven into the fabric itself, rather than printed on top."
+      },
+      "quilted": {
+        "label": "Quilted",
+        "phrase": "a padded diamond-quilted surface",
+        "description": "A padded surface divided by stitching into diamond-shaped sections."
+      },
+      "pleated": {
+        "label": "Pleated",
+        "phrase": "regular pressed pleats",
+        "description": "Regular folds pressed into the fabric, like those on a pleated skirt."
+      },
+      "brushed": {
+        "label": "Brushed",
+        "phrase": "a soft brushed surface",
+        "description": "A softly fuzzy surface, like brushed flannel."
+      },
+      "crinkled": {
+        "label": "Crinkled",
+        "phrase": "a gently crinkled surface",
+        "description": "Small, irregular wrinkles that give the fabric a relaxed, uneven surface."
+      },
+      "herringbone": {
+        "label": "Herringbone",
+        "phrase": "a herringbone weave",
+        "description": "A repeating zigzag weave that looks like rows of small V shapes."
+      },
+      "seersucker": {
+        "label": "Seersucker",
+        "phrase": "a puckered seersucker surface",
+        "description": "Alternating smooth and puckered areas that give the fabric a lightly rippled surface."
+      }
+    },
+    "details": {
+      "piping": {
+        "label": "Contrast piping",
+        "phrase": "{color} piping along the seams",
+        "description": "A narrow, cord-like edge along seams, often in a contrasting color to outline the garment’s shape."
+      },
+      "embroidery": {
+        "label": "Embroidery",
+        "phrase": "{color} floral embroidery",
+        "description": "Decorative designs stitched into the fabric with thread. This option asks for a floral design in your chosen accent color."
+      },
+      "buttons": {
+        "label": "Buttons",
+        "phrase": "{color} buttons",
+        "description": "Visible buttons in the chosen accent color, such as those down the front of a shirt or jacket."
+      },
+      "stitching": {
+        "label": "Topstitching",
+        "phrase": "{color} visible topstitching",
+        "description": "Visible lines of stitching on the outside of the garment, often following seams or pocket edges."
+      },
+      "trim": {
+        "label": "Edge trim",
+        "phrase": "{color} edge trim",
+        "description": "A decorative border along the garment’s edges, such as its neckline, cuffs or hem."
+      },
+      "belt": {
+        "label": "Belt",
+        "phrase": "a {color} waist belt",
+        "description": "A band around the waist, in the chosen accent color, to secure or define the outfit."
+      },
+      "pockets": {
+        "label": "Patch pockets",
+        "phrase": "{color} patch pockets",
+        "description": "Pockets made from separate pieces of fabric sewn onto the outside of the garment."
+      },
+      "stripes": {
+        "label": "Stripes",
+        "phrase": "{color} narrow stripes",
+        "description": "Narrow, repeated lines across the fabric in the chosen accent color."
+      },
+      "checks": {
+        "label": "Checks",
+        "phrase": "a {color} checked pattern",
+        "description": "A repeated grid of crossing lines or squares, like a checked shirt."
+      },
+      "laces": {
+        "label": "Laces",
+        "phrase": "{color} laces",
+        "description": "The cords threaded through a shoe or boot to fasten it. Choose their color separately from the footwear."
+      },
+      "buckle": {
+        "label": "Buckle",
+        "phrase": "a {color} buckle",
+        "description": "The fastening piece on a belt, shoe or strap. Choose its accent color separately."
+      },
+      "ribbon": {
+        "label": "Ribbon",
+        "phrase": "a {color} ribbon band",
+        "description": "A narrow decorative band, such as the band around a hat, in the chosen accent color."
+      },
+      "applique": {
+        "label": "Applique",
+        "phrase": "{color} geometric applique",
+        "description": "Decorative shapes made from pieces of material attached to the garment. This option asks for geometric shapes in your chosen accent color."
+      }
+    }
+  },
+  "ethnicity": {
+    "label": "Ethnicity / heritage",
+    "group": "Appearance",
+    "default": "unspecified",
+    "options": [
+      {
+        "id": "unspecified",
+        "label": "Unspecified",
+        "phrase": "",
+        "icon": "none"
+      },
+      {
+        "id": "african",
+        "label": "African",
+        "phrase": "African",
+        "icon": "heritage"
+      },
+      {
+        "id": "african_american",
+        "label": "African American",
+        "phrase": "African American",
+        "icon": "heritage"
+      },
+      {
+        "id": "afro_caribbean",
+        "label": "Afro-Caribbean",
+        "phrase": "Afro-Caribbean",
+        "icon": "heritage"
+      },
+      {
+        "id": "east_asian",
+        "label": "East Asian",
+        "phrase": "East Asian",
+        "icon": "heritage"
+      },
+      {
+        "id": "chinese",
+        "label": "Chinese",
+        "phrase": "Chinese",
+        "icon": "heritage"
+      },
+      {
+        "id": "japanese",
+        "label": "Japanese",
+        "phrase": "Japanese",
+        "icon": "heritage"
+      },
+      {
+        "id": "korean",
+        "label": "Korean",
+        "phrase": "Korean",
+        "icon": "heritage"
+      },
+      {
+        "id": "south_asian",
+        "label": "South Asian",
+        "phrase": "South Asian",
+        "icon": "heritage"
+      },
+      {
+        "id": "pakistani",
+        "label": "Pakistani",
+        "phrase": "Pakistani",
+        "icon": "heritage"
+      },
+      {
+        "id": "indian",
+        "label": "Indian",
+        "phrase": "Indian",
+        "icon": "heritage"
+      },
+      {
+        "id": "bangladeshi",
+        "label": "Bangladeshi",
+        "phrase": "Bangladeshi",
+        "icon": "heritage"
+      },
+      {
+        "id": "sri_lankan",
+        "label": "Sri Lankan",
+        "phrase": "Sri Lankan",
+        "icon": "heritage"
+      },
+      {
+        "id": "southeast_asian",
+        "label": "Southeast Asian",
+        "phrase": "Southeast Asian",
+        "icon": "heritage"
+      },
+      {
+        "id": "filipino",
+        "label": "Filipino",
+        "phrase": "Filipino",
+        "icon": "heritage"
+      },
+      {
+        "id": "vietnamese",
+        "label": "Vietnamese",
+        "phrase": "Vietnamese",
+        "icon": "heritage"
+      },
+      {
+        "id": "thai",
+        "label": "Thai",
+        "phrase": "Thai",
+        "icon": "heritage"
+      },
+      {
+        "id": "indonesian",
+        "label": "Indonesian",
+        "phrase": "Indonesian",
+        "icon": "heritage"
+      },
+      {
+        "id": "arab",
+        "label": "Arab",
+        "phrase": "Arab",
+        "icon": "heritage"
+      },
+      {
+        "id": "persian",
+        "label": "Persian",
+        "phrase": "Persian",
+        "icon": "heritage"
+      },
+      {
+        "id": "kurdish",
+        "label": "Kurdish",
+        "phrase": "Kurdish",
+        "icon": "heritage"
+      },
+      {
+        "id": "turkish",
+        "label": "Turkish",
+        "phrase": "Turkish",
+        "icon": "heritage"
+      },
+      {
+        "id": "north_african",
+        "label": "North African",
+        "phrase": "North African",
+        "icon": "heritage"
+      },
+      {
+        "id": "european",
+        "label": "European",
+        "phrase": "European",
+        "icon": "heritage"
+      },
+      {
+        "id": "latino",
+        "label": "Latin American",
+        "phrase": "Latin American",
+        "icon": "heritage"
+      },
+      {
+        "id": "indigenous_american",
+        "label": "Indigenous American",
+        "phrase": "Indigenous American",
+        "icon": "heritage"
+      },
+      {
+        "id": "pacific_islander",
+        "label": "Pacific Islander",
+        "phrase": "Pacific Islander",
+        "icon": "heritage"
+      },
+      {
+        "id": "mixed",
+        "label": "Mixed",
+        "phrase": "of mixed ethnicity",
+        "icon": "heritage"
+      },
+      {
+        "id": "west_african",
+        "label": "West African",
+        "phrase": "West African",
+        "icon": "heritage"
+      },
+      {
+        "id": "east_african",
+        "label": "East African",
+        "phrase": "East African",
+        "icon": "heritage"
+      },
+      {
+        "id": "central_african",
+        "label": "Central African",
+        "phrase": "Central African",
+        "icon": "heritage"
+      },
+      {
+        "id": "southern_african",
+        "label": "Southern African",
+        "phrase": "Southern African",
+        "icon": "heritage"
+      },
+      {
+        "id": "amazigh",
+        "label": "Amazigh",
+        "phrase": "Amazigh",
+        "icon": "heritage"
+      },
+      {
+        "id": "egyptian",
+        "label": "Egyptian",
+        "phrase": "Egyptian",
+        "icon": "heritage"
+      },
+      {
+        "id": "moroccan",
+        "label": "Moroccan",
+        "phrase": "Moroccan",
+        "icon": "heritage"
+      },
+      {
+        "id": "algerian",
+        "label": "Algerian",
+        "phrase": "Algerian",
+        "icon": "heritage"
+      },
+      {
+        "id": "tunisian",
+        "label": "Tunisian",
+        "phrase": "Tunisian",
+        "icon": "heritage"
+      },
+      {
+        "id": "libyan",
+        "label": "Libyan",
+        "phrase": "Libyan",
+        "icon": "heritage"
+      },
+      {
+        "id": "sudanese",
+        "label": "Sudanese",
+        "phrase": "Sudanese",
+        "icon": "heritage"
+      },
+      {
+        "id": "ethiopian",
+        "label": "Ethiopian",
+        "phrase": "Ethiopian",
+        "icon": "heritage"
+      },
+      {
+        "id": "eritrean",
+        "label": "Eritrean",
+        "phrase": "Eritrean",
+        "icon": "heritage"
+      },
+      {
+        "id": "somali",
+        "label": "Somali",
+        "phrase": "Somali",
+        "icon": "heritage"
+      },
+      {
+        "id": "kenyan",
+        "label": "Kenyan",
+        "phrase": "Kenyan",
+        "icon": "heritage"
+      },
+      {
+        "id": "ugandan",
+        "label": "Ugandan",
+        "phrase": "Ugandan",
+        "icon": "heritage"
+      },
+      {
+        "id": "tanzanian",
+        "label": "Tanzanian",
+        "phrase": "Tanzanian",
+        "icon": "heritage"
+      },
+      {
+        "id": "rwandan",
+        "label": "Rwandan",
+        "phrase": "Rwandan",
+        "icon": "heritage"
+      },
+      {
+        "id": "nigerian",
+        "label": "Nigerian",
+        "phrase": "Nigerian",
+        "icon": "heritage"
+      },
+      {
+        "id": "ghanaian",
+        "label": "Ghanaian",
+        "phrase": "Ghanaian",
+        "icon": "heritage"
+      },
+      {
+        "id": "senegalese",
+        "label": "Senegalese",
+        "phrase": "Senegalese",
+        "icon": "heritage"
+      },
+      {
+        "id": "ivorian",
+        "label": "Ivorian",
+        "phrase": "Ivorian",
+        "icon": "heritage"
+      },
+      {
+        "id": "cameroonian",
+        "label": "Cameroonian",
+        "phrase": "Cameroonian",
+        "icon": "heritage"
+      },
+      {
+        "id": "congolese",
+        "label": "Congolese",
+        "phrase": "Congolese",
+        "icon": "heritage"
+      },
+      {
+        "id": "angolan",
+        "label": "Angolan",
+        "phrase": "Angolan",
+        "icon": "heritage"
+      },
+      {
+        "id": "south_african",
+        "label": "South African",
+        "phrase": "South African",
+        "icon": "heritage"
+      },
+      {
+        "id": "zimbabwean",
+        "label": "Zimbabwean",
+        "phrase": "Zimbabwean",
+        "icon": "heritage"
+      },
+      {
+        "id": "malagasy",
+        "label": "Malagasy",
+        "phrase": "Malagasy",
+        "icon": "heritage"
+      },
+      {
+        "id": "yoruba",
+        "label": "Yoruba",
+        "phrase": "Yoruba",
+        "icon": "heritage"
+      },
+      {
+        "id": "igbo",
+        "label": "Igbo",
+        "phrase": "Igbo",
+        "icon": "heritage"
+      },
+      {
+        "id": "hausa",
+        "label": "Hausa",
+        "phrase": "Hausa",
+        "icon": "heritage"
+      },
+      {
+        "id": "amhara",
+        "label": "Amhara",
+        "phrase": "Amhara",
+        "icon": "heritage"
+      },
+      {
+        "id": "oromo",
+        "label": "Oromo",
+        "phrase": "Oromo",
+        "icon": "heritage"
+      },
+      {
+        "id": "zulu",
+        "label": "Zulu",
+        "phrase": "Zulu",
+        "icon": "heritage"
+      },
+      {
+        "id": "xhosa",
+        "label": "Xhosa",
+        "phrase": "Xhosa",
+        "icon": "heritage"
+      },
+      {
+        "id": "mongolian",
+        "label": "Mongolian",
+        "phrase": "Mongolian",
+        "icon": "heritage"
+      },
+      {
+        "id": "taiwanese",
+        "label": "Taiwanese",
+        "phrase": "Taiwanese",
+        "icon": "heritage"
+      },
+      {
+        "id": "tibetan",
+        "label": "Tibetan",
+        "phrase": "Tibetan",
+        "icon": "heritage"
+      },
+      {
+        "id": "uyghur",
+        "label": "Uyghur",
+        "phrase": "Uyghur",
+        "icon": "heritage"
+      },
+      {
+        "id": "han_chinese",
+        "label": "Han Chinese",
+        "phrase": "Han Chinese",
+        "icon": "heritage"
+      },
+      {
+        "id": "afghan",
+        "label": "Afghan",
+        "phrase": "Afghan",
+        "icon": "heritage"
+      },
+      {
+        "id": "nepali",
+        "label": "Nepali",
+        "phrase": "Nepali",
+        "icon": "heritage"
+      },
+      {
+        "id": "bhutanese",
+        "label": "Bhutanese",
+        "phrase": "Bhutanese",
+        "icon": "heritage"
+      },
+      {
+        "id": "maldivian",
+        "label": "Maldivian",
+        "phrase": "Maldivian",
+        "icon": "heritage"
+      },
+      {
+        "id": "punjabi",
+        "label": "Punjabi",
+        "phrase": "Punjabi",
+        "icon": "heritage"
+      },
+      {
+        "id": "sindhi",
+        "label": "Sindhi",
+        "phrase": "Sindhi",
+        "icon": "heritage"
+      },
+      {
+        "id": "pashtun",
+        "label": "Pashtun",
+        "phrase": "Pashtun",
+        "icon": "heritage"
+      },
+      {
+        "id": "baloch",
+        "label": "Baloch",
+        "phrase": "Baloch",
+        "icon": "heritage"
+      },
+      {
+        "id": "bengali",
+        "label": "Bengali",
+        "phrase": "Bengali",
+        "icon": "heritage"
+      },
+      {
+        "id": "tamil",
+        "label": "Tamil",
+        "phrase": "Tamil",
+        "icon": "heritage"
+      },
+      {
+        "id": "sinhalese",
+        "label": "Sinhalese",
+        "phrase": "Sinhalese",
+        "icon": "heritage"
+      },
+      {
+        "id": "gujarati",
+        "label": "Gujarati",
+        "phrase": "Gujarati",
+        "icon": "heritage"
+      },
+      {
+        "id": "marathi",
+        "label": "Marathi",
+        "phrase": "Marathi",
+        "icon": "heritage"
+      },
+      {
+        "id": "kashmiri",
+        "label": "Kashmiri",
+        "phrase": "Kashmiri",
+        "icon": "heritage"
+      },
+      {
+        "id": "telugu",
+        "label": "Telugu",
+        "phrase": "Telugu",
+        "icon": "heritage"
+      },
+      {
+        "id": "kannada",
+        "label": "Kannada",
+        "phrase": "Kannada",
+        "icon": "heritage"
+      },
+      {
+        "id": "malayali",
+        "label": "Malayali",
+        "phrase": "Malayali",
+        "icon": "heritage"
+      },
+      {
+        "id": "malay",
+        "label": "Malay",
+        "phrase": "Malay",
+        "icon": "heritage"
+      },
+      {
+        "id": "malaysian",
+        "label": "Malaysian",
+        "phrase": "Malaysian",
+        "icon": "heritage"
+      },
+      {
+        "id": "burmese",
+        "label": "Burmese",
+        "phrase": "Burmese",
+        "icon": "heritage"
+      },
+      {
+        "id": "khmer",
+        "label": "Khmer",
+        "phrase": "Khmer",
+        "icon": "heritage"
+      },
+      {
+        "id": "lao",
+        "label": "Lao",
+        "phrase": "Lao",
+        "icon": "heritage"
+      },
+      {
+        "id": "hmong",
+        "label": "Hmong",
+        "phrase": "Hmong",
+        "icon": "heritage"
+      },
+      {
+        "id": "balinese",
+        "label": "Balinese",
+        "phrase": "Balinese",
+        "icon": "heritage"
+      },
+      {
+        "id": "javanese",
+        "label": "Javanese",
+        "phrase": "Javanese",
+        "icon": "heritage"
+      },
+      {
+        "id": "timorese",
+        "label": "Timorese",
+        "phrase": "Timorese",
+        "icon": "heritage"
+      },
+      {
+        "id": "central_asian",
+        "label": "Central Asian",
+        "phrase": "Central Asian",
+        "icon": "heritage"
+      },
+      {
+        "id": "kazakh",
+        "label": "Kazakh",
+        "phrase": "Kazakh",
+        "icon": "heritage"
+      },
+      {
+        "id": "kyrgyz",
+        "label": "Kyrgyz",
+        "phrase": "Kyrgyz",
+        "icon": "heritage"
+      },
+      {
+        "id": "uzbek",
+        "label": "Uzbek",
+        "phrase": "Uzbek",
+        "icon": "heritage"
+      },
+      {
+        "id": "tajik",
+        "label": "Tajik",
+        "phrase": "Tajik",
+        "icon": "heritage"
+      },
+      {
+        "id": "turkmen",
+        "label": "Turkmen",
+        "phrase": "Turkmen",
+        "icon": "heritage"
+      },
+      {
+        "id": "west_asian",
+        "label": "West Asian",
+        "phrase": "West Asian",
+        "icon": "heritage"
+      },
+      {
+        "id": "lebanese",
+        "label": "Lebanese",
+        "phrase": "Lebanese",
+        "icon": "heritage"
+      },
+      {
+        "id": "syrian",
+        "label": "Syrian",
+        "phrase": "Syrian",
+        "icon": "heritage"
+      },
+      {
+        "id": "iraqi",
+        "label": "Iraqi",
+        "phrase": "Iraqi",
+        "icon": "heritage"
+      },
+      {
+        "id": "jordanian",
+        "label": "Jordanian",
+        "phrase": "Jordanian",
+        "icon": "heritage"
+      },
+      {
+        "id": "palestinian",
+        "label": "Palestinian",
+        "phrase": "Palestinian",
+        "icon": "heritage"
+      },
+      {
+        "id": "israeli",
+        "label": "Israeli",
+        "phrase": "Israeli",
+        "icon": "heritage"
+      },
+      {
+        "id": "saudi",
+        "label": "Saudi",
+        "phrase": "Saudi",
+        "icon": "heritage"
+      },
+      {
+        "id": "yemeni",
+        "label": "Yemeni",
+        "phrase": "Yemeni",
+        "icon": "heritage"
+      },
+      {
+        "id": "omani",
+        "label": "Omani",
+        "phrase": "Omani",
+        "icon": "heritage"
+      },
+      {
+        "id": "armenian",
+        "label": "Armenian",
+        "phrase": "Armenian",
+        "icon": "heritage"
+      },
+      {
+        "id": "georgian",
+        "label": "Georgian",
+        "phrase": "Georgian",
+        "icon": "heritage"
+      },
+      {
+        "id": "azerbaijani",
+        "label": "Azerbaijani",
+        "phrase": "Azerbaijani",
+        "icon": "heritage"
+      },
+      {
+        "id": "assyrian",
+        "label": "Assyrian",
+        "phrase": "Assyrian",
+        "icon": "heritage"
+      },
+      {
+        "id": "circassian",
+        "label": "Circassian",
+        "phrase": "Circassian",
+        "icon": "heritage"
+      },
+      {
+        "id": "northern_european",
+        "label": "Northern European",
+        "phrase": "Northern European",
+        "icon": "heritage"
+      },
+      {
+        "id": "southern_european",
+        "label": "Southern European",
+        "phrase": "Southern European",
+        "icon": "heritage"
+      },
+      {
+        "id": "eastern_european",
+        "label": "Eastern European",
+        "phrase": "Eastern European",
+        "icon": "heritage"
+      },
+      {
+        "id": "western_european",
+        "label": "Western European",
+        "phrase": "Western European",
+        "icon": "heritage"
+      },
+      {
+        "id": "irish",
+        "label": "Irish",
+        "phrase": "Irish",
+        "icon": "heritage"
+      },
+      {
+        "id": "scottish",
+        "label": "Scottish",
+        "phrase": "Scottish",
+        "icon": "heritage"
+      },
+      {
+        "id": "welsh",
+        "label": "Welsh",
+        "phrase": "Welsh",
+        "icon": "heritage"
+      },
+      {
+        "id": "english",
+        "label": "English",
+        "phrase": "English",
+        "icon": "heritage"
+      },
+      {
+        "id": "french",
+        "label": "French",
+        "phrase": "French",
+        "icon": "heritage"
+      },
+      {
+        "id": "german",
+        "label": "German",
+        "phrase": "German",
+        "icon": "heritage"
+      },
+      {
+        "id": "italian",
+        "label": "Italian",
+        "phrase": "Italian",
+        "icon": "heritage"
+      },
+      {
+        "id": "spanish",
+        "label": "Spanish",
+        "phrase": "Spanish",
+        "icon": "heritage"
+      },
+      {
+        "id": "portuguese",
+        "label": "Portuguese",
+        "phrase": "Portuguese",
+        "icon": "heritage"
+      },
+      {
+        "id": "greek",
+        "label": "Greek",
+        "phrase": "Greek",
+        "icon": "heritage"
+      },
+      {
+        "id": "dutch",
+        "label": "Dutch",
+        "phrase": "Dutch",
+        "icon": "heritage"
+      },
+      {
+        "id": "belgian",
+        "label": "Belgian",
+        "phrase": "Belgian",
+        "icon": "heritage"
+      },
+      {
+        "id": "swiss",
+        "label": "Swiss",
+        "phrase": "Swiss",
+        "icon": "heritage"
+      },
+      {
+        "id": "austrian",
+        "label": "Austrian",
+        "phrase": "Austrian",
+        "icon": "heritage"
+      },
+      {
+        "id": "polish",
+        "label": "Polish",
+        "phrase": "Polish",
+        "icon": "heritage"
+      },
+      {
+        "id": "czech",
+        "label": "Czech",
+        "phrase": "Czech",
+        "icon": "heritage"
+      },
+      {
+        "id": "slovak",
+        "label": "Slovak",
+        "phrase": "Slovak",
+        "icon": "heritage"
+      },
+      {
+        "id": "hungarian",
+        "label": "Hungarian",
+        "phrase": "Hungarian",
+        "icon": "heritage"
+      },
+      {
+        "id": "romanian",
+        "label": "Romanian",
+        "phrase": "Romanian",
+        "icon": "heritage"
+      },
+      {
+        "id": "bulgarian",
+        "label": "Bulgarian",
+        "phrase": "Bulgarian",
+        "icon": "heritage"
+      },
+      {
+        "id": "serbian",
+        "label": "Serbian",
+        "phrase": "Serbian",
+        "icon": "heritage"
+      },
+      {
+        "id": "croatian",
+        "label": "Croatian",
+        "phrase": "Croatian",
+        "icon": "heritage"
+      },
+      {
+        "id": "bosnian",
+        "label": "Bosnian",
+        "phrase": "Bosnian",
+        "icon": "heritage"
+      },
+      {
+        "id": "albanian",
+        "label": "Albanian",
+        "phrase": "Albanian",
+        "icon": "heritage"
+      },
+      {
+        "id": "ukrainian",
+        "label": "Ukrainian",
+        "phrase": "Ukrainian",
+        "icon": "heritage"
+      },
+      {
+        "id": "russian",
+        "label": "Russian",
+        "phrase": "Russian",
+        "icon": "heritage"
+      },
+      {
+        "id": "belarusian",
+        "label": "Belarusian",
+        "phrase": "Belarusian",
+        "icon": "heritage"
+      },
+      {
+        "id": "lithuanian",
+        "label": "Lithuanian",
+        "phrase": "Lithuanian",
+        "icon": "heritage"
+      },
+      {
+        "id": "latvian",
+        "label": "Latvian",
+        "phrase": "Latvian",
+        "icon": "heritage"
+      },
+      {
+        "id": "estonian",
+        "label": "Estonian",
+        "phrase": "Estonian",
+        "icon": "heritage"
+      },
+      {
+        "id": "finnish",
+        "label": "Finnish",
+        "phrase": "Finnish",
+        "icon": "heritage"
+      },
+      {
+        "id": "swedish",
+        "label": "Swedish",
+        "phrase": "Swedish",
+        "icon": "heritage"
+      },
+      {
+        "id": "norwegian",
+        "label": "Norwegian",
+        "phrase": "Norwegian",
+        "icon": "heritage"
+      },
+      {
+        "id": "danish",
+        "label": "Danish",
+        "phrase": "Danish",
+        "icon": "heritage"
+      },
+      {
+        "id": "icelandic",
+        "label": "Icelandic",
+        "phrase": "Icelandic",
+        "icon": "heritage"
+      },
+      {
+        "id": "basque",
+        "label": "Basque",
+        "phrase": "Basque",
+        "icon": "heritage"
+      },
+      {
+        "id": "catalan",
+        "label": "Catalan",
+        "phrase": "Catalan",
+        "icon": "heritage"
+      },
+      {
+        "id": "sami",
+        "label": "Sámi",
+        "phrase": "Sámi",
+        "icon": "heritage"
+      },
+      {
+        "id": "afro_canadian",
+        "label": "Afro-Canadian",
+        "phrase": "Afro-Canadian",
+        "icon": "heritage"
+      },
+      {
+        "id": "french_canadian",
+        "label": "French Canadian",
+        "phrase": "French Canadian",
+        "icon": "heritage"
+      },
+      {
+        "id": "first_nations",
+        "label": "First Nations",
+        "phrase": "First Nations",
+        "icon": "heritage"
+      },
+      {
+        "id": "inuit",
+        "label": "Inuit",
+        "phrase": "Inuit",
+        "icon": "heritage"
+      },
+      {
+        "id": "metis",
+        "label": "Métis",
+        "phrase": "Métis",
+        "icon": "heritage"
+      },
+      {
+        "id": "navajo",
+        "label": "Navajo",
+        "phrase": "Navajo",
+        "icon": "heritage"
+      },
+      {
+        "id": "cherokee",
+        "label": "Cherokee",
+        "phrase": "Cherokee",
+        "icon": "heritage"
+      },
+      {
+        "id": "cree",
+        "label": "Cree",
+        "phrase": "Cree",
+        "icon": "heritage"
+      },
+      {
+        "id": "afro_latin_american",
+        "label": "Afro-Latin American",
+        "phrase": "Afro-Latin American",
+        "icon": "heritage"
+      },
+      {
+        "id": "mexican",
+        "label": "Mexican",
+        "phrase": "Mexican",
+        "icon": "heritage"
+      },
+      {
+        "id": "brazilian",
+        "label": "Brazilian",
+        "phrase": "Brazilian",
+        "icon": "heritage"
+      },
+      {
+        "id": "argentine",
+        "label": "Argentine",
+        "phrase": "Argentine",
+        "icon": "heritage"
+      },
+      {
+        "id": "chilean",
+        "label": "Chilean",
+        "phrase": "Chilean",
+        "icon": "heritage"
+      },
+      {
+        "id": "colombian",
+        "label": "Colombian",
+        "phrase": "Colombian",
+        "icon": "heritage"
+      },
+      {
+        "id": "peruvian",
+        "label": "Peruvian",
+        "phrase": "Peruvian",
+        "icon": "heritage"
+      },
+      {
+        "id": "ecuadorian",
+        "label": "Ecuadorian",
+        "phrase": "Ecuadorian",
+        "icon": "heritage"
+      },
+      {
+        "id": "bolivian",
+        "label": "Bolivian",
+        "phrase": "Bolivian",
+        "icon": "heritage"
+      },
+      {
+        "id": "venezuelan",
+        "label": "Venezuelan",
+        "phrase": "Venezuelan",
+        "icon": "heritage"
+      },
+      {
+        "id": "guatemalan",
+        "label": "Guatemalan",
+        "phrase": "Guatemalan",
+        "icon": "heritage"
+      },
+      {
+        "id": "cuban",
+        "label": "Cuban",
+        "phrase": "Cuban",
+        "icon": "heritage"
+      },
+      {
+        "id": "dominican",
+        "label": "Dominican",
+        "phrase": "Dominican",
+        "icon": "heritage"
+      },
+      {
+        "id": "puerto_rican",
+        "label": "Puerto Rican",
+        "phrase": "Puerto Rican",
+        "icon": "heritage"
+      },
+      {
+        "id": "haitian",
+        "label": "Haitian",
+        "phrase": "Haitian",
+        "icon": "heritage"
+      },
+      {
+        "id": "jamaican",
+        "label": "Jamaican",
+        "phrase": "Jamaican",
+        "icon": "heritage"
+      },
+      {
+        "id": "trinidadian",
+        "label": "Trinidadian",
+        "phrase": "Trinidadian",
+        "icon": "heritage"
+      },
+      {
+        "id": "maya",
+        "label": "Maya",
+        "phrase": "Maya",
+        "icon": "heritage"
+      },
+      {
+        "id": "quechua",
+        "label": "Quechua",
+        "phrase": "Quechua",
+        "icon": "heritage"
+      },
+      {
+        "id": "aymara",
+        "label": "Aymara",
+        "phrase": "Aymara",
+        "icon": "heritage"
+      },
+      {
+        "id": "mapuche",
+        "label": "Mapuche",
+        "phrase": "Mapuche",
+        "icon": "heritage"
+      },
+      {
+        "id": "taino",
+        "label": "Taíno",
+        "phrase": "Taíno",
+        "icon": "heritage"
+      },
+      {
+        "id": "polynesian",
+        "label": "Polynesian",
+        "phrase": "Polynesian",
+        "icon": "heritage"
+      },
+      {
+        "id": "melanesian",
+        "label": "Melanesian",
+        "phrase": "Melanesian",
+        "icon": "heritage"
+      },
+      {
+        "id": "micronesian",
+        "label": "Micronesian",
+        "phrase": "Micronesian",
+        "icon": "heritage"
+      },
+      {
+        "id": "maori",
+        "label": "Māori",
+        "phrase": "Māori",
+        "icon": "heritage"
+      },
+      {
+        "id": "samoan",
+        "label": "Samoan",
+        "phrase": "Samoan",
+        "icon": "heritage"
+      },
+      {
+        "id": "tongan",
+        "label": "Tongan",
+        "phrase": "Tongan",
+        "icon": "heritage"
+      },
+      {
+        "id": "native_hawaiian",
+        "label": "Native Hawaiian",
+        "phrase": "Native Hawaiian",
+        "icon": "heritage"
+      },
+      {
+        "id": "fijian",
+        "label": "Fijian",
+        "phrase": "Fijian",
+        "icon": "heritage"
+      },
+      {
+        "id": "papuan",
+        "label": "Papuan",
+        "phrase": "Papuan",
+        "icon": "heritage"
+      },
+      {
+        "id": "chamorro",
+        "label": "Chamorro",
+        "phrase": "Chamorro",
+        "icon": "heritage"
+      },
+      {
+        "id": "aboriginal_australian",
+        "label": "Aboriginal Australian",
+        "phrase": "Aboriginal Australian",
+        "icon": "heritage"
+      },
+      {
+        "id": "torres_strait_islander",
+        "label": "Torres Strait Islander",
+        "phrase": "Torres Strait Islander",
+        "icon": "heritage"
+      },
+      {
+        "id": "eurasian",
+        "label": "Eurasian",
+        "phrase": "Eurasian",
+        "icon": "heritage"
+      },
+      {
+        "id": "romani",
+        "label": "Romani",
+        "phrase": "Romani",
+        "icon": "heritage"
+      },
+      {
+        "id": "jewish",
+        "label": "Jewish",
+        "phrase": "Jewish",
+        "icon": "heritage"
+      },
+      {
+        "id": "ashkenazi",
+        "label": "Ashkenazi Jewish",
+        "phrase": "Ashkenazi Jewish",
+        "icon": "heritage"
+      },
+      {
+        "id": "sephardi",
+        "label": "Sephardi Jewish",
+        "phrase": "Sephardi Jewish",
+        "icon": "heritage"
+      },
+      {
+        "id": "mizrahi",
+        "label": "Mizrahi Jewish",
+        "phrase": "Mizrahi Jewish",
+        "icon": "heritage"
+      }
+    ],
+    "description": "Browse by region and select an ethnicity or cultural origin. Expand a region to see its choices; the section containing your selection stays open. Skin color, hair and clothing remain independent. Unspecified adds no ethnicity description.",
+    "sections": [
+      {
+        "label": "General",
+        "options": [
+          "unspecified",
+          "mixed"
+        ]
+      },
+      {
+        "label": "Africa",
+        "options": [
+          "african",
+          "north_african",
+          "west_african",
+          "east_african",
+          "central_african",
+          "southern_african",
+          "amazigh",
+          "egyptian",
+          "moroccan",
+          "algerian",
+          "tunisian",
+          "libyan",
+          "sudanese",
+          "ethiopian",
+          "eritrean",
+          "somali",
+          "kenyan",
+          "ugandan",
+          "tanzanian",
+          "rwandan",
+          "nigerian",
+          "ghanaian",
+          "senegalese",
+          "ivorian",
+          "cameroonian",
+          "congolese",
+          "angolan",
+          "south_african",
+          "zimbabwean",
+          "malagasy",
+          "yoruba",
+          "igbo",
+          "hausa",
+          "amhara",
+          "oromo",
+          "zulu",
+          "xhosa"
+        ]
+      },
+      {
+        "label": "Asia · East Asia",
+        "options": [
+          "east_asian",
+          "chinese",
+          "japanese",
+          "korean",
+          "mongolian",
+          "taiwanese",
+          "tibetan",
+          "uyghur",
+          "han_chinese"
+        ]
+      },
+      {
+        "label": "Asia · South Asia",
+        "options": [
+          "south_asian",
+          "pakistani",
+          "indian",
+          "bangladeshi",
+          "sri_lankan",
+          "afghan",
+          "nepali",
+          "bhutanese",
+          "maldivian",
+          "punjabi",
+          "sindhi",
+          "pashtun",
+          "baloch",
+          "bengali",
+          "tamil",
+          "sinhalese",
+          "gujarati",
+          "marathi",
+          "kashmiri",
+          "telugu",
+          "kannada",
+          "malayali"
+        ]
+      },
+      {
+        "label": "Asia · Southeast Asia",
+        "options": [
+          "southeast_asian",
+          "filipino",
+          "vietnamese",
+          "thai",
+          "indonesian",
+          "malay",
+          "malaysian",
+          "burmese",
+          "khmer",
+          "lao",
+          "hmong",
+          "balinese",
+          "javanese",
+          "timorese"
+        ]
+      },
+      {
+        "label": "Asia · Central Asia",
+        "options": [
+          "central_asian",
+          "kazakh",
+          "kyrgyz",
+          "uzbek",
+          "tajik",
+          "turkmen"
+        ]
+      },
+      {
+        "label": "Asia · West Asia & Caucasus",
+        "options": [
+          "arab",
+          "persian",
+          "kurdish",
+          "turkish",
+          "west_asian",
+          "lebanese",
+          "syrian",
+          "iraqi",
+          "jordanian",
+          "palestinian",
+          "israeli",
+          "saudi",
+          "yemeni",
+          "omani",
+          "armenian",
+          "georgian",
+          "azerbaijani",
+          "assyrian",
+          "circassian"
+        ]
+      },
+      {
+        "label": "Europe",
+        "options": [
+          "european",
+          "northern_european",
+          "southern_european",
+          "eastern_european",
+          "western_european",
+          "irish",
+          "scottish",
+          "welsh",
+          "english",
+          "french",
+          "german",
+          "italian",
+          "spanish",
+          "portuguese",
+          "greek",
+          "dutch",
+          "belgian",
+          "swiss",
+          "austrian",
+          "polish",
+          "czech",
+          "slovak",
+          "hungarian",
+          "romanian",
+          "bulgarian",
+          "serbian",
+          "croatian",
+          "bosnian",
+          "albanian",
+          "ukrainian",
+          "russian",
+          "belarusian",
+          "lithuanian",
+          "latvian",
+          "estonian",
+          "finnish",
+          "swedish",
+          "norwegian",
+          "danish",
+          "icelandic",
+          "basque",
+          "catalan",
+          "sami"
+        ]
+      },
+      {
+        "label": "Americas · North America",
+        "options": [
+          "african_american",
+          "indigenous_american",
+          "afro_canadian",
+          "french_canadian",
+          "first_nations",
+          "inuit",
+          "metis",
+          "navajo",
+          "cherokee",
+          "cree"
+        ]
+      },
+      {
+        "label": "Americas · Latin America & Caribbean",
+        "options": [
+          "latino",
+          "afro_caribbean",
+          "afro_latin_american",
+          "mexican",
+          "brazilian",
+          "argentine",
+          "chilean",
+          "colombian",
+          "peruvian",
+          "ecuadorian",
+          "bolivian",
+          "venezuelan",
+          "guatemalan",
+          "cuban",
+          "dominican",
+          "puerto_rican",
+          "haitian",
+          "jamaican",
+          "trinidadian",
+          "maya",
+          "quechua",
+          "aymara",
+          "mapuche",
+          "taino"
+        ]
+      },
+      {
+        "label": "Oceania & Australia",
+        "options": [
+          "pacific_islander",
+          "polynesian",
+          "melanesian",
+          "micronesian",
+          "maori",
+          "samoan",
+          "tongan",
+          "native_hawaiian",
+          "fijian",
+          "papuan",
+          "chamorro",
+          "aboriginal_australian",
+          "torres_strait_islander"
+        ]
+      },
+      {
+        "label": "Cross-regional identities",
+        "options": [
+          "eurasian",
+          "romani",
+          "jewish",
+          "ashkenazi",
+          "sephardi",
+          "mizrahi"
+        ]
+      }
+    ],
+    "collapsible_sections": true
+  },
+  "extra_fields": {
+    "hair_finish": {
+      "label": "Hair finish",
+      "group": "Hair",
+      "default": "none",
+      "options": [
+        {
+          "id": "none",
+          "label": "None",
+          "phrase": "",
+          "icon": "none"
+        },
+        {
+          "id": "tidy",
+          "label": "Neatly groomed",
+          "phrase": "neatly groomed with controlled strands",
+          "icon": "hair_tidy"
+        },
+        {
+          "id": "messy",
+          "label": "Messy",
+          "phrase": "styled with deliberately messy, uneven strands",
+          "icon": "hair_messy"
+        },
+        {
+          "id": "tousled",
+          "label": "Tousled",
+          "phrase": "softly tousled with loose bends",
+          "icon": "hair_tousled"
+        },
+        {
+          "id": "windblown",
+          "label": "Windblown",
+          "phrase": "swept sideways by a light breeze",
+          "icon": "hair_windblown"
+        },
+        {
+          "id": "sleek",
+          "label": "Sleek",
+          "phrase": "smoothly groomed with a sleek finish",
+          "icon": "hair_sleek"
+        },
+        {
+          "id": "wet",
+          "label": "Wet look",
+          "phrase": "styled with a glossy wet-look finish",
+          "icon": "hair_wet"
+        },
+        {
+          "id": "flyaways",
+          "label": "Soft flyaways",
+          "phrase": "finished with a few wispy flyaway strands",
+          "icon": "hair_flyaways"
+        }
+      ],
+      "description": "Choose how the hair is styled or groomed: tidy, messy, windblown, sleek and so on. None keeps the hairstyle’s original description."
+    },
+    "hair_volume": {
+      "label": "Hair volume",
+      "group": "Hair",
+      "default": "none",
+      "options": [
+        {
+          "id": "none",
+          "label": "None",
+          "phrase": "",
+          "icon": "none"
+        },
+        {
+          "id": "flat",
+          "label": "Low volume",
+          "phrase": "with low volume close to the scalp",
+          "icon": "hair_flat"
+        },
+        {
+          "id": "airy",
+          "label": "Airy",
+          "phrase": "with light, airy volume",
+          "icon": "hair_airy"
+        },
+        {
+          "id": "voluminous",
+          "label": "Voluminous",
+          "phrase": "with generous volume at the crown and sides",
+          "icon": "hair_volume"
+        }
+      ],
+      "description": "Choose how full the hair looks around the head. None keeps the hairstyle’s original volume."
+    },
+    "eye_color": {
+      "label": "Eye color",
+      "group": "Face & accessories",
+      "default": "none",
+      "options": [
+        {
+          "id": "none",
+          "label": "None",
+          "phrase": "",
+          "icon": "none"
+        },
+        {
+          "id": "brown",
+          "label": "Brown",
+          "phrase": "The irises are brown",
+          "icon": "eyes",
+          "color": "#74482b",
+          "color_phrase": "The irises are {color}"
+        },
+        {
+          "id": "dark_brown",
+          "label": "Dark brown",
+          "phrase": "The irises are dark brown",
+          "icon": "eyes",
+          "color": "#35231e",
+          "color_phrase": "The irises are {color}"
+        },
+        {
+          "id": "hazel",
+          "label": "Hazel",
+          "phrase": "The irises are hazel",
+          "icon": "eyes",
+          "color": "#8e8444",
+          "color_phrase": "The irises are {color}"
+        },
+        {
+          "id": "green",
+          "label": "Green",
+          "phrase": "The irises are green",
+          "icon": "eyes",
+          "color": "#50754a",
+          "color_phrase": "The irises are {color}"
+        },
+        {
+          "id": "blue",
+          "label": "Blue",
+          "phrase": "The irises are blue",
+          "icon": "eyes",
+          "color": "#4388bd",
+          "color_phrase": "The irises are {color}"
+        },
+        {
+          "id": "gray",
+          "label": "Gray",
+          "phrase": "The irises are gray",
+          "icon": "eyes",
+          "color": "#8b919a",
+          "color_phrase": "The irises are {color}"
+        },
+        {
+          "id": "amber",
+          "label": "Amber",
+          "phrase": "The irises are amber",
+          "icon": "eyes",
+          "color": "#bd802e",
+          "color_phrase": "The irises are {color}"
+        },
+        {
+          "id": "violet",
+          "label": "Violet",
+          "phrase": "The irises are violet",
+          "icon": "eyes",
+          "color": "#8460a8",
+          "color_phrase": "The irises are {color}"
+        }
+      ],
+      "description": "Choose the iris color, or use the swatch for a custom shade. None leaves eye color unspecified."
+    },
+    "eye_shape": {
+      "label": "Eye shape",
+      "group": "Face & accessories",
+      "default": "none",
+      "options": [
+        {
+          "id": "none",
+          "label": "None",
+          "phrase": "",
+          "icon": "none"
+        },
+        {
+          "id": "almond",
+          "label": "Almond",
+          "phrase": "The eyes have an almond shape",
+          "icon": "eye_almond"
+        },
+        {
+          "id": "round",
+          "label": "Round",
+          "phrase": "The eyes have a rounded shape",
+          "icon": "eye_round"
+        },
+        {
+          "id": "hooded",
+          "label": "Hooded",
+          "phrase": "The eyes have hooded upper lids",
+          "icon": "eye_hooded"
+        },
+        {
+          "id": "monolid",
+          "label": "Monolid",
+          "phrase": "The eyes have a monolid shape",
+          "icon": "eye_monolid"
+        },
+        {
+          "id": "upturned",
+          "label": "Upturned",
+          "phrase": "The eyes have gently upturned outer corners",
+          "icon": "eye_upturned"
+        },
+        {
+          "id": "downturned",
+          "label": "Downturned",
+          "phrase": "The eyes have gently downturned outer corners",
+          "icon": "eye_downturned"
+        }
+      ],
+      "description": "Describe the outline of the eyes and eyelids. None leaves their shape unspecified."
+    },
+    "eyebrows": {
+      "label": "Eyebrows",
+      "group": "Face & accessories",
+      "default": "none",
+      "options": [
+        {
+          "id": "none",
+          "label": "None",
+          "phrase": "",
+          "icon": "none"
+        },
+        {
+          "id": "natural",
+          "label": "Natural",
+          "phrase": "The eyebrows are naturally shaped",
+          "icon": "brows_natural"
+        },
+        {
+          "id": "straight",
+          "label": "Straight",
+          "phrase": "The eyebrows are straight",
+          "icon": "brows_straight"
+        },
+        {
+          "id": "arched",
+          "label": "Arched",
+          "phrase": "The eyebrows are softly arched",
+          "icon": "brows_arched"
+        },
+        {
+          "id": "thick",
+          "label": "Thick",
+          "phrase": "The eyebrows are thick and defined",
+          "icon": "brows_thick"
+        },
+        {
+          "id": "fine",
+          "label": "Fine",
+          "phrase": "The eyebrows are fine and softly defined",
+          "icon": "brows_fine"
+        }
+      ],
+      "description": "Choose the brow thickness or shape. None adds no eyebrow instructions."
+    },
+    "lip_shape": {
+      "label": "Lip shape",
+      "group": "Face & accessories",
+      "default": "none",
+      "options": [
+        {
+          "id": "none",
+          "label": "None",
+          "phrase": "",
+          "icon": "none"
+        },
+        {
+          "id": "balanced",
+          "label": "Balanced",
+          "phrase": "The lips have balanced proportions",
+          "icon": "lips_balanced"
+        },
+        {
+          "id": "full",
+          "label": "Full",
+          "phrase": "The lips have full, softly rounded contours",
+          "icon": "lips_full"
+        },
+        {
+          "id": "thin",
+          "label": "Thin",
+          "phrase": "The lips have a fine, narrow contour",
+          "icon": "lips_thin"
+        },
+        {
+          "id": "cupid",
+          "label": "Cupid bow",
+          "phrase": "The lips have a defined Cupid's bow",
+          "icon": "lips_cupid"
+        },
+        {
+          "id": "wide",
+          "label": "Wide",
+          "phrase": "The lips have a wide contour",
+          "icon": "lips_wide"
+        }
+      ],
+      "description": "Choose the natural outline and fullness of the lips. Lip makeup below controls their cosmetic finish and color."
+    },
+    "lip_makeup": {
+      "label": "Lip makeup",
+      "group": "Face & accessories",
+      "default": "none",
+      "options": [
+        {
+          "id": "none",
+          "label": "None",
+          "phrase": "",
+          "icon": "none"
+        },
+        {
+          "id": "matte",
+          "label": "Matte lipstick",
+          "phrase": "The lips wear muted rose matte lipstick",
+          "icon": "lipstick",
+          "color": "#b34e62",
+          "color_phrase": "The lips wear {color} matte lipstick"
+        },
+        {
+          "id": "gloss",
+          "label": "Lip gloss",
+          "phrase": "The lips wear soft pink tinted lip gloss",
+          "icon": "lip_gloss",
+          "color": "#d88e9a",
+          "color_phrase": "The lips wear {color} tinted lip gloss"
+        },
+        {
+          "id": "stain",
+          "label": "Lip stain",
+          "phrase": "The lips wear a sheer berry lip stain",
+          "icon": "lip_stain",
+          "color": "#a74f59",
+          "color_phrase": "The lips wear a sheer {color} lip stain"
+        },
+        {
+          "id": "ombre",
+          "label": "Ombre lipstick",
+          "phrase": "The lips wear deep rose ombre lipstick fading softly toward the edges",
+          "icon": "lip_ombre",
+          "color": "#a93657",
+          "color_phrase": "The lips wear {color} ombre lipstick fading softly toward the edges"
+        }
+      ],
+      "description": "Choose lipstick, gloss or stain, then use the swatch to change its color. None adds no lip makeup."
+    },
+    "makeup": {
+      "label": "Makeup style",
+      "group": "Face & accessories",
+      "default": "none",
+      "options": [
+        {
+          "id": "none",
+          "label": "None",
+          "phrase": "",
+          "icon": "none"
+        },
+        {
+          "id": "natural",
+          "label": "Natural",
+          "phrase": "The makeup is subtle and natural with an even skin finish",
+          "icon": "makeup_natural"
+        },
+        {
+          "id": "soft_glam",
+          "label": "Soft glam",
+          "phrase": "The makeup has softly blended shading and a restrained glow",
+          "icon": "makeup_soft_glam"
+        },
+        {
+          "id": "glam",
+          "label": "Full glam",
+          "phrase": "The makeup has polished contouring, highlighted cheekbones and defined lashes",
+          "icon": "makeup_glam"
+        },
+        {
+          "id": "smoky",
+          "label": "Smoky",
+          "phrase": "The makeup has softly blended smoky shading around the eyes",
+          "icon": "makeup_smoky"
+        },
+        {
+          "id": "editorial",
+          "label": "Editorial",
+          "phrase": "The makeup uses precise graphic accents and a deliberate editorial finish",
+          "icon": "makeup_editorial"
+        }
+      ],
+      "description": "Choose the overall makeup treatment, from subtle to bold. Eyeliner and lip makeup can be set separately."
+    },
+    "eyeliner": {
+      "label": "Eyeliner",
+      "group": "Face & accessories",
+      "default": "none",
+      "options": [
+        {
+          "id": "none",
+          "label": "None",
+          "phrase": "",
+          "icon": "none"
+        },
+        {
+          "id": "fine",
+          "label": "Fine liner",
+          "phrase": "The eyes have a fine line along the upper lashes",
+          "icon": "liner_fine"
+        },
+        {
+          "id": "winged",
+          "label": "Winged liner",
+          "phrase": "The eyes have neat winged eyeliner",
+          "icon": "liner_winged"
+        },
+        {
+          "id": "bold",
+          "label": "Bold liner",
+          "phrase": "The eyes have bold eyeliner around the lash line",
+          "icon": "liner_bold"
+        },
+        {
+          "id": "graphic",
+          "label": "Graphic liner",
+          "phrase": "The eyes have a precise graphic eyeliner shape",
+          "icon": "liner_graphic"
+        }
+      ],
+      "description": "Choose the line drawn around the lashes, from fine liner to a bold or graphic shape."
+    },
+    "earrings": {
+      "label": "Earrings",
+      "group": "Face & accessories",
+      "default": "none",
+      "options": [
+        {
+          "id": "none",
+          "label": "None",
+          "phrase": "",
+          "icon": "none"
+        },
+        {
+          "id": "studs",
+          "label": "Studs",
+          "phrase": "The ears wear gold stud earrings",
+          "icon": "ear_studs",
+          "color": "#d6b85a",
+          "color_phrase": "The ears wear {color} stud earrings"
+        },
+        {
+          "id": "hoops",
+          "label": "Hoops",
+          "phrase": "The ears wear silver hoop earrings",
+          "icon": "ear_hoops",
+          "color": "#c3c6ce",
+          "color_phrase": "The ears wear {color} hoop earrings"
+        },
+        {
+          "id": "drops",
+          "label": "Drop earrings",
+          "phrase": "The ears wear gold drop earrings",
+          "icon": "ear_drops",
+          "color": "#d6b85a",
+          "color_phrase": "The ears wear {color} drop earrings"
+        },
+        {
+          "id": "cuffs",
+          "label": "Ear cuffs",
+          "phrase": "The ears wear silver ear cuffs",
+          "icon": "ear_cuffs",
+          "color": "#c3c6ce",
+          "color_phrase": "The ears wear {color} ear cuffs"
+        },
+        {
+          "id": "pearls",
+          "label": "Pearl studs",
+          "phrase": "The ears wear ivory pearl stud earrings",
+          "icon": "ear_pearls",
+          "color": "#ede7db",
+          "color_phrase": "The ears wear {color} pearl stud earrings"
+        }
+      ],
+      "description": "Choose ear jewelry and its color. None adds no earrings."
+    },
+    "necklace": {
+      "label": "Necklace",
+      "group": "Face & accessories",
+      "default": "none",
+      "options": [
+        {
+          "id": "none",
+          "label": "None",
+          "phrase": "",
+          "icon": "none"
+        },
+        {
+          "id": "chain",
+          "label": "Fine chain",
+          "phrase": "A fine gold chain necklace rests at the collar",
+          "icon": "neck_chain",
+          "color": "#d6b85a",
+          "color_phrase": "A fine {color} chain necklace rests at the collar"
+        },
+        {
+          "id": "pendant",
+          "label": "Pendant",
+          "phrase": "A silver pendant necklace rests at the collar",
+          "icon": "neck_pendant",
+          "color": "#c3c6ce",
+          "color_phrase": "A {color} pendant necklace rests at the collar"
+        },
+        {
+          "id": "choker",
+          "label": "Choker",
+          "phrase": "A black choker encircles the neck",
+          "icon": "neck_choker",
+          "color": "#302631",
+          "color_phrase": "A {color} choker encircles the neck"
+        },
+        {
+          "id": "pearls",
+          "label": "Pearl strand",
+          "phrase": "A strand of ivory pearls rests at the collar",
+          "icon": "neck_pearls",
+          "color": "#ede7db",
+          "color_phrase": "A strand of {color} pearls rests at the collar"
+        },
+        {
+          "id": "layered",
+          "label": "Layered chains",
+          "phrase": "Layered gold fine chains rest at the collar",
+          "icon": "neck_layered",
+          "color": "#d6b85a",
+          "color_phrase": "Layered {color} fine chains rest at the collar"
+        }
+      ],
+      "description": "Choose jewelry around the neck and its color. None adds no necklace."
+    },
+    "piercings": {
+      "label": "Facial piercings",
+      "group": "Face & accessories",
+      "default": "none",
+      "options": [
+        {
+          "id": "none",
+          "label": "None",
+          "phrase": "",
+          "icon": "none"
+        },
+        {
+          "id": "nostril",
+          "label": "Nostril stud",
+          "phrase": "A small silver stud decorates one nostril",
+          "icon": "piercing_nostril",
+          "color": "#c3c6ce",
+          "color_phrase": "A small {color} stud decorates one nostril"
+        },
+        {
+          "id": "nose_ring",
+          "label": "Nostril ring",
+          "phrase": "A small gold ring decorates one nostril",
+          "icon": "piercing_ring",
+          "color": "#d6b85a",
+          "color_phrase": "A small {color} ring decorates one nostril"
+        },
+        {
+          "id": "septum",
+          "label": "Septum ring",
+          "phrase": "A small silver septum ring sits beneath the nose",
+          "icon": "piercing_septum",
+          "color": "#c3c6ce",
+          "color_phrase": "A small {color} septum ring sits beneath the nose"
+        },
+        {
+          "id": "brow",
+          "label": "Eyebrow bar",
+          "phrase": "A silver bar piercing sits at one eyebrow",
+          "icon": "piercing_brow",
+          "color": "#c3c6ce",
+          "color_phrase": "A {color} bar piercing sits at one eyebrow"
+        },
+        {
+          "id": "lip",
+          "label": "Lip stud",
+          "phrase": "A small silver stud sits just below the lower lip",
+          "icon": "piercing_lip",
+          "color": "#c3c6ce",
+          "color_phrase": "A small {color} stud sits just below the lower lip"
+        },
+        {
+          "id": "paired",
+          "label": "Paired lip studs",
+          "phrase": "Two small silver studs sit symmetrically beneath the lower lip",
+          "icon": "piercing_paired",
+          "color": "#c3c6ce",
+          "color_phrase": "Two small {color} studs sit symmetrically beneath the lower lip"
+        }
+      ],
+      "description": "Choose the placement and type of facial piercing, then its metal color. Earrings are selected separately."
+    },
+    "moles": {
+      "label": "Beauty marks / moles",
+      "group": "Face & accessories",
+      "default": "none",
+      "options": [
+        {
+          "id": "none",
+          "label": "None",
+          "phrase": "",
+          "icon": "none"
+        },
+        {
+          "id": "left_cheek",
+          "label": "Left cheek",
+          "phrase": "A small beauty mark sits on the left cheek",
+          "icon": "mole_left_cheek"
+        },
+        {
+          "id": "right_cheek",
+          "label": "Right cheek",
+          "phrase": "A small beauty mark sits on the right cheek",
+          "icon": "mole_right_cheek"
+        },
+        {
+          "id": "upper_lip",
+          "label": "Above lip",
+          "phrase": "A small beauty mark sits above the upper lip",
+          "icon": "mole_upper_lip"
+        },
+        {
+          "id": "under_eye",
+          "label": "Beneath eye",
+          "phrase": "A small beauty mark sits beneath one eye",
+          "icon": "mole_under_eye"
+        }
+      ],
+      "description": "Place a small beauty mark on one part of the face. None adds no beauty mark."
+    },
+    "freckles": {
+      "label": "Freckles",
+      "group": "Face & accessories",
+      "default": "none",
+      "options": [
+        {
+          "id": "none",
+          "label": "None",
+          "phrase": "",
+          "icon": "none"
+        },
+        {
+          "id": "sparse",
+          "label": "Sparse",
+          "phrase": "A few faint freckles cross the nose",
+          "icon": "freckles_sparse"
+        },
+        {
+          "id": "light",
+          "label": "Light",
+          "phrase": "Light freckles scatter across the nose and cheeks",
+          "icon": "freckles_light"
+        },
+        {
+          "id": "dense",
+          "label": "Dense",
+          "phrase": "Dense natural freckles scatter across the nose and cheeks",
+          "icon": "freckles_dense"
+        }
+      ],
+      "description": "Choose how many freckles appear across the nose and cheeks. None adds no freckles."
+    },
+    "eyewear": {
+      "label": "Eyewear",
+      "group": "Face & accessories",
+      "default": "none",
+      "options": [
+        {
+          "id": "none",
+          "label": "None",
+          "phrase": "",
+          "icon": "none"
+        },
+        {
+          "id": "round",
+          "label": "Round glasses",
+          "phrase": "The subject wears brown round-framed eyeglasses",
+          "icon": "glasses_round",
+          "color": "#594f47",
+          "color_phrase": "The subject wears {color} round-framed eyeglasses"
+        },
+        {
+          "id": "rectangular",
+          "label": "Rectangular glasses",
+          "phrase": "The subject wears black rectangular eyeglasses",
+          "icon": "glasses_rect",
+          "color": "#333333",
+          "color_phrase": "The subject wears {color} rectangular eyeglasses"
+        },
+        {
+          "id": "cat_eye",
+          "label": "Cat-eye glasses",
+          "phrase": "The subject wears tortoiseshell brown cat-eye eyeglasses",
+          "icon": "glasses_cat",
+          "color": "#75463d",
+          "color_phrase": "The subject wears {color} cat-eye eyeglasses"
+        },
+        {
+          "id": "aviator",
+          "label": "Aviator glasses",
+          "phrase": "The subject wears silver thin-framed aviator eyeglasses",
+          "icon": "glasses_aviator",
+          "color": "#c3c6ce",
+          "color_phrase": "The subject wears {color} thin-framed aviator eyeglasses"
+        },
+        {
+          "id": "sunglasses",
+          "label": "Sunglasses",
+          "phrase": "The subject wears black sunglasses with dark lenses",
+          "icon": "glasses_sun",
+          "color": "#333333",
+          "color_phrase": "The subject wears {color} sunglasses with dark lenses"
+        },
+        {
+          "id": "monocle",
+          "label": "Monocle",
+          "phrase": "The subject wears a gold monocle",
+          "icon": "glasses_monocle",
+          "color": "#d6b85a",
+          "color_phrase": "The subject wears a {color} monocle"
+        }
+      ],
+      "description": "Choose glasses, sunglasses or a monocle, then adjust the frame color. None adds no eyewear."
+    },
+    "gloves": {
+      "label": "Gloves",
+      "group": "Clothing",
+      "default": "none",
+      "options": [
+        {
+          "id": "none",
+          "label": "None",
+          "phrase": "",
+          "icon": "none"
+        },
+        {
+          "id": "leather",
+          "label": "Leather gloves",
+          "phrase": "a pair of dark brown fitted leather gloves",
+          "icon": "gloves_leather",
+          "color": "#382e29",
+          "color_phrase": "a pair of {color} fitted leather gloves"
+        },
+        {
+          "id": "knit",
+          "label": "Knitted gloves",
+          "phrase": "a pair of gray wool knitted gloves",
+          "icon": "gloves_knit",
+          "color": "#747c86",
+          "color_phrase": "a pair of {color} wool knitted gloves"
+        },
+        {
+          "id": "fingerless",
+          "label": "Fingerless gloves",
+          "phrase": "a pair of black fingerless leather gloves",
+          "icon": "gloves_fingerless",
+          "color": "#333333",
+          "color_phrase": "a pair of {color} fingerless leather gloves"
+        },
+        {
+          "id": "long",
+          "label": "Opera gloves",
+          "phrase": "a pair of ivory elbow-length satin gloves",
+          "icon": "gloves_long",
+          "color": "#f1eadf",
+          "color_phrase": "a pair of {color} elbow-length satin gloves"
+        },
+        {
+          "id": "lace",
+          "label": "Lace gloves",
+          "phrase": "a pair of ivory lined lace gloves",
+          "icon": "gloves_lace",
+          "color": "#f1eadf",
+          "color_phrase": "a pair of {color} lined lace gloves"
+        },
+        {
+          "id": "work",
+          "label": "Work gloves",
+          "phrase": "a pair of tan canvas work gloves with reinforced palms",
+          "icon": "gloves_work",
+          "color": "#a2865d",
+          "color_phrase": "a pair of {color} canvas work gloves with reinforced palms"
+        },
+        {
+          "id": "sport",
+          "label": "Sport gloves",
+          "phrase": "a pair of slate blue padded athletic gloves",
+          "icon": "gloves_sport",
+          "color": "#536878",
+          "color_phrase": "a pair of {color} padded athletic gloves"
+        },
+        {
+          "id": "gauntlets",
+          "label": "Fantasy gauntlets",
+          "phrase": "a pair of brown leather fantasy gauntlets with raised cuffs",
+          "icon": "gloves_gauntlets",
+          "color": "#65432b",
+          "color_phrase": "a pair of {color} leather fantasy gauntlets with raised cuffs"
+        }
+      ],
+      "option_details": {
+        "leather": {
+          "fabric": "leather",
+          "details": [
+            "piping",
+            "stitching",
+            "trim",
+            "embroidery"
+          ]
+        },
+        "knit": {
+          "fabric": "wool",
+          "details": [
+            "piping",
+            "stitching",
+            "trim",
+            "embroidery"
+          ]
+        },
+        "fingerless": {
+          "fabric": "leather",
+          "details": [
+            "piping",
+            "stitching",
+            "trim",
+            "embroidery"
+          ]
+        },
+        "long": {
+          "fabric": "satin",
+          "details": [
+            "piping",
+            "stitching",
+            "trim",
+            "embroidery"
+          ]
+        },
+        "lace": {
+          "fabric": "lace",
+          "details": [
+            "piping",
+            "stitching",
+            "trim",
+            "embroidery"
+          ]
+        },
+        "work": {
+          "fabric": "canvas",
+          "details": [
+            "piping",
+            "stitching",
+            "trim",
+            "embroidery"
+          ]
+        },
+        "sport": {
+          "fabric": "",
+          "details": [
+            "piping",
+            "stitching",
+            "trim",
+            "embroidery"
+          ]
+        },
+        "gauntlets": {
+          "fabric": "leather",
+          "details": [
+            "piping",
+            "stitching",
+            "trim",
+            "embroidery"
+          ]
+        }
+      },
+      "description": "Choose handwear, from knitted gloves to fantasy gauntlets. Material, texture and accent details can be adjusted below."
+    }
+  }
+}

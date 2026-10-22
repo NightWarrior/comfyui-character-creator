@@ -1,0 +1,1351 @@
+{
+  "id": "9508e3e2-4242-422a-b8d7-e9aaef0594c7",
+  "revision": 5,
+  "last_node_id": 24,
+  "last_link_id": 28,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "CharacterCreator",
+      "pos": [
+        750,
+        0
+      ],
+      "size": [
+        690,
+        680
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "controlnets.entries.entry_0",
+          "type": "CHARACTER_CONTROL_ENTRY",
+          "link": 18
+        },
+        {
+          "name": "controlnets.entries.entry_1",
+          "type": "CHARACTER_CONTROL_ENTRY",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            1
+          ]
+        },
+        {
+          "name": "character_code",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "name": "controlnet_stack",
+          "type": "CHARACTER_CONTROL_STACK",
+          "links": [
+            2,
+            20
+          ]
+        },
+        {
+          "name": "negative_prompt",
+          "type": "STRING",
+          "links": [
+            28
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CharacterCreator"
+      },
+      "widgets_values": [
+        "qwen_image_2_1",
+        "character",
+        "woman",
+        "twenties",
+        "porcelain",
+        "slender",
+        "soft",
+        "unspecified",
+        "red",
+        "long_waves",
+        "smile",
+        "dress",
+        "qipao",
+        "tshirt",
+        "jeans",
+        "none",
+        "heels",
+        "none",
+        "mountains",
+        "soft",
+        "fashion",
+        "contrapposto",
+        "waist_up",
+        "neon",
+        "dynamic",
+        "enabled",
+        "",
+        "{\"dress\": \"#fa0000\", \"hair_color\": \"#a64b2a\", \"lip_makeup\": \"#a93440\", \"earrings\": \"#d4af37\"}",
+        24,
+        "{\"dress\": {\"fabric\": \"silk\", \"details\": {\"piping\": \"#d4af37\", \"belt\": \"#d4af37\"}}}",
+        "unspecified",
+        "tousled",
+        "voluminous",
+        "green",
+        "none",
+        "natural",
+        "none",
+        "stain",
+        "soft_glam",
+        "fine",
+        "studs",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "widgets_values_named": {
+        "model": "qwen_image_2_1",
+        "template": "character",
+        "gender": "woman",
+        "life_stage": "twenties",
+        "skin_tone": "porcelain",
+        "body_shape": "slender",
+        "muscle_tone": "soft",
+        "bust_size": "unspecified",
+        "hair_color": "red",
+        "hair_style": "long_waves",
+        "expression": "smile",
+        "wardrobe_mode": "dress",
+        "dress": "qipao",
+        "upper_garment": "tshirt",
+        "lower_garment": "jeans",
+        "outerwear": "none",
+        "shoes": "heels",
+        "headwear": "none",
+        "background": "mountains",
+        "scene_detail": "soft",
+        "art_style": "fashion",
+        "pose": "contrapposto",
+        "framing": "waist_up",
+        "lighting": "neon",
+        "composition": "dynamic",
+        "controlnets": "enabled",
+        "character_code": "",
+        "colors": "{\"dress\": \"#fa0000\", \"hair_color\": \"#a64b2a\", \"lip_makeup\": \"#a93440\", \"earrings\": \"#d4af37\"}",
+        "age": 24,
+        "clothing": "{\"dress\": {\"fabric\": \"silk\", \"details\": {\"piping\": \"#d4af37\", \"belt\": \"#d4af37\"}}}",
+        "ethnicity": "unspecified",
+        "hair_finish": "tousled",
+        "hair_volume": "voluminous",
+        "eye_color": "green",
+        "eye_shape": "none",
+        "eyebrows": "natural",
+        "lip_shape": "none",
+        "lip_makeup": "stain",
+        "makeup": "soft_glam",
+        "eyeliner": "fine",
+        "earrings": "studs",
+        "necklace": "none",
+        "piercings": "none",
+        "moles": "none",
+        "freckles": "none",
+        "eyewear": "none",
+        "gloves": "none"
+      }
+    },
+    {
+      "id": 2,
+      "type": "UNETLoader",
+      "pos": [
+        1510,
+        0
+      ],
+      "size": [
+        510,
+        90
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "localized_name": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "qwen_image_2.1_int8_convrot.safetensors",
+        "default"
+      ],
+      "widgets_values_named": {
+        "unet_name": "qwen_image_2.1_int8_convrot.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    {
+      "id": 3,
+      "type": "CLIPLoader",
+      "pos": [
+        1510,
+        180
+      ],
+      "size": [
+        510,
+        120
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "localized_name": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "qwen3vl_8b_int8_convrot.safetensors",
+        "qwen_image",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+        "type": "qwen_image",
+        "device": "default"
+      }
+    },
+    {
+      "id": 4,
+      "type": "VAELoader",
+      "pos": [
+        1510,
+        380
+      ],
+      "size": [
+        510,
+        70
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "localized_name": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            5,
+            6,
+            17
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "qwen_image_2.1_vae_bf16.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+      }
+    },
+    {
+      "id": 5,
+      "type": "TextEncodeQwenImage21",
+      "pos": [
+        2090,
+        210
+      ],
+      "size": [
+        340,
+        260
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 4
+        },
+        {
+          "name": "images.image_1",
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 5
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 1,
+          "widget": {
+            "name": "prompt"
+          }
+        },
+        {
+          "name": "negative_prompt",
+          "type": "STRING",
+          "link": 28,
+          "widget": {
+            "name": "negative_prompt"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "positive",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            7
+          ]
+        },
+        {
+          "localized_name": "negative",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            8
+          ]
+        },
+        {
+          "localized_name": "latent",
+          "name": "latent",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TextEncodeQwenImage21"
+      },
+      "widgets_values": [
+        "",
+        "",
+        1024
+      ],
+      "widgets_values_named": {
+        "prompt": "",
+        "negative_prompt": "",
+        "resolution": 1024
+      }
+    },
+    {
+      "id": 6,
+      "type": "QwenImage21Cache",
+      "pos": [
+        2090,
+        0
+      ],
+      "size": [
+        270,
+        90
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            19
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "QwenImage21Cache"
+      },
+      "widgets_values": [
+        "off",
+        "default"
+      ],
+      "widgets_values_named": {
+        "device": "off",
+        "dtype": "default"
+      }
+    },
+    {
+      "id": 7,
+      "type": "EmptyLatentImage",
+      "pos": [
+        2090,
+        650
+      ],
+      "size": [
+        300,
+        120
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 26
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 27
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "LATENT",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ],
+      "widgets_values_named": {
+        "width": 1024,
+        "height": 1024,
+        "batch_size": 1
+      },
+      "title": "Output canvas - width/height linked to guide"
+    },
+    {
+      "id": 8,
+      "type": "ApplyCharacterControlNets",
+      "pos": [
+        2470,
+        220
+      ],
+      "size": [
+        280,
+        125
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 7
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 8
+        },
+        {
+          "name": "stack",
+          "type": "CHARACTER_CONTROL_STACK",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            11
+          ]
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            12
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ApplyCharacterControlNets"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 9,
+      "type": "KSampler",
+      "pos": [
+        2820,
+        0
+      ],
+      "size": [
+        270,
+        270
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 21
+        },
+        {
+          "localized_name": "positive",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 11
+        },
+        {
+          "localized_name": "negative",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 12
+        },
+        {
+          "localized_name": "latent_image",
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "LATENT",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        43,
+        "fixed",
+        40,
+        1,
+        "euler",
+        "simple",
+        1
+      ],
+      "widgets_values_named": {
+        "seed": 43,
+        "steps": 40,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1
+      }
+    },
+    {
+      "id": 10,
+      "type": "VAEDecode",
+      "pos": [
+        3130,
+        0
+      ],
+      "size": [
+        230,
+        60
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "samples",
+          "name": "samples",
+          "type": "LATENT",
+          "link": 13
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 6
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            14
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 11,
+      "type": "SaveImage",
+      "pos": [
+        3430,
+        0
+      ],
+      "size": [
+        430,
+        500
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 14
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "CharacterCreator/Qwen21_Union_Control"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "CharacterCreator/Qwen21_Union_Pose"
+      },
+      "title": "Generated result - output/CharacterCreator"
+    },
+    {
+      "id": 12,
+      "type": "Note",
+      "pos": [
+        -650,
+        -420
+      ],
+      "size": [
+        590,
+        330
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "Note"
+      },
+      "widgets_values": [
+        "1. Upload any ordinary photo in \"1. Source photo\". The saved example uses the existing local red dress.png image. You do not need to prepare a skeleton or edge map.\n\n2. Choose the conversion in \"2. Choose conversion\". CannyEdgePreprocessor is selected and needs no detector weights. Queue the workflow.\n\n3. The converted guide appears in the preview below the converter; the generated result appears at Save Image on the right. Both preview and ControlNet receive the SAME converted image.\n\nChange the preprocessor dropdown to test a different type without changing any cables. The Qwen Union checkpoint stays the same. Character Creator supplies the target character and scene prompt.\n\nOutput sizing is automatic: the converted guide is scaled to ~1 megapixel, rounded to a 16-pixel grid, and its actual dimensions drive the output latent. Portrait and landscape photos keep their proportions.\n\nThe creator negative_prompt output is connected to negative text encoding. SD/SDXL generate concise style/crop-aware negatives; Qwen currently outputs an empty negative. Disconnect this link to enter your own negative text."
+      ],
+      "title": "START HERE - ready to queue",
+      "color": "#334355",
+      "bgcolor": "#202b38"
+    },
+    {
+      "id": 13,
+      "type": "ModelPatchLoader",
+      "pos": [
+        0,
+        0
+      ],
+      "size": [
+        310,
+        130
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL_PATCH",
+          "type": "MODEL_PATCH",
+          "links": [
+            15
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelPatchLoader"
+      },
+      "widgets_values": [
+        "Qwen-Image-2.1-Fun-Controlnet-Union.safetensors"
+      ],
+      "widgets_values_named": {
+        "name": "Qwen-Image-2.1-Fun-Controlnet-Union.safetensors"
+      },
+      "title": "Qwen 2.1 Union - same model for all guide types"
+    },
+    {
+      "id": 14,
+      "type": "LoadImage",
+      "pos": [
+        0,
+        200
+      ],
+      "size": [
+        350,
+        340
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            23
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "red dress.png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "red dress.png"
+      },
+      "title": "1. Source photo - upload any image here"
+    },
+    {
+      "id": 15,
+      "type": "CharacterQwenControlEntry",
+      "pos": [
+        380,
+        0
+      ],
+      "size": [
+        310,
+        130
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model_patch",
+          "type": "MODEL_PATCH",
+          "link": 15
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 16
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 17
+        }
+      ],
+      "outputs": [
+        {
+          "name": "entry",
+          "type": "CHARACTER_CONTROL_ENTRY",
+          "links": [
+            18
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CharacterQwenControlEntry"
+      },
+      "widgets_values": [
+        1.0,
+        0.0,
+        1.0
+      ],
+      "widgets_values_named": {
+        "strength": 1.0,
+        "start_percent": 0.0,
+        "end_percent": 1.0
+      },
+      "title": "4. Apply matched guide - strength and timing"
+    },
+    {
+      "id": 16,
+      "type": "ApplyCharacterModelControls",
+      "pos": [
+        2470,
+        0
+      ],
+      "size": [
+        310,
+        130
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 19
+        },
+        {
+          "name": "stack",
+          "type": "CHARACTER_CONTROL_STACK",
+          "link": 20
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            21
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ApplyCharacterModelControls"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 17,
+      "type": "Note",
+      "pos": [
+        -650,
+        0
+      ],
+      "size": [
+        590,
+        400
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "Note"
+      },
+      "widgets_values": [
+        "Use an ordinary photo, render or drawing as the source image. Pick a clear full-body photo for whole-body pose tests; a cropped portrait cannot provide leg joints that are outside the image.\n\nThe AIO Aux Preprocessor actually converts the source image. Its IMAGE output goes to both the guide preview and entry.image; the original photo is not used directly as a guide.\n\nThe workflow reuses the installed comfyui_controlnet_aux package. Canny and Scribble XDoG need no detector weights. Pose, Depth, HED, Realistic Lineart and M-LSD require their own detector weights, which are not installed yet. Those modes need the additional download approved; until then use Canny or Scribble XDoG.\n\nAlready have a prepared guide? Select it in Load Image and choose preprocessor = none. This bypasses conversion."
+      ],
+      "title": "Photo -> conversion -> guide -> ControlNet",
+      "color": "#334355",
+      "bgcolor": "#202b38"
+    },
+    {
+      "id": 18,
+      "type": "Note",
+      "pos": [
+        -650,
+        440
+      ],
+      "size": [
+        590,
+        480
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "Note"
+      },
+      "widgets_values": [
+        "CannyEdgePreprocessor: sharp edges and silhouettes. Ready now; no detector weights.\n\nScribble_XDoG_Preprocessor: converts a photo into rough sketch lines. Ready now; no detector weights.\n\nDWPreprocessor: DWPose body/hand/face skeleton, for pose control. Needs yolox_l.onnx and the DWPose TorchScript detector.\n\nDepthAnythingV2Preprocessor: relative near/far structure. Needs Depth Anything V2 Large (the AIO default).\n\nHEDPreprocessor: broad, soft object edges. Needs ControlNetHED.pth.\n\nLineArtPreprocessor: drawn contours. Needs sk_model.pth and sk_model2.pth.\n\nM-LSDPreprocessor: straight lines for architecture. Needs mlsd_large_512_fp32.pth.\n\nThe AIO dropdown also contains unrelated preprocessors. Use the choices above with this Qwen Union. Its generic SD/SDXL labels do not require switching to SD/SDXL ControlNet weights."
+      ],
+      "title": "Conversion dropdown - recommended Qwen Union choices",
+      "color": "#334355",
+      "bgcolor": "#202b38"
+    },
+    {
+      "id": 19,
+      "type": "Note",
+      "pos": [
+        380,
+        200
+      ],
+      "size": [
+        310,
+        610
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "Note"
+      },
+      "widgets_values": [
+        "strength: 1.0 starts with strong control. Try 0.5-0.8 for more prompt freedom; 0 disables control.\n\nstart_percent / end_percent: the part of denoising that uses the guide. 0 to 1 means the whole run.\n\nConverter resolution (768) controls extraction detail. Guide canvas megapixels (1.0) controls output size. Its dimensions feed Empty Latent Image automatically: do not disconnect those size wires.\n\nThis prevents a portrait skeleton or edge map being stretched to a square output. Adjust megapixels to change detail/cost while keeping the guide aspect ratio.\n\nPrompt framing still needs to agree with the source. A full-body skeleton can compete with a waist-up prompt even when the dimensions match.\n\nMULTIPLE TYPES: use the same source and preprocessing resolution, then match each final guide to this canvas. Share the model patch and VAE; connect the additional entry to the next creator socket."
+      ],
+      "title": "Strength, cropping and multiple guides",
+      "color": "#334355",
+      "bgcolor": "#202b38"
+    },
+    {
+      "id": 20,
+      "type": "Note",
+      "pos": [
+        1510,
+        650
+      ],
+      "size": [
+        540,
+        400
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "Note"
+      },
+      "widgets_values": [
+        "Source photo -> AIO -> Guide canvas -> entry.image\nThe SAME final guide -> preview + Get Image Size\nGet Image Size width/height -> Empty Latent Image\nLoad Model Patch -> entry.model_patch\nLoad VAE -> entry.vae\nEntry -> creator.controlnets.entries.entry_0\nCreator controlnet_stack -> Apply Character Model Controls -> sampler MODEL\n\nThe creator prompt goes to Text Encode Qwen Image 2.1. Its reference-image inputs serve image editing and are separate from the control guide.\n\nFor conversion-specific settings (Canny thresholds, pose hand/face detection, depth model size), replace AIO with that preprocessor's dedicated node. Reconnect source -> dedicated node -> entry.image AND guide preview.\n\nPublisher: https://huggingface.co/alibaba-pai/Qwen-Image-2.1-Fun-Controlnet-Union"
+      ],
+      "title": "Why these wires go here",
+      "color": "#334355",
+      "bgcolor": "#202b38"
+    },
+    {
+      "id": 21,
+      "type": "PreviewImage",
+      "pos": [
+        0,
+        1010
+      ],
+      "size": [
+        350,
+        340
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 22
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": [],
+      "title": "Converted control map - this guides generation"
+    },
+    {
+      "id": 22,
+      "type": "AIO_Preprocessor",
+      "pos": [
+        0,
+        610
+      ],
+      "size": [
+        350,
+        130
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 23
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            24
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AIO_Preprocessor",
+        "cnr_id": "comfyui_controlnet_aux"
+      },
+      "widgets_values": [
+        "CannyEdgePreprocessor",
+        768
+      ],
+      "title": "2. Choose conversion - Canny / Depth / Pose / lines"
+    },
+    {
+      "id": 23,
+      "type": "ImageScaleToTotalPixels",
+      "pos": [
+        0,
+        800
+      ],
+      "size": [
+        350,
+        150
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            16,
+            22,
+            25
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScaleToTotalPixels"
+      },
+      "widgets_values": [
+        "bicubic",
+        1.0,
+        16
+      ],
+      "title": "3. Guide canvas - preserve aspect, ~1 megapixel"
+    },
+    {
+      "id": 24,
+      "type": "GetImageSize",
+      "pos": [
+        380,
+        850
+      ],
+      "size": [
+        310,
+        120
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 25
+        }
+      ],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            26
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            27
+          ]
+        },
+        {
+          "name": "batch_size",
+          "type": "INT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GetImageSize"
+      },
+      "widgets_values": [],
+      "title": "Output dimensions follow the actual guide"
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      5,
+      3,
+      "STRING"
+    ],
+    [
+      2,
+      1,
+      2,
+      8,
+      2,
+      "CHARACTER_CONTROL_STACK"
+    ],
+    [
+      3,
+      2,
+      0,
+      6,
+      0,
+      "MODEL"
+    ],
+    [
+      4,
+      3,
+      0,
+      5,
+      0,
+      "CLIP"
+    ],
+    [
+      5,
+      4,
+      0,
+      5,
+      2,
+      "VAE"
+    ],
+    [
+      6,
+      4,
+      0,
+      10,
+      1,
+      "VAE"
+    ],
+    [
+      7,
+      5,
+      0,
+      8,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      8,
+      5,
+      1,
+      8,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      10,
+      7,
+      0,
+      9,
+      3,
+      "LATENT"
+    ],
+    [
+      11,
+      8,
+      0,
+      9,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      12,
+      8,
+      1,
+      9,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      13,
+      9,
+      0,
+      10,
+      0,
+      "LATENT"
+    ],
+    [
+      14,
+      10,
+      0,
+      11,
+      0,
+      "IMAGE"
+    ],
+    [
+      15,
+      13,
+      0,
+      15,
+      0,
+      "MODEL_PATCH"
+    ],
+    [
+      16,
+      23,
+      0,
+      15,
+      1,
+      "IMAGE"
+    ],
+    [
+      17,
+      4,
+      0,
+      15,
+      2,
+      "VAE"
+    ],
+    [
+      18,
+      15,
+      0,
+      1,
+      0,
+      "CHARACTER_CONTROL_ENTRY"
+    ],
+    [
+      19,
+      6,
+      0,
+      16,
+      0,
+      "MODEL"
+    ],
+    [
+      20,
+      1,
+      2,
+      16,
+      1,
+      "CHARACTER_CONTROL_STACK"
+    ],
+    [
+      21,
+      16,
+      0,
+      9,
+      0,
+      "MODEL"
+    ],
+    [
+      22,
+      23,
+      0,
+      21,
+      0,
+      "IMAGE"
+    ],
+    [
+      23,
+      14,
+      0,
+      22,
+      0,
+      "IMAGE"
+    ],
+    [
+      24,
+      22,
+      0,
+      23,
+      0,
+      "IMAGE"
+    ],
+    [
+      25,
+      23,
+      0,
+      24,
+      0,
+      "IMAGE"
+    ],
+    [
+      26,
+      24,
+      0,
+      7,
+      0,
+      "INT"
+    ],
+    [
+      27,
+      24,
+      1,
+      7,
+      1,
+      "INT"
+    ],
+    [
+      28,
+      1,
+      3,
+      5,
+      4,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.4,
+      "offset": [
+        50,
+        80
+      ]
+    }
+  },
+  "version": 0.4
+}
