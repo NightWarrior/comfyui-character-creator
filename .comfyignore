@@ -6,3 +6,4 @@ scripts/
 config.json
 __pycache__/
 *.py[cod]
+assets/screenshots/
