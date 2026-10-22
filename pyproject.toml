@@ -15,6 +15,5 @@ Documentation = "https://github.com/NightWarrior/comfyui-character-creator#readm
 "Bug Tracker" = "https://github.com/NightWarrior/comfyui-character-creator/issues"
 
 [tool.comfy]
-# Fill in the publisher ID assigned by registry.comfy.org before publishing.
-PublisherId = ""
+PublisherId = "nightwarrior"
 DisplayName = "Character Creator"

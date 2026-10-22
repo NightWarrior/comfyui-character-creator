@@ -201,7 +201,7 @@ The Python node-contract tests use the installed ComfyUI API and mock the model 
 
 ## Prepare for ComfyUI-Manager
 
-This is a standalone custom-node package, not a ComfyUI core modification. It includes `pyproject.toml`, `WEB_DIRECTORY` and packaging exclusions. The repository URL and MIT license are configured. Before publishing, create a Registry publisher, enter its exact `PublisherId` in `pyproject.toml` and confirm availability of the package name.
+This is a standalone custom-node package, not a ComfyUI core modification. It includes `pyproject.toml`, `WEB_DIRECTORY` and packaging exclusions. The repository URL and MIT license are configured. The Registry publisher is `nightwarrior`. Maintainers can publish through **Actions → Publish to Comfy Registry → Run workflow** on `main`; the entered version must match `pyproject.toml`. The workflow uses the `REGISTRY_ACCESS_TOKEN` repository secret and runs only when manually requested.
 
 Follow the [official Registry publishing process](https://docs.comfy.org/registry/publishing); the Registry powers ComfyUI-Manager discovery. GitHub distribution and Registry publication are separate steps. No Registry credentials are needed for local use.
 
