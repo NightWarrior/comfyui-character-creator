@@ -104,11 +104,27 @@ export function visibleFields(settings, catalog, group) {
 
 export function genderOptions(field, gender) {
     const lists = field.gender_options;
-    if (!lists) return field.options;
+    if (!lists) return field.options.filter((option) => !field.hidden_options?.includes(option.id));
     const known = new Set(Object.values(lists).flat());
     const allowed = lists[gender] ?? [];
     return [...allowed.map((id) => field.options.find((option) => option.id === id)).filter(Boolean),
         ...field.options.filter((option) => !known.has(option.id))];
+}
+
+export function isRestrictedCharacter(settings, catalog) {
+    if (catalog.allow_nsfw) return false;
+    const fields = { ...catalog.fields, ...catalog.extra_fields };
+    if (catalog.templates?.[settings.template]?.nsfw || Object.entries(fields).some(([name, field]) =>
+        field.options.find((option) => option.id === (settings[name] ?? field.default))?.nsfw)) return true;
+    for (const [name, refinements] of Object.entries(settings.clothing ?? {})) {
+        if ((refinements.opacity ?? 100) < 100) return true;
+        if (['fabric', 'texture'].some((kind) => catalog.clothing[kind][refinements[kind] ?? 'default']?.nsfw)) return true;
+        if (Object.entries(catalog.clothing.modifiers).some(([kind, spec]) => spec.options[refinements[kind] ?? 'default']?.nsfw)) return true;
+        if (['upper_garment', 'dress'].includes(name) && ['open', 'unzipped'].includes(refinements.closure)) return true;
+    }
+    const garments = settings.wardrobe_mode === 'dress' ? ['dress'] : ['upper_garment', 'lower_garment'];
+    const coverage = new Set(garments.flatMap((name) => fields[name].options.find((option) => option.id === settings[name])?.covers ?? []));
+    return !coverage.has('upper') || !coverage.has('lower');
 }
 
 export function optionSections(field, gender) {
@@ -119,7 +135,7 @@ export function optionSections(field, gender) {
         options: options.filter((option) => section.options.includes(option.id)),
     })).filter((section) => section.options.length);
     const other = options.filter((option) => !assigned.has(option.id));
-    if (other.length) sections.push({ label: 'Other styles', options: other });
+    if (other.length) sections.push({ label: field.group === 'Clothing' ? 'Other items' : 'Other styles', options: other });
     return sections;
 }
 
@@ -129,7 +145,7 @@ export function changeGender(node, gender, catalog) {
     for (const [name, field] of Object.entries(catalog.fields)) {
         const widget = node.widgets.find((item) => item.name === name);
         if (node.inputs?.some((input) => input.widget?.name === name && input.link != null)) continue;
-        const options = genderOptions(field, gender);
+        const options = genderOptions(field, gender).filter((option) => !option.nsfw || catalog.allow_nsfw);
         let value = name === 'gender' ? gender : settings[name];
         if (!options.some((option) => option.id === value)) {
             value = (options.find((option) => option.id !== 'none') ?? options[0]).id;
@@ -137,6 +153,17 @@ export function changeGender(node, gender, catalog) {
         if (widget.value !== value) {
             widget.value = value;
             changed.push(widget);
+            const clothingWidget = node.widgets.find((item) => item.name === 'clothing');
+            if (settings.clothing?.[name] && clothingWidget && !node.inputs?.some((input) => input.widget?.name === 'clothing' && input.link != null)) {
+                const clothing = JSON.parse(clothingWidget.value || '{}');
+                const option = field.options.find((item) => item.id === value);
+                const metadata = { ...option, ...field.option_details?.[value] };
+                for (const kind of Object.keys(catalog.clothing.modifiers)) {
+                    if (!metadata.modifiers?.[kind]?.includes(clothing[name][kind])) delete clothing[name][kind];
+                }
+                clothing[name].details = Object.fromEntries(Object.entries(clothing[name].details ?? {}).filter(([id]) => metadata.details?.includes(id)));
+                clothingWidget.value = JSON.stringify(clothing);
+            }
         }
     }
     for (const widget of changed) widget.callback?.(widget.value);

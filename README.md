@@ -44,7 +44,11 @@ The family button changes prompt formatting; it does not switch checkpoints or r
 
 ![Character library with three starter characters and a new-character slot](assets/screenshots/characters.jpg)
 
-Open **Characters** to select, create, rename or delete characters. Edits save automatically, and the latest matching generated image becomes the character's cover.
+Open **Characters** to select, create, rename or delete characters. Edits save automatically, and the latest matching generated image becomes the character's cover. Seven SFW starters showcase different ages and fashion styles. New starters are added once to existing libraries without replacing your characters or restoring ones you deleted.
+
+| Maya · Streetwear | Raven · Velvet gothic | Leo · Campus casual | Adrian · Modern tailoring |
+| --- | --- | --- | --- |
+| ![Maya](web/assets/maya.png) | ![Raven](web/assets/raven.png) | ![Leo](web/assets/leo.png) | ![Adrian](web/assets/adrian.png) |
 
 The library is saved in your current browser. Use **Export → Copy** to back up or share a `CC1…` character code; paste it and click **Import** to load it elsewhere. Codes contain character settings, not images, model files or ControlNet connections.
 
@@ -53,7 +57,15 @@ The library is saved in your current browser. Use **Export → Copy** to back up
 
 ![Color picker with hue, saturation, hex entry and a descriptive color name](assets/screenshots/colors.jpg)
 
-Click a color swatch to choose a color or type its hex value. **Reset** restores the default. Clothing also offers **Fabric / material**, **Surface / texture**, and item-specific details such as piping, embroidery, buttons and belts, each with its own accent color.
+Click a color swatch to choose a color, try suggested colors for that item and material, type its hex value, or the **eyedropper icon** in a browser that supports the eyedropper. **Reset** restores the default.
+
+Clothing offers fabrics, textures, accent details and garment-specific modifications: fastening, fit, hem length, sleeves and rolled sleeves. Materials include Rexine, PVC, plastic, latex, holographic fabric and more. Choose plastic, PVC or vinyl to show **Material opacity**: 100% is opaque, 0% is transparent.
+
+**Neckwear** has chokers, scarves, mufflers, ties and cowls, with color, material, wrapping and fastening options. Necklaces and earrings stay under **Face & accessories**. The one-piece menu also includes gothic layered and tailored outfits with adjustable fit, sleeves, lacing and accent details.
+
+The local NSFW setting unlocks transparency, underwear, lingerie separates, one-piece lingerie, shorter hems and glamour poses. Lingerie includes corsets, bustiers, camisoles, briefs, bodysuits, teddies, chemises and full-body catsuits, with applicable strap, lacing and fit controls. Unlined lace, sheer mesh and sheer organza offer opacity controls too. SFW mode hides restricted saved-character previews and cached portraits without known settings.
+
+Lace-up separates and bodysuits are also available. Underwear and lingerie are identified early in the prompt as visible clothing.
 
 </details>
 
@@ -70,7 +82,7 @@ Download a JSON from [examples](examples/) and drag it into ComfyUI.
 
 The SD/SDXL examples come with the named checkpoint selected; you can substitute another checkpoint from the same family and adjust sampling settings to suit it. Model weights are not included.
 
-**Compact** versions are also in the folder. They keep the creator visible and group generation inside a ComfyUI subgraph. Double-click the subgraph to inspect or change it.
+**Compact** workflows: [Qwen](examples/Qwen%20Image%202.1%20-%20Character%20Creator%20Compact.json), [SDXL](examples/SDXL%20-%20Juggernaut%20XL%20-%20Character%20Creator%20Compact.json), and [SD 1.5](examples/SD%201.5%20-%20DreamShaper%208%20-%20Character%20Creator%20Compact.json). They keep the creator visible and group generation inside a ComfyUI subgraph. Double-click the subgraph to inspect or change it.
 
 ### Try ControlNet
 

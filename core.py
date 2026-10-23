@@ -12,8 +12,8 @@ MAX_CODE_LENGTH = 32768
 ADAPTERS = {"qwen_image_2_1": "Qwen Image 2.1", "sdxl": "SDXL", "sd": "Stable Diffusion 1.5"}
 FRAGMENTS = {"opening", "scene", "pose", "appearance", "hair", "expression", "wardrobe", "lighting", "composition"}
 ID_PATTERN = re.compile(r"^[a-z][a-z0-9_]*$")
-COLOR_FIELDS = ("skin_tone", "hair_color", "dress", "upper_garment", "lower_garment", "outerwear", "shoes", "headwear", "gloves", "eye_color", "lip_makeup", "earrings", "necklace", "piercings", "eyewear")
-CLOTHING_FIELDS = ("dress", "upper_garment", "lower_garment", "outerwear", "shoes", "headwear", "gloves")
+COLOR_FIELDS = ("skin_tone", "hair_color", "dress", "upper_garment", "lower_garment", "outerwear", "shoes", "headwear", "gloves", "eye_color", "lip_makeup", "earrings", "necklace", "piercings", "eyewear", "neckwear")
+CLOTHING_FIELDS = ("dress", "upper_garment", "lower_garment", "outerwear", "shoes", "headwear", "gloves", "neckwear")
 HEX_COLOR = re.compile(r"^#[0-9a-fA-F]{6}$")
 
 
@@ -87,7 +87,7 @@ def load_catalog(root=ROOT):
         spec["options"].sort(key=lambda option: option.get("id") != "none")
         for option in spec["options"]:
             if (not isinstance(option.get("id"), str) or not ID_PATTERN.fullmatch(option["id"])
-                    or set(option) - {"id", "label", "phrase", "icon", "color", "covers", "nsfw", "color_phrase", "fabric", "details", "cropped_phrase"}
+                    or set(option) - {"id", "label", "phrase", "icon", "color", "covers", "nsfw", "color_phrase", "fabric", "details", "cropped_phrase", "modifiers", "wardrobe_role"}
                     or any(not isinstance(option.get(key), str) for key in ("label", "phrase", "icon"))):
                 raise ValueError(f"Invalid catalog option in {field}.")
             if "color_phrase" in option and (not isinstance(option["color_phrase"], str)
@@ -108,6 +108,13 @@ def load_catalog(root=ROOT):
             if "details" in metadata and (not isinstance(metadata["details"], list)
                     or any(not isinstance(key, str) or key not in catalog["clothing"]["details"] for key in metadata["details"])):
                 raise ValueError(f"Unknown garment details in {field}.")
+            if not isinstance(metadata.get("modifiers", {}), dict):
+                raise ValueError(f"Garment modifiers must be an object in {field}.")
+            if "wardrobe_role" in metadata and (metadata["wardrobe_role"] not in {"underwear", "lingerie"} or not option.get("nsfw")):
+                raise ValueError(f"Intimate wardrobe roles require an NSFW option in {field}.")
+            for kind, values in metadata.get("modifiers", {}).items():
+                if kind not in catalog["clothing"]["modifiers"] or not isinstance(values, list) or any(value not in catalog["clothing"]["modifiers"][kind]["options"] for value in values):
+                    raise ValueError(f"Unknown garment modifiers in {field}.")
         if spec["default"] not in {option["id"] for option in spec["options"]}:
             raise ValueError(f"Missing default option for {field}.")
     for template_id, template in catalog["templates"].items():
@@ -164,12 +171,35 @@ def resolve_character(settings, catalog):
     if not isinstance(clothing, dict) or set(clothing) - set(CLOTHING_FIELDS):
         raise ValueError("Clothing refinements must map garment fields to fabric, texture and details.")
     for field, refinements in clothing.items():
-        if not isinstance(refinements, dict) or set(refinements) - {"fabric", "texture", "details"}:
+        if not isinstance(refinements, dict) or set(refinements) - {"fabric", "texture", "details", "opacity", *catalog["clothing"]["modifiers"]}:
             raise ValueError(f"Invalid clothing refinements for {field}.")
         for key in ("fabric", "texture"):
             value = refinements.get(key, "default")
             if not isinstance(value, str) or value not in catalog["clothing"][key]:
                 raise ValueError(f"Unknown clothing {key} for {field}.")
+            if catalog["clothing"][key][value].get("nsfw") and not catalog["allow_nsfw"]:
+                raise ValueError("Restricted materials require allow_nsfw: true in local config.json.")
+        for kind, spec in catalog["clothing"]["modifiers"].items():
+            value = refinements.get(kind, "default")
+            if not isinstance(value, str) or value not in spec["options"]:
+                raise ValueError(f"Unknown clothing {kind} for {field}.")
+            if value == "default":
+                continue
+            if value not in selected[field].get("modifiers", {}).get(kind, []):
+                raise ValueError(f"The selected {field} does not support {kind}={value}.")
+            if spec["options"][value].get("nsfw") and not catalog["allow_nsfw"]:
+                raise ValueError("Restricted garment modifications require allow_nsfw: true in local config.json.")
+        sleeve = refinements.get("sleeve_length", "default")
+        if refinements.get("sleeve_roll", "default") != "default" and sleeve in {"sleeveless", "cap", "short", "elbow", "three_quarter"}:
+            raise ValueError("Rolled sleeves need original or full-length sleeves.")
+        if "opacity" in refinements:
+            opacity = refinements["opacity"]
+            if type(opacity) is not int or not 0 <= opacity <= 100:
+                raise ValueError("Garment opacity must be a whole number between 0 and 100.")
+            if not catalog["clothing"]["fabric"][refinements.get("fabric", "default")].get("transparency"):
+                raise ValueError("Opacity is available only for materials that support transparency.")
+            if opacity < 100 and not catalog["allow_nsfw"]:
+                raise ValueError("Transparent garments require allow_nsfw: true in local config.json.")
         details = refinements.get("details", {})
         if not isinstance(details, dict) or set(details) - set(catalog["clothing"]["details"]):
             raise ValueError(f"Unknown clothing detail for {field}.")
@@ -178,13 +208,21 @@ def resolve_character(settings, catalog):
     if not catalog["allow_nsfw"]:
         if template.get("nsfw", False) or any(option.get("nsfw", False) for option in selected.values()):
             raise ValueError("Restricted options require allow_nsfw: true in local config.json.")
-        coverage = set()
-        garments = ["dress"] if settings["wardrobe_mode"] == "dress" else ["upper_garment", "lower_garment"]
-        for field in garments:
-            coverage.update(selected[field].get("covers", []))
+        coverage = garment_coverage(settings, selected)
         if not {"upper", "lower"}.issubset(coverage):
             raise ValueError("This outfit leaves the torso or lower body uncovered. Select covering garments or explicitly enable allow_nsfw in local config.json.")
     return selected
+
+
+def garment_coverage(settings, selected):
+    garments = ["dress"] if settings["wardrobe_mode"] == "dress" else ["upper_garment", "lower_garment"]
+    coverage = set()
+    for field in garments:
+        refinements = settings.get("clothing", {}).get(field, {})
+        if refinements.get("opacity", 100) < 100 or refinements.get("closure") in {"open", "unzipped", "half_open"}:
+            continue
+        coverage.update(selected[field].get("covers", []))
+    return coverage
 
 
 def encode_character(settings):
@@ -245,6 +283,8 @@ def render_prompt(settings, catalog):
 def character_fragments(settings, selected, catalog):
     color_names = catalog["color_names"]
     phrase = {key: option["phrase"] for key, option in selected.items()}
+    if settings.get("necklace") == "choker" and settings.get("neckwear", "none") != "none":
+        phrase["necklace"] = ""
     phrase['art_style'] = re.sub(r'^(?:a|an) ', '', phrase['art_style'])
     for field, value in settings.get("colors", {}).items():
         if not phrase[field]:
@@ -256,6 +296,12 @@ def character_fragments(settings, selected, catalog):
     subject = f"an adult {phrase['gender']} {phrase['life_stage']}"
     if "age" in settings:
         subject = f"an adult {phrase['gender']} aged {clamp_age(settings['age'])} years"
+    main_garments = ["dress"] if settings["wardrobe_mode"] == "dress" else ["upper_garment", "lower_garment"]
+    visible_garments = [] if settings["framing"] == "portrait" else [field for field in main_garments if settings["framing"] != "waist_up" or field != "lower_garment"]
+    roles = {selected[field].get("wardrobe_role") for field in visible_garments} - {None}
+    intimate = ("lingerie" if "lingerie" in roles else "underwear") if roles and catalog["allow_nsfw"] else ""
+    if intimate:
+        subject += f", wearing visible {intimate}"
     features = [phrase[key] for key in ("skin_tone", "body_shape", "muscle_tone") if phrase[key]]
     heritage = next(option["phrase"] for option in catalog["ethnicity"]["options"] if option["id"] == settings.get("ethnicity", "unspecified"))
     cropped = settings["framing"] in {"waist_up", "portrait"}
@@ -278,8 +324,8 @@ def character_fragments(settings, selected, catalog):
         if modifiers:
             hair += " The hair is " + ", ".join(modifiers) + "."
     garments = ["dress"] if settings["wardrobe_mode"] == "dress" else ["upper_garment", "lower_garment"]
-    garments += ["outerwear", "shoes", "headwear", "gloves"]
-    coverage = set().union(*(set(selected[key].get("covers", [])) for key in garments))
+    garments += ["outerwear", "shoes", "headwear", "gloves", "neckwear"]
+    coverage = garment_coverage(settings, selected)
     if cropped:
         garments = [key for key in garments if key not in {"shoes", "lower_garment"}]
     elif settings["framing"] == "three_quarter":
@@ -297,6 +343,34 @@ def character_fragments(settings, selected, catalog):
                 phrase[field] = phrase[field].replace(material, catalog["clothing"]["fabric"][fabric]["phrase"], 1)
             else:
                 phrase[field] += " made from " + catalog["clothing"]["fabric"][fabric]["phrase"]
+        for kind, spec in catalog["clothing"]["modifiers"].items():
+            value = refinements.get(kind, "default")
+            if value == "default":
+                continue
+            if kind == "hem_length":
+                phrase[field] = re.sub(r"\b(?:knee-length|ankle-length|floor-length|full-length|mid-thigh|midi|mini|long)\s+", "", phrase[field])
+            elif kind == "sleeve_length":
+                phrase[field] = re.sub(r"\b(?:long-sleeved|short-sleeved|sleeveless)\s+", "", phrase[field])
+                phrase[field] = phrase[field].replace("with puffed sleeves", "with a gathered shoulder design")
+            elif kind == "closure":
+                phrase[field] = re.sub(r"\bopen-front\s+|\bopen\s+(?=(?:leather|wool|woven|knitted|cotton))", "", phrase[field])
+                phrase[field] = phrase[field].replace(" worn open", "").replace("with a buttoned bodice", "").rstrip()
+                phrase[field] = re.sub(r" with (?:an adjustable front-laced band|adjustable side lacing|front lacing)", "", phrase[field])
+            elif kind == "fit":
+                phrase[field] = re.sub(r"\b(?:fitted|loose|tailored|oversized)\s+", "", phrase[field])
+            elif kind == "waist_rise":
+                phrase[field] = re.sub(r"\b(?:high-waisted|bikini-cut)\s+", "", phrase[field])
+            phrase[field] += ", " + spec["options"][value]["phrase"]
+        if catalog["clothing"]["fabric"][fabric].get("transparency"):
+            opacity = refinements.get("opacity", 100)
+            phrase[field] = re.sub(r"\bopaque\s+", "", phrase[field])
+            if opacity == 100:
+                phrase[field] += ", fully opaque with no visibility through the material"
+            elif opacity == 0:
+                phrase[field] += ", clear and transparent with the body visible through the material"
+            else:
+                visibility = "mostly transparent" if opacity < 35 else "semi-transparent" if opacity < 70 else "slightly translucent"
+                phrase[field] += f", {visibility} material at approximately {opacity}% opacity"
         texture = refinements.get("texture", "default")
         if texture != "default":
             phrase[field] += " with " + catalog["clothing"]["texture"][texture]["phrase"]
@@ -308,15 +382,18 @@ def character_fragments(settings, selected, catalog):
         if cropped:
             phrase[field] = phrase[field].replace("full-length ", "").replace("floor-length ", "")
     if portrait:
-        garments = [key for key in garments if key in {"headwear", "outerwear"} or "upper" in selected[key].get("covers", [])]
-        worn = [("the visible neckline and shoulders of " if key != "headwear" else "") + phrase[key] for key in garments if phrase[key]]
+        garments = [key for key in garments if key in {"headwear", "outerwear", "neckwear"} or "upper" in selected[key].get("covers", [])]
+        worn = [("the visible neckline and shoulders of " if key not in {"headwear", "neckwear"} else "") + phrase[key] for key in garments if phrase[key]]
     else:
         worn = [phrase[key] for key in garments if phrase[key]]
-    chest = " The torso is fully covered by opaque clothing." if "upper" in coverage and not portrait else ""
-    if settings["gender"] == "woman" and phrase["bust_size"] and "upper" in coverage and not portrait:
-        size = {"small": "small", "medium": "medium", "full": "full"}.get(settings["bust_size"], "natural")
-        garment = "dress bodice" if settings["wardrobe_mode"] == "dress" else "upper garment"
-        chest = f" The {garment} has a {size} bust fit, with opaque fabric fully covering the chest."
+    chest = " The torso is fully covered by opaque clothing." if "upper" in coverage and not portrait and not intimate else ""
+    if settings["gender"] == "woman" and phrase["bust_size"] and not portrait:
+        size = {"small": "small", "medium": "medium-sized", "full": "large"}.get(settings["bust_size"], "natural-sized")
+        contour = {"small": "a subtle upper-body contour", "medium": "a moderately rounded upper-body contour", "full": "a prominent rounded upper-body contour"}.get(settings["bust_size"], "a natural upper-body contour")
+        noun = "breasts" if catalog["allow_nsfw"] else "chest"
+        chest = f" She has {size if noun == 'breasts' else 'a ' + size} {noun} and {contour}."
+        if "upper" in coverage and not intimate:
+            chest += " The clothing has opaque fabric fully covering the chest and follows this shape."
     missing = []
     if settings["wardrobe_mode"] == "separates":
         if settings["upper_garment"] == "none":
@@ -334,7 +411,7 @@ def character_fragments(settings, selected, catalog):
         "appearance": ("The subject has " + ", ".join(features) + "." if features else "") + (f" The subject is {heritage}." if heritage else ""),
         "hair": hair,
         "expression": f"The face has {phrase['expression']}." + (" " + face if face else ""),
-        "wardrobe": ("The subject wears " + ", ".join(worn) + ". " if worn else "") + chest + " ".join(missing),
+        "wardrobe": ((f"The visible clothing includes {intimate}: " if intimate else "The subject wears ") + ", ".join(worn) + ". " if worn else "") + chest + " ".join(missing),
         "lighting": f"The lighting is {phrase['lighting']}.",
         "composition": f"The overall composition uses {phrase['framing']}, {phrase['composition']}." + (" The crop ends at the waist; the legs and feet remain outside the image." if settings["framing"] == "waist_up" else " The bottom edge cuts across the shoulders; the chest, torso and waist remain outside the image." if portrait else ""),
     }
@@ -363,7 +440,7 @@ def character_fragments(settings, selected, catalog):
         "appearance": ", ".join(features + ([heritage] if heritage else [])),
         "hair": ", ".join([phrase['hair_color'] + ' hair', phrase['hair_style']] + [phrase[key] for key in ('hair_finish', 'hair_volume') if phrase[key]]) if settings['hair_style'] != 'bald' else 'bald head',
         "expression": ", ".join(filter(None, [phrase['expression'], *compact_face])),
-        "wardrobe": ", ".join(filter(None, ["wearing " + ", ".join(worn) if worn else "", chest.strip(), *missing])),
+        "wardrobe": ", ".join(filter(None, [(f"visible {intimate}: " if intimate else "wearing ") + ", ".join(worn) if worn else "", chest.strip(), *missing])),
         "lighting": phrase['lighting'],
         "composition": phrase['composition'],
     }

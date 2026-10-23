@@ -223,7 +223,7 @@ nav button[aria-pressed=true] {
     color:#d3c2ee;
     margin:12px 0 6px;
 }
-.option-section,.face-group,.garment-card {
+.option-section,.face-group {
     border:1px solid var(--line);
     border-radius:5px;
     margin-top:7px;
@@ -232,7 +232,7 @@ nav button[aria-pressed=true] {
 .option-section {
     padding:0 7px 7px;
 }
-.option-section summary,.face-group>summary,.garment-card>summary {
+.option-section summary,.face-group>summary {
     padding:9px 8px;
     font-size:11px;
     cursor:pointer;
@@ -242,10 +242,10 @@ nav button[aria-pressed=true] {
 .option-section summary {
     margin:0 -7px 7px;
 }
-.face-group[open]>summary,.garment-card[open]>summary {
+.face-group[open]>summary {
     border-bottom:1px solid var(--line);
 }
-.face-group>.field,.garment-card>.field {
+.face-group>.field {
     margin:12px;
 }
 .face-group .tiles {
@@ -469,7 +469,8 @@ footer {
     padding:5px 9px;
 }
 .prompt {
-    height:82px;
+    height:auto;
+    min-height:240px;
     padding:8px 10px;
     overflow:auto;
     white-space:pre-wrap;
@@ -517,7 +518,8 @@ dialog .prompt-tools strong {
     font-size:20px;
 }
 dialog .prompt {
-    height:65vh;
+    height:min(80vh,calc(100vh - 130px));
+    min-height:0;
     font-size:13px;
 }
 .characters-dialog {
@@ -839,6 +841,23 @@ dialog .prompt {
 .color-actions button {
     flex:1;
 }
+.color-actions .color-dropper {
+    flex:0 0 34px;
+    display:grid;
+    place-items:center;
+    padding:6px;
+}
+.color-dropper svg {
+    width:18px;
+    height:18px;
+}
+.color-dialog.sampling {
+    visibility:hidden;
+}
+.color-dialog.sampling::backdrop {
+    background:transparent;
+    backdrop-filter:none;
+}
 .color-actions button:last-child {
     background:var(--accent);
     color:#211b30;
@@ -915,16 +934,31 @@ nav [data-icon-outline] {
     display:none;
 }
 .clothing-field .tiles {
-    display:grid;
-    grid-auto-flow:column;
-    grid-auto-columns:65px;
-    grid-template-columns:none;
+    display:flex;
     overflow-x:auto;
     padding-bottom:5px;
     scrollbar-width:thin;
 }
 .clothing-field .tile {
+    flex:0 0 65px;
     min-height:68px;
+}
+.garment-divider {
+    flex:0 0 auto;
+    display:flex;
+    align-items:center;
+    max-width:70px;
+    padding:0 8px;
+    margin-left:5px;
+    border-left:2px solid #81718e;
+    color:var(--muted);
+    font-size:10px;
+    line-height:1.35;
+    text-align:left;
+}
+.garment-divider:first-child {
+    margin-left:0;
+    border-left-color:var(--accent);
 }
 .ethnicity-picker {
     margin-top:14px;
@@ -1035,6 +1069,84 @@ nav button {
 .clothing-field>.color-row {
     font-size:10px;
 }
+.clothing-section {
+    padding:9px 0 10px;
+    margin-top:12px;
+}
+.clothing-section>h3 {
+    margin:0 0 9px;
+    font-size:12px;
+}
+.clothing-section.outfit-setup {
+    margin-top:8px;
+}
+.suggested-colors {
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin:10px 0 4px;
+}
+.suggested-colors small {
+    flex-basis:100%;
+    color:var(--muted);
+    font-size:10px;
+}
+.suggested-colors button {
+    width:28px;
+    height:28px;
+    padding:0;
+    border:1px solid #aaa2b7;
+    border-radius:5px;
+}
+.suggested-colors button:hover {
+    outline:2px solid var(--accent);
+    outline-offset:2px;
+}
+.suggested-colors button[aria-pressed=true] {
+    outline:2px solid var(--ink);
+    outline-offset:2px;
+}
+.garment-modifiers {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+    margin-top:8px;
+}
+.garment-modifier {
+    display:grid;
+    grid-template-rows:auto 30px;
+    font-size:10px;
+    gap:4px;
+    min-width:0;
+    margin:0;
+}
+.garment-modifier>span {
+    line-height:14px;
+}
+.garment-modifier select {
+    width:100%;
+    max-width:none;
+    min-width:0;
+    height:30px;
+    margin:0;
+    padding:5px 8px;
+    font-size:10px;
+}
+.garment-opacity {
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:6px;
+    margin-top:8px;
+    font-size:10px;
+}
+.garment-opacity input[type=range] {
+    flex:1;
+    min-width:90px;
+}
+.garment-opacity input[type=number] {
+    width:48px;
+}
 .clothing-field>details .color-row {
     font-size:10px;
 }
@@ -1114,14 +1226,6 @@ nav button {
 .garment-materials .color-row button {
     font-size:8px;
     padding:4px;
-}
-.extra-details {
-    border-top:1px solid var(--line);
-    margin-top:7px;
-    padding-top:3px;
-}
-.extra-details>summary {
-    font-size:10px;
 }
 .portrait-image img {
     object-position:center top;
@@ -1360,7 +1464,7 @@ header>button[aria-label="Select model family"]::after {
     align-content:start;
     column-gap:8px;
 }
-.choices[data-category=Clothing]>:not(.garment-card),.choices[data-category=Clothing]>.garment-card[open] {
+.choices[data-category=Clothing]>* {
     grid-column:1/-1;
 }
 @container (max-width:650px) {
@@ -1431,14 +1535,6 @@ header>button[aria-label="Select model family"]::after {
 }
 .clothing-field>details>.color-row input[type=color] {
     height:22px;
-}
-.clothing-field .extra-details {
-    margin-top:4px;
-    padding-top:0;
-}
-.garment-card>summary {
-    padding:7px;
-    line-height:14px;
 }
 .choices[data-category=Scene] .field {
     margin-top:7px;

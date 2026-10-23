@@ -17,10 +17,11 @@ class CharacterTests(unittest.TestCase):
         self.catalog = core.load_catalog()
         self.settings = core.defaults(self.catalog)
 
-    def test_three_starters_use_only_valid_options_and_round_trip_as_adults(self):
+    def test_seven_starters_use_only_valid_options_and_round_trip_as_adults(self):
+        self.catalog["allow_nsfw"] = False
         starters = core.starter_characters(self.catalog)
-        self.assertEqual(len(starters), 3)
-        self.assertEqual([row["settings"]["age"] for row in starters], [24, 52, 78])
+        self.assertEqual(len(starters), 7)
+        self.assertEqual([row["settings"]["age"] for row in starters], [24, 52, 78, 18, 29, 18, 28])
         self.assertEqual({key: starters[0]["settings"][key] for key in ("art_style", "background", "lighting", "composition")},
                          {"art_style": "fashion", "background": "mountains", "lighting": "neon", "composition": "dynamic"})
         for row in starters:
@@ -31,6 +32,10 @@ class CharacterTests(unittest.TestCase):
                 self.assertIn(f'aged {settings["age"]} years', prompt)
                 self.assertNotIn("uncovered", prompt)
                 self.assertNotIn("prompt", settings)
+                self.assertTrue({"upper", "lower"}.issubset(core.garment_coverage(settings, core.resolve_character(settings, self.catalog))))
+                for family in core.ADAPTERS:
+                    core.render_prompt({**settings, "model": family}, self.catalog)
+                    core.render_negative_prompt({**settings, "model": family}, self.catalog)
         self.assertIn("bright red silk qipao", core.render_prompt(starters[0]["settings"], self.catalog))
         self.assertIn("metallic gold piping", core.render_prompt(starters[0]["settings"], self.catalog))
 
@@ -118,7 +123,7 @@ class CharacterTests(unittest.TestCase):
                 elif field in {"upper_garment", "lower_garment"} and option["id"] == "none":
                     settings["wardrobe_mode"] = "dress"
                 with self.subTest(field=field, option=option["id"]):
-                    self.assertIsInstance(core.render_prompt(settings, self.catalog), str)
+                    self.assertIsInstance(core.render_prompt(settings, {**self.catalog, "allow_nsfw": True}), str)
 
     def test_missing_coverage_is_gated_in_both_outfit_modes(self):
         for changes in ({"upper_garment": "none"}, {"lower_garment": "none"}, {"wardrobe_mode": "dress", "dress": "none"}):
@@ -232,7 +237,7 @@ class CharacterTests(unittest.TestCase):
         self.assertTrue(core.render_prompt({**self.settings, "art_style": "anime"}, self.catalog).startswith("The image is an anime"))
 
     def test_breast_size_affects_only_female_prompt(self):
-        for size, phrase in (("small", "small bust fit"), ("medium", "medium bust fit"), ("full", "full bust fit")):
+        for size, phrase in (("small", "a small chest"), ("medium", "a medium-sized chest"), ("full", "a large chest")):
             settings = {**self.settings, "bust_size": size, "age": 30}
             self.assertIn(phrase, core.render_prompt(settings, self.catalog))
             self.assertNotIn("breasts", core.render_prompt({**settings, "gender": "man"}, self.catalog))
@@ -314,7 +319,7 @@ class CharacterTests(unittest.TestCase):
                     'colors': {'dress': '#ea5dc4', 'hair_color': '#ff0000'}}
         prompt = core.render_prompt(core.decode_character(core.encode_character(settings)), self.catalog)
         self.assertIn('bright pink satin evening dress', prompt)
-        self.assertIn('dress bodice has a small bust fit', prompt)
+        self.assertIn('a small chest', prompt)
         self.assertIn('opaque fabric fully covering the chest', prompt)
         self.assertNotIn('breasts', prompt)
         self.assertNotIn('shoes', prompt)
@@ -389,6 +394,7 @@ class CharacterTests(unittest.TestCase):
             self.assertEqual(self.settings[name], field['default'])
 
     def test_all_garment_material_texture_and_detail_choices_render(self):
+        self.catalog['allow_nsfw'] = True
         for field in core.CLOTHING_FIELDS:
             for option in {**self.catalog['fields'], **self.catalog['extra_fields']}[field]['options']:
                 if not option['phrase']:

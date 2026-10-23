@@ -11,10 +11,10 @@ function memoryStorage() {
     return { getItem: (key) => values.get(key) ?? null, setItem: (key, value) => values.set(key, value) };
 }
 
-test('library starts with three adults, saves edits and names, and never resurrects deleted characters', () => {
+test('library starts with bundled adults, saves edits and names, and never resurrects deleted characters', () => {
     const storage = memoryStorage();
     const library = new CharacterLibrary(storage, starters);
-    assert.equal(library.characters.length, 3);
+    assert.equal(library.characters.length, starters.length);
     assert.equal(library.characters[0].settings.age, 24);
     const original = structuredClone(starters);
     let notifications = 0;
@@ -56,6 +56,19 @@ test('storage errors do not discard an existing library or partially mutate a ch
     assert.throws(() => library.rename('scarlet', 'Lost name'), /Quota/);
     assert.deepEqual(library.characters, before);
     assert.throws(() => new CharacterLibrary({ getItem: () => '{broken' }, starters), SyntaxError);
+});
+
+test('thumbnail restriction follows its generation and is preserved when the character becomes SFW', () => {
+    const storage = memoryStorage();
+    const library = new CharacterLibrary(storage, starters);
+    const row = library.characters[0];
+    library.setImage(row.id, cover, 100, true);
+    library.update(row.id, { ...row.settings, dress: 'day_dress' }, catalog);
+    assert.equal(new CharacterLibrary(storage, starters).characters[0].image_restricted, true);
+    library.setImage(row.id, 'data:image/webp;base64,BBBB', 200, false);
+    assert.equal(library.characters[0].image_restricted, false);
+    library.setImage(row.id, cover, 150, true);
+    assert.equal(library.characters[0].image_restricted, false);
 });
 
 test('character matching normalizes optional defaults and object order', () => {
@@ -166,4 +179,38 @@ test('aborting a pending thumbnail releases its image source, canvas and listene
         await assert.rejects(imageThumbnail({}, {}, 0, signal), { name: 'AbortError' });
         assert.equal(source, null);
     } finally { globalThis.Image = originalImage; globalThis.document = originalDocument; }
+});
+
+
+test('starter migration appends once, preserves edits and remembers deletions', () => {
+    const storage = memoryStorage();
+    const original = { ...structuredClone(starters[0]), name: 'My Scarlet', image: cover };
+    const custom = { id: 'custom', name: 'Personal', settings: { ...original.settings, age: 40 } };
+    storage.setItem('character-creator.characters.v1', JSON.stringify({ version: 1, characters: [original, custom] }));
+    const library = new CharacterLibrary(storage, starters);
+    assert.deepEqual(library.characters.slice(0, 2), [original, custom]);
+    assert.deepEqual(library.characters.slice(2).map((row) => row.id), starters.slice(3).map((row) => row.id));
+    library.remove(starters[3].id);
+    assert.deepEqual(new CharacterLibrary(storage, starters).characters, library.characters);
+    assert.ok(!library.characters.some((row) => row.id === 'celeste'));
+});
+
+test('migration quota failure preserves the saved library', () => {
+    const saved = JSON.stringify({ version: 1, characters: [starters[0]] });
+    const library = new CharacterLibrary({ getItem: () => saved, setItem: () => { throw new Error('Quota'); } }, starters);
+    assert.deepEqual(library.characters, [starters[0]]);
+    assert.match(library.migrationError, /Quota/);
+});
+
+
+test('starter migration keeps colliding saved IDs and preserves future migration markers', () => {
+    const storage = memoryStorage();
+    const custom = { ...structuredClone(starters[3]), name: 'My edited character', settings: { ...starters[3].settings, age: 35 } };
+    storage.setItem('character-creator.characters.v1', JSON.stringify({ version: 1, characters: [custom], starter_ids: ['scarlet', 'celeste', 'silas', 'future_starter'] }));
+    const library = new CharacterLibrary(storage, starters);
+    assert.deepEqual(library.characters[0], custom);
+    assert.equal(library.characters.filter((row) => row.id === custom.id).length, 1);
+    assert.ok(library.starterIds.includes('future_starter'));
+    library.remove(custom.id);
+    assert.ok(!new CharacterLibrary(storage, starters).characters.some((row) => row.id === custom.id));
 });

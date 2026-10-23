@@ -1,7 +1,7 @@
 [
   {
     "id": "scarlet",
-    "name": "Scarlet · Red Qipao",
+    "name": "Scarlet Â· Red Qipao",
     "settings": {
       "model": "qwen_image_2_1",
       "template": "character",
@@ -56,7 +56,7 @@
   },
   {
     "id": "celeste",
-    "name": "Celeste · Timeless Elegance",
+    "name": "Celeste Â· Timeless Elegance",
     "settings": {
       "model": "qwen_image_2_1",
       "template": "character",
@@ -107,7 +107,7 @@
   },
   {
     "id": "silas",
-    "name": "Silas · The Weathered Sage",
+    "name": "Silas Â· The Weathered Sage",
     "settings": {
       "model": "qwen_image_2_1",
       "template": "character",
@@ -155,6 +155,270 @@
           }
         }
       }
+    }
+  },
+  {
+    "id": "maya",
+    "name": "Maya · Colorblock Streetwear",
+    "settings": {
+      "model": "qwen_image_2_1",
+      "template": "character",
+      "gender": "woman",
+      "life_stage": "twenties",
+      "skin_tone": "brown",
+      "body_shape": "petite",
+      "muscle_tone": "soft",
+      "bust_size": "unspecified",
+      "hair_color": "black",
+      "hair_style": "twin_braids",
+      "expression": "smile",
+      "wardrobe_mode": "separates",
+      "dress": "qipao",
+      "upper_garment": "tshirt",
+      "lower_garment": "wide_leg",
+      "outerwear": "varsity",
+      "shoes": "high_tops",
+      "headwear": "none",
+      "background": "city",
+      "scene_detail": "soft",
+      "art_style": "fashion",
+      "pose": "hands_pockets",
+      "framing": "full_body",
+      "lighting": "golden",
+      "composition": "dynamic",
+      "age": 18,
+      "hair_finish": "tidy",
+      "hair_volume": "voluminous",
+      "eye_color": "brown",
+      "eyebrows": "natural",
+      "lip_makeup": "none",
+      "makeup": "none",
+      "eyeliner": "none",
+      "earrings": "hoops",
+      "colors": {
+        "upper_garment": "#fff4df",
+        "lower_garment": "#153e62",
+        "outerwear": "#218c86",
+        "neckwear": "#ee9b36",
+        "shoes": "#fff4df"
+      },
+      "clothing": {
+        "outerwear": {
+          "fabric": "wool",
+          "fit": "relaxed",
+          "closure": "open",
+          "sleeve_length": "long",
+          "details": {
+            "piping": "#fff4df",
+            "applique": "#ee9b36"
+          }
+        },
+        "lower_garment": {
+          "fabric": "denim",
+          "fit": "relaxed"
+        }
+      },
+      "neckwear": "neckerchief",
+      "ethnicity": "south_asian"
+    }
+  },
+  {
+    "id": "raven",
+    "name": "Raven · Velvet Nocturne",
+    "settings": {
+      "model": "qwen_image_2_1",
+      "template": "character",
+      "gender": "woman",
+      "life_stage": "twenties",
+      "skin_tone": "fair",
+      "body_shape": "pear",
+      "muscle_tone": "soft",
+      "bust_size": "unspecified",
+      "hair_color": "black",
+      "hair_style": "french_bob",
+      "expression": "smile",
+      "wardrobe_mode": "dress",
+      "dress": "goth_ensemble",
+      "upper_garment": "tshirt",
+      "lower_garment": "jeans",
+      "outerwear": "none",
+      "shoes": "combat",
+      "headwear": "none",
+      "background": "fantasy",
+      "scene_detail": "soft",
+      "art_style": "fashion",
+      "pose": "runway_turn",
+      "framing": "full_body",
+      "lighting": "rim",
+      "composition": "dramatic",
+      "age": 29,
+      "hair_finish": "sleek",
+      "hair_volume": "none",
+      "eye_color": "gray",
+      "eyebrows": "natural",
+      "lip_makeup": "matte",
+      "makeup": "soft_glam",
+      "eyeliner": "fine",
+      "earrings": "drops",
+      "colors": {
+        "dress": "#32213e",
+        "neckwear": "#17181f",
+        "earrings": "#c8cbd4",
+        "lip_makeup": "#923b55"
+      },
+      "clothing": {
+        "dress": {
+          "fabric": "velvet",
+          "fit": "tailored",
+          "closure": "hooked",
+          "hem_length": "ankle",
+          "sleeve_length": "long",
+          "details": {
+            "gothic_motif": "#c8cbd4",
+            "piping": "#877098",
+            "buttons": "#c8cbd4"
+          }
+        }
+      },
+      "neckwear": "velvet_choker",
+      "ethnicity": "east_asian",
+      "necklace": "gothic_pendant"
+    }
+  },
+  {
+    "id": "leo",
+    "name": "Leo · Campus Color",
+    "settings": {
+      "model": "qwen_image_2_1",
+      "template": "character",
+      "gender": "man",
+      "life_stage": "twenties",
+      "skin_tone": "dark",
+      "body_shape": "lean",
+      "muscle_tone": "natural",
+      "bust_size": "unspecified",
+      "hair_color": "black",
+      "hair_style": "short_curls",
+      "expression": "smile",
+      "wardrobe_mode": "separates",
+      "dress": "qipao",
+      "upper_garment": "rugby_shirt",
+      "lower_garment": "chinos",
+      "outerwear": "none",
+      "shoes": "sneakers",
+      "headwear": "none",
+      "background": "cafe",
+      "scene_detail": "soft",
+      "art_style": "fashion",
+      "pose": "leaning",
+      "framing": "full_body",
+      "lighting": "daylight",
+      "composition": "editorial",
+      "age": 18,
+      "hair_finish": "tidy",
+      "hair_volume": "airy",
+      "eye_color": "brown",
+      "eyebrows": "natural",
+      "lip_makeup": "none",
+      "makeup": "none",
+      "eyeliner": "none",
+      "earrings": "none",
+      "colors": {
+        "upper_garment": "#254d84",
+        "lower_garment": "#d3b486",
+        "shoes": "#fff4df",
+        "eyewear": "#b98b44"
+      },
+      "clothing": {
+        "upper_garment": {
+          "fabric": "cotton",
+          "fit": "relaxed",
+          "sleeve_length": "long",
+          "details": {
+            "stripes": "#fff4df"
+          }
+        },
+        "lower_garment": {
+          "fabric": "cotton",
+          "fit": "tailored"
+        }
+      },
+      "neckwear": "none",
+      "ethnicity": "afro_caribbean",
+      "eyewear": "round"
+    }
+  },
+  {
+    "id": "adrian",
+    "name": "Adrian · Modern Tailoring",
+    "settings": {
+      "model": "qwen_image_2_1",
+      "template": "character",
+      "gender": "man",
+      "life_stage": "twenties",
+      "skin_tone": "olive",
+      "body_shape": "athletic",
+      "muscle_tone": "defined",
+      "bust_size": "unspecified",
+      "hair_color": "brown",
+      "hair_style": "side_part",
+      "expression": "smile",
+      "wardrobe_mode": "separates",
+      "dress": "qipao",
+      "upper_garment": "shirt",
+      "lower_garment": "trousers",
+      "outerwear": "suit_jacket",
+      "shoes": "loafers",
+      "headwear": "none",
+      "background": "rooftop",
+      "scene_detail": "soft",
+      "art_style": "photo",
+      "pose": "contrapposto",
+      "framing": "full_body",
+      "lighting": "golden",
+      "composition": "editorial",
+      "age": 28,
+      "hair_finish": "sleek",
+      "hair_volume": "none",
+      "eye_color": "hazel",
+      "eyebrows": "natural",
+      "lip_makeup": "none",
+      "makeup": "none",
+      "eyeliner": "none",
+      "earrings": "none",
+      "colors": {
+        "upper_garment": "#fff4df",
+        "lower_garment": "#54746a",
+        "outerwear": "#54746a",
+        "neckwear": "#ab683e",
+        "shoes": "#604332"
+      },
+      "clothing": {
+        "upper_garment": {
+          "fabric": "linen",
+          "closure": "buttoned",
+          "fit": "tailored",
+          "sleeve_length": "long"
+        },
+        "outerwear": {
+          "fabric": "linen",
+          "fit": "tailored",
+          "closure": "open",
+          "details": {
+            "buttons": "#b98b44"
+          }
+        },
+        "lower_garment": {
+          "fabric": "linen",
+          "fit": "tailored"
+        },
+        "neckwear": {
+          "fabric": "silk",
+          "neck_style": "knotted"
+        }
+      },
+      "neckwear": "silk_scarf",
+      "ethnicity": "persian"
     }
   }
 ]

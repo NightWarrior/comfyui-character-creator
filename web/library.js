@@ -1,4 +1,5 @@
 const STORAGE_KEY = 'character-creator.characters.v1';
+const ORIGINAL_STARTERS = ['scarlet', 'celeste', 'silas'];
 
 function sorted(value) {
     if (Array.isArray(value)) return value.map(sorted);
@@ -29,6 +30,21 @@ export class CharacterLibrary {
             throw new Error('The saved character library is invalid. Export or back up browser storage before resetting it.');
         }
         this.characters = document.characters;
+        this.starterIds = Array.isArray(document.starter_ids) ? document.starter_ids : saved == null
+            ? starters.map((row) => row.id) : ORIGINAL_STARTERS;
+        const additions = starters.filter((row) => !this.starterIds.includes(row.id)
+            && !this.characters.some((existing) => existing.id === row.id));
+        const starterIds = [...new Set([...this.starterIds, ...starters.map((row) => row.id)])];
+        if (saved != null && (additions.length || starterIds.length !== this.starterIds.length)) {
+            try {
+                const characters = [...this.characters, ...structuredClone(additions)];
+                storage.setItem(STORAGE_KEY, JSON.stringify({ version: 1, characters, starter_ids: starterIds }));
+                this.characters = characters;
+                this.starterIds = starterIds;
+            } catch (error) {
+                this.migrationError = `Could not add starter characters: ${error.message}`;
+            }
+        }
     }
 
     subscribe(callback) {
@@ -37,7 +53,7 @@ export class CharacterLibrary {
     }
 
     commit(characters) {
-        this.storage?.setItem(STORAGE_KEY, JSON.stringify({ version: 1, characters }));
+        this.storage?.setItem(STORAGE_KEY, JSON.stringify({ version: 1, characters, starter_ids: this.starterIds }));
         this.characters = characters;
         for (const callback of this.listeners) callback();
     }
@@ -63,11 +79,11 @@ export class CharacterLibrary {
         this.commit(this.characters.map((row) => row.id === id ? { ...row, settings: structuredClone(settings) } : row));
     }
 
-    setImage(id, image, completedAt) {
+    setImage(id, image, completedAt, restricted = false) {
         if (!/^data:image\/webp;base64,[A-Za-z0-9+/=]+$/.test(image) || image.length > 200000) throw new Error('Invalid character thumbnail.');
         const row = this.characters.find((row) => row.id === id);
         if (!row || (row.image_time ?? 0) >= completedAt) return;
-        this.commit(this.characters.map((row) => row.id === id ? { ...row, image, image_time: completedAt } : row));
+        this.commit(this.characters.map((row) => row.id === id ? { ...row, image, image_time: completedAt, image_restricted: restricted } : row));
     }
 }
 
@@ -91,13 +107,9 @@ export function generatedCharacters(history, catalog) {
         const image = imageNodes.map(([, output]) => output.images.filter((image) => image.type === 'output' || image.type === 'temp').at(-1)).find(Boolean);
         if (!image) continue;
         const characterId = workflowNodes.find((node) => String(node.id) === id)?.properties?.character_creator_character_id;
-        if (characterId) {
-            result.push({ characterId, image });
-            continue;
-        }
         const inputs = node.inputs;
         if (typeof inputs.character_code === 'string' && inputs.character_code.trim()) {
-            result.push({ payload: { code: inputs.character_code }, image });
+            result.push({ ...(characterId ? { characterId } : {}), payload: { code: inputs.character_code }, image });
             continue;
         }
         const settings = { model: 'qwen_image_2_1', template: 'character' };
@@ -108,7 +120,8 @@ export function generatedCharacters(history, catalog) {
             if (name === 'character_code') continue;
             settings[name] = name === 'colors' || name === 'clothing' ? JSON.parse(value) : value;
         }
-        if (!connected) result.push({ payload: { settings }, image });
+        if (!connected) result.push({ ...(characterId ? { characterId } : {}), payload: { settings }, image });
+        else if (characterId) result.push({ characterId, image });
     }
     return result;
 }

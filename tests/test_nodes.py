@@ -5,7 +5,7 @@ import sys
 import types
 import unittest
 from pathlib import Path
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 
 ROOT = Path(__file__).resolve().parents[1]
 COMFY_ROOT = ROOT.parents[1]
@@ -32,6 +32,28 @@ class NodeTests(unittest.TestCase):
     def setUp(self):
         self.settings = core.defaults(core.load_catalog())
         comfy_nodes.ControlNetApplyAdvanced.reset_mock()
+
+    def test_sfw_schema_and_execution_block_lingerie_from_widgets_and_shared_codes(self):
+        catalog = json.loads((ROOT / 'catalog.json').read_text(encoding='utf-8'))
+        catalog['allow_nsfw'] = False
+        defaults = core.defaults(catalog)
+        with patch.object(addon_nodes, 'load_catalog', return_value=catalog):
+            schema = addon_nodes.CharacterCreator.define_schema()
+            schema.finalize()
+            info = schema.get_v1_info(addon_nodes.CharacterCreator)
+            inputs = {**info.input['required'], **info.input['optional']}
+            for field in ['dress', 'upper_garment', 'lower_garment']:
+                for option in catalog['fields'][field]['options']:
+                    if not option.get('nsfw'):
+                        continue
+                    self.assertNotIn(option['id'], inputs[field][0])
+                    for model in core.ADAPTERS:
+                        settings = {**defaults, 'model': model, field: option['id']}
+                        with self.subTest(model=model, field=field, option=option['id']):
+                            with self.assertRaisesRegex(ValueError, 'allow_nsfw'):
+                                addon_nodes.CharacterCreator.execute(**settings, controlnets={'controlnets': 'disabled'})
+                            with self.assertRaisesRegex(ValueError, 'allow_nsfw'):
+                                addon_nodes.CharacterCreator.execute(**defaults, character_code=core.encode_character(settings), controlnets={'controlnets': 'disabled'})
 
     def test_all_node_schemas_validate_against_installed_comfy_api(self):
         for node in (addon_nodes.CharacterCreator, addon_nodes.CharacterControlNetEntry, addon_nodes.ApplyCharacterControlNets, addon_nodes.CharacterQwenControlEntry, addon_nodes.ApplyCharacterModelControls):

@@ -97,6 +97,7 @@
         "none",
         "none",
         "none",
+        "none",
         "none"
       ],
       "widgets_values_named": {
@@ -146,7 +147,8 @@
         "moles": "none",
         "freckles": "none",
         "eyewear": "none",
-        "gloves": "none"
+        "gloves": "none",
+        "neckwear": "none"
       }
     },
     {

@@ -5,6 +5,8 @@ import test from 'node:test';
 import { getLibrary } from '../web/library.js';
 
 class Element {
+    querySelector(selector) { return find(this, (item) => item !== this && (selector.startsWith('.') ? item.className === selector.slice(1) : item.tag === selector)); }
+    get tagName() { return this.tag.toUpperCase(); }
     constructor(tag) {
         this.tag = tag;
         this.children = [];
@@ -20,10 +22,10 @@ class Element {
     append(...children) { this.children.push(...children); }
     scrollTo(options) { this.scrollOptions = options; }
     getBoundingClientRect() { return { top: 0 }; }
-    get scrollTop() { return 0; }
+    get scrollTop() { return this.scrolledTo ?? 0; }
     set scrollTop(value) { this.scrolledTo = value; }
     get clientHeight() { return 150; }
-    replaceChildren(...children) { this.children = children; }
+    replaceChildren(...children) { if (!children.length) this.scrollTop = 0; this.children = children; }
     replaceChild(replacement, original) { this.children[this.children.indexOf(original)] = replacement; }
     setAttribute(name, value) { this.attributes[name] = value; }
     attachShadow() { this.shadow = new Element('shadow'); return this.shadow; }
@@ -55,6 +57,9 @@ test('panel mounts on the node, edits native widgets, restores settings and disp
     const originalAnimationFrame = globalThis.requestAnimationFrame;
     globalThis.requestAnimationFrame = (callback) => queueMicrotask(callback);
     const originalImage = globalThis.Image;
+    const originalEyeDropper = globalThis.EyeDropper;
+    let dropperSignal;
+    globalThis.EyeDropper = class { async open(options) { dropperSignal = options.signal; return { sRGBHex: '#123456' }; } };
     globalThis.Image = class { naturalWidth = 1024; naturalHeight = 1024; async decode() {} };
     const originalFetch = globalThis.fetch;
     globalThis.fetch = async () => ({ ok: true, json: async () => structuredClone(catalog.characters) });
@@ -74,7 +79,7 @@ test('panel mounts on the node, edits native widgets, restores settings and disp
             const data = path.endsWith('/catalog') ? { ...catalog, allow_nsfw: false,
                 models: { qwen_image_2_1: 'Qwen Image 2.1', sdxl: 'SDXL', sd: 'Stable Diffusion 1.5' },
                 color_fields: Object.keys({ ...catalog.fields, ...catalog.extra_fields }).filter((key) => ({ ...catalog.fields, ...catalog.extra_fields })[key].options.some((option) => option.color_phrase)),
-                clothing_fields: ['dress', 'upper_garment', 'lower_garment', 'outerwear', 'shoes', 'headwear', 'gloves'] } : {
+                clothing_fields: ['dress', 'upper_garment', 'lower_garment', 'outerwear', 'shoes', 'headwear', 'gloves', 'neckwear'] } : {
                 settings: payload.settings ?? { ...settings, hair_style: 'bob' },
                 prompt: resolvedPrompt, code: 'CC1.test',
             };
@@ -143,7 +148,7 @@ test('panel mounts on the node, edits native widgets, restores settings and disp
         assert.equal(node.panelWidget.options.getMinHeight(), 540);
         assert.deepEqual(node.panelWidget.computeLayoutSize(), { minWidth: 550, minHeight: 540 });
         assert.equal(node.resizable, true);
-        assert.equal(node.size[1], 800);
+        assert.equal(node.size[1], 960);
         assert.equal(node.panelWidget.width, node.size[0]);
         node.panelWidget.width = 400;
         node.setSize([900, 1100]);
@@ -257,14 +262,70 @@ test('panel mounts on the node, edits native widgets, restores settings and disp
         find(root, (item) => item.tag === 'button' && item.textContent === 'Identity').onclick();
         find(root, (item) => item.attributes['aria-label'] === 'Gender: Female').onclick();
         find(root, (item) => item.tag === 'button' && item.textContent === 'Clothing').onclick();
+        const clothingChoices = find(root, (item) => item.className === 'choices');
+        const upperField = find(clothingChoices, (item) => item.dataset.field === 'upper_garment');
+        const upperRows = upperField.children.filter((item) => item.className === 'tiles');
+        assert.equal(upperRows.length, 1);
+        const rowItems = upperRows[0].children;
+        assert.deepEqual(rowItems.filter((item) => item.className === 'garment-divider').map((item) => item.textContent),
+            ['Start', 'Everyday tops', 'Shirts & blouses', 'Knitwear', 'Sport & work']);
+        for (const [index, item] of rowItems.entries()) {
+            if (item.className === 'garment-divider') {
+                assert.equal(item.attributes['aria-orientation'], 'vertical');
+                assert.equal(rowItems[index + 1].tag, 'button');
+            }
+        }
+        assert.deepEqual(clothingChoices.children.filter((item) => item.dataset.field).map((item) => item.dataset.field),
+            ['wardrobe_mode', 'upper_garment', 'lower_garment', 'outerwear', 'headwear', 'neckwear', 'gloves', 'shoes']);
+        assert.equal(find(clothingChoices, (item) => item.dataset.field === 'wardrobe_mode').children[0].textContent, 'Outfit setup');
+        assert.ok(clothingChoices.children.filter((item) => item.dataset.field).every((item) => item.className.includes('clothing-section')));
+        const beforeNeckwear = node.widgets.find((widget) => widget.name === 'clothing').value;
+        find(root, (item) => item.attributes['aria-label'] === 'Neckwear: Leather choker').onclick();
+        assert.equal(node.widgets.find((widget) => widget.name === 'neckwear').value, 'choker');
+        const neckWidth = find(root, (item) => item.attributes['aria-label'] === 'Neckwear neck_width');
+        assert.ok(neckWidth);
+        clothingChoices.scrollTop = 420;
+        const upperTiles = find(clothingChoices, (item) => item.dataset.field === 'upper_garment').querySelector('.tiles');
+        upperTiles.scrollLeft = 170;
+        const garmentDetails = find(clothingChoices, (item) => item.dataset.field === 'upper_garment').querySelector('details');
+        garmentDetails.open = true;
+        neckWidth.value = 'wide'; neckWidth.onchange();
+        assert.equal(clothingChoices.scrollTop, 420);
+        assert.equal(find(clothingChoices, (item) => item.dataset.field === 'upper_garment').querySelector('details').open, true);
+        assert.equal(find(clothingChoices, (item) => item.dataset.field === 'upper_garment').querySelector('.tiles').scrollLeft, 170);
+        assert.equal(JSON.parse(node.widgets.find((widget) => widget.name === 'clothing').value).neckwear.neck_width, 'wide');
+        const modifiers = find(root, (item) => item.className === 'garment-modifiers');
+        assert.ok(modifiers.children.every((row) => row.className === 'garment-modifier' && row.children[0].tag === 'span' && row.children[1].tag === 'select'));
+        const details = find(root, (item) => item.tag === 'details' && item.children[0]?.textContent === 'Garment details & accent colors');
+        assert.ok(!find(details, (item) => item !== details && item.tag === 'details'));
+        assert.ok(details.children.some((item) => item.tag === 'label'));
+        find(root, (item) => item.attributes['aria-label'] === 'Neckwear: None').onclick();
+        node.widgets.find((widget) => widget.name === 'clothing').value = beforeNeckwear;
+        node.onConnectionsChange(); await setImmediate();
         find(root, (item) => item.attributes['aria-label'] === 'Gloves: Leather gloves').onclick();
         assert.equal(node.widgets.find((widget) => widget.name === 'gloves').value, 'leather');
         assert.ok(find(root, (item) => item.attributes['aria-label'] === 'Gloves custom color'));
         const none = find(root, (item) => item.attributes['aria-label'] === 'Upper garment: None');
         assert.equal(none.disabled, true);
+        const upperWidget = node.widgets.find((widget) => widget.name === 'upper_garment');
+        const previousUpper = upperWidget.value;
+        upperWidget.value = 'lace_bralette';
+        node.onConnectionsChange(); await setImmediate();
+        assert.ok(find(root, (item) => item.textContent === 'Restricted selection'));
+        assert.ok(!find(find(root, (item) => item.className === 'preview'), (item) => item.tag === 'img'));
+        upperWidget.value = previousUpper;
+        node.onConnectionsChange(); await setImmediate();
+        for (const name of ['upper_garment', 'lower_garment']) {
+            for (const option of catalog.fields[name].options.filter((option) => option.nsfw)) {
+                assert.ok(!find(root, (item) => item.attributes['aria-label'] === `${catalog.fields[name].label}: ${option.label}`));
+            }
+        }
         find(root, (item) => item.attributes['aria-label'] === 'Outfit construction: Dress / one piece').onclick();
         assert.equal(node.widgets.find((widget) => widget.name === 'wardrobe_mode').value, 'dress');
         assert.ok(find(root, (item) => item.attributes['aria-label'] === 'Dress / one piece: Day dress'));
+        for (const option of catalog.fields.dress.options.filter((option) => option.nsfw)) {
+            assert.ok(!find(root, (item) => item.attributes['aria-label'] === `Dress / one piece: ${option.label}`));
+        }
         assert.ok(!find(root, (item) => item.attributes['aria-label'] === 'Upper garment: T-shirt'));
         const picker = find(root, (item) => item.attributes['aria-label'] === 'Dress / one piece custom color');
         assert.equal(picker.type, 'color');
@@ -285,6 +346,7 @@ test('panel mounts on the node, edits native widgets, restores settings and disp
             dress: { fabric: 'velvet', texture: 'jacquard', details: { embroidery: '#ff0000' } },
         });
         // The custom picker updates the same native color widget, without a browser color dialog.
+        await setImmediate();
         const popupPicker = find(root, (item) => item.attributes['aria-label'] === 'Dress / one piece custom color');
         popupPicker.getBoundingClientRect = () => ({ left: 900, top: 650, right: 930, bottom: 680, width: 30, height: 30 });
         const colorDialog = find(root, (item) => item.attributes['aria-label'] === 'Choose color');
@@ -293,6 +355,27 @@ test('panel mounts on the node, edits native widgets, restores settings and disp
         assert.equal(colorDialog.open, true);
         assert.equal(colorDialog.style.left, '722px');
         assert.equal(colorDialog.style.top, '326px');
+        const suggestions = find(colorDialog, (item) => item.attributes['aria-label'] === 'Suggested colors');
+        assert.equal(suggestions.children.filter((item) => item.tag === 'button').length, 6);
+        const suggested = suggestions.children.find((item) => item.tag === 'button');
+        suggested.onclick();
+        assert.equal(JSON.parse(node.widgets.find((widget) => widget.name === 'colors').value).dress, suggested.dataset.color);
+        assert.equal(find(colorDialog, (item) => item.attributes['aria-label'] === 'Hex color').value, suggested.dataset.color);
+        assert.equal(suggested.attributes['aria-pressed'], 'true');
+        const dropper = find(colorDialog, (item) => item.attributes['aria-label'] === 'Pick from screen');
+        assert.equal(dropper.disabled, false);
+        assert.equal(dropper.textContent, '');
+        assert.match(dropper.innerHTML, /<svg/);
+        const selection = dropper.onclick();
+        assert.equal(colorDialog.classes.has('sampling'), true);
+        await selection;
+        assert.equal(dropperSignal.aborted, false);
+        assert.equal(colorDialog.classes.has('sampling'), false);
+        assert.equal(JSON.parse(node.widgets.find((widget) => widget.name === 'colors').value).dress, '#123456', find(root, (item) => item.attributes.role === 'status')?.textContent);
+        globalThis.EyeDropper = class { async open() { throw Object.assign(new Error('cancelled'), { name: 'AbortError' }); } };
+        await dropper.onclick();
+        assert.equal(colorDialog.classes.has('sampling'), false);
+        assert.equal(JSON.parse(node.widgets.find((widget) => widget.name === 'colors').value).dress, '#123456');
         const hexColor = find(colorDialog, (item) => item.attributes['aria-label'] === 'Hex color');
         hexColor.value = '#22aa66'; hexColor.oninput();
         assert.equal(find(colorDialog, (item) => item.textContent === 'Reset').disabled, false);
@@ -301,6 +384,17 @@ test('panel mounts on the node, edits native widgets, restores settings and disp
         assert.equal(JSON.parse(node.widgets.find((widget) => widget.name === 'colors').value).dress, '#22aa66');
         find(colorDialog, (item) => item.textContent === 'Done').onclick();
         assert.equal(colorDialog.open, false);
+        const garmentFabric = find(root, (item) => item.attributes['aria-label'] === 'Dress / one piece fabric');
+        garmentFabric.value = 'plastic'; garmentFabric.onchange();
+        const opacity = find(root, (item) => item.attributes['aria-label'] === 'Dress / one piece opacity');
+        assert.equal(opacity.value, '100');
+        assert.equal(opacity.disabled, true);
+        const hem = find(root, (item) => item.attributes['aria-label'] === 'Dress / one piece hem_length');
+        assert.ok(hem.children.some((item) => item.value === 'knee'));
+        assert.ok(!hem.children.some((item) => item.value === 'mini'));
+        hem.value = 'midi'; hem.onchange();
+        assert.equal(JSON.parse(node.widgets.find((widget) => widget.name === 'clothing').value).dress.hem_length, 'midi');
+        assert.ok(!find(root, (item) => item.className === 'garment-card'));
         find(root, (item) => item.tag === 'button' && item.textContent === 'ControlNet').onclick();
         node.inputs = [
             { name: 'controlnets.entries.entry_0', link: 42 },
@@ -488,7 +582,7 @@ test('panel mounts on the node, edits native widgets, restores settings and disp
         assert.equal(libraryDialog.open, false);
         await find(root, (item) => item.tag === 'button' && item.textContent === 'Characters').onclick();
         assert.equal(libraryDialog.open, true);
-        assert.equal(grid.children.length, 4);
+        assert.equal(grid.children.length, catalog.characters.length + 1);
         assert.equal(grid.children.at(-1).attributes['aria-label'], 'Create new character');
         await grid.children[0].onclick();
         getLibrary(catalog).setImage('scarlet', 'data:image/webp;base64,AAAA', 100);
@@ -496,6 +590,15 @@ test('panel mounts on the node, edits native widgets, restores settings and disp
         getLibrary(catalog).setImage('scarlet', 'data:image/webp;base64,BBBB', 200);
         assert.equal(find(root, (item) => item.className === 'preview').children[0].children[0].src, 'data:image/webp;base64,BBBB');
         assert.equal(find(grid.children[0], (item) => item.tag === 'img').src, 'data:image/webp;base64,BBBB');
+        const restrictedRow = getLibrary(catalog).add({ ...catalog.characters[0].settings, dress: 'lingerie_bodysuit' }, 'Restricted test');
+        getLibrary(catalog).setImage(restrictedRow.id, 'data:image/webp;base64,CCCC', 201, true);
+        const restrictedCard = find(grid, (item) => item.attributes['aria-label'] === 'Load character: Restricted test');
+        assert.equal(restrictedCard.disabled, true);
+        assert.ok(!find(restrictedCard, (item) => item.tag === 'img'));
+        getLibrary(catalog).remove(restrictedRow.id);
+        getLibrary(catalog).setImage('scarlet', 'data:image/webp;base64,CCCC', 201, true);
+        assert.notEqual(find(grid.children[0], (item) => item.tag === 'img')?.src, 'data:image/webp;base64,CCCC');
+        assert.notEqual(find(root, (item) => item.className === 'preview').children[0].children[0]?.src, 'data:image/webp;base64,CCCC');
         recentHistory = { completed: {
             prompt: [0, 'completed', {
                 1: { class_type: 'CharacterCreator', inputs: {} },
@@ -519,10 +622,10 @@ test('panel mounts on the node, edits native widgets, restores settings and disp
         find(libraryDialog, (item) => item.tag === 'button' && item.textContent === 'Rename').onclick();
         assert.equal(grid.children[0].attributes['aria-label'], 'Load character: Ruby');
         await grid.children.at(-1).onclick();
-        assert.equal(grid.children.length, 5);
+        assert.equal(grid.children.length, catalog.characters.length + 2);
         assert.equal(name.value, 'New character');
         find(libraryDialog, (item) => item.tag === 'button' && item.textContent === 'Delete').onclick();
-        assert.equal(grid.children.length, 4);
+        assert.equal(grid.children.length, catalog.characters.length + 1);
         assert.equal(node.properties.character_creator_character_id, undefined);
         find(libraryDialog, (item) => item.tag === 'button' && item.textContent === 'Close').onclick();
         assert.equal(libraryDialog.open, false);
@@ -546,7 +649,7 @@ test('panel mounts on the node, edits native widgets, restores settings and disp
         legacy.onConfigure();
         legacy.onNodeCreated();
         await setImmediate();
-        assert.deepEqual(legacy.size, [960, 800]);
+        assert.deepEqual(legacy.size, [960, 960]);
         assert.equal(legacy.properties.character_creator_layout_version, 1);
         legacy.setSize([800, 1000]);
         legacy.onConfigure();
@@ -556,7 +659,7 @@ test('panel mounts on the node, edits native widgets, restores settings and disp
         fresh.size = [690, 1700];
         fresh.onNodeCreated();
         await setImmediate();
-        assert.deepEqual(fresh.size, [960, 800]);
+        assert.deepEqual(fresh.size, [960, 960]);
         assert.equal(fresh.widgets.find((widget) => widget.name === 'age').value, 24);
         assert.equal(fresh.widgets.find((widget) => widget.name === 'dress').value, 'qipao');
         assert.equal(JSON.parse(fresh.widgets.find((widget) => widget.name === 'colors').value).dress, '#fa0000');
@@ -622,6 +725,7 @@ test('panel mounts on the node, edits native widgets, restores settings and disp
         else delete globalThis.cancelAnimationFrame;
         globalThis.__characterTestApi.fetchApi = fetchApi;
         node.onRemoved();
+        assert.equal(dropperSignal.aborted, true);
         const previousRequests = requests;
         await new Promise((resolve) => setTimeout(resolve, 210));
         assert.equal(requests, previousRequests);
@@ -631,6 +735,8 @@ test('panel mounts on the node, edits native widgets, restores settings and disp
         if (originalAnimationFrame) globalThis.requestAnimationFrame = originalAnimationFrame;
         else delete globalThis.requestAnimationFrame;
         globalThis.Image = originalImage;
+        if (originalEyeDropper) globalThis.EyeDropper = originalEyeDropper;
+        else delete globalThis.EyeDropper;
         globalThis.fetch = originalFetch;
         if (originalNavigator) Object.defineProperty(globalThis, 'navigator', originalNavigator);
         else delete globalThis.navigator;

@@ -1,4 +1,5 @@
 const paths = {
+    eyedropper: '<path d="m40 7 17 17-6 6-4-4-24 24-12 3 3-12 24-24-4-4Z"/><path d="m21 35 8 8M36 19l9 9"/>',
     female: '<circle cx="32" cy="12" r="8"/><path d="M24 26h16l8 22H16Zm3 23v12m10-12v12M24 26l-9 17m25-17 9 17"/>',
     male: '<circle cx="32" cy="12" r="8"/><path d="M21 39V29q11-9 22 0v10M25 32v28m14-28v28M25 43h14"/>',
     hair: '<circle cx="16" cy="44" r="8"/><circle cx="40" cy="44" r="8"/><path d="m21 38 30-28M35 38 13 9m15 21 8 8"/>',
@@ -109,6 +110,12 @@ const poses = {
 };
 
 const garmentIcons = {
+    lingerie_longline: 'bustier', lingerie_lace: 'bra', lingerie_cami: 'tank', lingerie_french: 'boxers',
+    lingerie_tap: 'boxers', lingerie_lace_briefs: 'briefs', lingerie_bikini: 'briefs', lingerie_boyshorts: 'boxers',
+    lingerie_boxer_briefs: 'boxers', lingerie_trunks: 'boxers',
+    lingerie_bralette: 'bra', lingerie_undershirt: 'tank', lingerie_structured_body: 'bodysuit',
+    lingerie_lace_up_bra: 'bra', lingerie_lace_cami: 'tank', lingerie_lace_up_briefs: 'briefs',
+    lingerie_lace_up_body: 'bodysuit', lingerie_lace_teddy: 'teddy',
     shirt_dress: 'dress', wrap_dress: 'dress', a_line_dress: 'dress', pleated_dress: 'gown',
     turtleneck_dress: 'dress', ball_gown: 'gown', qipao: 'gown', pinafore: 'dress',
     coveralls: 'jumpsuit', flight_suit: 'jumpsuit', long_sleeve: 'sweater', turtleneck: 'sweater',
@@ -155,6 +162,14 @@ const garmentFeatures = {
 };
 for (const [name, base] of Object.entries(garmentIcons)) paths[name] = paths[base] + `<path d="${garmentFeatures[name]}"/>`;
 Object.assign(paths, {
+    bustier: '<path d="M14 14q9-9 18 5 9-14 18-5l-5 22 3 20H16l3-20Z"/><path d="M23 26v26m18-26v26M18 39h28"/>',
+    corset: '<path d="M14 10q18 12 36 0l-7 23 6 23H15l6-23Z"/><path d="M28 18v34m8-34v34m-8-29 8 7-8 7 8 7-8 7"/>',
+    bodysuit: '<path d="M17 6h9l6 14 6-14h9l-4 26 6 9-13 17h-8L15 41l6-9Z"/><path d="M21 32h22M17 41q11 0 11 17m19-17q-11 0-11 17"/>',
+    teddy: '<path d="M18 6h6l8 23 8-23h6l-5 25 7 12-12 15h-8L16 43l7-12Z"/><path d="M22 34h20"/>',
+    slip: '<path d="M22 5h5v12l5 6 5-6V5h5l-3 24 11 28H14l11-28Z"/><path d="M16 51h32"/>',
+    babydoll: '<path d="M20 5h6v11l6 7 6-7V5h6l-3 25 14 20H9l14-20Z"/><path d="M24 54h16l-6 8h-4Z"/>',
+    catsuit: '<path d="m23 5-13 8-5 24 7 3 11-18-3 21-3 18h12l3-21 3 21h12l-3-18-3-21 11 18 7-3-5-24-13-8q-9 12-18 0Z"/>',
+    garter_stockings: '<path d="M9 10h46L36 31h-8ZM14 38h13v23H12Zm23 0h13l2 23H37Z"/><path d="M18 22v16m28-16v16M13 44h14m10 0h14"/>',
     heritage: '<circle cx="32" cy="32" r="23"/><path d="M9 32h46M32 9q-20 23 0 46 20-23 0-46ZM14 19h36M14 45h36"/>',
     smile: '<ellipse cx="32" cy="30" rx="20" ry="24"/><path d="M22 25h3m14 0h3M22 37q10 13 20 0"/>',
     neutral: '<ellipse cx="32" cy="30" rx="20" ry="24"/><path d="M22 25h3m14 0h3M24 41h16"/>',
@@ -300,6 +315,94 @@ Object.assign(paths, {
     gloves_gauntlets: gloveIcon + '<path d="M17 47h26l3 14H14Z"/><path d="M22 50v8m7-8v8m7-8v8"/>',
 });
 
+Object.assign(paths, {
+    bra: '<path d="M12 15v13m40-13v13M8 29q10-14 21 0l3 7 3-7q11-14 21 0v14q-12 9-24-2-12 11-24 2Z"/>',
+    sports_bra: '<path d="M17 10h9l3 15h6l3-15h9l8 36H9Z"/><path d="M10 41h44"/>',
+    bandeau: '<path d="M10 24q22 5 44 0v23q-22 4-44 0Z"/>',
+    briefs: '<path d="M7 18h50l-6 15-13 18H26L13 33Z"/><path d="M10 25h44M13 33q13-2 13 18m25-18q-13-2-13 18"/>',
+    high_briefs: '<path d="M11 10h42v22L38 54H26L11 32Z"/><path d="M11 17h42M11 32q15-2 15 22m27-22q-15-2-15 22"/>',
+    thong: '<path d="M8 20h48L35 48h-6Z"/><path d="M11 26h42M29 48l3-17 3 17"/>',
+    boxers: '<path d="M13 12h38l5 42H36l-4-22-4 22H8Z"/><path d="M13 20h38M32 20v12"/>',
+    body_petite: '<path d="M25 16h14l-2 10 8 12-4 17H23l-4-17 8-12Z"/><path d="M10 16v39m-3-39h6m-6 39h6"/>',
+    body_dwarfism: '<path d="M22 7h20l-3 17 6 11-5 16H24l-5-16 6-11Z"/><path d="M25 51v8m14-8v8"/>',
+    body_slim: '<path d="M26 7h12l-2 14 4 13-3 23H27l-3-23 4-13Z"/>',
+    body_lean: '<path d="M24 7h16l-3 18 6 10-5 22H26l-5-22 6-10Z"/><path d="M28 32h8m-8 7h8"/>',
+    body_stocky: '<path d="M19 10h26l-2 12 9 14-5 21H17l-5-21 9-14Z"/>',
+    body_tall: '<path d="M25 3h14l-2 17 5 14-5 27H27l-5-27 5-14Z"/>',
+    body_pear: '<path d="M26 6h12l-2 16 13 16-5 20H20l-5-20 13-16Z"/>',
+    body_triangle: '<path d="M14 7h36L39 30l-2 28H27l-2-28Z"/>',
+    body_hourglass: '<path d="M19 7h26l-9 23q17 10 11 27H17q-6-17 11-27Z"/>',
+    body_rectangle: '<path d="M22 7h20v50H22Z"/>',
+    body_rounded: '<path d="M23 7h18q16 27 7 47H16Q7 34 23 7Z"/>',
+    body_plus: '<path d="M19 7h26q9 13 8 27l2 23H9l2-23Q10 20 19 7Z"/>',
+    body_powerful: '<path d="M16 6h32l7 17-9 12-4 22H22l-4-22-9-12Z"/><path d="M24 22h16M26 33h12"/>',
+});
+Object.assign(poses, {
+    pose_runway_walk: 'M26 27 14 42m24-15 10 14M28 43 40 60m-4-17L24 60',
+    pose_runway_turn: 'M26 27 16 39m22-12 12 6M28 43 20 60m16-17 10 15',
+    pose_editorial_hip: 'M26 27 12 37l14 5m12-15 12 15M28 43 20 60m16-17 8 17',
+    pose_editorial_arms: 'M26 27 14 15 25 3m13 24 12-12L39 3M28 43 22 60m14-17 7 17',
+    pose_ballet_first: 'M26 27 15 39l12 7m11-19 11 12-12 7M28 43l4 15-13 3m17-18-4 15 13 3',
+    pose_ballet_arabesque: 'M26 27 5 20m33 7 20-10M28 43 26 61m10-18 22-10',
+    pose_ballet_passe: 'M26 27 15 13 27 3m11 24 11-14L37 3M28 43l3 18m5-18 13 5-17 8',
+    pose_ballet_plie: 'M26 27 12 37l15 4m11-14 14 10-15 4M28 43 15 49l5 12m16-18 13 6-5 12',
+    pose_ballet_releve: 'M26 27 12 37m26-10 14 10M28 43l2 18m6-18-2 18',
+    pose_ballet_lunge: 'M26 27 12 17 25 3m13 24 22 8M28 43 13 48 5 61m31-18 19 18',
+    pose_glamour_shoulder: 'M26 27 13 40m25-13 9 14-10 3M28 43 20 61m16-18 8 18',
+    pose_glamour_recline: 'M26 27 12 39 6 54m32-27 9 12M28 43 44 53 61 55m-25-12 14 5 11 2',
+    pose_glamour_kneel: 'M26 27 16 38l11 5m11-16 10 11-11 5M28 43 21 55l12 5m3-17 7 12-9 5',
+});
+
+const neckOutline = '<path d="M22 5v14L8 29v28h48V29L42 19V5"/>';
+Object.assign(paths, {
+    neckwear_choker: neckOutline + '<path d="M22 15h20v10H22Z"/><path d="M30 17h6v6h-6Z"/>',
+    neckwear_velvet: neckOutline + '<path d="M22 16h20v8H22ZM32 24l-8 7v-9l8 3 8-3v9Z"/>',
+    neckwear_lace: neckOutline + '<path d="M22 13h20v11q-3 6-5 0-3 6-5 0-3 6-5 0-3 6-5 0Z"/><path d="m25 16 3 3-3 3m7-6 3 3-3 3m7-6 2 3-2 3"/>',
+    neckwear_studded: neckOutline + '<path d="M22 14h20v12H22ZM25 17l2 5 2-5m3 0 2 5 2-5m3 0 1 5"/>',
+    neckwear_scarf: neckOutline + '<path d="M19 17q13 9 26 0l2 9q-15 9-30 0Zm7 13-6 24h10l6-24m2 0 7 21h8L45 27"/>',
+    neckwear_muffler: neckOutline + '<path d="M18 14q14 10 28 0l3 14q-17 10-34 0Zm5 19v24h12V33"/><path d="m22 18 4 5-4 5m9-9 4 5-4 6m9-11 4 5-4 5M26 37v16m5-16v16"/>',
+    neckwear_silk: neckOutline + '<path d="M20 17q12 6 24 0l-8 12 13 16-13 7-6-22-10 13-9-8 16-12Z"/><path d="m29 22 6 7m-4 3 8 13"/>',
+    neckwear_neckerchief: neckOutline + '<path d="m19 17 13 5 13-5-13 23Zm11 22-6 13 9-3 5 3-3-13"/>',
+    neckwear_cravat: neckOutline + '<path d="m23 18 9 6 9-6-3 11 6 23H20l6-23Zm3 11h12m-11 4 10 5-12 5 15 5"/>',
+    neckwear_tie: neckOutline + '<path d="m27 18 5 4 5-4-2 10h-6Zm2 10-4 22 7 8 7-8-4-22Z"/>',
+    neckwear_bowtie: neckOutline + '<path d="m30 20-11-7v18l11-7h4l11 7V13l-11 7Zm0 0h4v4h-4Z"/>',
+    neckwear_cowl: neckOutline + '<path d="M17 15q15 10 30 0l4 17q-19 19-38 0Z"/><path d="M17 24q15 15 30 0M19 32q13 10 26 0"/>',
+    neckwear_gaiter: neckOutline + '<path d="M20 10h24l2 22q-14 12-28 0Z"/><path d="M21 16h22m-23 7h24m-23 7q11 7 22 0"/>',
+    neck_locket: neckOutline + '<path d="M17 24q15 26 30 0"/><ellipse cx="32" cy="43" rx="6" ry="8"/><path d="M32 36v14"/>',
+    neck_lariat: neckOutline + '<path d="m17 24 15 15 15-15M32 39v16"/><circle cx="32" cy="56" r="2"/>',
+    neck_gemstone: neckOutline + '<path d="M17 24q15 25 30 0M32 37l-7 9 7 10 7-10Z"/><path d="m25 46 7-3 7 3m-7-3v13"/>',
+    neck_beads: neckOutline + '<circle cx="18" cy="26" r="3"/><circle cx="22" cy="33" r="3"/><circle cx="28" cy="38" r="3"/><circle cx="36" cy="38" r="3"/><circle cx="42" cy="33" r="3"/><circle cx="46" cy="26" r="3"/>',
+    neck_torc: neckOutline + '<path d="M19 24q-6 27 13 27t13-27M22 25q-4 22 10 22t10-22"/><circle cx="20" cy="23" r="3"/><circle cx="44" cy="23" r="3"/>',
+    neck_gothic: neckOutline + '<path d="M17 24q15 25 30 0M32 37v20m-8-12h16m-11-5 3-3 3 3m-11 2-3 3 3 3m16-6 3 3-3 3m-11 6 3 3 3-3"/>',
+    ear_chandelier: '<circle cx="32" cy="9" r="4"/><path d="m32 13-15 21h30Zm-15 21v15m15-15v21m15-21v15"/><circle cx="17" cy="53" r="3"/><circle cx="32" cy="59" r="3"/><circle cx="47" cy="53" r="3"/>',
+    ear_threader: '<path d="M22 8q-8 3-4 11l14 14v24m-9-37 9-9q8-8 12 0v32"/><circle cx="44" cy="46" r="3"/>',
+    ear_tassel: '<circle cx="32" cy="9" r="4"/><path d="M32 13v8l-10 8 10 6 10-6-10-8ZM22 35l-7 23m13-23-3 23m11-23 3 23m3-23 7 23M15 58h34"/>',
+    ear_cluster: '<circle cx="32" cy="11" r="4"/><path d="M32 15v9"/><circle cx="32" cy="31" r="7"/><circle cx="22" cy="40" r="6"/><circle cx="42" cy="40" r="6"/><circle cx="32" cy="48" r="7"/>',
+    goth_outfit: '<path d="M26 5h12v9l11 7 7 23-7 3-9-20-3 10 17 23H10l17-23-3-10-9 20-7-3 7-23 11-7Z"/><path d="M27 17h10l-10 7 10 7H27m-6 17h22m-27 7h32M28 8h8"/>',
+    goth_suit: '<path d="M25 5h14v9l13 8 6 25-7 2-10-23 5 21H35l-3-11-3 11H18l5-21-10 23-7-2 6-25 13-8Z"/><path d="m26 17 6 12 6-12M22 47l-2 13h9l3-17 3 17h9l-2-13M30 31h4m-4 7h4"/>',
+    lingerie_longline: paths.bra + '<path d="M8 43v13h48V43M16 48v8m8-8v8m16-8v8m8-8v8"/>',
+    lingerie_bralette: '<path d="M19 5h5v16l8 18 8-18V5h5v17l10 24q-23 17-46 0l10-24Z"/><path d="M15 43q17 15 34 0M24 22l-5 22m21-22 5 22"/>',
+    lingerie_lace_up_bra: paths.bra + '<path d="M28 27l8 6-8 6 8 6M28 27v18m8-18v18"/>',
+    lingerie_lace_cami: '<path d="M20 5h5v14l7 7 7-7V5h5l-4 29 7 22H17l7-22Z"/><path d="m23 29 5 5-5 5m9-10 5 5-5 5m9-10 3 5-3 5M19 49l4 4 4-4 4 4 4-4 4 4 4-4"/>',
+    lingerie_lace_up_briefs: paths.briefs + '<path d="m10 22 9 4-6 5 10 4M54 22l-9 4 6 5-10 4"/>',
+    lingerie_lace_up_body: paths.bodysuit + '<path d="M28 24l8 6-8 6 8 6M28 24v18m8-18v18"/>',
+    lingerie_lace_teddy: paths.teddy + '<path d="m20 38 4 4-4 4m20-8 4 4-4 4M24 49l4 4 4-4 4 4 4-4"/>',
+    lingerie_undershirt: '<path d="M19 6h8q5 18 10 0h8l-2 17 7 10-5 24H19l-5-24 7-10Z"/><path d="M23 39v13m8-12v12m9-13v13"/>',
+    lingerie_structured_body: paths.bodysuit + '<path d="M24 30v15m16-15v15M29 32l6 4-6 4 6 4M20 43h24"/>',
+    lingerie_lace: paths.bra + '<path d="m12 32 4 4 4-4 4 4m16-4 4 4 4-4 4 4m-40 7 4 3 4-3 4 3m16-3 4 3 4-3 4 3"/>',
+    lingerie_cami: '<path d="M20 5h5v14l7 7 7-7V5h5l-4 29 7 22H17l7-22Z"/><path d="M23 23q9 15 18 0M18 50l4 4 4-4 4 4 4-4 4 4 4-4 4 4"/>',
+    lingerie_french: paths.boxers + '<path d="m9 49 4 4 4-4 4 4 4-4m13 0 4 4 4-4 4 4 4-4"/>',
+    lingerie_tap: '<path d="M14 12h36l5 34-17 6-6-24-6 24-17-6Z"/><path d="M14 20h36M12 41l13 5m14 0 13-5"/>',
+    lingerie_lace_briefs: paths.briefs + '<path d="m13 26 5 5 5-5 5 5 4-5 4 5 5-5 5 5 5-5"/>',
+    lingerie_bikini: '<path d="M7 20h50l-9 10-13 23h-6L16 30Z"/><path d="M7 20l9 4 13 29m28-33-9 4-13 29"/>',
+    lingerie_boyshorts: '<path d="M12 15h40l3 31H36l-4-15-4 15H9Z"/><path d="M12 23h40M10 40h18m8 0h18"/>',
+    lingerie_boxer_briefs: '<path d="M13 10h38l4 47H36l-4-25-4 25H9Z"/><path d="M13 19h38M32 19v13m-7-8v15m14-15v15"/>',
+    lingerie_trunks: '<path d="M12 16h40l2 34H36l-4-17-4 17H10Z"/><path d="M12 24h40M32 24v9m-20 11h16m8 0h17"/>',
+    body_compact: '<path d="M21 15h22l-2 9 8 12-5 17H20l-5-17 8-12Z"/><path d="M7 15v38m-3-38h6m-6 38h6"/>',
+    body_pronounced: '<path d="M17 6h30l-11 24q22 9 14 28H14q-8-19 14-28Z"/><path d="M28 30h8"/>',
+    body_full_hips: '<path d="M27 6h10l-1 17q23 11 16 35H12q-7-24 16-35Z"/>',
+});
+
 export const iconNames = Object.freeze([...Object.keys(paths), ...Object.keys(hair), ...Object.keys(poses)]);
 
 export function icon(name, color = '#bca9e8') {
@@ -320,6 +423,36 @@ const previewTrousers = '<path d="M62 138H98L96 176 93 252H81L80 180 79 252H67L6
 const previewSkirt = '<path d="M62 138H98L109 187H51Z"/><path d="M62 146H98M66 153 59 181M94 153 101 181" fill="none"/>';
 const previewJacket = '<path d="M68 77 58 80 43 139 51 143 64 97 61 150H76L75 95ZM92 77 102 80 117 139 109 143 96 97 99 150H84L85 95Z"/><path d="M68 79 77 98 70 108M92 79 83 98 90 108" fill="none"/>';
 const previewGarments = {
+    neckwear_choker: '<path d="M69 71H91V80H69Z"/><path d="M78 73h5v5h-5Z" fill="none"/>',
+    neckwear_velvet: '<path d="M69 72H91V80H69ZM80 79l-7 6v-8l7 3 7-3v8Z"/>',
+    neckwear_lace: '<path d="M69 69H91V80q-3 5-5 0-3 5-6 0-3 5-6 0-3 5-5 0Z"/>',
+    neckwear_studded: '<path d="M69 71H91V81H69Z"/><path d="m72 74 2 4 2-4m4 0 2 4 2-4m3 0 1 4" fill="none"/>',
+    neckwear_scarf: '<path d="M66 73Q80 82 94 73L98 85Q80 99 62 85ZM72 91 65 139H79L85 91Z"/>',
+    neckwear_muffler: '<path d="M65 69Q80 78 95 69L100 88Q80 104 60 88ZM68 94V145H82V97Z"/><path d="M70 101v38m7-38v38M65 81q15 12 30 0" fill="none"/>',
+    neckwear_silk: '<path d="M67 72Q80 80 93 72L84 87 99 119 85 125 77 90 64 112 55 100 73 83Z"/>',
+    neckwear_neckerchief: '<path d="M65 75 80 81 95 75 80 108ZM77 105l-7 17 11-5 9 5-7-17Z"/>',
+    neckwear_cravat: '<path d="M70 74 80 82 90 74 85 88 93 123H67L75 88Z"/><path d="M74 91h12m-12 8h13m-15 8h17" fill="none"/>',
+    neckwear_tie: '<path d="m75 77 5 4 5-4-2 11h-6ZM77 88l-5 41 8 10 8-10-5-41Z"/>',
+    neckwear_bowtie: '<path d="m77 77-12-6v16l12-6h6l12 6V71l-12 6Z"/>',
+    neckwear_cowl: '<path d="M63 71Q80 80 97 71L102 92Q80 117 58 92Z"/><path d="M65 84q15 18 30 0" fill="none"/>',
+    neckwear_gaiter: '<path d="M68 64H92L96 86Q80 100 64 86Z"/><path d="M69 72h22m-23 7h24" fill="none"/>',
+    goth_outfit: previewSleeves + '<path d="M68 70H92V82H68ZM65 133H95L117 252H43Z"/><path d="M65 147 107 194H53m2 17h52M75 100l10 8-10 8 10 8M49 241h62" fill="none"/>',
+    goth_suit: previewTrousers + previewSleeves + '<path d="M68 70H92V82H68ZM64 125H96L104 192H87L80 149 73 192H56Z"/><path d="m70 82 10 18 10-18M78 109h4m-4 10h4" fill="none"/>',
+    bustier: '<path d="M65 98Q72 88 80 100Q88 88 95 98L93 120 98 137H62L67 120Z"/><path d="M73 108V134m14-26v26" fill="none"/>',
+    corset: '<path d="M64 96Q80 107 96 96L91 117 98 140H62L69 117Z"/><path d="M77 104v31m6-31v31m-6-25 6 6-6 6 6 6" fill="none"/>',
+    bodysuit: '<path d="M68 78H73L80 96 87 78H92L96 105 91 128 98 143 85 161H75L62 143 69 128 64 105Z"/>',
+    teddy: '<path d="M68 78H73L80 110 87 78H92L91 128 98 143 85 161H75L62 143 69 128Z"/>',
+    slip: '<path d="M68 78H72V96L80 103 88 96V78H92L94 125 105 183H55L66 125Z"/>',
+    babydoll: '<path d="M68 78H72V96L80 103 88 96V78H92L93 116 109 154H51L67 116Z"/><path d="M67 155H93L85 167H75Z"/>',
+    catsuit: previewSleeves + previewTrousers,
+    garter_stockings: '<path d="M62 138H98L86 160H74ZM64 182H78V252H66ZM82 182H96L94 252H82Z"/><path d="M69 150v32m22-32v32" fill="none"/>',
+    bra: '<path d="M66 94Q72 87 79 99L81 99Q88 87 94 94L94 110Q86 118 80 110Q74 118 66 110Z"/><path d="M67 96 69 78m24 18-2-18" fill="none"/>',
+    sports_bra: '<path d="M68 80H73L76 95H84L87 80H92L96 117H64Z"/>',
+    bandeau: '<path d="M64 99Q80 103 96 99V116H64Z"/>',
+    briefs: '<path d="M62 138H98L87 160H73Z"/><path d="M63 143H97M64 147Q73 146 73 160M96 147Q87 146 87 160" fill="none"/>',
+    high_briefs: '<path d="M64 128H96L98 145 87 161H73L62 145Z"/>',
+    thong: '<path d="M62 139H98L83 161H77Z"/>',
+    boxers: '<path d="M62 138H98L99 175H83L80 157 77 175H61Z"/>',
     shirt: previewShirt,
     polo: previewShirt + '<path d="M68 77 75 94 80 86 85 94 92 77M80 86V105" fill="none"/>',
     henley: previewShirt + '<path d="M80 85V111M77 94H83M77 104H83" fill="none"/>',
@@ -367,7 +500,7 @@ export function characterPreview(settings, fields) {
     const safeSkin = /^#[0-9a-f]{6}$/i.test(skin) ? skin : '#bd8663';
     const safeHair = /^#[0-9a-f]{6}$/i.test(hairColor) ? hairColor : '#65432b';
     const outfit = settings.wardrobe_mode === 'dress' ? ['dress'] : ['upper_garment', 'lower_garment'];
-    const layers = [...outfit, 'outerwear', 'shoes', 'headwear', 'gloves'].map((key) => {
+    const layers = [...outfit, 'outerwear', 'shoes', 'headwear', 'gloves', 'neckwear'].map((key) => {
         if (settings[key] === 'none') return '';
         const shape = previewGarments[selected(key)?.icon] ?? previewGarments[garmentIcons[selected(key)?.icon]];
         const color = settings.colors?.[key] ?? selected(key)?.color;
@@ -381,6 +514,12 @@ export function characterPreview(settings, fields) {
         const accents = Object.entries(settings.clothing?.[key]?.details ?? {}).filter(([id, value]) =>
             selected(key)?.details?.includes(id) && /^#[0-9a-f]{6}$/i.test(value));
         const detailPaths = {
+            lace_trim: 'M64 135l4 4 4-4 4 4 4-4 4 4 4-4 4 4 4-4',
+            studs: 'M68 103h1m22 0h1m-24 13h1m22 0h1m-24 13h1m22 0h1',
+            chains: 'M66 145q14 18 28 0m-28 4q14 18 28 0',
+            eyelets: 'M75 103h1m8 0h1m-10 9h1m8 0h1m-10 9h1m8 0h1',
+            ruching: 'M68 108q12 6 24 0m-24 6q12 6 24 0m-24 6q12 6 24 0',
+            gothic_motif: 'M71 132v-19l9-13 9 13v19m-9-27v27m-6-15h12',
             piping: 'M65 82 65 137H95L95 82', embroidery: 'M72 104q8-16 16 0-16 8-16 0m8-8v18',
             buttons: 'M80 100h1m-1 13h1m-1 13h1', stitching: 'M64 141H96M67 151V174M93 151V174',
             trim: 'M64 136H96M68 80Q80 92 92 80', belt: 'M64 143H96M77 140H83V146H77Z',
@@ -390,9 +529,18 @@ export function characterPreview(settings, fields) {
             buckle: 'M65 255H74V261H65ZM85 255H94V261H85Z', ribbon: 'M57 30H103',
             applique: 'M80 100 87 110 80 120 73 110Z',
         };
+        if (key === 'neckwear') Object.assign(detailPaths, {
+            piping: 'M68 74h24m-24 6h24', embroidery: 'M76 76q4-7 8 0-8 4-8 0',
+            ribbon: 'M77 79l-5 5v-7l8 3 8-3v7l-5-5', lace_trim: 'M68 79l4 3 4-3 4 3 4-3 4 3 4-3',
+            studs: 'M72 76h1m6 0h1m6 0h1', chains: 'M69 79q11 12 22 0',
+            eyelets: 'M72 75h1m5 0h1m5 0h1', stripes: 'M70 71v12m7-12v12m7-12v12m7-12v12',
+            checks: 'M68 75h24m-24 5h24m-18-9v13m7-13v13m7-13v13',
+        });
         const clip = `garment-${key}`;
         const details = accents.map(([id, value]) => `<path data-detail="${id}" d="${detailPaths[id]}" fill="none" stroke="${value}" stroke-width="2.5" clip-path="url(#${clip})"/>`).join('');
-        return `<g data-garment="${key}" fill="${fill}" stroke="#c8c1e1" stroke-width="1.5" stroke-linejoin="round">${drawing}${chest}<defs><clipPath id="${clip}">${drawing.replace(/ data-(?:foot|hand)="[^"]*"/g, '')}</clipPath></defs>${details}</g>`;
+        const opacity = settings.clothing?.[key]?.opacity ?? 100;
+        const alpha = Number.isInteger(opacity) && opacity >= 0 && opacity <= 100 ? opacity / 100 : 1;
+        return `<g data-garment="${key}" fill="${fill}" fill-opacity="${alpha}" stroke="#c8c1e1" stroke-width="1.5" stroke-linejoin="round">${drawing}${chest}<defs><clipPath id="${clip}">${drawing.replace(/ data-(?:foot|hand)="[^"]*"/g, '')}</clipPath></defs>${details}</g>`;
     }).join('');
     const style = settings.hair_style;
     const hairShape = hair[style] ?? hair[selected('hair_style')?.icon] ?? hair.long_waves;
@@ -428,7 +576,17 @@ export function characterPreview(settings, fields) {
                 : '<circle cx="57" cy="55" r="2"/><circle cx="103" cy="55" r="2"/>';
         faceLayers.push(`<g data-face-detail="earrings" fill="none" stroke="${ink('earrings', '#d6b85a')}" stroke-width="1.5">${shape}</g>`);
     }
-    if (settings.necklace && settings.necklace !== 'none') faceLayers.push(`<g data-face-detail="necklace" fill="none" stroke="${ink('necklace', '#d6b85a')}" stroke-width="1.5"><path d="M69 79q11 17 22 0"/>${settings.necklace === 'pendant' ? '<path d="m80 87-3 4 3 4 3-4Z"/>' : ''}</g>`);
+    if (settings.necklace && settings.necklace !== 'none' && !(settings.necklace === 'choker' && settings.neckwear && settings.neckwear !== 'none')) {
+        const ornaments = {
+            pendant: '<path d="m80 87-3 4 3 4 3-4Z"/>', locket: '<ellipse cx="80" cy="92" rx="3" ry="4"/>',
+            lariat: '<path d="M80 87v15"/>', gemstone: '<path d="m80 87-4 5 4 5 4-5Z"/>',
+            beads: '<path d="M71 83h1m3 3h1m3 2h1m3-2h1m3-3h1" stroke-width="3"/>',
+            pearls: '<path d="M71 83h1m3 3h1m3 2h1m3-2h1m3-3h1" stroke-width="3"/>',
+            layered: '<path d="M68 82q12 22 24 0"/>', torc: '<path d="M69 80q-3 19 11 19t11-19"/>',
+            gothic_pendant: '<path d="M80 87v13m-4-8h8"/>', choker: '<path d="M69 74h22v6H69Z"/>',
+        };
+        faceLayers.push(`<g data-face-detail="necklace" fill="none" stroke="${ink('necklace', '#d6b85a')}" stroke-width="1.5">${settings.necklace === 'choker' ? '' : '<path d="M69 79q11 17 22 0"/>'}${ornaments[settings.necklace] ?? ''}</g>`);
+    }
     if (settings.piercings && settings.piercings !== 'none') {
         const shape = { nostril: '<circle cx="84" cy="54" r="1"/>', nose_ring: '<circle cx="84" cy="55" r="2"/>', septum: '<path d="M78 54v2q2 3 4 0v-2"/>', brow: '<path d="m88 41 2 4"/>', lip: '<circle cx="80" cy="64" r="1"/>', paired: '<circle cx="76" cy="64" r="1"/><circle cx="84" cy="64" r="1"/>' }[settings.piercings];
         if (shape) faceLayers.push(`<g data-face-detail="piercings" fill="none" stroke="${ink('piercings', '#c3c6ce')}" stroke-width="1.2">${shape}</g>`);

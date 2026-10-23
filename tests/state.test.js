@@ -1,12 +1,70 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
-import { applySettings, changeGender, clampAge, genderOptions, normalizeAgeWidget, optionSections, settingsFromWidgets, visibleFields } from '../web/state.js';
+import { applySettings, changeGender, clampAge, genderOptions, isRestrictedCharacter, normalizeAgeWidget, optionSections, settingsFromWidgets, visibleFields } from '../web/state.js';
 import { characterPreview, icon, iconNames } from '../web/icons.js';
 
 const catalog = JSON.parse(readFileSync(new URL('../catalog.json', import.meta.url), 'utf8'));
 const defaults = { model: 'qwen_image_2_1', template: 'character', ...Object.fromEntries(Object.entries(catalog.fields).map(([key, value]) => [key, value.default])) };
 const makeNode = () => ({ widgets: [...Object.entries(defaults).map(([name, value]) => ({ name, value })), { name: 'character_code', value: 'old code' }], inputs: [] });
+
+test('SFW preview policy rejects restricted clothes, transparency, modifiers and uncovered saved characters', () => {
+    const safe = { ...catalog, allow_nsfw: false };
+    assert.equal(isRestrictedCharacter(defaults, safe), false);
+    for (const [field, spec] of Object.entries({ ...catalog.fields, ...catalog.extra_fields })) {
+        for (const option of spec.options.filter((option) => option.nsfw)) {
+            const settings = { ...defaults, [field]: option.id };
+            assert.equal(isRestrictedCharacter(settings, safe), true, `${field}: ${option.id}`);
+            assert.equal(isRestrictedCharacter(settings, { ...safe, allow_nsfw: true }), false);
+        }
+    }
+    for (const clothing of [
+        { upper_garment: { fabric: 'plastic', opacity: 99 } },
+        { upper_garment: { fabric: 'lace' } },
+        { lower_garment: { hem_length: 'micro' } },
+        { upper_garment: { closure: 'open' } },
+    ]) assert.equal(isRestrictedCharacter({ ...defaults, clothing }, safe), true);
+    assert.equal(isRestrictedCharacter({ ...defaults, upper_garment: 'none' }, safe), true);
+    assert.equal(isRestrictedCharacter({ ...defaults, clothing: { upper_garment: { fabric: 'plastic', opacity: 100 } } }, safe), false);
+});
+
+test('neckwear is separate from jewelry, has distinct icons and appears in the outfit preview', () => {
+    const neckwear = catalog.extra_fields.neckwear;
+    assert.equal(neckwear.group, 'Clothing');
+    assert.ok(!genderOptions(catalog.extra_fields.necklace, 'woman').some((option) => option.id === 'choker'));
+    const drawings = new Set();
+    for (const option of neckwear.options.filter((option) => option.id !== 'none')) {
+        assert.ok(iconNames.includes(option.icon));
+        const drawing = icon(option.icon);
+        assert.notEqual(drawing, icon('person'));
+        drawings.add(drawing);
+        const preview = characterPreview({ ...defaults, neckwear: option.id }, { ...catalog.fields, ...catalog.extra_fields });
+        assert.match(preview, /data-garment="neckwear"/);
+        assert.ok(!preview.includes('undefined'));
+    }
+    assert.equal(drawings.size, neckwear.options.length - 1);
+    for (const id of ['goth_ensemble', 'goth_suit']) {
+        const option = catalog.fields.dress.options.find((option) => option.id === id);
+        assert.notEqual(icon(option.icon), icon('gown'));
+        assert.match(characterPreview({ ...defaults, wardrobe_mode: 'dress', dress: id }, catalog.fields), /data-garment="dress"/);
+    }
+});
+
+test('clothing row sections keep every allowed option exactly once and separate underwear from lingerie', () => {
+    for (const spec of Object.values({ ...catalog.fields, ...catalog.extra_fields }).filter((field) => field.group === 'Clothing' && field.sections)) {
+        for (const gender of ['man', 'woman']) {
+            const sections = optionSections(spec, gender);
+            const options = sections.flatMap((section) => section.options.map((option) => option.id));
+            assert.equal(options[0], 'none');
+            assert.equal(new Set(options).size, options.length);
+            assert.deepEqual([...options].sort(), genderOptions(spec, gender).map((option) => option.id).sort());
+            for (const section of sections) {
+                if (!['Underwear', 'Lingerie'].includes(section.label)) continue;
+                assert.ok(section.options.every((option) => option.nsfw));
+            }
+        }
+    }
+});
 
 test('native widgets supply every character setting and survive round trips', () => {
     const node = makeNode();

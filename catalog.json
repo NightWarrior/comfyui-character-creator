@@ -162,6 +162,104 @@
           "label": "Full figured",
           "phrase": "a full figure",
           "icon": "body_full"
+        },
+        {
+          "id": "petite",
+          "label": "Petite",
+          "phrase": "a short adult stature with a small body frame",
+          "icon": "body_petite"
+        },
+        {
+          "id": "dwarfism",
+          "label": "Short stature / dwarfism",
+          "phrase": "an adult body with dwarfism, a long torso relative to shorter limbs",
+          "icon": "body_dwarfism"
+        },
+        {
+          "id": "slim",
+          "label": "Slim",
+          "phrase": "a slim build with narrow shoulders and hips",
+          "icon": "body_slim"
+        },
+        {
+          "id": "lean",
+          "label": "Lean",
+          "phrase": "a lean build with low body fat and defined limbs",
+          "icon": "body_lean"
+        },
+        {
+          "id": "compact",
+          "label": "Compact",
+          "phrase": "a short solid build with a compact torso",
+          "icon": "body_compact"
+        },
+        {
+          "id": "stocky",
+          "label": "Stocky",
+          "phrase": "a stocky build with a broad torso and sturdy limbs",
+          "icon": "body_stocky"
+        },
+        {
+          "id": "tall_slender",
+          "label": "Tall and slender",
+          "phrase": "a tall slender build with long limbs",
+          "icon": "body_tall"
+        },
+        {
+          "id": "pear",
+          "label": "Pear / wider hips",
+          "phrase": "a pear-shaped build with narrower shoulders and wider hips",
+          "icon": "body_pear"
+        },
+        {
+          "id": "inverted_triangle",
+          "label": "Broad shoulders / narrow hips",
+          "phrase": "an inverted-triangle build with broad shoulders and narrow hips",
+          "icon": "body_triangle"
+        },
+        {
+          "id": "hourglass",
+          "label": "Hourglass",
+          "phrase": "an hourglass build with balanced shoulders and hips and a defined waist",
+          "icon": "body_hourglass"
+        },
+        {
+          "id": "rectangle",
+          "label": "Straight / rectangular",
+          "phrase": "a straight build with similar shoulder, waist and hip widths",
+          "icon": "body_rectangle"
+        },
+        {
+          "id": "apple",
+          "label": "Rounded torso",
+          "phrase": "a rounded build with more fullness around the torso",
+          "icon": "body_rounded"
+        },
+        {
+          "id": "plus_size",
+          "label": "Plus-size",
+          "phrase": "a plus-size build with a full torso, soft arms and broad hips",
+          "icon": "body_plus"
+        },
+        {
+          "id": "powerful",
+          "label": "Powerful / heavyweight",
+          "phrase": "a heavyweight muscular build with a thick torso and powerful legs",
+          "icon": "body_powerful"
+        },
+        {
+          "id": "pronounced_hourglass",
+          "label": "Pronounced hourglass",
+          "phrase": "a pronounced hourglass figure with a narrow waist and full hips",
+          "icon": "body_pronounced",
+          "nsfw": true
+        },
+        {
+          "id": "full_hips",
+          "label": "Full hips and thighs",
+          "phrase": "a narrow upper body with very full hips and thick thighs",
+          "icon": "body_full_hips",
+          "nsfw": true
         }
       ],
       "description": "Choose the overall build and silhouette, such as slender, broad or curvy."
@@ -728,6 +826,104 @@
           "covers": []
         },
         {
+          "id": "lingerie_bodysuit",
+          "label": "Lingerie bodysuit",
+          "phrase": "an opaque-lined lace lingerie bodysuit with a brief-cut lower section",
+          "icon": "bodysuit",
+          "color": "#3b203e",
+          "nsfw": true,
+          "covers": [
+            "upper",
+            "lower"
+          ],
+          "color_phrase": "{color} opaque-lined lace lingerie bodysuit with a brief-cut lower section"
+        },
+        {
+          "id": "lingerie_teddy",
+          "label": "Lingerie teddy",
+          "phrase": "a satin lingerie teddy with a V neckline and brief-cut lower section",
+          "icon": "teddy",
+          "color": "#3b203e",
+          "nsfw": true,
+          "covers": [
+            "upper",
+            "lower"
+          ],
+          "color_phrase": "{color} satin lingerie teddy with a V neckline and brief-cut lower section"
+        },
+        {
+          "id": "longline_bodysuit",
+          "label": "Longline lingerie bodysuit",
+          "phrase": "a structured satin longline lingerie bodysuit with shaped cups",
+          "icon": "lingerie_structured_body",
+          "color": "#3b203e",
+          "nsfw": true,
+          "covers": [
+            "upper",
+            "lower"
+          ],
+          "color_phrase": "{color} structured satin longline lingerie bodysuit with shaped cups"
+        },
+        {
+          "id": "lingerie_chemise",
+          "label": "Lingerie chemise",
+          "phrase": "a silk lingerie chemise with thin shoulder straps",
+          "icon": "slip",
+          "color": "#3b203e",
+          "nsfw": true,
+          "covers": [
+            "upper",
+            "lower"
+          ],
+          "color_phrase": "{color} silk lingerie chemise with thin shoulder straps"
+        },
+        {
+          "id": "babydoll",
+          "label": "Babydoll lingerie",
+          "phrase": "a short opaque-lined chiffon babydoll with matching briefs",
+          "icon": "babydoll",
+          "color": "#3b203e",
+          "nsfw": true,
+          "covers": [
+            "upper",
+            "lower"
+          ],
+          "color_phrase": "{color} short opaque-lined chiffon babydoll with matching briefs"
+        },
+        {
+          "id": "lingerie_catsuit",
+          "label": "Full-body lingerie catsuit",
+          "phrase": "a fitted opaque-lined lace lingerie catsuit covering the torso, arms and legs",
+          "icon": "catsuit",
+          "color": "#3b203e",
+          "nsfw": true,
+          "covers": [
+            "upper",
+            "lower"
+          ],
+          "color_phrase": "{color} fitted opaque-lined lace lingerie catsuit covering the torso, arms and legs"
+        },
+        {
+          "id": "lace_up_bodysuit",
+          "label": "Lace-up lingerie bodysuit",
+          "phrase": "a black unlined lace lingerie bodysuit with front lacing and a brief-cut lower section",
+          "icon": "lingerie_lace_up_body",
+          "color": "#17151c",
+          "color_phrase": "a {color} unlined lace lingerie bodysuit with front lacing and a brief-cut lower section",
+          "nsfw": true,
+          "covers": []
+        },
+        {
+          "id": "lace_teddy",
+          "label": "Unlined lace teddy",
+          "phrase": "a black unlined floral lace lingerie teddy with a V neckline",
+          "icon": "lingerie_lace_teddy",
+          "color": "#17151c",
+          "color_phrase": "a {color} unlined floral lace lingerie teddy with a V neckline",
+          "nsfw": true,
+          "covers": []
+        },
+        {
           "id": "day_dress",
           "label": "Day dress",
           "phrase": "a muted teal cotton day dress with a fitted waist",
@@ -906,11 +1102,43 @@
             "upper",
             "lower"
           ]
+        },
+        {
+          "id": "goth_ensemble",
+          "label": "Gothic layered outfit",
+          "phrase": "an opaque black velvet gothic outfit with a high-neck long-sleeved fitted bodice and an ankle-length layered skirt",
+          "icon": "goth_outfit",
+          "color": "#24212b",
+          "color_phrase": "an opaque {color} velvet gothic outfit with a high-neck long-sleeved fitted bodice and an ankle-length layered skirt",
+          "covers": [
+            "upper",
+            "lower"
+          ]
+        },
+        {
+          "id": "goth_suit",
+          "label": "Gothic tailored suit",
+          "phrase": "an opaque black brocade gothic suit with a high-collared long-sleeved frock coat and matching tailored trousers",
+          "icon": "goth_suit",
+          "color": "#24212b",
+          "color_phrase": "an opaque {color} brocade gothic suit with a high-collared long-sleeved frock coat and matching tailored trousers",
+          "covers": [
+            "upper",
+            "lower"
+          ]
         }
       ],
       "gender_options": {
         "woman": [
           "none",
+          "lace_teddy",
+          "lace_up_bodysuit",
+          "lingerie_catsuit",
+          "babydoll",
+          "lingerie_chemise",
+          "longline_bodysuit",
+          "lingerie_teddy",
+          "lingerie_bodysuit",
           "day_dress",
           "evening_dress",
           "sundress",
@@ -924,14 +1152,17 @@
           "qipao",
           "pinafore",
           "coveralls",
-          "flight_suit"
+          "flight_suit",
+          "goth_ensemble",
+          "goth_suit"
         ],
         "man": [
           "none",
           "overalls",
           "jumpsuit",
           "coveralls",
-          "flight_suit"
+          "flight_suit",
+          "goth_suit"
         ]
       },
       "option_details": {
@@ -946,7 +1177,37 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "hem_length": [
+              "micro",
+              "mini",
+              "knee",
+              "midi",
+              "ankle",
+              "floor"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "evening_dress": {
           "fabric": "satin",
@@ -959,7 +1220,23 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "hem_length": [
+              "micro",
+              "mini",
+              "knee",
+              "midi",
+              "ankle",
+              "floor"
+            ]
+          }
         },
         "sundress": {
           "fabric": "linen",
@@ -972,7 +1249,23 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "hem_length": [
+              "micro",
+              "mini",
+              "knee",
+              "midi",
+              "ankle",
+              "floor"
+            ]
+          }
         },
         "jumpsuit": {
           "fabric": "woven",
@@ -985,7 +1278,15 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ]
+          }
         },
         "overalls": {
           "fabric": "cotton",
@@ -998,7 +1299,15 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ]
+          }
         },
         "shirt_dress": {
           "fabric": "cotton",
@@ -1011,7 +1320,43 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "closure": [
+              "buttoned",
+              "top_open",
+              "half_open",
+              "open"
+            ],
+            "hem_length": [
+              "micro",
+              "mini",
+              "knee",
+              "midi",
+              "ankle",
+              "floor"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "wrap_dress": {
           "fabric": "jersey",
@@ -1024,7 +1369,23 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "hem_length": [
+              "micro",
+              "mini",
+              "knee",
+              "midi",
+              "ankle",
+              "floor"
+            ]
+          }
         },
         "a_line_dress": {
           "fabric": "crepe",
@@ -1037,7 +1398,23 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "hem_length": [
+              "micro",
+              "mini",
+              "knee",
+              "midi",
+              "ankle",
+              "floor"
+            ]
+          }
         },
         "pleated_dress": {
           "fabric": "chiffon",
@@ -1050,7 +1427,23 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "hem_length": [
+              "micro",
+              "mini",
+              "knee",
+              "midi",
+              "ankle",
+              "floor"
+            ]
+          }
         },
         "turtleneck_dress": {
           "fabric": "wool",
@@ -1063,7 +1456,37 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "hem_length": [
+              "micro",
+              "mini",
+              "knee",
+              "midi",
+              "ankle",
+              "floor"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "ball_gown": {
           "fabric": "silk",
@@ -1076,7 +1499,23 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "hem_length": [
+              "micro",
+              "mini",
+              "knee",
+              "midi",
+              "ankle",
+              "floor"
+            ]
+          }
         },
         "qipao": {
           "fabric": "silk",
@@ -1089,7 +1528,37 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "hem_length": [
+              "micro",
+              "mini",
+              "knee",
+              "midi",
+              "ankle",
+              "floor"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "pinafore": {
           "fabric": "cotton",
@@ -1102,7 +1571,23 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "hem_length": [
+              "micro",
+              "mini",
+              "knee",
+              "midi",
+              "ankle",
+              "floor"
+            ]
+          }
         },
         "coveralls": {
           "fabric": "cotton",
@@ -1115,7 +1600,29 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "flight_suit": {
           "fabric": "woven",
@@ -1128,10 +1635,382 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
+        },
+        "lingerie_bodysuit": {
+          "fabric": "opaque-lined lace",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "ribbon",
+            "applique"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "strap_style": [
+              "crossback",
+              "halter",
+              "racerback",
+              "regular"
+            ]
+          },
+          "wardrobe_role": "lingerie"
+        },
+        "lingerie_teddy": {
+          "fabric": "satin",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "ribbon",
+            "applique"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "strap_style": [
+              "crossback",
+              "halter",
+              "racerback",
+              "regular"
+            ]
+          },
+          "wardrobe_role": "lingerie"
+        },
+        "longline_bodysuit": {
+          "fabric": "satin",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "ribbon",
+            "applique"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "closure": [
+              "hooked",
+              "front_laced",
+              "back_laced"
+            ],
+            "strap_style": [
+              "crossback",
+              "halter",
+              "racerback",
+              "regular"
+            ]
+          },
+          "wardrobe_role": "lingerie"
+        },
+        "lingerie_chemise": {
+          "fabric": "silk",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "ribbon",
+            "applique"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "hem_length": [
+              "micro",
+              "mini",
+              "knee",
+              "midi"
+            ],
+            "strap_style": [
+              "crossback",
+              "halter",
+              "racerback",
+              "regular"
+            ]
+          },
+          "wardrobe_role": "lingerie"
+        },
+        "babydoll": {
+          "fabric": "opaque-lined chiffon",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "ribbon",
+            "applique"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "hem_length": [
+              "micro",
+              "mini",
+              "knee",
+              "midi"
+            ],
+            "strap_style": [
+              "crossback",
+              "halter",
+              "racerback",
+              "regular"
+            ]
+          },
+          "wardrobe_role": "lingerie"
+        },
+        "lingerie_catsuit": {
+          "fabric": "opaque-lined lace",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "ribbon",
+            "applique"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "short",
+              "long"
+            ]
+          },
+          "wardrobe_role": "lingerie"
+        },
+        "goth_ensemble": {
+          "fabric": "velvet",
+          "details": [
+            "piping",
+            "lace_trim",
+            "gothic_motif",
+            "embroidery",
+            "buttons",
+            "chains",
+            "studs",
+            "eyelets",
+            "belt",
+            "ruching"
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed"
+            ],
+            "closure": [
+              "hooked",
+              "front_laced",
+              "back_laced"
+            ],
+            "hem_length": [
+              "micro",
+              "mini",
+              "knee",
+              "midi",
+              "ankle",
+              "floor"
+            ],
+            "sleeve_length": [
+              "cap",
+              "short",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow"
+            ]
+          }
+        },
+        "goth_suit": {
+          "fabric": "brocade",
+          "details": [
+            "piping",
+            "lace_trim",
+            "gothic_motif",
+            "embroidery",
+            "buttons",
+            "chains",
+            "studs",
+            "eyelets",
+            "belt",
+            "ruching"
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed"
+            ],
+            "closure": [
+              "hooked",
+              "front_laced",
+              "back_laced"
+            ],
+            "sleeve_length": [
+              "cap",
+              "short",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow"
+            ]
+          }
+        },
+        "lace_up_bodysuit": {
+          "fabric": "lace",
+          "details": [
+            "lace_trim",
+            "piping",
+            "embroidery",
+            "ribbon",
+            "eyelets"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted"
+            ],
+            "closure": [
+              "front_laced",
+              "back_laced"
+            ],
+            "strap_style": [
+              "crossback",
+              "halter",
+              "regular"
+            ]
+          },
+          "wardrobe_role": "lingerie"
+        },
+        "lace_teddy": {
+          "fabric": "lace",
+          "details": [
+            "lace_trim",
+            "piping",
+            "embroidery",
+            "ribbon",
+            "eyelets"
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "relaxed"
+            ],
+            "strap_style": [
+              "crossback",
+              "halter",
+              "regular"
+            ]
+          },
+          "wardrobe_role": "lingerie"
         }
       },
-      "description": "Choose the main one-piece outfit. The upper and lower separates are ignored while this mode is active."
+      "description": "Choose the main one-piece outfit. The upper and lower separates are ignored while this mode is active.",
+      "sections": [
+        {
+          "label": "Start",
+          "options": [
+            "none"
+          ]
+        },
+        {
+          "label": "Lingerie",
+          "options": [
+            "lingerie_bodysuit",
+            "lingerie_teddy",
+            "longline_bodysuit",
+            "lingerie_chemise",
+            "babydoll",
+            "lingerie_catsuit",
+            "lace_up_bodysuit",
+            "lace_teddy"
+          ]
+        },
+        {
+          "label": "Everyday",
+          "options": [
+            "day_dress",
+            "sundress",
+            "shirt_dress",
+            "wrap_dress",
+            "a_line_dress",
+            "pleated_dress",
+            "turtleneck_dress",
+            "pinafore"
+          ]
+        },
+        {
+          "label": "Formal",
+          "options": [
+            "evening_dress",
+            "ball_gown",
+            "qipao"
+          ]
+        },
+        {
+          "label": "Gothic",
+          "options": [
+            "goth_ensemble",
+            "goth_suit"
+          ]
+        },
+        {
+          "label": "Jumpsuits & workwear",
+          "options": [
+            "jumpsuit",
+            "overalls",
+            "coveralls",
+            "flight_suit"
+          ]
+        }
+      ]
     },
     "upper_garment": {
       "label": "Upper garment",
@@ -1143,6 +2022,146 @@
           "label": "None",
           "phrase": "",
           "icon": "none",
+          "covers": []
+        },
+        {
+          "id": "lace_bralette",
+          "label": "Lace bralette",
+          "phrase": "an opaque-lined lace lingerie bralette",
+          "icon": "lingerie_lace",
+          "color": "#3b203e",
+          "nsfw": true,
+          "covers": [
+            "upper"
+          ],
+          "color_phrase": "{color} opaque-lined lace lingerie bralette"
+        },
+        {
+          "id": "bustier",
+          "label": "Bustier",
+          "phrase": "a structured satin lingerie bustier with shaped cups",
+          "icon": "bustier",
+          "color": "#3b203e",
+          "nsfw": true,
+          "covers": [
+            "upper"
+          ],
+          "color_phrase": "{color} structured satin lingerie bustier with shaped cups"
+        },
+        {
+          "id": "corset",
+          "label": "Corset",
+          "phrase": "a boned satin lingerie corset",
+          "icon": "corset",
+          "color": "#3b203e",
+          "nsfw": true,
+          "covers": [
+            "upper"
+          ],
+          "color_phrase": "{color} boned satin lingerie corset"
+        },
+        {
+          "id": "lingerie_camisole",
+          "label": "Lingerie camisole",
+          "phrase": "a silk lingerie camisole with thin shoulder straps",
+          "icon": "lingerie_cami",
+          "color": "#3b203e",
+          "nsfw": true,
+          "covers": [
+            "upper"
+          ],
+          "color_phrase": "{color} silk lingerie camisole with thin shoulder straps"
+        },
+        {
+          "id": "bralette",
+          "label": "Bralette",
+          "phrase": "a soft cotton bralette",
+          "icon": "lingerie_bralette",
+          "nsfw": true,
+          "covers": [
+            "upper"
+          ],
+          "color": "#292b35",
+          "color_phrase": "{color} soft cotton bralette"
+        },
+        {
+          "id": "bra",
+          "label": "Underwire bra",
+          "phrase": "an underwire satin bra",
+          "icon": "bra",
+          "nsfw": true,
+          "covers": [
+            "upper"
+          ],
+          "color": "#292b35",
+          "color_phrase": "{color} underwire satin bra"
+        },
+        {
+          "id": "sports_bra",
+          "label": "Sports bra",
+          "phrase": "an opaque jersey sports bra",
+          "icon": "sports_bra",
+          "nsfw": true,
+          "covers": [
+            "upper"
+          ],
+          "color": "#292b35",
+          "color_phrase": "{color} opaque jersey sports bra"
+        },
+        {
+          "id": "bandeau",
+          "label": "Bandeau",
+          "phrase": "a strapless opaque jersey bandeau",
+          "icon": "bandeau",
+          "nsfw": true,
+          "covers": [
+            "upper"
+          ],
+          "color": "#292b35",
+          "color_phrase": "{color} strapless opaque jersey bandeau"
+        },
+        {
+          "id": "longline_bra",
+          "label": "Longline bra",
+          "phrase": "a satin longline bra with a wide underband",
+          "icon": "lingerie_longline",
+          "nsfw": true,
+          "covers": [
+            "upper"
+          ],
+          "color": "#292b35",
+          "color_phrase": "{color} satin longline bra with a wide underband"
+        },
+        {
+          "id": "undershirt",
+          "label": "Fitted undershirt",
+          "phrase": "a fitted cotton underwear vest",
+          "icon": "lingerie_undershirt",
+          "nsfw": true,
+          "covers": [
+            "upper"
+          ],
+          "color": "#292b35",
+          "color_phrase": "{color} fitted cotton underwear vest"
+        },
+        {
+          "id": "lace_up_bralette",
+          "label": "Lace-up bralette",
+          "phrase": "a black lace lingerie bralette with an adjustable front-laced band",
+          "icon": "lingerie_lace_up_bra",
+          "color": "#17151c",
+          "color_phrase": "a {color} lace lingerie bralette with an adjustable front-laced band",
+          "nsfw": true,
+          "covers": []
+        },
+        {
+          "id": "lace_camisole",
+          "label": "Unlined lace camisole",
+          "phrase": "a black unlined floral lace lingerie camisole",
+          "icon": "lingerie_lace_cami",
+          "color": "#17151c",
+          "color_phrase": "a {color} unlined floral lace lingerie camisole",
+          "nsfw": true,
           "covers": []
         },
         {
@@ -1358,6 +2377,18 @@
       "gender_options": {
         "woman": [
           "none",
+          "lace_camisole",
+          "lace_up_bralette",
+          "lingerie_camisole",
+          "corset",
+          "bustier",
+          "lace_bralette",
+          "undershirt",
+          "longline_bra",
+          "bandeau",
+          "sports_bra",
+          "bra",
+          "bralette",
           "tshirt",
           "shirt",
           "blouse",
@@ -1378,6 +2409,7 @@
         ],
         "man": [
           "none",
+          "undershirt",
           "polo",
           "henley",
           "tshirt",
@@ -1405,7 +2437,29 @@
             "stripes",
             "checks",
             "applique"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "shirt": {
           "fabric": "woven",
@@ -1419,7 +2473,35 @@
             "applique",
             "buttons",
             "pockets"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "closure": [
+              "buttoned",
+              "top_open",
+              "half_open",
+              "open"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "blouse": {
           "fabric": "silk",
@@ -1433,7 +2515,35 @@
             "applique",
             "buttons",
             "pockets"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "closure": [
+              "buttoned",
+              "top_open",
+              "half_open",
+              "open"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "sweater": {
           "fabric": "knitted",
@@ -1445,7 +2555,29 @@
             "stripes",
             "checks",
             "applique"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "hoodie": {
           "fabric": "cotton",
@@ -1457,7 +2589,33 @@
             "stripes",
             "checks",
             "applique"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "closure": [
+              "zipped",
+              "unzipped"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "tank": {
           "fabric": "cotton",
@@ -1469,7 +2627,15 @@
             "stripes",
             "checks",
             "applique"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ]
+          }
         },
         "polo": {
           "fabric": "cotton",
@@ -1483,7 +2649,35 @@
             "applique",
             "buttons",
             "pockets"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "closure": [
+              "buttoned",
+              "top_open",
+              "half_open",
+              "open"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "henley": {
           "fabric": "cotton",
@@ -1497,7 +2691,35 @@
             "applique",
             "buttons",
             "pockets"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "closure": [
+              "buttoned",
+              "top_open",
+              "half_open",
+              "open"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "long_sleeve": {
           "fabric": "cotton",
@@ -1509,7 +2731,29 @@
             "stripes",
             "checks",
             "applique"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "turtleneck": {
           "fabric": "wool",
@@ -1521,7 +2765,29 @@
             "stripes",
             "checks",
             "applique"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "sweatshirt": {
           "fabric": "cotton",
@@ -1533,7 +2799,29 @@
             "stripes",
             "checks",
             "applique"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "rugby_shirt": {
           "fabric": "cotton",
@@ -1547,7 +2835,29 @@
             "applique",
             "buttons",
             "pockets"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "athletic_top": {
           "fabric": "jersey",
@@ -1559,7 +2869,29 @@
             "stripes",
             "checks",
             "applique"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "tunic": {
           "fabric": "linen",
@@ -1573,7 +2905,29 @@
             "applique",
             "buttons",
             "pockets"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "vest_shirt": {
           "fabric": "cotton",
@@ -1587,7 +2941,15 @@
             "applique",
             "buttons",
             "pockets"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ]
+          }
         },
         "overshirt": {
           "fabric": "flannel",
@@ -1601,7 +2963,35 @@
             "applique",
             "buttons",
             "pockets"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "closure": [
+              "buttoned",
+              "top_open",
+              "half_open",
+              "open"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "peasant_blouse": {
           "fabric": "cotton",
@@ -1615,7 +3005,29 @@
             "applique",
             "buttons",
             "pockets"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "bow_blouse": {
           "fabric": "silk",
@@ -1629,7 +3041,35 @@
             "applique",
             "buttons",
             "pockets"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "closure": [
+              "buttoned",
+              "top_open",
+              "half_open",
+              "open"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "puff_sleeve": {
           "fabric": "cotton",
@@ -1643,10 +3083,377 @@
             "applique",
             "buttons",
             "pockets"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
+        },
+        "bralette": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "stripes"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "strap_style": [
+              "crossback",
+              "halter",
+              "racerback",
+              "regular"
+            ]
+          },
+          "wardrobe_role": "underwear"
+        },
+        "bra": {
+          "fabric": "satin",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "stripes"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "strap_style": [
+              "crossback",
+              "halter",
+              "racerback",
+              "regular"
+            ]
+          },
+          "wardrobe_role": "underwear"
+        },
+        "sports_bra": {
+          "fabric": "jersey",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "stripes"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "strap_style": [
+              "crossback",
+              "halter",
+              "racerback",
+              "regular"
+            ]
+          },
+          "wardrobe_role": "underwear"
+        },
+        "bandeau": {
+          "fabric": "jersey",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "stripes"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ]
+          },
+          "wardrobe_role": "underwear"
+        },
+        "longline_bra": {
+          "fabric": "satin",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "stripes"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "strap_style": [
+              "crossback",
+              "halter",
+              "racerback",
+              "regular"
+            ]
+          },
+          "wardrobe_role": "underwear"
+        },
+        "undershirt": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "stripes"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ]
+          },
+          "wardrobe_role": "underwear"
+        },
+        "lace_bralette": {
+          "fabric": "opaque-lined lace",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "ribbon",
+            "applique"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "strap_style": [
+              "crossback",
+              "halter",
+              "racerback",
+              "regular"
+            ]
+          },
+          "wardrobe_role": "lingerie"
+        },
+        "bustier": {
+          "fabric": "satin",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "ribbon",
+            "applique"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "closure": [
+              "hooked",
+              "front_laced",
+              "back_laced"
+            ],
+            "strap_style": [
+              "crossback",
+              "halter",
+              "racerback",
+              "regular"
+            ]
+          },
+          "wardrobe_role": "lingerie"
+        },
+        "corset": {
+          "fabric": "satin",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "ribbon",
+            "applique"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "closure": [
+              "hooked",
+              "front_laced",
+              "back_laced"
+            ],
+            "strap_style": [
+              "crossback",
+              "halter",
+              "racerback",
+              "regular"
+            ]
+          },
+          "wardrobe_role": "lingerie"
+        },
+        "lingerie_camisole": {
+          "fabric": "silk",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "ribbon",
+            "applique"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "strap_style": [
+              "crossback",
+              "halter",
+              "racerback",
+              "regular"
+            ]
+          },
+          "wardrobe_role": "lingerie"
+        },
+        "lace_up_bralette": {
+          "fabric": "lace",
+          "details": [
+            "lace_trim",
+            "piping",
+            "embroidery",
+            "ribbon",
+            "eyelets"
+          ],
+          "modifiers": {
+            "closure": [
+              "front_laced",
+              "back_laced"
+            ],
+            "strap_style": [
+              "crossback",
+              "halter",
+              "regular"
+            ]
+          },
+          "wardrobe_role": "lingerie"
+        },
+        "lace_camisole": {
+          "fabric": "lace",
+          "details": [
+            "lace_trim",
+            "piping",
+            "embroidery",
+            "ribbon",
+            "eyelets"
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "relaxed"
+            ],
+            "strap_style": [
+              "crossback",
+              "halter",
+              "regular"
+            ]
+          },
+          "wardrobe_role": "lingerie"
         }
       },
-      "description": "Choose the top worn with a separate lower garment. Outerwear can be added over it."
+      "description": "Choose the top worn with a separate lower garment. Outerwear can be added over it.",
+      "sections": [
+        {
+          "label": "Start",
+          "options": [
+            "none"
+          ]
+        },
+        {
+          "label": "Underwear",
+          "options": [
+            "bralette",
+            "bra",
+            "sports_bra",
+            "bandeau",
+            "longline_bra",
+            "undershirt"
+          ]
+        },
+        {
+          "label": "Lingerie",
+          "options": [
+            "lace_bralette",
+            "bustier",
+            "corset",
+            "lingerie_camisole",
+            "lace_up_bralette",
+            "lace_camisole"
+          ]
+        },
+        {
+          "label": "Everyday tops",
+          "options": [
+            "tshirt",
+            "hoodie",
+            "tank",
+            "long_sleeve",
+            "sweatshirt",
+            "rugby_shirt"
+          ]
+        },
+        {
+          "label": "Shirts & blouses",
+          "options": [
+            "shirt",
+            "blouse",
+            "polo",
+            "henley",
+            "overshirt",
+            "peasant_blouse",
+            "bow_blouse",
+            "puff_sleeve"
+          ]
+        },
+        {
+          "label": "Knitwear",
+          "options": [
+            "sweater",
+            "turtleneck"
+          ]
+        },
+        {
+          "label": "Sport & work",
+          "options": [
+            "athletic_top",
+            "tunic",
+            "vest_shirt"
+          ]
+        }
+      ]
     },
     "lower_garment": {
       "label": "Lower garment",
@@ -1658,6 +3465,160 @@
           "label": "None",
           "phrase": "",
           "icon": "none",
+          "covers": []
+        },
+        {
+          "id": "french_knickers",
+          "label": "French knickers",
+          "phrase": "loose silk French knickers with lace edging",
+          "icon": "lingerie_french",
+          "color": "#3b203e",
+          "nsfw": true,
+          "covers": [
+            "lower"
+          ],
+          "color_phrase": "{color} loose silk French knickers with lace edging"
+        },
+        {
+          "id": "tap_shorts",
+          "label": "Lingerie tap shorts",
+          "phrase": "short satin lingerie tap shorts",
+          "icon": "lingerie_tap",
+          "color": "#3b203e",
+          "nsfw": true,
+          "covers": [
+            "lower"
+          ],
+          "color_phrase": "{color} short satin lingerie tap shorts"
+        },
+        {
+          "id": "lace_briefs",
+          "label": "Lace briefs",
+          "phrase": "opaque-lined lace lingerie briefs",
+          "icon": "lingerie_lace_briefs",
+          "color": "#3b203e",
+          "nsfw": true,
+          "covers": [
+            "lower"
+          ],
+          "color_phrase": "{color} opaque-lined lace lingerie briefs"
+        },
+        {
+          "id": "briefs_stockings",
+          "label": "Briefs and stockings",
+          "phrase": "satin lingerie briefs with a garter belt and thigh-high stockings",
+          "icon": "garter_stockings",
+          "color": "#3b203e",
+          "nsfw": true,
+          "covers": [
+            "lower"
+          ],
+          "color_phrase": "{color} satin lingerie briefs with a garter belt and thigh-high stockings"
+        },
+        {
+          "id": "briefs",
+          "label": "Briefs",
+          "phrase": "cotton underwear briefs",
+          "icon": "briefs",
+          "nsfw": true,
+          "covers": [
+            "lower"
+          ],
+          "color": "#292b35",
+          "color_phrase": "{color} cotton underwear briefs"
+        },
+        {
+          "id": "high_waist_briefs",
+          "label": "High-waisted briefs",
+          "phrase": "high-waisted cotton underwear briefs",
+          "icon": "high_briefs",
+          "nsfw": true,
+          "covers": [
+            "lower"
+          ],
+          "color": "#292b35",
+          "color_phrase": "{color} high-waisted cotton underwear briefs"
+        },
+        {
+          "id": "bikini_briefs",
+          "label": "Bikini briefs",
+          "phrase": "satin bikini-cut underwear briefs",
+          "icon": "lingerie_bikini",
+          "nsfw": true,
+          "covers": [
+            "lower"
+          ],
+          "color": "#292b35",
+          "color_phrase": "{color} satin bikini-cut underwear briefs"
+        },
+        {
+          "id": "boyshorts",
+          "label": "Boyshorts",
+          "phrase": "jersey boyshort underwear",
+          "icon": "lingerie_boyshorts",
+          "nsfw": true,
+          "covers": [
+            "lower"
+          ],
+          "color": "#292b35",
+          "color_phrase": "{color} jersey boyshort underwear"
+        },
+        {
+          "id": "thong",
+          "label": "Thong",
+          "phrase": "a satin thong",
+          "icon": "thong",
+          "nsfw": true,
+          "covers": [
+            "lower"
+          ],
+          "color": "#292b35",
+          "color_phrase": "{color} satin thong"
+        },
+        {
+          "id": "boxers",
+          "label": "Boxer shorts",
+          "phrase": "loose cotton boxer underwear shorts",
+          "icon": "boxers",
+          "nsfw": true,
+          "covers": [
+            "lower"
+          ],
+          "color": "#292b35",
+          "color_phrase": "{color} loose cotton boxer underwear shorts"
+        },
+        {
+          "id": "boxer_briefs",
+          "label": "Boxer briefs",
+          "phrase": "fitted jersey boxer briefs",
+          "icon": "lingerie_boxer_briefs",
+          "nsfw": true,
+          "covers": [
+            "lower"
+          ],
+          "color": "#292b35",
+          "color_phrase": "{color} fitted jersey boxer briefs"
+        },
+        {
+          "id": "trunks",
+          "label": "Trunks",
+          "phrase": "short-legged jersey underwear trunks",
+          "icon": "lingerie_trunks",
+          "nsfw": true,
+          "covers": [
+            "lower"
+          ],
+          "color": "#292b35",
+          "color_phrase": "{color} short-legged jersey underwear trunks"
+        },
+        {
+          "id": "lace_up_briefs",
+          "label": "Lace-up briefs",
+          "phrase": "black lace lingerie briefs with adjustable side lacing",
+          "icon": "lingerie_lace_up_briefs",
+          "color": "#17151c",
+          "color_phrase": "{color} lace lingerie briefs with adjustable side lacing",
+          "nsfw": true,
           "covers": []
         },
         {
@@ -1851,6 +3812,16 @@
       "gender_options": {
         "woman": [
           "none",
+          "lace_up_briefs",
+          "briefs_stockings",
+          "lace_briefs",
+          "tap_shorts",
+          "french_knickers",
+          "thong",
+          "boyshorts",
+          "bikini_briefs",
+          "high_waist_briefs",
+          "briefs",
           "jeans",
           "trousers",
           "skirt",
@@ -1870,6 +3841,11 @@
         ],
         "man": [
           "none",
+          "trunks",
+          "boxer_briefs",
+          "boxers",
+          "thong",
+          "briefs",
           "jeans",
           "trousers",
           "shorts",
@@ -1894,7 +3870,15 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ]
+          }
         },
         "trousers": {
           "fabric": "",
@@ -1907,7 +3891,15 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ]
+          }
         },
         "skirt": {
           "fabric": "woven",
@@ -1920,7 +3912,23 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "hem_length": [
+              "micro",
+              "mini",
+              "knee",
+              "midi",
+              "ankle",
+              "floor"
+            ]
+          }
         },
         "shorts": {
           "fabric": "cotton",
@@ -1933,7 +3941,15 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ]
+          }
         },
         "long_skirt": {
           "fabric": "linen",
@@ -1946,7 +3962,23 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "hem_length": [
+              "micro",
+              "mini",
+              "knee",
+              "midi",
+              "ankle",
+              "floor"
+            ]
+          }
         },
         "cargo_shorts": {
           "fabric": "cotton",
@@ -1959,7 +3991,15 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ]
+          }
         },
         "chinos": {
           "fabric": "cotton",
@@ -1972,7 +4012,15 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ]
+          }
         },
         "wide_leg": {
           "fabric": "linen",
@@ -1985,7 +4033,15 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ]
+          }
         },
         "joggers": {
           "fabric": "jersey",
@@ -1998,7 +4054,15 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ]
+          }
         },
         "cargo_pants": {
           "fabric": "cotton",
@@ -2011,7 +4075,15 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ]
+          }
         },
         "track_pants": {
           "fabric": "woven",
@@ -2024,7 +4096,15 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ]
+          }
         },
         "bermuda": {
           "fabric": "linen",
@@ -2037,7 +4117,15 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ]
+          }
         },
         "pleated_skirt": {
           "fabric": "crepe",
@@ -2050,7 +4138,23 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "hem_length": [
+              "micro",
+              "mini",
+              "knee",
+              "midi",
+              "ankle",
+              "floor"
+            ]
+          }
         },
         "pencil_skirt": {
           "fabric": "wool",
@@ -2063,7 +4167,23 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "hem_length": [
+              "micro",
+              "mini",
+              "knee",
+              "midi",
+              "ankle",
+              "floor"
+            ]
+          }
         },
         "a_line_skirt": {
           "fabric": "cotton",
@@ -2076,7 +4196,23 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "hem_length": [
+              "micro",
+              "mini",
+              "knee",
+              "midi",
+              "ankle",
+              "floor"
+            ]
+          }
         },
         "culottes": {
           "fabric": "linen",
@@ -2089,7 +4225,15 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ]
+          }
         },
         "leggings": {
           "fabric": "jersey",
@@ -2102,10 +4246,365 @@
             "checks",
             "applique",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ]
+          }
+        },
+        "briefs": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "stripes"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "waist_rise": [
+              "low",
+              "mid",
+              "high"
+            ]
+          },
+          "wardrobe_role": "underwear"
+        },
+        "high_waist_briefs": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "stripes"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "waist_rise": [
+              "low",
+              "mid",
+              "high"
+            ]
+          },
+          "wardrobe_role": "underwear"
+        },
+        "bikini_briefs": {
+          "fabric": "satin",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "stripes"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "waist_rise": [
+              "low",
+              "mid",
+              "high"
+            ]
+          },
+          "wardrobe_role": "underwear"
+        },
+        "boyshorts": {
+          "fabric": "jersey",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "stripes"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "waist_rise": [
+              "low",
+              "mid",
+              "high"
+            ]
+          },
+          "wardrobe_role": "underwear"
+        },
+        "thong": {
+          "fabric": "satin",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "stripes"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "waist_rise": [
+              "low",
+              "mid",
+              "high"
+            ]
+          },
+          "wardrobe_role": "underwear"
+        },
+        "boxers": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "stripes"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "waist_rise": [
+              "low",
+              "mid",
+              "high"
+            ]
+          },
+          "wardrobe_role": "underwear"
+        },
+        "boxer_briefs": {
+          "fabric": "jersey",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "stripes"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "waist_rise": [
+              "low",
+              "mid",
+              "high"
+            ]
+          },
+          "wardrobe_role": "underwear"
+        },
+        "trunks": {
+          "fabric": "jersey",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "stripes"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "waist_rise": [
+              "low",
+              "mid",
+              "high"
+            ]
+          },
+          "wardrobe_role": "underwear"
+        },
+        "french_knickers": {
+          "fabric": "silk",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "ribbon",
+            "applique"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "waist_rise": [
+              "low",
+              "mid",
+              "high"
+            ]
+          },
+          "wardrobe_role": "lingerie"
+        },
+        "tap_shorts": {
+          "fabric": "satin",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "ribbon",
+            "applique"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "waist_rise": [
+              "low",
+              "mid",
+              "high"
+            ]
+          },
+          "wardrobe_role": "lingerie"
+        },
+        "lace_briefs": {
+          "fabric": "opaque-lined lace",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "ribbon",
+            "applique"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ],
+            "waist_rise": [
+              "low",
+              "mid",
+              "high"
+            ]
+          },
+          "wardrobe_role": "lingerie"
+        },
+        "briefs_stockings": {
+          "fabric": "satin",
+          "details": [
+            "piping",
+            "embroidery",
+            "trim",
+            "ribbon",
+            "applique"
+          ],
+          "modifiers": {
+            "fit": [
+              "compression",
+              "fitted",
+              "relaxed"
+            ]
+          },
+          "wardrobe_role": "lingerie"
+        },
+        "lace_up_briefs": {
+          "fabric": "lace",
+          "details": [
+            "lace_trim",
+            "piping",
+            "embroidery",
+            "ribbon",
+            "eyelets"
+          ],
+          "modifiers": {
+            "closure": [
+              "side_laced"
+            ],
+            "waist_rise": [
+              "low",
+              "mid",
+              "high"
+            ]
+          },
+          "wardrobe_role": "lingerie"
         }
       },
-      "description": "Choose trousers, shorts or a skirt. This choice stays saved but is omitted from prompts cropped above the lower body."
+      "description": "Choose trousers, shorts or a skirt. This choice stays saved but is omitted from prompts cropped above the lower body.",
+      "sections": [
+        {
+          "label": "Start",
+          "options": [
+            "none"
+          ]
+        },
+        {
+          "label": "Underwear",
+          "options": [
+            "briefs",
+            "high_waist_briefs",
+            "bikini_briefs",
+            "boyshorts",
+            "thong",
+            "boxers",
+            "boxer_briefs",
+            "trunks"
+          ]
+        },
+        {
+          "label": "Lingerie",
+          "options": [
+            "french_knickers",
+            "tap_shorts",
+            "lace_briefs",
+            "briefs_stockings",
+            "lace_up_briefs"
+          ]
+        },
+        {
+          "label": "Trousers",
+          "options": [
+            "jeans",
+            "trousers",
+            "chinos",
+            "wide_leg",
+            "joggers",
+            "cargo_pants",
+            "track_pants",
+            "leggings"
+          ]
+        },
+        {
+          "label": "Skirts",
+          "options": [
+            "skirt",
+            "long_skirt",
+            "pleated_skirt",
+            "pencil_skirt",
+            "a_line_skirt"
+          ]
+        },
+        {
+          "label": "Shorts",
+          "options": [
+            "shorts",
+            "cargo_shorts",
+            "bermuda",
+            "culottes"
+          ]
+        }
+      ]
     },
     "outerwear": {
       "label": "Outerwear",
@@ -2281,7 +4780,33 @@
             "buttons",
             "pockets",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "closure": [
+              "zipped",
+              "unzipped"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "blazer": {
           "fabric": "wool",
@@ -2296,7 +4821,35 @@
             "buttons",
             "pockets",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "closure": [
+              "buttoned",
+              "top_open",
+              "half_open",
+              "open"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "coat": {
           "fabric": "wool",
@@ -2311,7 +4864,35 @@
             "buttons",
             "pockets",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "closure": [
+              "buttoned",
+              "top_open",
+              "half_open",
+              "open"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "cardigan": {
           "fabric": "knitted",
@@ -2326,7 +4907,35 @@
             "buttons",
             "pockets",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "closure": [
+              "buttoned",
+              "top_open",
+              "half_open",
+              "open"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "bomber": {
           "fabric": "woven",
@@ -2341,7 +4950,33 @@
             "buttons",
             "pockets",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "closure": [
+              "zipped",
+              "unzipped"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "denim_jacket": {
           "fabric": "denim",
@@ -2356,7 +4991,35 @@
             "buttons",
             "pockets",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "closure": [
+              "buttoned",
+              "top_open",
+              "half_open",
+              "open"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "biker": {
           "fabric": "leather",
@@ -2371,7 +5034,33 @@
             "buttons",
             "pockets",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "closure": [
+              "zipped",
+              "unzipped"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "trench": {
           "fabric": "cotton",
@@ -2386,7 +5075,35 @@
             "buttons",
             "pockets",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "closure": [
+              "buttoned",
+              "top_open",
+              "half_open",
+              "open"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "parka": {
           "fabric": "woven",
@@ -2401,7 +5118,33 @@
             "buttons",
             "pockets",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "closure": [
+              "zipped",
+              "unzipped"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "puffer": {
           "fabric": "",
@@ -2416,7 +5159,33 @@
             "buttons",
             "pockets",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "closure": [
+              "zipped",
+              "unzipped"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "cape": {
           "fabric": "wool",
@@ -2431,7 +5200,15 @@
             "buttons",
             "pockets",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ]
+          }
         },
         "robe": {
           "fabric": "velvet",
@@ -2446,7 +5223,33 @@
             "buttons",
             "pockets",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "closure": [
+              "tied",
+              "open"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "varsity": {
           "fabric": "wool",
@@ -2461,7 +5264,35 @@
             "buttons",
             "pockets",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "closure": [
+              "buttoned",
+              "top_open",
+              "half_open",
+              "open"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         },
         "suit_jacket": {
           "fabric": "wool",
@@ -2476,10 +5307,80 @@
             "buttons",
             "pockets",
             "belt"
-          ]
+          ],
+          "modifiers": {
+            "fit": [
+              "fitted",
+              "tailored",
+              "relaxed",
+              "oversized"
+            ],
+            "closure": [
+              "buttoned",
+              "top_open",
+              "half_open",
+              "open"
+            ],
+            "sleeve_length": [
+              "sleeveless",
+              "cap",
+              "short",
+              "elbow",
+              "three_quarter",
+              "long"
+            ],
+            "sleeve_roll": [
+              "wrist",
+              "forearm",
+              "elbow",
+              "above_elbow"
+            ]
+          }
         }
       },
-      "description": "Add a jacket, coat or other outer layer over the main outfit. None leaves the main outfit as it is."
+      "description": "Add a jacket, coat or other outer layer over the main outfit. None leaves the main outfit as it is.",
+      "sections": [
+        {
+          "label": "Start",
+          "options": [
+            "none"
+          ]
+        },
+        {
+          "label": "Jackets",
+          "options": [
+            "jacket",
+            "bomber",
+            "denim_jacket",
+            "biker",
+            "varsity"
+          ]
+        },
+        {
+          "label": "Tailored",
+          "options": [
+            "blazer",
+            "suit_jacket"
+          ]
+        },
+        {
+          "label": "Coats",
+          "options": [
+            "coat",
+            "trench",
+            "parka",
+            "puffer"
+          ]
+        },
+        {
+          "label": "Layers",
+          "options": [
+            "cardigan",
+            "cape",
+            "robe"
+          ]
+        }
+      ]
     },
     "shoes": {
       "label": "Shoes",
@@ -2746,7 +5647,48 @@
           ]
         }
       },
-      "description": "Choose footwear. Shoes stay saved but are omitted from prompts where the feet are outside the crop."
+      "description": "Choose footwear. Shoes stay saved but are omitted from prompts where the feet are outside the crop.",
+      "sections": [
+        {
+          "label": "Start",
+          "options": [
+            "none"
+          ]
+        },
+        {
+          "label": "Casual & flats",
+          "options": [
+            "sandals",
+            "loafers",
+            "oxfords",
+            "ballet_flats"
+          ]
+        },
+        {
+          "label": "Heels",
+          "options": [
+            "heels",
+            "ankle_heels"
+          ]
+        },
+        {
+          "label": "Boots",
+          "options": [
+            "boots",
+            "chelsea",
+            "combat",
+            "hiking"
+          ]
+        },
+        {
+          "label": "Sport",
+          "options": [
+            "sneakers",
+            "running",
+            "high_tops"
+          ]
+        }
+      ]
     },
     "headwear": {
       "label": "Headwear",
@@ -2940,7 +5882,39 @@
           ]
         }
       },
-      "description": "Add a hat, cap, scarf or other head covering. None leaves the head uncovered."
+      "description": "Add a hat, cap, scarf or other head covering. None leaves the head uncovered.",
+      "sections": [
+        {
+          "label": "Start",
+          "options": [
+            "none"
+          ]
+        },
+        {
+          "label": "Caps & hats",
+          "options": [
+            "cap",
+            "hat",
+            "beret",
+            "bucket",
+            "fedora"
+          ]
+        },
+        {
+          "label": "Warm hats",
+          "options": [
+            "beanie"
+          ]
+        },
+        {
+          "label": "Hoods & wraps",
+          "options": [
+            "headscarf",
+            "hood",
+            "headband"
+          ]
+        }
+      ]
     },
     "background": {
       "label": "Background",
@@ -3256,6 +6230,87 @@
           "label": "Hands in pockets",
           "phrase": "standing with hands tucked into the outfit pockets",
           "icon": "standing"
+        },
+        {
+          "id": "runway_walk",
+          "label": "Runway walk",
+          "phrase": "walking along a runway with one foot crossing slightly ahead of the other, shoulders back and chin level",
+          "icon": "pose_runway_walk"
+        },
+        {
+          "id": "runway_turn",
+          "label": "Runway turn",
+          "phrase": "pivoting at the end of a runway with one shoulder turned toward the camera",
+          "icon": "pose_runway_turn"
+        },
+        {
+          "id": "editorial_hip",
+          "label": "Editorial hip shift",
+          "phrase": "standing with weight on one leg, one hip shifted sideways and one hand at the waist",
+          "icon": "pose_editorial_hip"
+        },
+        {
+          "id": "editorial_arms",
+          "label": "Editorial overhead arms",
+          "phrase": "standing with both arms raised in a soft curve above the head",
+          "icon": "pose_editorial_arms"
+        },
+        {
+          "id": "ballet_first",
+          "label": "Ballet first position",
+          "phrase": "standing in ballet first position with heels together, toes turned outward and arms softly rounded low",
+          "icon": "pose_ballet_first"
+        },
+        {
+          "id": "ballet_arabesque",
+          "label": "Ballet arabesque",
+          "phrase": "balancing on one leg with the other extended behind and both arms extended gracefully",
+          "icon": "pose_ballet_arabesque"
+        },
+        {
+          "id": "ballet_passe",
+          "label": "Ballet passe",
+          "phrase": "balancing on one leg with the other knee bent outward and toes touching the supporting knee, arms rounded overhead",
+          "icon": "pose_ballet_passe"
+        },
+        {
+          "id": "ballet_plie",
+          "label": "Ballet plie",
+          "phrase": "bending both knees outward in a controlled ballet plie, heels grounded and arms curved",
+          "icon": "pose_ballet_plie"
+        },
+        {
+          "id": "ballet_releve",
+          "label": "Ballet releve",
+          "phrase": "rising onto the balls of both feet with a lengthened torso and softly curved arms",
+          "icon": "pose_ballet_releve"
+        },
+        {
+          "id": "ballet_lunge",
+          "label": "Ballet lunge",
+          "phrase": "holding a deep graceful side lunge with one arm sweeping overhead",
+          "icon": "pose_ballet_lunge"
+        },
+        {
+          "id": "glamour_shoulder",
+          "label": "Glamour shoulder turn",
+          "phrase": "standing with one hip angled away, turning the shoulders toward the camera with a confident gaze",
+          "icon": "pose_glamour_shoulder",
+          "nsfw": true
+        },
+        {
+          "id": "glamour_recline",
+          "label": "Reclining glamour",
+          "phrase": "reclining sideways on a chaise longue with one arm supporting the upper body and legs resting together",
+          "icon": "pose_glamour_recline",
+          "nsfw": true
+        },
+        {
+          "id": "glamour_kneel",
+          "label": "Upright kneeling",
+          "phrase": "kneeling upright with the torso straight, shoulders relaxed and hands resting at the waist",
+          "icon": "pose_glamour_kneel",
+          "nsfw": true
         }
       ],
       "option_details": {
@@ -3297,6 +6352,45 @@
         },
         "hands_pockets": {
           "cropped_phrase": "upright with relaxed shoulders and elbows angled slightly back"
+        },
+        "runway_walk": {
+          "cropped_phrase": "moving forward with shoulders back, chin level and a controlled natural arm swing"
+        },
+        "runway_turn": {
+          "cropped_phrase": "turning the shoulders toward the camera with a poised chin"
+        },
+        "editorial_hip": {
+          "cropped_phrase": "holding the torso at a gentle side angle with one hand at the waist"
+        },
+        "editorial_arms": {
+          "cropped_phrase": "holding both arms in a soft curve above the head"
+        },
+        "ballet_first": {
+          "cropped_phrase": "holding the shoulders down and arms softly rounded low"
+        },
+        "ballet_arabesque": {
+          "cropped_phrase": "inclining the torso gently forward with gracefully extended arms"
+        },
+        "ballet_passe": {
+          "cropped_phrase": "holding the torso upright and arms rounded overhead"
+        },
+        "ballet_plie": {
+          "cropped_phrase": "holding the torso upright with arms curved gently outward"
+        },
+        "ballet_releve": {
+          "cropped_phrase": "lengthening the neck and torso with softly curved arms"
+        },
+        "ballet_lunge": {
+          "cropped_phrase": "leaning the torso to the side with one arm sweeping overhead"
+        },
+        "glamour_shoulder": {
+          "cropped_phrase": "turning the shoulders toward the camera with a confident gaze"
+        },
+        "glamour_recline": {
+          "cropped_phrase": "reclining against a chaise back with one arm supporting the upper body"
+        },
+        "glamour_kneel": {
+          "cropped_phrase": "holding the torso upright with relaxed shoulders and hands at the waist"
         }
       },
       "description": "Choose the character’s stance, action or body direction. Framing determines how much of that pose is visible."
@@ -3555,7 +6649,21 @@
     "#f5c3d8": "pale blush pink",
     "#d4af37": "metallic gold",
     "#a93440": "muted rose red",
-    "#264d43": "deep forest green"
+    "#264d43": "deep forest green",
+    "#17151c": "soft black",
+    "#34343c": "charcoal grey",
+    "#f2eadb": "warm ivory",
+    "#bca58b": "warm taupe",
+    "#293446": "midnight navy",
+    "#542b46": "deep plum",
+    "#742b3e": "wine red",
+    "#245747": "deep emerald",
+    "#a66c3e": "cognac brown",
+    "#bfd1d8": "pale icy blue",
+    "#87979d": "smoky blue grey",
+    "#c7cbd1": "silver grey",
+    "#c7a45b": "antique gold",
+    "#916644": "warm bronze"
   },
   "clothing": {
     "fabric": {
@@ -3564,80 +6672,197 @@
         "phrase": "",
         "description": "Keep the material already described by the selected garment."
       },
-      "cotton": {
-        "label": "Cotton",
-        "phrase": "cotton",
-        "description": "A familiar fabric with a soft, mostly matte appearance, like a T-shirt or everyday shirt."
-      },
-      "linen": {
-        "label": "Linen",
-        "phrase": "linen",
-        "description": "A lightly textured fabric that often shows natural creases, like a relaxed summer shirt."
-      },
-      "silk": {
-        "label": "Silk",
-        "phrase": "silk",
-        "description": "A fine fabric that drapes softly and often catches light with a gentle sheen."
-      },
-      "wool": {
-        "label": "Wool",
-        "phrase": "wool",
-        "description": "A warm-looking fabric, often used for sweaters, tailored jackets and coats."
-      },
-      "denim": {
-        "label": "Denim",
-        "phrase": "denim",
-        "description": "The sturdy fabric used for jeans, with a visible diagonal weave."
-      },
-      "leather": {
-        "label": "Leather",
-        "phrase": "leather",
-        "description": "A solid hide-like surface that can look smooth, firm or slightly glossy."
-      },
-      "suede": {
-        "label": "Suede",
-        "phrase": "suede",
-        "description": "A leather surface with a soft, fuzzy finish and little shine."
-      },
-      "velvet": {
-        "label": "Velvet",
-        "phrase": "velvet",
-        "description": "A plush surface with short, dense fibers that catch light in soft highlights."
-      },
-      "satin": {
-        "label": "Satin",
-        "phrase": "satin",
-        "description": "A smooth fabric surface with a noticeable sheen, often used for evening wear."
-      },
-      "jersey": {
-        "label": "Jersey",
-        "phrase": "jersey",
-        "description": "A soft, flexible knit fabric, like the material of many T-shirts."
-      },
-      "corduroy": {
-        "label": "Corduroy",
-        "phrase": "corduroy",
-        "description": "A fabric with rows of raised ridges, often used for trousers and jackets."
+      "brocade": {
+        "label": "Brocade",
+        "phrase": "brocade",
+        "description": "A decorative fabric with raised-looking designs woven into it, often used for ornate or formal clothing."
       },
       "canvas": {
         "label": "Canvas",
         "phrase": "canvas",
         "description": "A sturdy, closely woven fabric, often used for workwear and casual shoes."
       },
+      "chainmail": {
+        "label": "Chainmail over lining",
+        "phrase": "small linked metal rings over opaque lining",
+        "description": "Small linked metal rings over opaque lining.",
+        "transparency": false
+      },
+      "corduroy": {
+        "label": "Corduroy",
+        "phrase": "corduroy",
+        "description": "A fabric with rows of raised ridges, often used for trousers and jackets."
+      },
+      "cotton": {
+        "label": "Cotton",
+        "phrase": "cotton",
+        "description": "A familiar fabric with a soft, mostly matte appearance, like a T-shirt or everyday shirt."
+      },
       "crepe": {
         "label": "Crepe",
         "phrase": "crepe",
         "description": "A fabric with a fine, slightly pebbled or crinkled surface."
+      },
+      "denim": {
+        "label": "Denim",
+        "phrase": "denim",
+        "description": "The sturdy fabric used for jeans, with a visible diagonal weave."
+      },
+      "faux_fur": {
+        "label": "Faux fur",
+        "phrase": "dense soft faux fur",
+        "description": "Dense soft faux fur.",
+        "transparency": false
+      },
+      "holographic": {
+        "label": "Holographic fabric",
+        "phrase": "holographic fabric with shifting rainbow reflections",
+        "description": "Holographic fabric with shifting rainbow reflections.",
+        "transparency": false
+      },
+      "jersey": {
+        "label": "Jersey",
+        "phrase": "jersey",
+        "description": "A soft, flexible knit fabric, like the material of many T-shirts."
+      },
+      "lace": {
+        "label": "Lace",
+        "phrase": "floral lace",
+        "description": "Unlined lingerie fabric. Adjust opacity to describe its transparency. Requires local NSFW permission.",
+        "transparency": true,
+        "nsfw": true
+      },
+      "latex": {
+        "label": "Latex rubber",
+        "phrase": "smooth stretch latex rubber",
+        "description": "Smooth stretch latex rubber.",
+        "transparency": false
+      },
+      "leather": {
+        "label": "Leather",
+        "phrase": "leather",
+        "description": "A solid hide-like surface that can look smooth, firm or slightly glossy."
       },
       "chiffon": {
         "label": "Lined chiffon",
         "phrase": "opaque-lined chiffon",
         "description": "A light, delicate fabric over an opaque lining, so the garment remains covered."
       },
-      "brocade": {
-        "label": "Brocade",
-        "phrase": "brocade",
-        "description": "A decorative fabric with raised-looking designs woven into it, often used for ornate or formal clothing."
+      "mesh": {
+        "label": "Lined mesh",
+        "phrase": "fine mesh over opaque lining",
+        "description": "Fine mesh over opaque lining.",
+        "transparency": false
+      },
+      "organza": {
+        "label": "Lined organza",
+        "phrase": "crisp organza over opaque lining",
+        "description": "Crisp organza over opaque lining.",
+        "transparency": false
+      },
+      "tulle": {
+        "label": "Lined tulle",
+        "phrase": "layered tulle over opaque lining",
+        "description": "Layered tulle over opaque lining.",
+        "transparency": false
+      },
+      "linen": {
+        "label": "Linen",
+        "phrase": "linen",
+        "description": "A lightly textured fabric that often shows natural creases, like a relaxed summer shirt."
+      },
+      "metallic": {
+        "label": "Metallic lame",
+        "phrase": "metallic lame fabric with fine reflective threads",
+        "description": "Metallic lame fabric with fine reflective threads.",
+        "transparency": false
+      },
+      "neoprene": {
+        "label": "Neoprene",
+        "phrase": "structured neoprene",
+        "description": "Structured neoprene.",
+        "transparency": false
+      },
+      "patent": {
+        "label": "Patent leather",
+        "phrase": "patent leather with a mirror-like shine",
+        "description": "Patent leather with a mirror-like shine.",
+        "transparency": false
+      },
+      "plastic": {
+        "label": "Plastic",
+        "phrase": "flexible plastic sheeting",
+        "description": "Flexible plastic sheeting.",
+        "transparency": true
+      },
+      "pvc": {
+        "label": "PVC",
+        "phrase": "smooth PVC",
+        "description": "Smooth pvc.",
+        "transparency": true
+      },
+      "rexine": {
+        "label": "Rexine / faux leather",
+        "phrase": "Rexine synthetic leather with a fine leather-like grain",
+        "description": "Rexine synthetic leather with a fine leather-like grain.",
+        "transparency": false
+      },
+      "satin": {
+        "label": "Satin",
+        "phrase": "satin",
+        "description": "A smooth fabric surface with a noticeable sheen, often used for evening wear."
+      },
+      "sequins": {
+        "label": "Sequined fabric",
+        "phrase": "fabric covered in closely spaced sequins",
+        "description": "Fabric covered in closely spaced sequins.",
+        "transparency": false
+      },
+      "sheer_mesh": {
+        "label": "Sheer mesh",
+        "phrase": "fine sheer mesh",
+        "description": "Unlined lingerie fabric. Adjust opacity to describe its transparency. Requires local NSFW permission.",
+        "transparency": true,
+        "nsfw": true
+      },
+      "sheer_organza": {
+        "label": "Sheer organza",
+        "phrase": "unlined organza",
+        "description": "Unlined lingerie fabric. Adjust opacity to describe its transparency. Requires local NSFW permission.",
+        "transparency": true,
+        "nsfw": true
+      },
+      "silk": {
+        "label": "Silk",
+        "phrase": "silk",
+        "description": "A fine fabric that drapes softly and often catches light with a gentle sheen."
+      },
+      "suede": {
+        "label": "Suede",
+        "phrase": "suede",
+        "description": "A leather surface with a soft, fuzzy finish and little shine."
+      },
+      "taffeta": {
+        "label": "Taffeta",
+        "phrase": "crisp taffeta with a subtle sheen",
+        "description": "Crisp taffeta with a subtle sheen.",
+        "transparency": false
+      },
+      "velvet": {
+        "label": "Velvet",
+        "phrase": "velvet",
+        "description": "A plush surface with short, dense fibers that catch light in soft highlights."
+      },
+      "vinyl": {
+        "label": "Vinyl",
+        "phrase": "high-gloss vinyl",
+        "description": "High-gloss vinyl.",
+        "transparency": true
+      },
+      "wool": {
+        "label": "Wool",
+        "phrase": "wool",
+        "description": "A warm-looking fabric, often used for sweaters, tailored jackets and coats."
       }
     },
     "texture": {
@@ -3646,60 +6871,90 @@
         "phrase": "",
         "description": "Keep the selected garment’s original surface description."
       },
-      "smooth": {
-        "label": "Smooth",
-        "phrase": "a smooth matte surface",
-        "description": "An even, matte surface without a strongly visible texture."
-      },
-      "ribbed": {
-        "label": "Ribbed knit",
-        "phrase": "a fine ribbed-knit surface",
-        "description": "Fine raised rows in the knit, like the ribs on a sweater cuff."
+      "brushed": {
+        "label": "Brushed",
+        "phrase": "a soft brushed surface",
+        "description": "A softly fuzzy surface, like brushed flannel."
       },
       "cable": {
         "label": "Cable knit",
         "phrase": "a raised cable-knit surface",
         "description": "Raised, rope-like knitted patterns, like those on a cable-knit sweater."
       },
-      "twill": {
-        "label": "Twill",
-        "phrase": "a visible diagonal twill weave",
-        "description": "A weave with small diagonal lines across the fabric, as seen in denim or chinos."
-      },
-      "jacquard": {
-        "label": "Jacquard",
-        "phrase": "a woven jacquard pattern",
-        "description": "A decorative pattern woven into the fabric itself, rather than printed on top."
-      },
-      "quilted": {
-        "label": "Quilted",
-        "phrase": "a padded diamond-quilted surface",
-        "description": "A padded surface divided by stitching into diamond-shaped sections."
-      },
-      "pleated": {
-        "label": "Pleated",
-        "phrase": "regular pressed pleats",
-        "description": "Regular folds pressed into the fabric, like those on a pleated skirt."
-      },
-      "brushed": {
-        "label": "Brushed",
-        "phrase": "a soft brushed surface",
-        "description": "A softly fuzzy surface, like brushed flannel."
-      },
       "crinkled": {
         "label": "Crinkled",
         "phrase": "a gently crinkled surface",
         "description": "Small, irregular wrinkles that give the fabric a relaxed, uneven surface."
+      },
+      "croc": {
+        "label": "Crocodile emboss",
+        "phrase": "a crocodile-scale embossed pattern",
+        "description": "A crocodile-scale embossed pattern."
+      },
+      "embossed": {
+        "label": "Embossed",
+        "phrase": "a raised embossed pattern",
+        "description": "A raised embossed pattern."
+      },
+      "flocked": {
+        "label": "Flocked",
+        "phrase": "a soft raised flocked pattern",
+        "description": "A soft raised flocked pattern."
       },
       "herringbone": {
         "label": "Herringbone",
         "phrase": "a herringbone weave",
         "description": "A repeating zigzag weave that looks like rows of small V shapes."
       },
+      "glossy": {
+        "label": "High gloss",
+        "phrase": "a highly glossy reflective finish",
+        "description": "A highly glossy reflective finish."
+      },
+      "iridescent": {
+        "label": "Iridescent",
+        "phrase": "an iridescent surface shifting color in the light",
+        "description": "An iridescent surface shifting color in the light."
+      },
+      "jacquard": {
+        "label": "Jacquard",
+        "phrase": "a woven jacquard pattern",
+        "description": "A decorative pattern woven into the fabric itself, rather than printed on top."
+      },
+      "perforated": {
+        "label": "Perforated over lining",
+        "phrase": "a regularly perforated outer surface over opaque lining",
+        "description": "A regularly perforated outer surface over opaque lining."
+      },
+      "pleated": {
+        "label": "Pleated",
+        "phrase": "regular pressed pleats",
+        "description": "Regular folds pressed into the fabric, like those on a pleated skirt."
+      },
+      "quilted": {
+        "label": "Quilted",
+        "phrase": "a padded diamond-quilted surface",
+        "description": "A padded surface divided by stitching into diamond-shaped sections."
+      },
+      "ribbed": {
+        "label": "Ribbed knit",
+        "phrase": "a fine ribbed-knit surface",
+        "description": "Fine raised rows in the knit, like the ribs on a sweater cuff."
+      },
       "seersucker": {
         "label": "Seersucker",
         "phrase": "a puckered seersucker surface",
         "description": "Alternating smooth and puckered areas that give the fabric a lightly rippled surface."
+      },
+      "smooth": {
+        "label": "Smooth",
+        "phrase": "a smooth matte surface",
+        "description": "An even, matte surface without a strongly visible texture."
+      },
+      "twill": {
+        "label": "Twill",
+        "phrase": "a visible diagonal twill weave",
+        "description": "A weave with small diagonal lines across the fabric, as seen in denim or chinos."
       }
     },
     "details": {
@@ -3767,6 +7022,401 @@
         "label": "Applique",
         "phrase": "{color} geometric applique",
         "description": "Decorative shapes made from pieces of material attached to the garment. This option asks for geometric shapes in your chosen accent color."
+      },
+      "lace_trim": {
+        "label": "Lace edging",
+        "phrase": "{color} scalloped lace along the edges",
+        "description": "{color} scalloped lace along the edges."
+      },
+      "studs": {
+        "label": "Metal studs",
+        "phrase": "small {color} metal studs arranged along the seams",
+        "description": "Small {color} metal studs arranged along the seams."
+      },
+      "chains": {
+        "label": "Chain accents",
+        "phrase": "{color} decorative chains draped along the garment",
+        "description": "{color} decorative chains draped along the garment."
+      },
+      "eyelets": {
+        "label": "Metal eyelets",
+        "phrase": "{color} metal eyelets around the fastening",
+        "description": "{color} metal eyelets around the fastening."
+      },
+      "ruching": {
+        "label": "Ruching",
+        "phrase": "{color} gathered ruched panels",
+        "description": "{color} gathered ruched panels."
+      },
+      "gothic_motif": {
+        "label": "Gothic embroidery",
+        "phrase": "{color} pointed-arch gothic embroidery",
+        "description": "{color} pointed-arch gothic embroidery."
+      }
+    },
+    "modifiers": {
+      "fit": {
+        "label": "Garment fit",
+        "options": {
+          "default": {
+            "label": "Original fit",
+            "phrase": "",
+            "description": "."
+          },
+          "compression": {
+            "label": "Compression fit",
+            "phrase": "with a very close stretch compression fit",
+            "description": "With a very close stretch compression fit."
+          },
+          "fitted": {
+            "label": "Fitted",
+            "phrase": "with a close body-skimming fit",
+            "description": "With a close body-skimming fit."
+          },
+          "tailored": {
+            "label": "Tailored",
+            "phrase": "with a shaped tailored fit",
+            "description": "With a shaped tailored fit."
+          },
+          "relaxed": {
+            "label": "Relaxed",
+            "phrase": "with a loose relaxed fit",
+            "description": "With a loose relaxed fit."
+          },
+          "oversized": {
+            "label": "Oversized",
+            "phrase": "with an oversized roomy fit",
+            "description": "With an oversized roomy fit."
+          }
+        }
+      },
+      "closure": {
+        "label": "Fastening",
+        "options": {
+          "default": {
+            "label": "Original fastening",
+            "phrase": "",
+            "description": "."
+          },
+          "buttoned": {
+            "label": "Fully buttoned",
+            "phrase": "fully buttoned from collar to hem",
+            "description": "Fully buttoned from collar to hem."
+          },
+          "zipped": {
+            "label": "Fully zipped",
+            "phrase": "fully zipped up",
+            "description": "Fully zipped up."
+          },
+          "hooked": {
+            "label": "Hook-and-eye closed",
+            "phrase": "secured closed with hook-and-eye fastenings",
+            "description": "Secured closed with hook-and-eye fastenings."
+          },
+          "front_laced": {
+            "label": "Laced at front",
+            "phrase": "secured with adjustable lacing at the front",
+            "description": "Secured with adjustable lacing at the front."
+          },
+          "back_laced": {
+            "label": "Laced at back",
+            "phrase": "secured with adjustable lacing at the back",
+            "description": "Secured with adjustable lacing at the back."
+          },
+          "side_laced": {
+            "label": "Laced sides",
+            "phrase": "secured with crossing laces at both sides",
+            "description": "Adjustable crossing laces join the side panels."
+          },
+          "tied": {
+            "label": "Tied closed",
+            "phrase": "secured closed with a tied waist belt",
+            "description": "Secured closed with a tied waist belt."
+          },
+          "top_open": {
+            "label": "Top button open",
+            "phrase": "buttoned with only the top collar button undone",
+            "description": "Buttoned with only the top collar button undone."
+          },
+          "half_open": {
+            "label": "Partly unbuttoned",
+            "phrase": "partly unbuttoned down the front",
+            "description": "Partly unbuttoned down the front.",
+            "nsfw": true
+          },
+          "open": {
+            "label": "Unbuttoned / open",
+            "phrase": "unbuttoned and open at the front",
+            "description": "Unbuttoned and open at the front."
+          },
+          "unzipped": {
+            "label": "Unzipped / open",
+            "phrase": "unzipped and open at the front",
+            "description": "Unzipped and open at the front."
+          }
+        }
+      },
+      "hem_length": {
+        "label": "Hem length",
+        "options": {
+          "default": {
+            "label": "Original length",
+            "phrase": "",
+            "description": "."
+          },
+          "micro": {
+            "label": "Micro / upper-thigh",
+            "phrase": "with a very short upper-thigh hem",
+            "description": "With a very short upper-thigh hem.",
+            "nsfw": true
+          },
+          "mini": {
+            "label": "Mini / mid-thigh",
+            "phrase": "with a hem ending at mid-thigh",
+            "description": "With a hem ending at mid-thigh.",
+            "nsfw": true
+          },
+          "knee": {
+            "label": "Knee length",
+            "phrase": "with a hem ending at the knees",
+            "description": "With a hem ending at the knees."
+          },
+          "midi": {
+            "label": "Midi / mid-calf",
+            "phrase": "with a hem ending at mid-calf",
+            "description": "With a hem ending at mid-calf."
+          },
+          "ankle": {
+            "label": "Ankle length",
+            "phrase": "with a hem ending at the ankles",
+            "description": "With a hem ending at the ankles."
+          },
+          "floor": {
+            "label": "Floor length",
+            "phrase": "with a hem reaching the floor",
+            "description": "With a hem reaching the floor."
+          }
+        }
+      },
+      "sleeve_length": {
+        "label": "Sleeve length",
+        "options": {
+          "default": {
+            "label": "Original sleeves",
+            "phrase": "",
+            "description": "."
+          },
+          "sleeveless": {
+            "label": "Sleeveless",
+            "phrase": "with a sleeveless cut",
+            "description": "With a sleeveless cut."
+          },
+          "cap": {
+            "label": "Cap sleeves",
+            "phrase": "with small cap sleeves covering the shoulder tops",
+            "description": "With small cap sleeves covering the shoulder tops."
+          },
+          "short": {
+            "label": "Short sleeves",
+            "phrase": "with short sleeves ending above the elbows",
+            "description": "With short sleeves ending above the elbows."
+          },
+          "elbow": {
+            "label": "Elbow sleeves",
+            "phrase": "with sleeves ending at the elbows",
+            "description": "With sleeves ending at the elbows."
+          },
+          "three_quarter": {
+            "label": "Three-quarter sleeves",
+            "phrase": "with sleeves ending midway along the forearms",
+            "description": "With sleeves ending midway along the forearms."
+          },
+          "long": {
+            "label": "Full sleeves",
+            "phrase": "with full-length sleeves reaching the wrists",
+            "description": "With full-length sleeves reaching the wrists."
+          }
+        }
+      },
+      "sleeve_roll": {
+        "label": "Rolled sleeves",
+        "options": {
+          "default": {
+            "label": "Not rolled",
+            "phrase": "",
+            "description": "."
+          },
+          "wrist": {
+            "label": "Cuffs turned back",
+            "phrase": "with the sleeve cuffs turned back once at the wrists",
+            "description": "With the sleeve cuffs turned back once at the wrists."
+          },
+          "forearm": {
+            "label": "Rolled to forearms",
+            "phrase": "with the sleeves rolled up to mid-forearm",
+            "description": "With the sleeves rolled up to mid-forearm."
+          },
+          "elbow": {
+            "label": "Rolled to elbows",
+            "phrase": "with the sleeves rolled just below the elbows",
+            "description": "With the sleeves rolled just below the elbows."
+          },
+          "above_elbow": {
+            "label": "Rolled above elbows",
+            "phrase": "with the sleeves rolled above the elbows",
+            "description": "With the sleeves rolled above the elbows."
+          }
+        }
+      },
+      "strap_style": {
+        "label": "Strap style",
+        "options": {
+          "default": {
+            "label": "Original straps",
+            "phrase": "",
+            "description": "."
+          },
+          "crossback": {
+            "label": "Cross-back straps",
+            "phrase": "with shoulder straps crossing at the back",
+            "description": "With shoulder straps crossing at the back."
+          },
+          "halter": {
+            "label": "Halter strap",
+            "phrase": "with a single halter strap around the neck",
+            "description": "With a single halter strap around the neck."
+          },
+          "racerback": {
+            "label": "Racerback",
+            "phrase": "with a racerback strap arrangement",
+            "description": "With a racerback strap arrangement."
+          },
+          "regular": {
+            "label": "Straight straps",
+            "phrase": "with two straight shoulder straps",
+            "description": "With two straight shoulder straps."
+          }
+        }
+      },
+      "waist_rise": {
+        "label": "Waist rise",
+        "options": {
+          "default": {
+            "label": "Original waist",
+            "phrase": "",
+            "description": "."
+          },
+          "low": {
+            "label": "Low rise",
+            "phrase": "with a low-rise waistband at the hips",
+            "description": "With a low-rise waistband at the hips."
+          },
+          "mid": {
+            "label": "Mid rise",
+            "phrase": "with a mid-rise waistband below the navel",
+            "description": "With a mid-rise waistband below the navel."
+          },
+          "high": {
+            "label": "High rise",
+            "phrase": "with a high-rise waistband at the natural waist",
+            "description": "With a high-rise waistband at the natural waist."
+          }
+        }
+      },
+      "neck_width": {
+        "label": "Band width",
+        "options": {
+          "default": {
+            "label": "Original width",
+            "phrase": "",
+            "description": "."
+          },
+          "thin": {
+            "label": "Narrow band",
+            "phrase": "forming a narrow band around the neck",
+            "description": "Forming a narrow band around the neck."
+          },
+          "standard": {
+            "label": "Medium band",
+            "phrase": "forming a medium-width band around the neck",
+            "description": "Forming a medium-width band around the neck."
+          },
+          "wide": {
+            "label": "Wide band",
+            "phrase": "forming a wide band around the neck",
+            "description": "Forming a wide band around the neck."
+          }
+        }
+      },
+      "neck_style": {
+        "label": "Wrap / drape",
+        "options": {
+          "default": {
+            "label": "Original styling",
+            "phrase": "",
+            "description": "."
+          },
+          "loose": {
+            "label": "Loose drape",
+            "phrase": "draped loosely around the neck",
+            "description": "Draped loosely around the neck."
+          },
+          "single_wrap": {
+            "label": "Single wrap",
+            "phrase": "wrapped once around the neck",
+            "description": "Wrapped once around the neck."
+          },
+          "double_wrap": {
+            "label": "Double wrap",
+            "phrase": "wrapped twice around the neck",
+            "description": "Wrapped twice around the neck."
+          },
+          "knotted": {
+            "label": "Front knot",
+            "phrase": "secured with a neat knot at the front",
+            "description": "Secured with a neat knot at the front."
+          },
+          "tucked": {
+            "label": "Tucked in",
+            "phrase": "with the ends tucked inside the neckline",
+            "description": "With the ends tucked inside the neckline."
+          },
+          "over_shoulder": {
+            "label": "Over one shoulder",
+            "phrase": "with one end draped over the shoulder",
+            "description": "With one end draped over the shoulder."
+          }
+        }
+      },
+      "neck_fastening": {
+        "label": "Neck fastening",
+        "options": {
+          "default": {
+            "label": "Original fastening",
+            "phrase": "",
+            "description": "."
+          },
+          "buckle": {
+            "label": "Buckle",
+            "phrase": "fastened with a small buckle at the back",
+            "description": "Fastened with a small buckle at the back."
+          },
+          "laced": {
+            "label": "Laced back",
+            "phrase": "secured with crossing laces at the back",
+            "description": "Secured with crossing laces at the back."
+          },
+          "clasp": {
+            "label": "Metal clasp",
+            "phrase": "secured with a small metal clasp",
+            "description": "Secured with a small metal clasp."
+          },
+          "ribbon": {
+            "label": "Ribbon tie",
+            "phrase": "tied with a small ribbon at the back",
+            "description": "Tied with a small ribbon at the back."
+          }
+        }
       }
     }
   },
@@ -5759,12 +9409,44 @@
           "icon": "ear_pearls",
           "color": "#ede7db",
           "color_phrase": "The ears wear {color} pearl stud earrings"
+        },
+        {
+          "id": "chandelier",
+          "label": "Chandelier earrings",
+          "phrase": "The ears wear silver chandelier earrings",
+          "icon": "ear_chandelier",
+          "color": "#c3c6ce",
+          "color_phrase": "The ears wear {color} chandelier earrings"
+        },
+        {
+          "id": "threaders",
+          "label": "Threader earrings",
+          "phrase": "The ears wear fine silver threader earrings",
+          "icon": "ear_threader",
+          "color": "#c3c6ce",
+          "color_phrase": "The ears wear fine {color} threader earrings"
+        },
+        {
+          "id": "tassels",
+          "label": "Tassel earrings",
+          "phrase": "The ears wear burgundy tassel earrings",
+          "icon": "ear_tassel",
+          "color": "#c3c6ce",
+          "color_phrase": "The ears wear {color} tassel earrings"
+        },
+        {
+          "id": "clusters",
+          "label": "Gem clusters",
+          "phrase": "The ears wear silver gemstone cluster earrings",
+          "icon": "ear_cluster",
+          "color": "#c3c6ce",
+          "color_phrase": "The ears wear {color} gemstone cluster earrings"
         }
       ],
       "description": "Choose ear jewelry and its color. None adds no earrings."
     },
     "necklace": {
-      "label": "Necklace",
+      "label": "Neck jewelry",
       "group": "Face & accessories",
       "default": "none",
       "options": [
@@ -5813,9 +9495,60 @@
           "icon": "neck_layered",
           "color": "#d6b85a",
           "color_phrase": "Layered {color} fine chains rest at the collar"
+        },
+        {
+          "id": "locket",
+          "label": "Locket",
+          "phrase": "A gold oval locket necklace rests at the collar",
+          "icon": "neck_locket",
+          "color": "#d6b85a",
+          "color_phrase": "A {color} oval locket necklace rests at the collar"
+        },
+        {
+          "id": "lariat",
+          "label": "Lariat",
+          "phrase": "A silver Y-shaped lariat necklace rests at the collar",
+          "icon": "neck_lariat",
+          "color": "#c3c6ce",
+          "color_phrase": "A {color} Y-shaped lariat necklace rests at the collar"
+        },
+        {
+          "id": "gemstone",
+          "label": "Gemstone pendant",
+          "phrase": "A deep green gemstone pendant hangs from a silver chain",
+          "icon": "neck_gemstone",
+          "color": "#2d8b68",
+          "color_phrase": "A {color} gemstone pendant hangs from a silver chain"
+        },
+        {
+          "id": "beads",
+          "label": "Beaded necklace",
+          "phrase": "A strand of muted blue beads rests at the collar",
+          "icon": "neck_beads",
+          "color": "#568fba",
+          "color_phrase": "A strand of {color} beads rests at the collar"
+        },
+        {
+          "id": "torc",
+          "label": "Metal torc",
+          "phrase": "A curved gold torc necklace rests around the collar",
+          "icon": "neck_torc",
+          "color": "#d6b85a",
+          "color_phrase": "A curved {color} torc necklace rests around the collar"
+        },
+        {
+          "id": "gothic_pendant",
+          "label": "Gothic pendant",
+          "phrase": "An ornate silver gothic pendant hangs from a fine chain",
+          "icon": "neck_gothic",
+          "color": "#c3c6ce",
+          "color_phrase": "An ornate {color} gothic pendant hangs from a fine chain"
         }
       ],
-      "description": "Choose jewelry around the neck and its color. None adds no necklace."
+      "description": "Necklaces and ornamental jewelry. Chokers and scarves are in Clothing > Neckwear.",
+      "hidden_options": [
+        "choker"
+      ]
     },
     "piercings": {
       "label": "Facial piercings",
@@ -6161,7 +9894,452 @@
           ]
         }
       },
-      "description": "Choose handwear, from knitted gloves to fantasy gauntlets. Material, texture and accent details can be adjusted below."
+      "description": "Choose handwear, from knitted gloves to fantasy gauntlets. Material, texture and accent details can be adjusted below.",
+      "sections": [
+        {
+          "label": "Start",
+          "options": [
+            "none"
+          ]
+        },
+        {
+          "label": "Everyday",
+          "options": [
+            "leather",
+            "knit",
+            "fingerless",
+            "sport"
+          ]
+        },
+        {
+          "label": "Dress gloves",
+          "options": [
+            "long",
+            "lace"
+          ]
+        },
+        {
+          "label": "Work & armor",
+          "options": [
+            "work",
+            "gauntlets"
+          ]
+        }
+      ]
+    },
+    "neckwear": {
+      "label": "Neckwear",
+      "group": "Clothing",
+      "default": "none",
+      "description": "Chokers, scarves and other neckwear. Materials, colors and modifications apply only to the selected item. Neck jewelry remains independent under Face & accessories.",
+      "options": [
+        {
+          "id": "none",
+          "label": "None",
+          "phrase": "",
+          "icon": "none"
+        },
+        {
+          "id": "choker",
+          "label": "Leather choker",
+          "phrase": "a black leather choker",
+          "icon": "neckwear_choker",
+          "color": "#342b38",
+          "color_phrase": "{color} leather choker"
+        },
+        {
+          "id": "velvet_choker",
+          "label": "Velvet choker",
+          "phrase": "a burgundy velvet choker",
+          "icon": "neckwear_velvet",
+          "color": "#342b38",
+          "color_phrase": "{color} velvet choker"
+        },
+        {
+          "id": "lace_choker",
+          "label": "Lace choker",
+          "phrase": "a black opaque-lined lace choker",
+          "icon": "neckwear_lace",
+          "color": "#342b38",
+          "color_phrase": "{color} opaque-lined lace choker"
+        },
+        {
+          "id": "studded_choker",
+          "label": "Studded choker",
+          "phrase": "a black leather choker with small silver studs",
+          "icon": "neckwear_studded",
+          "color": "#342b38",
+          "color_phrase": "{color} leather choker with small silver studs"
+        },
+        {
+          "id": "scarf",
+          "label": "Woven scarf",
+          "phrase": "a soft grey woven scarf",
+          "icon": "neckwear_scarf",
+          "color": "#657080",
+          "color_phrase": "{color} woven scarf"
+        },
+        {
+          "id": "muffler",
+          "label": "Knitted muffler",
+          "phrase": "a thick charcoal knitted wool muffler",
+          "icon": "neckwear_muffler",
+          "color": "#657080",
+          "color_phrase": "{color} knitted wool muffler"
+        },
+        {
+          "id": "silk_scarf",
+          "label": "Silk scarf",
+          "phrase": "a ruby red silk neck scarf",
+          "icon": "neckwear_silk",
+          "color": "#657080",
+          "color_phrase": "{color} silk neck scarf"
+        },
+        {
+          "id": "neckerchief",
+          "label": "Neckerchief",
+          "phrase": "a navy cotton neckerchief",
+          "icon": "neckwear_neckerchief",
+          "color": "#657080",
+          "color_phrase": "{color} cotton neckerchief"
+        },
+        {
+          "id": "cravat",
+          "label": "Cravat",
+          "phrase": "an ivory silk cravat",
+          "icon": "neckwear_cravat",
+          "color": "#657080",
+          "color_phrase": "{color} silk cravat"
+        },
+        {
+          "id": "tie",
+          "label": "Necktie",
+          "phrase": "a charcoal silk necktie",
+          "icon": "neckwear_tie",
+          "color": "#657080",
+          "color_phrase": "{color} silk necktie"
+        },
+        {
+          "id": "bowtie",
+          "label": "Bow tie",
+          "phrase": "a black satin bow tie",
+          "icon": "neckwear_bowtie",
+          "color": "#657080",
+          "color_phrase": "{color} satin bow tie"
+        },
+        {
+          "id": "cowl",
+          "label": "Cowl",
+          "phrase": "a soft grey wool cowl around the neck",
+          "icon": "neckwear_cowl",
+          "color": "#657080",
+          "color_phrase": "{color} wool cowl around the neck"
+        },
+        {
+          "id": "gaiter",
+          "label": "Neck gaiter",
+          "phrase": "a slate blue jersey neck gaiter",
+          "icon": "neckwear_gaiter",
+          "color": "#657080",
+          "color_phrase": "{color} jersey neck gaiter"
+        }
+      ],
+      "option_details": {
+        "choker": {
+          "fabric": "leather",
+          "details": [
+            "piping",
+            "embroidery",
+            "ribbon",
+            "lace_trim",
+            "studs",
+            "chains",
+            "eyelets"
+          ],
+          "modifiers": {
+            "neck_width": [
+              "thin",
+              "standard",
+              "wide"
+            ],
+            "neck_fastening": [
+              "buckle",
+              "laced",
+              "clasp",
+              "ribbon"
+            ]
+          }
+        },
+        "velvet_choker": {
+          "fabric": "velvet",
+          "details": [
+            "piping",
+            "embroidery",
+            "ribbon",
+            "lace_trim",
+            "studs",
+            "chains",
+            "eyelets"
+          ],
+          "modifiers": {
+            "neck_width": [
+              "thin",
+              "standard",
+              "wide"
+            ],
+            "neck_fastening": [
+              "buckle",
+              "laced",
+              "clasp",
+              "ribbon"
+            ]
+          }
+        },
+        "lace_choker": {
+          "fabric": "opaque-lined lace",
+          "details": [
+            "piping",
+            "embroidery",
+            "ribbon",
+            "lace_trim",
+            "studs",
+            "chains",
+            "eyelets"
+          ],
+          "modifiers": {
+            "neck_width": [
+              "thin",
+              "standard",
+              "wide"
+            ],
+            "neck_fastening": [
+              "buckle",
+              "laced",
+              "clasp",
+              "ribbon"
+            ]
+          }
+        },
+        "studded_choker": {
+          "fabric": "leather",
+          "details": [
+            "piping",
+            "embroidery",
+            "ribbon",
+            "lace_trim",
+            "studs",
+            "chains",
+            "eyelets"
+          ],
+          "modifiers": {
+            "neck_width": [
+              "thin",
+              "standard",
+              "wide"
+            ],
+            "neck_fastening": [
+              "buckle",
+              "laced",
+              "clasp",
+              "ribbon"
+            ]
+          }
+        },
+        "scarf": {
+          "fabric": "woven",
+          "details": [
+            "piping",
+            "embroidery",
+            "ribbon",
+            "lace_trim",
+            "stripes",
+            "checks"
+          ],
+          "modifiers": {
+            "neck_style": [
+              "loose",
+              "single_wrap",
+              "double_wrap",
+              "knotted",
+              "tucked",
+              "over_shoulder"
+            ]
+          }
+        },
+        "muffler": {
+          "fabric": "wool",
+          "details": [
+            "piping",
+            "embroidery",
+            "ribbon",
+            "lace_trim",
+            "stripes",
+            "checks"
+          ],
+          "modifiers": {
+            "neck_style": [
+              "loose",
+              "single_wrap",
+              "double_wrap",
+              "knotted",
+              "tucked",
+              "over_shoulder"
+            ]
+          }
+        },
+        "silk_scarf": {
+          "fabric": "silk",
+          "details": [
+            "piping",
+            "embroidery",
+            "ribbon",
+            "lace_trim",
+            "stripes",
+            "checks"
+          ],
+          "modifiers": {
+            "neck_style": [
+              "loose",
+              "single_wrap",
+              "double_wrap",
+              "knotted",
+              "tucked",
+              "over_shoulder"
+            ]
+          }
+        },
+        "neckerchief": {
+          "fabric": "cotton",
+          "details": [
+            "piping",
+            "embroidery",
+            "ribbon",
+            "lace_trim",
+            "stripes",
+            "checks"
+          ],
+          "modifiers": {
+            "neck_style": [
+              "loose",
+              "single_wrap",
+              "double_wrap",
+              "knotted",
+              "tucked",
+              "over_shoulder"
+            ]
+          }
+        },
+        "cravat": {
+          "fabric": "silk",
+          "details": [
+            "piping",
+            "embroidery",
+            "ribbon",
+            "lace_trim",
+            "stripes",
+            "checks"
+          ],
+          "modifiers": {
+            "neck_style": [
+              "loose",
+              "single_wrap",
+              "double_wrap",
+              "knotted",
+              "tucked",
+              "over_shoulder"
+            ]
+          }
+        },
+        "tie": {
+          "fabric": "silk",
+          "details": [
+            "piping",
+            "embroidery",
+            "ribbon",
+            "lace_trim",
+            "stripes",
+            "checks"
+          ],
+          "modifiers": {}
+        },
+        "bowtie": {
+          "fabric": "satin",
+          "details": [
+            "piping",
+            "embroidery",
+            "ribbon",
+            "lace_trim",
+            "stripes",
+            "checks"
+          ],
+          "modifiers": {}
+        },
+        "cowl": {
+          "fabric": "wool",
+          "details": [
+            "piping",
+            "embroidery",
+            "ribbon",
+            "lace_trim",
+            "stripes",
+            "checks"
+          ],
+          "modifiers": {}
+        },
+        "gaiter": {
+          "fabric": "jersey",
+          "details": [
+            "piping",
+            "embroidery",
+            "ribbon",
+            "lace_trim",
+            "stripes",
+            "checks"
+          ],
+          "modifiers": {}
+        }
+      },
+      "sections": [
+        {
+          "label": "Start",
+          "options": [
+            "none"
+          ]
+        },
+        {
+          "label": "Chokers",
+          "options": [
+            "choker",
+            "velvet_choker",
+            "lace_choker",
+            "studded_choker"
+          ]
+        },
+        {
+          "label": "Scarves & wraps",
+          "options": [
+            "scarf",
+            "muffler",
+            "silk_scarf",
+            "neckerchief"
+          ]
+        },
+        {
+          "label": "Ties & cravats",
+          "options": [
+            "cravat",
+            "tie",
+            "bowtie"
+          ]
+        },
+        {
+          "label": "Cowls & gaiters",
+          "options": [
+            "cowl",
+            "gaiter"
+          ]
+        }
+      ]
     }
   }
 }

@@ -44,7 +44,8 @@ class CharacterCreator(io.ComfyNode):
                            default="unspecified", optional=True, advanced=True, display_name="Ethnicity / heritage"),
         ]
         for name, field in catalog["extra_fields"].items():
-            inputs.append(io.Combo.Input(name, options=[option["id"] for option in field["options"]],
+            inputs.append(io.Combo.Input(name, options=[option["id"] for option in field["options"]
+                                                       if catalog["allow_nsfw"] or not option.get("nsfw", False)],
                                          default=initial.get(name, field["default"]), optional=True, advanced=True, display_name=field["label"]))
         return io.Schema(
             node_id="CharacterCreator", display_name="Character Creator",

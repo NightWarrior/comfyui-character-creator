@@ -1,8 +1,8 @@
-import { hexToHsv, hsvToHex, normalizeHex, nearestColor } from './colors.js';
+import { hexToHsv, hsvToHex, normalizeHex, nearestColor, recommendedColors } from './colors.js';
 import { app } from '../../../scripts/app.js';
 import { api } from '../../../scripts/api.js';
 import { characterPreview, icon } from './icons.js';
-import { applySettings, changeGender, clampAge, normalizeAgeWidget, optionSections, settingsFromWidgets, visibleFields } from './state.js';
+import { applySettings, changeGender, clampAge, isRestrictedCharacter, normalizeAgeWidget, optionSections, settingsFromWidgets, visibleFields } from './state.js';
 import { promptChanges, renderPrompt, scrollPromptToChange } from './prompt.js';
 import { characterKey, generatedCharacters, generationTime, getLibrary, imageThumbnail } from './library.js';
 
@@ -76,17 +76,19 @@ async function updateCharacterCovers(history, completedAt, signal) {
     const library = getLibrary(editorCatalog);
     for (const candidate of generatedCharacters(history, editorCatalog)) {
         let matches;
+        let settings = candidate.payload?.settings;
+        if (candidate.payload?.code) settings = (await jsonRequest('resolve', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(candidate.payload), signal })).settings;
         if (candidate.characterId) matches = library.characters.filter((row) => row.id === candidate.characterId);
         else {
-            const resolved = await jsonRequest('resolve', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(candidate.payload), signal });
-            const key = characterKey(resolved.settings, editorCatalog);
+            const key = characterKey(settings, editorCatalog);
             matches = library.characters.filter((row) => characterKey(row.settings, editorCatalog) === key);
         }
         matches = matches.filter((row) => (row.image_time ?? 0) < completedAt);
         if (!matches.length) continue;
         const thumbnail = await imageThumbnail(candidate.image, api, completedAt, signal);
         signal?.throwIfAborted();
-        for (const row of matches) library.setImage(row.id, thumbnail, completedAt);
+        const restricted = !settings || isRestrictedCharacter(settings, { ...editorCatalog, allow_nsfw: false });
+        for (const row of matches) library.setImage(row.id, thumbnail, completedAt, restricted);
     }
 }
 
@@ -187,11 +189,18 @@ function mountPanel(node, catalog) {
     hexRow.append(hex, colorSample);
     const colorName = element('p', undefined, 'color-name');
     colorName.setAttribute('aria-label', 'Color name');
+    const suggestedColors = element('div', undefined, 'suggested-colors');
+    suggestedColors.setAttribute('aria-label', 'Suggested colors');
     const colorActions = element('div', undefined, 'color-actions');
     const resetColor = element('button', 'Reset');
     const doneColor = element('button', 'Done');
-    colorActions.append(resetColor, doneColor);
-    colorDialog.append(colorHeading, saturation, hue, hexRow, colorName,
+    const dropperColor = element('button', undefined, 'color-dropper');
+    dropperColor.innerHTML = icon('eyedropper');
+    dropperColor.setAttribute('aria-label', 'Pick from screen');
+    dropperColor.disabled = typeof globalThis.EyeDropper !== 'function';
+    dropperColor.title = dropperColor.disabled ? 'Screen sampling needs a browser with EyeDropper support on HTTPS or localhost.' : 'Sample a color anywhere on your screen. Press Escape to cancel.';
+    colorActions.append(dropperColor, resetColor, doneColor);
+    colorDialog.append(colorHeading, saturation, hue, hexRow, colorName, suggestedColors,
         element('p', 'Color names are included in the prompt.', 'help'), colorActions);
     shadow.append(colorDialog);
     dismissOnBackdrop(colorDialog);
@@ -207,12 +216,28 @@ function mountPanel(node, catalog) {
         hex.value = value;
         colorSample.style.background = value;
         colorName.textContent = nearestColor(value, catalog.color_names);
+        for (const swatch of suggestedColors.children) {
+            if (swatch.dataset.color) swatch.setAttribute('aria-pressed', String(swatch.dataset.color === value));
+        }
     };
     const changeColor = (value) => {
         paintColor(value);
         colorTarget.picker.value = value;
         colorTarget.picker.oninput();
         resetColor.disabled = !colorTarget.reset;
+    };
+    dropperColor.onclick = async () => {
+        const target = colorTarget;
+        colorDialog.classList.toggle('sampling', true);
+        try {
+            const result = await new globalThis.EyeDropper().open({ signal: controller.signal });
+            const value = normalizeHex(result.sRGBHex);
+            if (value && colorDialog.open && colorTarget === target) changeColor(value);
+        } catch (error) {
+            if (error.name !== 'AbortError') status.textContent = 'Screen color sampling is unavailable. Use the color picker or hex field.';
+        } finally {
+            colorDialog.classList.toggle('sampling', false);
+        }
     };
     hue.oninput = () => changeColor(hsvToHex({ ...hsv, h: Number(hue.value) }));
     hex.oninput = () => { const value = normalizeHex(hex.value); if (value) changeColor(value); };
@@ -227,13 +252,27 @@ function mountPanel(node, catalog) {
     saturation.onpointerdown = (event) => { saturation.setPointerCapture(event.pointerId); moveColor(event); };
     saturation.onpointermove = (event) => { if (event.buttons === 1) moveColor(event); };
     resetColor.onclick = () => { colorDialog.close(); colorTarget.reset?.onclick(); };
-    const bindColorPopup = (picker, reset) => {
+    const bindColorPopup = (picker, reset, field, accent = false) => {
         picker.onclick = (event) => {
             event.preventDefault();
             if (picker.disabled) return;
             colorTarget = { picker, reset };
             resetColor.disabled = !reset || reset.disabled;
             paintColor(picker.value);
+            const settings = settingsFromWidgets(node, catalog);
+            const material = settings.clothing?.[field]?.fabric;
+            const label = material && material !== 'default' ? catalog.clothing.fabric[material].label : (catalog.fields[field] ?? catalog.extra_fields[field]).label;
+            suggestedColors.replaceChildren(element('small', `Suggested ${accent ? 'accent ' : ''}colors · ${label}`));
+            for (const color of recommendedColors(field, settings, catalog, accent)) {
+                const swatch = element('button');
+                swatch.dataset.color = color.value;
+                swatch.style.background = color.value;
+                swatch.title = `${color.label} · ${color.value}`;
+                swatch.setAttribute('aria-label', `Suggested color: ${color.label} (${color.value})`);
+                swatch.setAttribute('aria-pressed', String(picker.value === color.value));
+                swatch.onclick = () => changeColor(color.value);
+                suggestedColors.append(swatch);
+            }
             colorDialog.showModal();
             const bounds = picker.getBoundingClientRect();
             const popup = colorDialog.getBoundingClientRect();
@@ -276,7 +315,7 @@ function mountPanel(node, catalog) {
     shadow.append(charactersDialog);
     let library;
     let libraryLoadError;
-    try { library = getLibrary(catalog); } catch (error) { libraryLoadError = error.message; }
+    try { library = getLibrary(catalog); libraryLoadError = library.migrationError; } catch (error) { libraryLoadError = error.message; }
     node.properties ??= {};
     const activeCharacter = () => library?.characters.find((row) => row.id === node.properties.character_creator_character_id);
     let promptText = '';
@@ -417,11 +456,17 @@ function mountPanel(node, catalog) {
 
     function renderAvatar(settings = settingsFromWidgets(node, catalog)) {
         const active = activeCharacter();
+        characterTitle.textContent = active?.name ?? 'Current character';
+        if (isRestrictedCharacter(settings, catalog)) {
+            outfit.textContent = 'Restricted selection';
+            avatar.replaceChildren();
+            previewCaption.textContent = 'Choose covering clothing or enable NSFW in local config.json.';
+            return;
+        }
         const schematic = characterPreview(settings, { ...catalog.fields, ...catalog.extra_fields });
         outfit.innerHTML = schematic.replaceAll('id="garment-', 'id="outfit-garment-').replaceAll('url(#garment-', 'url(#outfit-garment-');
-        characterTitle.textContent = active?.name ?? 'Current character';
-        const generated = typeof active?.image === 'string' && /^data:image\/webp;base64,[A-Za-z0-9+/=]+$/.test(active.image) && active.image.length <= 200000;
-        const source = generated ? active.image : starterPortrait(active);
+        const generated = (catalog.allow_nsfw || active?.image_restricted === false) && typeof active?.image === 'string' && /^data:image\/webp;base64,[A-Za-z0-9+/=]+$/.test(active.image) && active.image.length <= 200000;
+        const source = active && isRestrictedCharacter(active.settings, catalog) ? null : generated ? active.image : starterPortrait(active);
         if (source) {
             const image = element('img');
             image.src = source;
@@ -452,7 +497,11 @@ function mountPanel(node, catalog) {
             const portrait = element('div', undefined, 'portrait');
             const schematic = () => { portrait.innerHTML = characterPreview(row.settings, { ...catalog.fields, ...catalog.extra_fields })
                 .replaceAll('id="garment-', `id="library-${index}-garment-`).replaceAll('url(#garment-', `url(#library-${index}-garment-`); };
-            if (typeof row.image === 'string' && /^data:image\/webp;base64,[A-Za-z0-9+/=]+$/.test(row.image) && row.image.length <= 200000) {
+            if (isRestrictedCharacter(row.settings, catalog)) {
+                portrait.textContent = 'NSFW disabled';
+                button.disabled = true;
+                button.title = 'This character requires allow_nsfw: true in local config.json.';
+            } else if ((catalog.allow_nsfw || row.image_restricted === false) && typeof row.image === 'string' && /^data:image\/webp;base64,[A-Za-z0-9+/=]+$/.test(row.image) && row.image.length <= 200000) {
                 const image = element('img'); image.src = row.image; image.alt = row.name;
                 image.onerror = schematic;
                 portrait.append(image);
@@ -578,7 +627,7 @@ function mountPanel(node, catalog) {
             for (const [label, names] of [
                 ['Eyes & brows', ['eye_color', 'eye_shape', 'eyebrows']],
                 ['Lips & makeup', ['lip_shape', 'lip_makeup', 'makeup', 'eyeliner']],
-                ['Jewelry', ['earrings', 'necklace']], ['Piercings', ['piercings']],
+                ['Earrings', ['earrings']], ['Neck jewelry', ['necklace']], ['Piercings', ['piercings']],
                 ['Moles & freckles', ['moles', 'freckles']], ['Eyewear', ['eyewear']],
             ]) {
                 const panel = element('details', undefined, 'face-group');
@@ -598,23 +647,20 @@ function mountPanel(node, catalog) {
             }
             for (const [name, field] of rows) if (!assigned.has(name)) choices.append(field);
         } else if (group === 'Clothing') {
-            for (const [name, field] of rows) {
-                if (name === 'wardrobe_mode') continue;
-                field.className += ' clothing-field';
-                if (['dress', 'upper_garment'].includes(name)) {
-                    const tiles = Array.from(field.children).find((child) => child.className === 'tiles');
-                    const selected = Array.from(tiles?.children ?? []).find((tile) => tile.dataset.option === settings[name]);
-                    if (selected) tiles.scrollLeft = selected.offsetLeft;
-                    continue;
+            choices.replaceChildren(...Array.from(choices.children).filter((child) => !child.dataset?.field));
+            const order = ['wardrobe_mode', 'dress', 'upper_garment', 'lower_garment', 'outerwear', 'headwear', 'neckwear', 'gloves', 'shoes'];
+            for (const name of [...order, ...[...rows.keys()].filter((name) => !order.includes(name))]) {
+                const field = rows.get(name);
+                if (!field) continue;
+                field.className += ' clothing-field clothing-section';
+                if (name === 'wardrobe_mode') {
+                    field.className += ' outfit-setup';
+                    Array.from(field.children).find((child) => child.tagName === 'H3').textContent = 'Outfit setup';
                 }
-                const panel = element('details', undefined, 'garment-card');
-                panel.open = openGroups.get(`garment:${name}`) ?? false;
-                panel.ontoggle = () => openGroups.set(`garment:${name}`, panel.open);
-                const spec = catalog.fields[name] ?? catalog.extra_fields[name];
-                const label = spec.options.find((option) => option.id === settings[name])?.label ?? 'None';
-                const summary = element('summary', `${spec.label} · ${label}`);
-                choices.replaceChild(panel, field);
-                panel.append(summary, field);
+                choices.append(field);
+                const tiles = Array.from(field.children).find((child) => child.className === 'tiles');
+                const selected = Array.from(tiles?.children ?? []).find((tile) => tile.dataset.option === settings[name]);
+                if (selected) tiles.scrollLeft = selected.offsetLeft;
             }
         } else if (group === 'Appearance' && rows.has('ethnicity')) {
             const field = rows.get('ethnicity');
@@ -629,6 +675,11 @@ function mountPanel(node, catalog) {
 
     function update() {
         if (removed) return;
+        const sameCategory = choices.dataset.category === group;
+        const scrollTop = sameCategory ? choices.scrollTop : 0;
+        const fieldScroll = new Map(sameCategory ? Array.from(choices.children)
+            .filter((section) => section.dataset?.field)
+            .map((section) => [section.dataset.field, { left: section.querySelector('.tiles')?.scrollLeft, detailsOpen: section.querySelector('details')?.open }]) : []);
         if (colorDialog.open) colorDialog.close();
         const settings = settingsFromWidgets(node, catalog);
         modelButton.textContent = (catalog.models?.[settings.model] ?? settings.model).toUpperCase();
@@ -821,6 +872,10 @@ function mountPanel(node, catalog) {
                     if (widget('clothing') && settings.clothing?.[name]) {
                         const clothing = JSON.parse(widget('clothing').value || '{}');
                         clothing[name].details = Object.fromEntries(Object.entries(clothing[name].details ?? {}).filter(([id]) => (field.option_details?.[option.id]?.details ?? option.details)?.includes(id)));
+                        const modifiers = field.option_details?.[option.id]?.modifiers ?? option.modifiers ?? {};
+                        for (const kind of Object.keys(catalog.clothing.modifiers ?? {})) {
+                            if (!modifiers[kind]?.includes(clothing[name][kind])) delete clothing[name][kind];
+                        }
                         widget('clothing').value = JSON.stringify(clothing);
                     }
                     if (['skin_tone', 'hair_color', 'eye_color'].includes(name) || !option.color_phrase) {
@@ -849,7 +904,10 @@ function mountPanel(node, catalog) {
                     fieldSelect.onchange = () => selectOption(field.options.find((option) => option.id === fieldSelect.value));
                     section.append(fieldSelect);
                 } else {
-                    for (const optionGroup of optionSections(field, settings.gender)) {
+                    const groups = optionSections(field, settings.gender);
+                    const dividedRow = group === 'Clothing' && name !== 'wardrobe_mode';
+                    const labels = new Map(groups.flatMap((section) => section.options.map((option) => [option.id, section.label])));
+                    for (const optionGroup of dividedRow ? [{ options: groups.flatMap((section) => section.options) }] : groups) {
                         const collapsible = field.collapsible_sections || (name === 'hair_style' && optionGroup.label);
                         const optionContainer = collapsible ? element('details', undefined, 'option-section') : section;
                         if (collapsible) {
@@ -860,8 +918,18 @@ function mountPanel(node, catalog) {
                         } else if (optionGroup.label) section.append(element('h4', optionGroup.label, 'option-heading'));
                         if (optionGroup.description) optionContainer.append(element('p', optionGroup.description, 'connection-note'));
                         const tiles = element('div', undefined, 'tiles');
+                        let previousLabel;
                         for (const option of optionGroup.options) {
                             if (option.nsfw && !catalog.allow_nsfw) continue;
+                            const label = labels.get(option.id);
+                            if (dividedRow && label && label !== previousLabel) {
+                                const divider = element('span', label, 'garment-divider');
+                                divider.setAttribute('role', 'separator');
+                                divider.setAttribute('aria-orientation', 'vertical');
+                                divider.setAttribute('aria-label', label);
+                                tiles.append(divider);
+                                previousLabel = label;
+                            }
                             const button = element('button', undefined, 'tile');
                             button.dataset.option = option.id;
                             button.setAttribute('aria-pressed', String((settings[name] ?? field.default) === option.id));
@@ -955,7 +1023,7 @@ function mountPanel(node, catalog) {
                         update();
                         node.graph?.setDirtyCanvas(true, true);
                     };
-                    bindColorPopup(picker, reset);
+                    bindColorPopup(picker, reset, name);
                     row.append(picker, label, reset);
                     materials.append(row);
                 }
@@ -966,6 +1034,8 @@ function mountPanel(node, catalog) {
                         skipChangeHighlight = Object.values(patch).includes('default');
                         const clothing = JSON.parse(widget('clothing').value || '{}');
                         clothing[name] = { ...clothing[name], ...patch };
+                        if (patch.fabric && !catalog.clothing.fabric[patch.fabric].transparency) delete clothing[name].opacity;
+                        if (patch.sleeve_length && !['default', 'long'].includes(patch.sleeve_length)) delete clothing[name].sleeve_roll;
                         widget('clothing').value = JSON.stringify(clothing);
                         update();
                         node.graph?.setDirtyCanvas(true, true);
@@ -975,6 +1045,7 @@ function mountPanel(node, catalog) {
                         const select = element('select');
                         select.setAttribute('aria-label', `${field.label} ${kind}`);
                         for (const [id, spec] of Object.entries(catalog.clothing[kind])) {
+                            if (spec.nsfw && !catalog.allow_nsfw) continue;
                             const option = element('option', spec.label);
                             option.value = id;
                             option.title = spec.description;
@@ -988,14 +1059,62 @@ function mountPanel(node, catalog) {
                         row.append(select);
                         materials.append(row);
                     }
+                    const modifications = element('div', undefined, 'garment-modifiers');
+                    for (const [kind, supported] of Object.entries(selected.modifiers ?? {})) {
+                        if (kind === 'sleeve_roll' && !['default', 'long'].includes(refinements.sleeve_length ?? 'default')) continue;
+                        const spec = catalog.clothing.modifiers[kind];
+                        const row = element('label', undefined, 'garment-modifier');
+                        row.append(element('span', spec.label));
+                        const select = element('select');
+                        select.setAttribute('aria-label', `${field.label} ${kind}`);
+                        for (const id of ['default', ...supported]) {
+                            const item = spec.options[id];
+                            if (!catalog.allow_nsfw && (item.nsfw || ['open', 'unzipped'].includes(id) && ['upper_garment', 'dress'].includes(name))) continue;
+                            const option = element('option', item.label);
+                            option.value = id;
+                            option.title = item.description;
+                            select.append(option);
+                        }
+                        select.value = refinements[kind] ?? 'default';
+                        select.title = spec.options[select.value].description;
+                        row.title = select.title;
+                        select.disabled = disabled;
+                        select.onchange = () => save({ [kind]: select.value });
+                        row.append(select);
+                        modifications.append(row);
+                    }
+                    if (modifications.children.length) section.append(modifications);
+                    if (catalog.clothing.fabric[refinements.fabric ?? 'default'].transparency) {
+                        const row = element('label', 'Material opacity', 'garment-opacity');
+                        row.title = '100% is fully opaque. Lower values describe increasing transparency; image models approximate these values.';
+                        const slider = element('input');
+                        slider.type = 'range'; slider.min = catalog.allow_nsfw ? '0' : '100'; slider.max = '100'; slider.step = '1';
+                        slider.value = String(refinements.opacity ?? 100);
+                        slider.setAttribute('aria-label', `${field.label} opacity`);
+                        const number = element('input');
+                        number.type = 'number'; number.min = slider.min; number.max = '100'; number.step = '1'; number.value = slider.value;
+                        number.setAttribute('aria-label', `${field.label} opacity percent`);
+                        slider.disabled = number.disabled = disabled || !catalog.allow_nsfw;
+                        slider.oninput = () => {
+                            number.value = slider.value;
+                            const clothing = JSON.parse(widget('clothing').value || '{}');
+                            clothing[name] = { ...clothing[name], opacity: Number(slider.value) };
+                            widget('clothing').value = JSON.stringify(clothing);
+                            renderAvatar(); previewPrompt();
+                            node.graph?.setDirtyCanvas(true, true);
+                        };
+                        number.onchange = () => save({ opacity: Math.max(Number(slider.min), Math.min(100, Math.round(Number(number.value) || 0))) });
+                        slider.onchange = () => save({ opacity: Number(slider.value) });
+                        row.append(slider, number, element('span', '%'));
+                        section.append(row);
+                        if (!catalog.allow_nsfw) section.append(element('p', 'Transparency requires allow_nsfw: true in local config.json.', 'help'));
+                    }
                     if (selected.details?.length) {
                         const detailsPanel = element('details');
                         detailsPanel.open = Boolean(Object.keys(refinements.details ?? {}).length);
                         const summary = element('summary', 'Garment details & accent colors');
                         summary.title = 'Enable decorative or functional details for this garment. Each enabled detail has its own accent color. Hover over a detail to learn what it adds.';
                         detailsPanel.append(summary);
-                        const extraDetails = element('details', undefined, 'extra-details');
-                        extraDetails.append(element('summary', 'More garment details'));
                         for (const id of selected.details) {
                             const spec = catalog.clothing.details[id];
                             const row = element('label', undefined, 'color-row');
@@ -1028,11 +1147,10 @@ function mountPanel(node, catalog) {
                             };
                             check.onchange = color.oninput = setDetail;
                             const reset = { disabled: !check.checked, onclick: () => { check.checked = false; setDetail(); } };
-                            bindColorPopup(color, reset);
+                            bindColorPopup(color, reset, name, true);
                             row.append(check, element('span', spec.label), color);
-                            (check.checked ? detailsPanel : extraDetails).append(row);
+                            detailsPanel.append(row);
                         }
-                        if (extraDetails.children.length > 1) detailsPanel.append(extraDetails);
                         section.append(detailsPanel);
                     }
                 }
@@ -1040,6 +1158,14 @@ function mountPanel(node, catalog) {
             }
         }
         organizeFields(settings);
+        choices.scrollTop = scrollTop;
+        for (const section of choices.children) {
+            const saved = fieldScroll.get(section.dataset?.field);
+            const tiles = section.querySelector('.tiles');
+            const details = section.querySelector('details');
+            if (tiles && saved?.left !== undefined) tiles.scrollLeft = saved.left;
+            if (details && saved?.detailsOpen !== undefined) details.open = saved.detailsOpen;
+        }
         previewPrompt();
     }
 
@@ -1186,7 +1312,7 @@ function mountPanel(node, catalog) {
         hideNativeWidgets();
         const savedSize = node._characterCreatorConfiguredSize ?? node.size;
         const hasSavedLayout = node._characterCreatorConfigured && node._characterCreatorConfiguredLayout === 1;
-        const initialHeight = hasSavedLayout ? savedSize[1] : 800;
+        const initialHeight = hasSavedLayout ? savedSize[1] : 960;
         node.setSize([Math.max(savedSize[0], hasSavedLayout ? 670 : 960), Math.max(initialHeight, node.computeSize()[1])]);
         node.properties.character_creator_layout_version = 1;
         domWidget.width = node.size[0];
