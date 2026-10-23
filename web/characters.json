@@ -1,7 +1,7 @@
 [
   {
     "id": "scarlet",
-    "name": "Scarlet Â· Red Qipao",
+    "name": "Scarlet · Red Qipao",
     "settings": {
       "model": "qwen_image_2_1",
       "template": "character",
@@ -56,7 +56,7 @@
   },
   {
     "id": "celeste",
-    "name": "Celeste Â· Timeless Elegance",
+    "name": "Celeste · Timeless Elegance",
     "settings": {
       "model": "qwen_image_2_1",
       "template": "character",
@@ -107,7 +107,7 @@
   },
   {
     "id": "silas",
-    "name": "Silas Â· The Weathered Sage",
+    "name": "Silas · The Weathered Sage",
     "settings": {
       "model": "qwen_image_2_1",
       "template": "character",
