@@ -1158,7 +1158,6 @@ function mountPanel(node, catalog) {
             }
         }
         organizeFields(settings);
-        choices.scrollTop = scrollTop;
         for (const section of choices.children) {
             const saved = fieldScroll.get(section.dataset?.field);
             const tiles = section.querySelector('.tiles');
@@ -1166,6 +1165,7 @@ function mountPanel(node, catalog) {
             if (tiles && saved?.left !== undefined) tiles.scrollLeft = saved.left;
             if (details && saved?.detailsOpen !== undefined) details.open = saved.detailsOpen;
         }
+        choices.scrollTop = scrollTop;
         previewPrompt();
     }
 
