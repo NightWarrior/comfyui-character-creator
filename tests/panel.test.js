@@ -5,6 +5,7 @@ import test from 'node:test';
 import { getLibrary } from '../web/library.js';
 
 class Element {
+    addEventListener(type, handler, options) { (this.events ??= {})[type] = { handler, options }; }
     querySelector(selector) { return find(this, (item) => item !== this && (selector.startsWith('.') ? item.className === selector.slice(1) : item.tag === selector)); }
     get tagName() { return this.tag.toUpperCase(); }
     constructor(tag) {
@@ -67,7 +68,7 @@ test('panel mounts on the node, edits native widgets, restores settings and disp
     const copied = [];
     Object.defineProperty(globalThis, 'navigator', { configurable: true,
         value: { clipboard: { async writeText(value) { copied.push(value); } } } });
-    globalThis.document = { createElement: (tag) => new Element(tag),
+    globalThis.document = { addEventListener: Element.prototype.addEventListener, createElement: (tag) => new Element(tag),
         createTextNode: (text) => { const node = new Element('#text'); node.textContent = text; return node; } };
     globalThis.__characterTestApp = { registerExtension(value) { extension = value; } };
     globalThis.__characterTestApi = {
@@ -123,25 +124,46 @@ test('panel mounts on the node, edits native widgets, restores settings and disp
         await extension.beforeRegisterNodeDef(Node, { name: 'CharacterCreator' });
         node = new Node();
         node.onConfigure();
+        for (const widget of node.widgets) widget.type = typeof widget.value === 'number' ? 'number' : 'combo';
+        node.widgets.find((widget) => widget.name === 'character_code').type = 'converted-widget';
+        const originalWidgetTypes = node.widgets.map((widget) => widget.type);
         const originalWidgetCount = node.widgets.length;
         const originalWidgetValues = node.widgets.map((widget) => widget.value);
         node.widgets.find((widget) => widget.name === 'character_code').inputEl = { style: {} };
         node.onNodeCreated();
         await setImmediate();
         assert.ok(node.panel?.shadow);
+        let wheelStopped = false;
+        const wheel = document.events.wheel;
+        assert.equal(wheel.options.passive, true);
+        assert.equal(wheel.options.capture, true);
+        wheel.handler({
+            composedPath() { return [node.panel]; },
+            stopPropagation() { wheelStopped = true; },
+            preventDefault() { assert.fail('The editor must retain native scrolling.'); },
+        });
+        assert.equal(wheelStopped, true);
+        wheel.handler({
+            composedPath() { return []; },
+            stopPropagation() { assert.fail('Canvas scrolling outside the editor must remain available.'); },
+        });
         assert.equal(node.widgets.length, originalWidgetCount + 1);
         assert.equal(node.panelWidget.serialize, false);
         const nativeWidgets = node.widgets.filter((widget) => widget.serialize !== false);
         assert.deepEqual(nativeWidgets.map((widget) => widget.value), originalWidgetValues);
-        assert.ok(nativeWidgets.every((widget) => widget.hidden && widget.type === 'converted-widget'));
+        assert.ok(nativeWidgets.every((widget) => widget.hidden && widget.options.hidden));
+        assert.deepEqual(nativeWidgets.map((widget) => widget.type), originalWidgetTypes);
         assert.ok(nativeWidgets.every((widget) => widget.computeSize()[1] < 0));
         assert.ok(nativeWidgets.every((widget) => widget.computeLayoutSize().maxHeight === 0));
         const recreatedWidget = nativeWidgets[0];
         recreatedWidget.hidden = false;
+        recreatedWidget.options.hidden = false;
         recreatedWidget.type = 'combo';
         recreatedWidget.computeLayoutSize = () => ({ minHeight: 30 });
         node.onDrawBackground();
         assert.equal(recreatedWidget.hidden, true);
+        assert.equal(recreatedWidget.options.hidden, true);
+        assert.equal(recreatedWidget.type, 'combo');
         assert.equal(recreatedWidget.computeLayoutSize().maxHeight, 0);
         assert.equal(node.widgets.find((widget) => widget.name === 'character_code').inputEl.style.display, 'none');
         assert.equal(node.panelWidget.computeSize, undefined);
@@ -725,6 +747,7 @@ test('panel mounts on the node, edits native widgets, restores settings and disp
         else delete globalThis.cancelAnimationFrame;
         globalThis.__characterTestApi.fetchApi = fetchApi;
         node.onRemoved();
+        assert.equal(wheel.options.signal.aborted, true);
         assert.equal(dropperSignal.aborted, true);
         const previousRequests = requests;
         await new Promise((resolve) => setTimeout(resolve, 210));

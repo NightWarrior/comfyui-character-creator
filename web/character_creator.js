@@ -381,6 +381,10 @@ function mountPanel(node, catalog) {
         });
     };
     const controller = new AbortController();
+    // Nodes 2.0 forwards wheel events during capture, before they reach the host.
+    document.addEventListener('wheel', (event) => {
+        if (event.composedPath().includes(host)) event.stopPropagation();
+    }, { capture: true, passive: true, signal: controller.signal });
     const colorLabels = new Map();
     const openGroups = new Map();
     const groups = [...new Set(Object.values({ ...catalog.fields, ...catalog.extra_fields }).map((field) => field.group)), 'Settings', 'ControlNet'];
@@ -1250,11 +1254,11 @@ function mountPanel(node, catalog) {
         for (const input of node.widgets ?? []) {
             if (!nativeNames.has(input.name)) continue;
             input.hidden = true;
-            input.type = 'converted-widget';
+            (input.options ??= {}).hidden = true;
             input.computeSize = hiddenSize;
             input.computeLayoutSize = hiddenLayout;
-            if (input.inputEl) input.inputEl.style.display = 'none';
-            if (input.element) input.element.style.display = 'none';
+            const nativeElement = input.element ?? input.inputEl;
+            if (nativeElement) nativeElement.style.display = 'none';
         }
     };
     hideNativeWidgets();

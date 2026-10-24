@@ -4,6 +4,8 @@ Build a character visually, then send the prompt straight into your image workfl
 
 **Qwen Image 2.1 · SDXL · Stable Diffusion 1.5**
 
+Works with classic nodes and **Nodes 2.0 (Beta)**.
+
 ![Character Creator clothing editor with garment options, accent colors and a character preview](assets/screenshots/clothing.jpg)
 
 ## Make it yours
